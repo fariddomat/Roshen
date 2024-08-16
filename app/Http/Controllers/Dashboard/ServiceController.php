@@ -51,7 +51,6 @@ class ServiceController extends Controller
         $request_data = $request->except(['img']);
 
         $img = Image::make($request->img)
-            ->resize(524, 646)
             ->encode('webp', 90);
 
         Storage::disk('public')->put('images/' . $request->img->hashName(), (string)$img, 'public');
@@ -113,7 +112,6 @@ class ServiceController extends Controller
             Storage::disk('public')->delete('images/' . $service->img);
 
             $img = Image::make($request->img)
-                ->resize(524, 646)
                 ->encode('webp', 90);
 
             Storage::disk('public')->put('images/' . $request->img->hashName(), (string)$img, 'public');

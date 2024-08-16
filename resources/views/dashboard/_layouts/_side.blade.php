@@ -24,6 +24,14 @@
                     الخدمات</a>
                </li>
                <li class="nav-item">
+                   <a class="nav-link" href="{{ route('dashboard.blogcategories.index') }}"><i class="icon-note "></i>
+                    تصنيفات المدونة</a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="{{ route('dashboard.blogs.index') }}"><i class="icon-note "></i>
+                    المدونة</a>
+               </li>
+               <li class="nav-item">
                    <a class="nav-link" href="{{ route('dashboard.setting.contact') }}"><i class="fa fa-comments-o  "></i>
                     الرسائل</a>
                </li>

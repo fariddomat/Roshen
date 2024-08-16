@@ -34,11 +34,11 @@ Route::group([], function () {
 
 
     Route::get('/about', 'Home\AboutController@index')->name('about');
-    Route::get('/blogs', 'Home\BlogController@index')->name('projects');
-    Route::get('/blog/{id}', 'Home\BlogController@show')->name('project');
+    Route::get('/blogs', 'Home\BlogController@index')->name('blogs');
+    Route::get('/blog/{id}', 'Home\BlogController@show')->name('blog');
 
-    Route::get('/services', 'Home\ServiceController@index')->name('projects');
-    Route::get('/services/{id}', 'Home\ServiceController@show')->name('project');
+    Route::get('/services', 'Home\ServiceController@index')->name('services');
+    Route::get('/services/{id}', 'Home\ServiceController@show')->name('service');
 
     Route::get('/projects', 'Home\ProjectControlelr@index')->name('projects');
     Route::get('/projects/{id}', 'Home\ProjectControlelr@show')->name('project');
@@ -63,6 +63,10 @@ Route::prefix('dashboard')
 
             Route::resource('users', 'Dashboard\UserController');
             Route::resource('privacies', 'Dashboard\PrivacyController');
+
+            Route::resource('blogcategories', 'Dashboard\BlogCategoryController');
+            Route::resource('blogs', 'Dashboard\BlogController');
+            Route::delete('/blogs/{blog}/index-image', 'Dashboard\BlogController@destroyIndexImage')->name('blogs.indexImage.destroy');
 
             Route::resource('categories', 'Dashboard\CategoryController');
             Route::resource('services', 'Dashboard\ServiceController');

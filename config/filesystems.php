@@ -49,6 +49,12 @@ return [
         ],
 
 
+        'public_html' => [
+            'driver' => 'local',
+            'root'   => public_path(),
+            'url' => env('APP_URL').'/public_html',
+            'visibility' => 'public',
+        ],
         'public_images' => [
             'driver' => 'local',
             'root' => public_path(), // Replace with your actual public directory path
@@ -58,8 +64,8 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
-            'url' => env('APP_URL') . '/storage',
+            'root'   => public_path() . '/uploads',
+            'url' => env('APP_URL').'/public',
             'visibility' => 'public',
         ],
 
