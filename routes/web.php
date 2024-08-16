@@ -65,6 +65,7 @@ Route::prefix('dashboard')
             Route::resource('privacies', 'Dashboard\PrivacyController');
 
             Route::resource('categories', 'Dashboard\CategoryController');
+            Route::resource('services', 'Dashboard\ServiceController');
 
             Route::resource('projects', 'Dashboard\ProjectController');
             Route::get('/projects/{id}/clone', 'Dashboard\ProjectController@clone')->name('projects.clone');

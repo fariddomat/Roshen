@@ -20,8 +20,8 @@
                     سجل العمليات</a>
                </li>
                <li class="nav-item">
-                   <a class="nav-link" href="{{ route('dashboard.promoters.index') }}"><i class="icon-people "></i>
-                    الوسطاء</a>
+                   <a class="nav-link" href="{{ route('dashboard.services.index') }}"><i class="icon-note "></i>
+                    الخدمات</a>
                </li>
                <li class="nav-item">
                    <a class="nav-link" href="{{ route('dashboard.setting.contact') }}"><i class="fa fa-comments-o  "></i>
