@@ -1,0 +1,439 @@
+@extends('home._layouts._app')
+
+@section('style')
+
+
+@endsection
+@section('scripts')
+
+@endsection
+@section('content')
+
+<!-- blog starts -->
+<section class="blog trending">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="listing-inner">
+                    <div
+                            class="list-results d-flex align-items-center justify-content-between"
+                    >
+                        <div class="list-results-sort">
+                            <p class="m-0">عرض 1-5 من 80 نتيجة</p>
+                        </div>
+                        <div
+                                class="click-menu d-flex align-items-center justify-content-between"
+                        >
+                            <!--                            <div class="change-grid f-active me-2">-->
+                            <!--                                <a href="g{{ route('projects') }}"><i class="fa fa-th"></i></a>-->
+                            <!--                            </div>-->
+                            <div
+                                    class="sortby d-flex align-items-center justify-content-between ml-2"
+                            >
+                                <select class="niceSelect">
+                                    <option value="1">فلترة بواسطة</option>
+                                    <option value="2">الاقدم</option>
+                                    <option value="2">الاحدث</option>
+                                    <option value="3">من الأقل إلى الأعلى</option>
+                                    <option value="4">من الاعلي الي الاقل</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trend-box">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 mb-4  p-3 box-shadow">
+                                <div class="trend-item box-shadow rounded">
+                                    <div class="trend-image">
+                                        <img src="{{ asset('asset') }}/images/Background.png" alt="image"/>
+                                        <a href="#" class="flash bg-theme1 white px-3 py-2"></a>
+                                        <div
+                                                class="trend-meta d-flex align-items-center justify-content-between"
+                                        >
+                                            <div class="entry-author">
+                                                <img
+                                                        src="{{ asset('asset') }}/images/Background.png"
+                                                        alt=""
+                                                        class="rounded-circle me-1"
+                                                />
+                                                <span>Jenny</span>
+                                            </div>
+                                            <a href="services-detail.html" class="tags bg-theme2 white px-3 py-1">استعراض
+                                                المشروع</a>
+                                        </div>
+                                    </div>
+                                    <div class="trend-content p-4">
+                                        <h5 class="theme">درب الحرمين 1</h5>
+                                        <h4>
+                                            <a href="services-detail.html"
+                                            >مشروع درب الحرمين 11  </a
+                                            >
+                                        </h4>
+                                        <div
+                                                class="entry-meta d-flex align-items-center justify-content-between border-b pb-1 mb-2">
+                                            <div class="entry-author">
+                                                <p>
+                                                    السعر يبدا من <span class="d-block theme fw-bold"
+                                                >$63,000.00</span
+                                                >
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p class="mb-0">
+                                            وصف عن المشروع
+                                            وصف عن المشروع
+                                            وصف عن المشروع
+                                            وصف عن المشروع
+                                        </p>
+                                    </div>
+                                    <ul
+                                            class="d-flex align-items-center justify-content-between bg-grey p-3 px-4"
+                                    >
+                                        <li class="me-2">عدد الغرف</li>
+                                        <li class="me-2">2 الدور</li>
+                                        <li>الحي</li>
+                                        <li>المساحة</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 mb-4  p-3 box-shadow">
+                                <div class="trend-item box-shadow rounded">
+                                    <div class="trend-image">
+                                        <img src="{{ asset('asset') }}/images/Background.png" alt="image"/>
+                                        <a href="#" class="flash bg-theme1 white px-3 py-2"></a>
+                                        <div
+                                                class="trend-meta d-flex align-items-center justify-content-between"
+                                        >
+                                            <div class="entry-author">
+                                                <img
+                                                        src="{{ asset('asset') }}/images/Background.png"
+                                                        alt=""
+                                                        class="rounded-circle me-1"
+                                                />
+                                                <span>Jenny</span>
+                                            </div>
+                                            <a href="services-detail.html" class="tags bg-theme2 white px-3 py-1">استعراض
+                                                المشروع</a>
+                                        </div>
+                                    </div>
+                                    <div class="trend-content p-4">
+                                        <h5 class="theme">درب الحرمين 1</h5>
+                                        <h4>
+                                            <a href="services-detail.html"
+                                            >مشروع درب الحرمين 11  </a
+                                            >
+                                        </h4>
+                                        <div
+                                                class="entry-meta d-flex align-items-center justify-content-between border-b pb-1 mb-2">
+                                            <div class="entry-author">
+                                                <p>
+                                                    السعر يبدا من <span class="d-block theme fw-bold"
+                                                >$63,000.00</span
+                                                >
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p class="mb-0">
+                                            وصف عن المشروع
+                                            وصف عن المشروع
+                                            وصف عن المشروع
+                                            وصف عن المشروع
+                                        </p>
+                                    </div>
+                                    <ul
+                                            class="d-flex align-items-center justify-content-between bg-grey p-3 px-4"
+                                    >
+                                        <li class="me-2">عدد الغرف</li>
+                                        <li class="me-2">2 الدور</li>
+                                        <li>الحي</li>
+                                        <li>المساحة</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 mb-4  p-3 box-shadow">
+                                <div class="trend-item box-shadow rounded">
+                                    <div class="trend-image">
+                                        <img src="{{ asset('asset') }}/images/Background.png" alt="image"/>
+                                        <a href="#" class="flash bg-theme1 white px-3 py-2"></a>
+                                        <div
+                                                class="trend-meta d-flex align-items-center justify-content-between"
+                                        >
+                                            <div class="entry-author">
+                                                <img
+                                                        src="{{ asset('asset') }}/images/Background.png"
+                                                        alt=""
+                                                        class="rounded-circle me-1"
+                                                />
+                                                <span>Jenny</span>
+                                            </div>
+                                            <a href="services-detail.html" class="tags bg-theme2 white px-3 py-1">استعراض
+                                                المشروع</a>
+                                        </div>
+                                    </div>
+                                    <div class="trend-content p-4">
+                                        <h5 class="theme">درب الحرمين 1</h5>
+                                        <h4>
+                                            <a href="services-detail.html"
+                                            >مشروع درب الحرمين 11  </a
+                                            >
+                                        </h4>
+                                        <div
+                                                class="entry-meta d-flex align-items-center justify-content-between border-b pb-1 mb-2">
+                                            <div class="entry-author">
+                                                <p>
+                                                    السعر يبدا من <span class="d-block theme fw-bold"
+                                                >$63,000.00</span
+                                                >
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p class="mb-0">
+                                            وصف عن المشروع
+                                            وصف عن المشروع
+                                            وصف عن المشروع
+                                            وصف عن المشروع
+                                        </p>
+                                    </div>
+                                    <ul
+                                            class="d-flex align-items-center justify-content-between bg-grey p-3 px-4"
+                                    >
+                                        <li class="me-2">عدد الغرف</li>
+                                        <li class="me-2">2 الدور</li>
+                                        <li>الحي</li>
+                                        <li>المساحة</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 mb-4  p-3 box-shadow">
+                                <div class="trend-item box-shadow rounded">
+                                    <div class="trend-image">
+                                        <img src="{{ asset('asset') }}/images/Background.png" alt="image"/>
+                                        <a href="#" class="flash bg-theme1 white px-3 py-2"></a>
+                                        <div
+                                                class="trend-meta d-flex align-items-center justify-content-between"
+                                        >
+                                            <div class="entry-author">
+                                                <img
+                                                        src="{{ asset('asset') }}/images/Background.png"
+                                                        alt=""
+                                                        class="rounded-circle me-1"
+                                                />
+                                                <span>Jenny</span>
+                                            </div>
+                                            <a href="services-detail.html" class="tags bg-theme2 white px-3 py-1">استعراض
+                                                المشروع</a>
+                                        </div>
+                                    </div>
+                                    <div class="trend-content p-4">
+                                        <h5 class="theme">درب الحرمين 1</h5>
+                                        <h4>
+                                            <a href="services-detail.html"
+                                            >مشروع درب الحرمين 11  </a
+                                            >
+                                        </h4>
+                                        <div
+                                                class="entry-meta d-flex align-items-center justify-content-between border-b pb-1 mb-2">
+                                            <div class="entry-author">
+                                                <p>
+                                                    السعر يبدا من <span class="d-block theme fw-bold"
+                                                >$63,000.00</span
+                                                >
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p class="mb-0">
+                                            وصف عن المشروع
+                                            وصف عن المشروع
+                                            وصف عن المشروع
+                                            وصف عن المشروع
+                                        </p>
+                                    </div>
+                                    <ul
+                                            class="d-flex align-items-center justify-content-between bg-grey p-3 px-4"
+                                    >
+                                        <li class="me-2">عدد الغرف</li>
+                                        <li class="me-2">2 الدور</li>
+                                        <li>الحي</li>
+                                        <li>المساحة</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 mb-4  p-3 box-shadow">
+                                <div class="trend-item box-shadow rounded">
+                                    <div class="trend-image">
+                                        <img src="{{ asset('asset') }}/images/Background.png" alt="image"/>
+                                        <a href="#" class="flash bg-theme1 white px-3 py-2"></a>
+                                        <div
+                                                class="trend-meta d-flex align-items-center justify-content-between"
+                                        >
+                                            <div class="entry-author">
+                                                <img
+                                                        src="{{ asset('asset') }}/images/Background.png"
+                                                        alt=""
+                                                        class="rounded-circle me-1"
+                                                />
+                                                <span>Jenny</span>
+                                            </div>
+                                            <a href="services-detail.html" class="tags bg-theme2 white px-3 py-1">استعراض
+                                                المشروع</a>
+                                        </div>
+                                    </div>
+                                    <div class="trend-content p-4">
+                                        <h5 class="theme">درب الحرمين 1</h5>
+                                        <h4>
+                                            <a href="services-detail.html"
+                                            >مشروع درب الحرمين 11  </a
+                                            >
+                                        </h4>
+                                        <div
+                                                class="entry-meta d-flex align-items-center justify-content-between border-b pb-1 mb-2">
+                                            <div class="entry-author">
+                                                <p>
+                                                    السعر يبدا من <span class="d-block theme fw-bold"
+                                                >$63,000.00</span
+                                                >
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p class="mb-0">
+                                            وصف عن المشروع
+                                            وصف عن المشروع
+                                            وصف عن المشروع
+                                            وصف عن المشروع
+                                        </p>
+                                    </div>
+                                    <ul
+                                            class="d-flex align-items-center justify-content-between bg-grey p-3 px-4"
+                                    >
+                                        <li class="me-2">عدد الغرف</li>
+                                        <li class="me-2">2 الدور</li>
+                                        <li>الحي</li>
+                                        <li>المساحة</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pagination-main text-center">
+                            <ul class="pagination">
+                                <li>
+                                    <a href="#"><i
+                                            class="fa fa-angle-double-left"
+                                            aria-hidden="true"></i></a>
+                                </li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li>
+                                    <a href="#"
+                                    ><i
+                                            class="fa fa-angle-double-right"
+                                            aria-hidden="true"
+                                    ></i
+                                    ></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- sidebar starts -->
+            <div class="col-lg-4 col-md-12">
+                <div class="sidebar-sticky">
+                    <div class="list-sidebar">
+                        <div class="sidebar-item mb-4 box-shadow p-4 text-centerb">
+                            <h3>ابحث عن منزلك</h3>
+                            <form class="form-find">
+                                <!--                                <div class="form-group mb-2">-->
+                                <!--                                    <input type="text" placeholder="Enter Keywords"/>-->
+                                <!--                                </div>-->
+                                <div class="form-group mb-2">
+                                    <div class="input-box">
+                                        <select class="niceSelect">
+                                            <option value="1">الموقع</option>
+                                            <option value="2">جدة</option>
+                                            <option value="3">الرياض</option>
+                                            <option value="4">الدمام</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-2">
+                                    <div class="input-box">
+                                        <select class="niceSelect">
+                                            <option value="1">نوع المكان</option>
+                                            <option value="2">شقة</option>
+                                            <option value="3">فيلا</option>
+                                            <option value="5">حجرة</option>
+                                            <option value="5">منزل كامل</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-2">
+                                    <div class="input-box">
+                                        <select class="niceSelect">
+                                            <option value="1">كل الحالات</option>
+                                            <option value="2">للايجار</option>
+                                            <option value="3">للبيع</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-2 d-flex justify-content-between">
+                                    <div class="input-box w-50 me-1">
+                                        <select class="niceSelect">
+                                            <option value="1">عدد الحجرات</option>
+                                            <option value="2">5</option>
+                                            <option value="3">3</option>
+                                            <option value="3">4</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-box w-50 ms-1">
+                                        <select class="niceSelect">
+                                            <option value="1">الحمامات</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-2">
+                                    <div class="range-slider mt-0">
+                                        <p class="text-start mb-2">نطاق السعر</p>
+                                        <div
+                                                data-min="0"
+                                                data-max="2000"
+                                                data-unit="$"
+                                                data-min-name="min_price"
+                                                data-max-name="max_price"
+                                                class="range-slider-ui ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
+                                                aria-disabled="false"
+                                        >
+                                            <span class="min-value">500 $</span>
+                                            <span class="max-value">20000 $</span>
+                                            <div
+                                                    class="ui-slider-range ui-widget-header ui-corner-all full"
+                                                    style="left: 0%; width: 100%"
+                                            ></div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group text-center w-100">
+                                    <input
+                                            type="submit"
+                                            class="nir-btn w-100"
+                                            id="submit3"
+                                            value="بحث"
+                                    />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- blog Ends -->
+
+@endsection
+

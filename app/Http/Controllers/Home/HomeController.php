@@ -25,7 +25,7 @@ class HomeController extends Controller
         $max_price=Apartment::max('price');
         $max_room_count=Apartment::max('room_count');
         $max_area=Apartment::max('area');
-        $about=About::first();
+        $about=About::first()?:'';
 
         $count = Project::count();
         return view('home.index', compact('projects', 'count', 'category_list', 'max_price', 'max_room_count', 'max_area', 'about'));

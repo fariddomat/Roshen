@@ -1,77 +1,118 @@
 @extends('home._layouts._app')
 @section('style')
-    <style>
-        input,
-        .form-submit-cont {
-            border-radius: 15px;
-        }
 
-        textarea {
-            border-radius: 15px 15px 0px 0px;
-        }
-
-        #form-submit {
-                width: 100%;
-                border-radius: 0px 0px 15px 15px;
-            }
-        @media only screen and (max-width:600px) {
-
-            input,
-            .form-submit-cont {
-                max-width: 90%;
-                border-radius: 15px;
-            }
-
-            textarea {
-                max-width: 90%;
-                border-radius: 15px 15px 0px 0px;
-            }
-
-            #form-submit {
-                width: 100%;
-                border-radius: 0px 0px 15px 15px;
-            }
-        }
-    </style>
 @endsection
 @section('content')
-    <section class="section-light section-both-shadow top-padding-45 margin-top-135">
-        <div class="container">
+
+
+<!-- contact starts -->
+<section class="contact-main pt-0 pb-10 bg-grey">
+    <div class="map">
+        <div style="width: 100%">
+            <iframe
+                    height="500"
+                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(mangal%20bazar)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+            ></iframe>
+        </div>
+    </div>
+    <div class="container">
+        <div class="contact-info-main">
             <div class="row">
-                <div class="col-xs-12 col-md-6 margin-top-45">
-                    <h1 class="negative-margin">للاستفسار عن خدماتنا بشكل كامل</h1>
-                    <h2 class="negative-margin margin-top-30">تواصل معنا</h2>
-
-                </div>
-                <div class="col-xs-12 col-md-6 margin-top-45">
-                    <form name="contact-from" id="contact-form" action="{{ route('contact') }}" method="post">
-                        @csrf
-                        @extends('admin._layouts._error')
-                        <div id="form-result"></div>
-                        <input name="name" id="name" type="text" class="input-short main-input required,all"
-                            placeholder="الاسم بالكامل *"
-                            style="  float: right;
-                            margin-left: 15px;" required />
-                        <input name="phone" id="phone" type="text" class="input-short pull-right main-input ,all"
-                            placeholder="رقم الهاتف *" required />
-                        <input name="email" id="mail" type="email" class="input-full main-input ,email"
-                            placeholder="البريد الالكتروني" />
-                        <textarea name="message" id="message" class="input-full contact-textarea main-input required,email"
-                            placeholder="رسالتك *" required></textarea>
-                        <div class="form-submit-cont">
-                            <button type="submit" class="button-primary pull-right" id="form-submit">
-                                <span>ارسال</span>
-                                <div class="button-triangle"></div>
-                                <div class="button-triangle2"></div>
-                                <div class="button-icon"><i class="fa fa-paper-plane"></i></div>
-                            </button>
-                            <div class="clearfix"></div>
+                <div class="col-lg-10 col-offset-lg-1 mx-auto">
+                    <div class="contact-info bg-white pt-10 pb-10 px-5">
+                        <div class="contact-info-title text-center mb-4 px-5">
+                            <h3 class="mb-1">معلومات التواصل معنا</h3>
+                            <p class="mb-0">يكون نسعى لارضائكم دائماً من خلال قسم خدمات العملاء لدينا</p>
                         </div>
-                    </form>
+                        <div class="contact-info-content row mb-1">
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div
+                                        class="info-item bg-lgrey px-4 py-5 border-all text-center">
+                                    <div class="info-icon mb-2">
+                                        <i class="fa fa-map-marker"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <p style="font-size: 18px" class="m-0"> السعودية جدة</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div
+                                        class="info-item bg-lgrey px-4 py-5 border-all text-center"
+                                >
+                                    <div class="info-icon mb-2">
+                                        <i class="fa fa-phone"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <p style="font-size: 18px" class="m-0"><a href="tel:+966554115160">00966554115160</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12 mb-4">
+                                <div
+                                        class="info-item bg-lgrey px-4 py-5 border-all text-center"
+                                >
+                                    <div class="info-icon mb-2">
+                                        <i class="fa fa-envelope"></i>
+                                    </div>
+                                    <div class="info-content ps-4">
+                                        <p style="font-size: 18px" class="m-0"> info@roshem.sa</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="contact-form1" class="contact-form px-5">
+                            <div class="contact-info-title text-center mb-4 px-5">
+                                <h3 class="mb-1">خدمة عملاء مميزة ورد سريع</h3>
+                                <p class="mb-0">
+                                    اسعي لارضائك دايما بالعمل ولا ينتهي العمل الا وانت راض عنة
+                                </p>
+                            </div>
+                            <div id="contactform-error-msg"></div>
+
+                            <form
+                                    method="post"
+                                    action="#"
+                                    name="contactform"
+                                    id="contactform">
+
+                                <div class="form-group mb-2">
+                                    <input type="text" name="last_name" class="form-control" id="llastname"
+                                           placeholder=" *الاسم "/>
+                                </div>
+                                <div class="form-group mb-2">
+                                    <input type="email" name="email" class="form-control" id="email"
+                                           placeholder="البريد الالكتروني"/>
+                                </div>
+                                <div class="form-group mb-2">
+                                    <input type="text" name="phone" class="form-control" id="phnumber"
+                                           placeholder=" *رقم  الجوال"
+                                    />
+
+                                    <div class="form-group mb-2">
+                                        <select class="form-control mt-2" id="dropdown" name="dropdown">
+                                            <option value="" disabled selected>اختر الخدمة</option>
+                                            <option value="option1">خيار 1</option>
+                                            <option value="option2">خيار 2</option>
+                                            <option value="option3">خيار 3</option>
+                                        </select>
+                                    </div>
+                                    <div class="textarea mb-2">
+                                        <textarea name="comments" placeholder=" *اكتب رسالتك نسعد بها"></textarea>
+                                    </div>
+                                    <div class="comment-btn text-center"><input type="submit"
+                                                                                style="background-color: #6f42c1; color: white"
+                                                                                class="btn px-5" id="submit2"
+                                                                                value="ارسال الرسالة"/>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-
-
             </div>
         </div>
-    </section>
+    </div>
+</section>
+<!-- contact Ends -->
 @endsection

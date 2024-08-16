@@ -205,7 +205,7 @@
 
                                     <li><a href="{{ route('home') }}">@lang('site.home')</a></li>
                                     <li><a href="{{ route('about') }}">@lang('site.about')</a></li>
-                                    <li><a href="{{ route('services') }}">@lang('site.services')</a></li>
+                                    <li><a href="{{ route('projects') }}">@lang('site.services')</a></li>
                                     <li><a href="{{ route('blogs') }}">@lang('site.blog')</a></li>
                                     {{-- <li><a href="{{ route('home') }}#portfolio">@lang('site.my_works')</a></li> --}}
                                     <li><a href="{{ route('contact') }}">@lang('site.contact')</a></li>
@@ -285,7 +285,7 @@
                             </div>
                         @endforeach
 
-                        <a href="{{ route('services') }}" class="roboto text-uppercase" >@lang('site.view_all_services') <i class="fas fa-caret-right"></i></a>
+                        <a href="{{ route('projects') }}" class="roboto text-uppercase" >@lang('site.view_all_services') <i class="fas fa-caret-right"></i></a>
                     </div>
                 </div>
                 <!-- End of Footer services -->

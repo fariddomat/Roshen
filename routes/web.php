@@ -31,8 +31,17 @@ Route::group([], function () {
     Route::post('/promoters', 'Home\HomeController@promoters')->name('promoters');
     Route::get('/categories', 'Home\CategoryControlelr@index')->name('categories');
     Route::get('/category/{id}', 'Home\CategoryControlelr@show')->name('category');
+
+
+    Route::get('/about', 'Home\AboutController@index')->name('about');
+    Route::get('/blogs', 'Home\BlogController@index')->name('projects');
+    Route::get('/blog/{id}', 'Home\BlogController@show')->name('project');
+
+    Route::get('/services', 'Home\ServiceController@index')->name('projects');
+    Route::get('/services/{id}', 'Home\ServiceController@show')->name('project');
+
     Route::get('/projects', 'Home\ProjectControlelr@index')->name('projects');
-    Route::get('/project/{id}', 'Home\ProjectControlelr@show')->name('project');
+    Route::get('/projects/{id}', 'Home\ProjectControlelr@show')->name('project');
     Route::get('/privacy', 'Home\HomeController@privacy')->name('privacy');
 
 

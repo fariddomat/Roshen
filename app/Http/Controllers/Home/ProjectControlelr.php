@@ -18,7 +18,7 @@ class ProjectControlelr extends Controller
         ];
         // dd($category->name);
         $projects = Project::orderBy('created_at')->paginate(6);
-        return view('home.category', compact('category', 'projects'));
+        return view('home.projects', compact('category', 'projects'));
     }
 
     public function show($id)
