@@ -42,6 +42,11 @@
                 <a class="nav-link" href="{{ route('dashboard.certs.index') }}"><i class="icon-camera "></i>
                     الشهادات</a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('dashboard.reviews.index') }}"><i class="icon-star "></i>
+                    القييمات</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('dashboard.whies.index') }}"><i class="icon-note "></i>
                     لماذا تختارنا</a>
