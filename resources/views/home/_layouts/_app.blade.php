@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="{{ asset('asset') }}/fonts/line-icons.css" type="text/css" />
     <style>
-        @media (max-width: 1400px) and (min-width: 1300px) {
+        @media (min-width: 1300px) {
 
             .main_header_area .header_menu .navbar.navbar-default .nav.navbar-nav li a,
             .main_header_area.headerstye-1 .header_menu .navbar.navbar-default .nav.navbar-nav li a {

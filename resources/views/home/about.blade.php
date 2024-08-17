@@ -172,7 +172,7 @@
     <!-- about-us starts -->
     <div class="banner py-6"
         style="
-        background-image: url(images/shape-1.png);
+        background-image: url({{ asset('home') }}/images/shape-1.png);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -205,7 +205,7 @@
                     </div>
                     <div class="col-lg-5 col-sm-12 mb-4">
                         <div class="about-image p-3 box-shadow position-relative">
-                            <img src="images/Background.png" alt="" class="w-100" />
+                            <img src="{{ asset('home') }}/images/Background.png" alt="" class="w-100" />
                         </div>
                     </div>
                 </div>

@@ -24,7 +24,7 @@
 
                     <div class="form-group mb-3">
                         <label for="who" class="form-label">من نحن؟</label>
-                        <textarea class="form-control" id="who" name="who" rows="5" dir="rtl">{{ old('who') ?? isset($about) ? $about->who_are_we : '' }}</textarea>
+                        <textarea class="form-control" id="who_are_we" name="who_are_we" rows="5" dir="rtl">{{ old('who_are_we') ?? isset($about) ? $about->who_are_we : '' }}</textarea>
                     </div>
 
                     <hr>
@@ -41,10 +41,14 @@
 
                     <hr>
                     <div class="form-group mb-3">
-                        <label for="quality_safty" class="form-label">الجودة والأمان</label>
-                        <textarea class="form-control" id="quality_safty" name="quality_safty" rows="5" dir="rtl">{{ old('quality_safty') ?? isset($about) ? $about->quality_safty : '' }}</textarea>
+                        <label for="quality_safty" class="form-label">قيمنا</label>
+                        <textarea class="form-control" id="values" name="values" rows="5" dir="rtl">{{ old('values') ?? isset($about) ? $about->values : '' }}</textarea>
                     </div>
-
+                    <hr>
+                    <div class="form-group mb-3">
+                        <label for="quality_safty" class="form-label">أهدافنا</label>
+                        <textarea class="form-control" id="goals" name="goals" rows="5" dir="rtl">{{ old('goals') ?? isset($about) ? $about->goals : '' }}</textarea>
+                    </div>
                     <div class="form-group mb-3">
                         <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Save </button>
                     </div>

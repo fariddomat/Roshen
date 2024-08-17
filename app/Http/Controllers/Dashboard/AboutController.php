@@ -17,10 +17,11 @@ class AboutController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'quality_safty' => ['required'],
-            'who' => ['required'],
+            'who_are_we' => ['required'],
             'message' => ['required'],
             'vision' => ['required'],
+            'values' => ['required'],
+            'goals' => ['required'],
         ];
         $validatedData = $request->validate($rules);
 
@@ -29,8 +30,9 @@ class AboutController extends Controller
             $about = new About();
         }
 
-        $about->quality_safty = $validatedData['quality_safty'];
-        $about->who_are_we = $validatedData['who'];
+        $about->goals = $validatedData['goals'];
+        $about->values = $validatedData['values'];
+        $about->who_are_we = $validatedData['who_are_we'];
         $about->message = $validatedData['message'];
         $about->vision = $validatedData['vision'];
         $about->save();

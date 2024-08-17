@@ -16,9 +16,11 @@ class CreateAboutsTable extends Migration
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
             $table->longText('who_are_we');
-            $table->longText('message');
+            $table->longText('who_are_we_image');
+            $table->longText('values');
+            $table->longText('goals');
             $table->longText('vision');
-            $table->longText('quality_safty');
+            $table->longText('message');
             $table->timestamps();
         });
     }
