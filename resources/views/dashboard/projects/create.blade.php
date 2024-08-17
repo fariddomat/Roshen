@@ -55,8 +55,8 @@
 
 
                                     {{-- virtual --}}
-                                    {{-- <h5 class="mt-2">جولة افتراضية - iframe (اختياري)</h5>
-                                    <textarea name="virtual_location" class="form-control" id="basicTextarea" rows="3">{{ old('virtual_location') }}</textarea> --}}
+                                    <h5 class="mt-2">جولة افتراضية - iframe (اختياري)</h5>
+                                    <textarea name="virtual_location" class="form-control" id="basicTextarea" rows="3">{{ old('virtual_location') }}</textarea>
 
                                     <h5 class="mt-2">حالة المشروع</h5>
                                     <select name="status" id="" class="form-control">
@@ -290,43 +290,7 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">الضمانات</h4>
-
-
-                    </div>
-                    <div class="card-block">
-                        <div class="" style="text-align: right">
-
-                            <fieldset class="form-group">
-                                <div class="col-lg-6 mt-3">
-
-                                    <h5 class="mt-2">على الهيكل الانشائي</h5>
-                                    <input value="{{ old('f1') }}" name="f1" type="text"
-                                        class="form-control" id="basicInput" required>
-
-                                    <h5 class="mt-2">على القواطع والأفياش</h5>
-                                    <input value="{{ old('f2') }}" name="f2" type="text"
-                                        class="form-control" id="basicInput" required>
-
-                                    <h5 class="mt-2">على الكهرباء والسباكة</h5>
-                                    <input value="{{ old('f3') }}" name="f3" type="text"
-                                        class="form-control" id="basicInput" required>
-
-                                    <h5 class="mt-2">اتحاد الملاك مجاناَ</h5>
-                                    <input value="{{ old('f4') }}" name="f4" type="text"
-                                        class="form-control" id="basicInput" required>
-
-                                </div>
-                            </fieldset>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+     
 
 
         <div class="row">

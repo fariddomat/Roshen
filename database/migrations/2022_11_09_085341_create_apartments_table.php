@@ -29,6 +29,7 @@ class CreateApartmentsTable extends Migration
             $table->text('details');
             $table->string('img');
             $table->longText('virtual_location')->nullable();
+            $table->longText('youtube')->nullable();
             // $table->text('reservation');
             $table->timestamps();
         });

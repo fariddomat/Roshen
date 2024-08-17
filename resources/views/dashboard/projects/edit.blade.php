@@ -65,8 +65,8 @@
                                     <h5 class="mt-2">الموقع على الخريطة - iframe (اختياري)</h5>
                                     <textarea name="address_location" class="form-control" id="basicTextarea" rows="3">{{ old('address_location', $project->address_location) }}</textarea>
 
-                                    {{-- <h5 class="mt-2">جولة افتراضية - iframe (اختياري)</h5>
-                                    <textarea name="virtual_location" class="form-control" id="basicTextarea" rows="3">{{ old('virtual_location', $project->virtual_location) }}</textarea> --}}
+                                    <h5 class="mt-2">جولة افتراضية - iframe (اختياري)</h5>
+                                    <textarea name="virtual_location" class="form-control" id="basicTextarea" rows="3">{{ old('virtual_location', $project->virtual_location) }}</textarea>
 
                                     <h5 class="mt-2">حالة المشروع</h5>
                                     <select name="status" id="" class="form-control">
@@ -323,52 +323,7 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">الضمانات</h4>
-                        <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
-                        <div class="heading-elements">
-                            <ul class="list-inline mb-0">
-                                <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
-                                <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
-                                <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
-                                {{-- <li><a data-action="close"><i class="ft-x"></i></a></li> --}}
-                            </ul>
-                        </div>
-
-                    </div>
-                    <div class="card-block">
-                        <div class="card-body " style="text-align: right">
-
-                            <fieldset class="form-group">
-                                <div class="col-lg-6 mt-3">
-
-                                    <h5 class="mt-2">على الهيكل الانشائي</h5>
-                                    <input value="{{ old('f1', $project->facility->f1) }}" name="f1" type="text"
-                                        class="form-control" id="basicInput" required>
-
-                                    <h5 class="mt-2">على القواطع والأفياش</h5>
-                                    <input value="{{ old('f2', $project->facility->f2) }}" name="f2" type="text"
-                                        class="form-control" id="basicInput" required>
-
-                                    <h5 class="mt-2">على الكهرباء والسباكة</h5>
-                                    <input value="{{ old('f3', $project->facility->f3) }}" name="f3" type="text"
-                                        class="form-control" id="basicInput" required>
-
-                                    <h5 class="mt-2">اتحاد الملاك مجاناَ</h5>
-                                    <input value="{{ old('f4', $project->facility->f4) }}" name="f4" type="text"
-                                        class="form-control" id="basicInput" required>
-
-                                </div>
-                            </fieldset>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+      
 
         <div class="row">
             <div class="col-12">

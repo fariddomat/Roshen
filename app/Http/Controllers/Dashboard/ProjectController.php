@@ -130,11 +130,6 @@ class ProjectController extends Controller
 
                 'pdetails' => 'required',
 
-                'f1' => 'required',
-                'f2' => 'required',
-                'f3' => 'required',
-                'f4' => 'required',
-
             ]);
         try {
 
@@ -208,15 +203,7 @@ class ProjectController extends Controller
                 'details' => $request->pdetails,
             ]);
 
-            // facility
-            $facility = Facility::create([
-                'project_id' => $project->id,
-                'f1' => $request->f1,
-                'f2' => $request->f2,
-                'f3' => $request->f3,
-                'f4' => $request->f4,
-                'f5' => $request->f5,
-            ]);
+
 
             LogSystem::success('تم إضافة مشروع جديد بنجاح - اسم المشروع: ' . $request->name);
 
@@ -287,10 +274,6 @@ class ProjectController extends Controller
                 'pdfs.*' => 'nullable|mimes:pdf',
                 'pdetails' => 'required',
 
-                'f1' => 'required',
-                'f2' => 'required',
-                'f3' => 'required',
-                'f4' => 'required',
             ]);
 
         try {
@@ -397,14 +380,7 @@ class ProjectController extends Controller
             ]);
 
             // facility
-            $facility = Facility::where('project_id', $project->id);
-            $facility->update([
-                'f1' => $request->f1,
-                'f2' => $request->f2,
-                'f3' => $request->f3,
-                'f4' => $request->f4,
-                'f5' => $request->f5,
-            ]);
+          
             LogSystem::info('تم تعديل مشروع - اسم المشروع: ' . $project->name);
 
             session()->flash('success', 'Successfully updated !');
