@@ -32,6 +32,14 @@
                     المدونة</a>
                </li>
                <li class="nav-item">
+                   <a class="nav-link" href="{{ route('dashboard.counters.index') }}"><i class="icon-counter ">123</i>
+                    العدادات</a>
+               </li>
+               <li class="nav-item">
+                <a class="nav-link" href="{{ route('dashboard.partners.index') }}"><i class="icon-user "></i>
+                 الشركاء</a>
+            </li>
+               <li class="nav-item">
                    <a class="nav-link" href="{{ route('dashboard.setting.contact') }}"><i class="fa fa-comments-o  "></i>
                     الرسائل</a>
                </li>

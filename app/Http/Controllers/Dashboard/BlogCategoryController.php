@@ -60,5 +60,7 @@ class BlogCategoryController extends Controller
         return redirect()->route('dashboard.blogcategories.index');
     }
 
-  
+
+
+
 }

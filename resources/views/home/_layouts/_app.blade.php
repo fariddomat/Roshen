@@ -48,14 +48,7 @@
             <nav class="navbar navbar-default">
                 <div class="container">
                     <div class="navbar-flex d-flex align-items-center justify-content-between w-100 pb-3 pt-3">
-                        <!-- Brand and toggle get grouped for better mobile display -->
-                        <div class="navbar-header">
-                            <a class="navbar-brand" href="{{ route('home') }}">
-                                <img src="{{ asset('asset') }}/images/logo.webp" alt="image" />
-                                <img src="{{ asset('asset') }}/images/logo.webp" alt="image" />
-                            </a>
-                        </div>
-                        <!-- Collect the nav links, forms, and other content for toggling -->
+                           <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="navbar-collapse1 d-flex align-items-center justify-content-center"
                             id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav" id="responsive-menu">
@@ -65,7 +58,7 @@
                                 </li>
                                 <li><a class="" href="{{ route('about') }}">من نحن</a></li>
                                 <li class="submenu dropdown">
-                                    <a href="g{{ route('projects') }}" class="dropdown-toggle" data-toggle="dropdown"
+                                    <a href="{{ route('projects') }}" class="dropdown-toggle" data-toggle="dropdown"
                                         role="button" aria-haspopup="true" aria-expanded="false">مشاريعنا
                                     </a>
                                 </li>
@@ -84,6 +77,14 @@
                                 </li>
                             </ul>
                         </div>
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="{{ route('home') }}">
+                                <img src="{{ asset('asset') }}/images/logo.webp" alt="image" />
+                                <img src="{{ asset('asset') }}/images/logo.webp" alt="image" />
+                            </a>
+                        </div>
+
                         <div id="slicknav-mobile"></div>
                     </div>
                 </div>

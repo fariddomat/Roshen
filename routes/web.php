@@ -70,6 +70,8 @@ Route::prefix('dashboard')
 
             Route::resource('categories', 'Dashboard\CategoryController');
             Route::resource('services', 'Dashboard\ServiceController');
+            Route::resource('counters', 'Dashboard\CounterController');
+            Route::resource('partners', 'Dashboard\PartnerController');
 
             Route::resource('projects', 'Dashboard\ProjectController');
             Route::get('/projects/{id}/clone', 'Dashboard\ProjectController@clone')->name('projects.clone');
