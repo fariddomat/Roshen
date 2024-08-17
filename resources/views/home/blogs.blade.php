@@ -23,7 +23,7 @@
                                     class="list-results d-flex align-items-center justify-content-between"
                             >
                                 <div class="list-results-sort">
-                                    <p class="m-0">Showing 1-5 of 80 results</p>
+                                    {{-- <p class="m-0">Showing 1-5 of 80 results</p> --}}
                                 </div>
                                 <div
                                         class="click-menu d-flex align-items-center justify-content-between"
@@ -40,298 +40,46 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 mb-4">
-                            <div class="trend-item box-shadow bg-white">
-                                <div class="trend-image">
-                                    <img src="{{ asset('asset') }}/images/Background.png" alt="image" />
-                                </div>
-                                <div class="trend-content-main p-4">
-                                    <div class="trend-content">
-                                        <h5 class="theme">Design</h5>
-                                        <h4>
-                                            <a href="detail-1.html"
-                                            >How a developer and designer duo at Deutsche Bank
-                                                keep remote alive.</a
-                                            >
-                                        </h4>
-                                        <p class="mb-2">
-                                            A wonderful serenity has taken possession of my entire
-                                            soul, like these sweet mornings.
-                                        </p>
-                                        <div
-                                                class="entry-meta d-flex align-items-center justify-content-between"
-                                        >
-                                            <div class="entry-author">
-                                                <img
-                                                        src="{{ asset('asset') }}/images/Background.png"
-                                                        alt=""
-                                                        class="rounded-circle me-1"
-                                                />
-                                                <span>Kelton Brown</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                       @foreach ($blogs as $blog)
+                       <div class="col-lg-6 mb-4">
+                        <div class="trend-item box-shadow bg-white">
+                            <div class="trend-image">
+                                <img src="{{ asset('asset') }}/images/Background.png" alt="image" />
                             </div>
-                        </div>
-                        <div class="col-lg-6 mb-4">
-                            <div class="trend-item box-shadow bg-white">
-                                <div class="trend-image">
-                                    <img src="{{ asset('asset') }}/images/Background.png" alt="image" />
-                                </div>
-                                <div class="trend-content-main p-4">
-                                    <div class="trend-content">
-                                        <h5 class="theme">Design</h5>
-                                        <h4>
-                                            <a href="detail-1.html"
-                                            >How a developer and designer duo at Deutsche Bank
-                                                keep remote alive.</a
-                                            >
-                                        </h4>
-                                        <p class="mb-2">
-                                            A wonderful serenity has taken possession of my entire
-                                            soul, like these sweet mornings.
-                                        </p>
-                                        <div
-                                                class="entry-meta d-flex align-items-center justify-content-between"
+                            <div class="trend-content-main p-4">
+                                <div class="trend-content">
+                                    <h5 class="theme">{{$blog->category->name}}</h5>
+                                    <h4>
+                                        <a href="{{ route('blog', $blog->id) }}"
+                                        >{{$blog->title}}</a
                                         >
-                                            <div class="entry-author">
-                                                <img
-                                                        src="{{ asset('asset') }}/images/Background.png"
-                                                        alt=""
-                                                        class="rounded-circle me-1"
-                                                />
-                                                <span>Kelton Brown</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 mb-4">
-                            <div class="trend-item box-shadow bg-white">
-                                <div class="trend-image">
-                                    <img src="{{ asset('asset') }}/images/Background.png" alt="image" />
-                                </div>
-                                <div class="trend-content-main p-4">
-                                    <div class="trend-content">
-                                        <h5 class="theme">Design</h5>
-                                        <h4>
-                                            <a href="detail-1.html"
-                                            >How a developer and designer duo at Deutsche Bank
-                                                keep remote alive.</a
-                                            >
-                                        </h4>
-                                        <p class="mb-2">
-                                            A wonderful serenity has taken possession of my entire
-                                            soul, like these sweet mornings.
-                                        </p>
-                                        <div
-                                                class="entry-meta d-flex align-items-center justify-content-between"
-                                        >
-                                            <div class="entry-author">
-                                                <img
-                                                        src="{{ asset('asset') }}/images/Background.png"
-                                                        alt=""
-                                                        class="rounded-circle me-1"
-                                                />
-                                                <span>Kelton Brown</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 mb-4">
-                            <div class="trend-item box-shadow bg-white">
-                                <div class="trend-image">
-                                    <img src="{{ asset('asset') }}/images/Background.png" alt="image" />
-                                </div>
-                                <div class="trend-content-main p-4">
-                                    <div class="trend-content">
-                                        <h5 class="theme">Design</h5>
-                                        <h4>
-                                            <a href="detail-1.html"
-                                            >How a developer and designer duo at Deutsche Bank
-                                                keep remote alive.</a
-                                            >
-                                        </h4>
-                                        <p class="mb-2">
-                                            A wonderful serenity has taken possession of my entire
-                                            soul, like these sweet mornings.
-                                        </p>
-                                        <div
-                                                class="entry-meta d-flex align-items-center justify-content-between"
-                                        >
-                                            <div class="entry-author">
-                                                <img
-                                                        src="{{ asset('asset') }}/images/Background.png"
-                                                        alt=""
-                                                        class="rounded-circle me-1"
-                                                />
-                                                <span>Kelton Brown</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 mb-4">
-                            <div class="trend-item box-shadow bg-white">
-                                <div class="trend-image">
-                                    <img src="{{ asset('asset') }}/images/Background.png" alt="image" />
-                                </div>
-                                <div class="trend-content-main p-4">
-                                    <div class="trend-content">
-                                        <h5 class="theme">Design</h5>
-                                        <h4>
-                                            <a href="detail-1.html"
-                                            >How a developer and designer duo at Deutsche Bank
-                                                keep remote alive.</a
-                                            >
-                                        </h4>
-                                        <p class="mb-2">
-                                            A wonderful serenity has taken possession of my entire
-                                            soul, like these sweet mornings.
-                                        </p>
-                                        <div
-                                                class="entry-meta d-flex align-items-center justify-content-between"
-                                        >
-                                            <div class="entry-author">
-                                                <img
-                                                        src="{{ asset('asset') }}/images/Background.png"
-                                                        alt=""
-                                                        class="rounded-circle me-1"
-                                                />
-                                                <span>Kelton Brown</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 mb-4">
-                            <div class="trend-item box-shadow bg-white">
-                                <div class="trend-image">
-                                    <img src="{{ asset('asset') }}/images/Background.png" alt="image" />
-                                </div>
-                                <div class="trend-content-main p-4">
-                                    <div class="trend-content">
-                                        <h5 class="theme">Design</h5>
-                                        <h4>
-                                            <a href="detail-1.html"
-                                            >How a developer and designer duo at Deutsche Bank
-                                                keep remote alive.</a
-                                            >
-                                        </h4>
-                                        <p class="mb-2">
-                                            A wonderful serenity has taken possession of my entire
-                                            soul, like these sweet mornings.
-                                        </p>
-                                        <div
-                                                class="entry-meta d-flex align-items-center justify-content-between"
-                                        >
-                                            <div class="entry-author">
-                                                <img
-                                                        src="{{ asset('asset') }}/images/Background.png"
-                                                        alt=""
-                                                        class="rounded-circle me-1"
-                                                />
-                                                <span>Kelton Brown</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 mb-4">
-                            <div class="trend-item box-shadow bg-white">
-                                <div class="trend-image">
-                                    <img src="{{ asset('asset') }}/images/Background.png" alt="image" />
-                                </div>
-                                <div class="trend-content-main p-4">
-                                    <div class="trend-content">
-                                        <h5 class="theme">Design</h5>
-                                        <h4>
-                                            <a href="detail-1.html"
-                                            >How a developer and designer duo at Deutsche Bank
-                                                keep remote alive.</a
-                                            >
-                                        </h4>
-                                        <p class="mb-2">
-                                            A wonderful serenity has taken possession of my entire
-                                            soul, like these sweet mornings.
-                                        </p>
-                                        <div
-                                                class="entry-meta d-flex align-items-center justify-content-between"
-                                        >
-                                            <div class="entry-author">
-                                                <img
-                                                        src="{{ asset('asset') }}/images/Background.png"
-                                                        alt=""
-                                                        class="rounded-circle me-1"
-                                                />
-                                                <span>Kelton Brown</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 mb-4">
-                            <div class="trend-item box-shadow bg-white">
-                                <div class="trend-image">
-                                    <img src="{{ asset('asset') }}/images/Background.png" alt="image" />
-                                </div>
-                                <div class="trend-content-main p-4">
-                                    <div class="trend-content">
-                                        <h5 class="theme">Design</h5>
-                                        <h4>
-                                            <a href="detail-1.html"
-                                            >How a developer and designer duo at Deutsche Bank
-                                                keep remote alive.</a
-                                            >
-                                        </h4>
-                                        <p class="mb-2">
-                                            A wonderful serenity has taken possession of my entire
-                                            soul, like these sweet mornings.
-                                        </p>
-                                        <div
-                                                class="entry-meta d-flex align-items-center justify-content-between"
-                                        >
-                                            <div class="entry-author">
-                                                <img
-                                                        src="{{ asset('asset') }}/images/Background.png"
-                                                        alt=""
-                                                        class="rounded-circle me-1"
-                                                />
-                                                <span>Kelton Brown</span>
-                                            </div>
+                                    </h4>
+                                    <p class="mb-2">
+                                        {!! Str::limit($blog->introduction, 190, ' ...') !!}
+
+                                    </p>
+                                    <div
+                                            class="entry-meta d-flex align-items-center justify-content-between"
+                                    >
+                                        <div class="entry-author">
+                                            <img
+                                                    src="{{ asset($blog->author_image) }}"
+                                                    alt=""
+                                                    class="rounded-circle me-1"
+                                            />
+                                            <span>{{ $blog->author_name }}</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                       @endforeach
+
+                    </div>
                     <div class="pagination-main text-center">
                         <ul class="pagination">
-                            <li>
-                                <a href="#"
-                                ><i class="fa fa-angle-double-left" aria-hidden="true"></i
-                                ></a>
-                            </li>
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li>
-                                <a href="#"
-                                ><i
-                                        class="fa fa-angle-double-right"
-                                        aria-hidden="true"
-                                ></i
-                                ></a>
-                            </li>
+                          {{ $blogs->links() }}
                         </ul>
                     </div>
                 </div>
@@ -344,10 +92,11 @@
                         <div class="sidebar-item mb-4">
                             <h4 class="">جميع الفئات</h4>
                             <ul class="sidebar-category">
-                                <li><a href="#">الكل</a></li>
-                                <li class="active"><a href="#">متميز</a></li>
-                                <li class=""><a href="#">العقارات</a></li>
-                                <li class=""><a href="#">طبية</a></li>
+                                <li class="active"><a href="#">الكل</a></li>
+                                @foreach ($blogCategories as $blogCategory)
+                                <li class=""><a href="#">{{ $blogCategory->name }}</a></li>
+
+                                @endforeach
                             </ul>
                         </div>
 
@@ -360,7 +109,7 @@
 <!-- blog Ends -->
 
 <!-- featured-video starts -->
-<section class="featured-video pb-5 bg-grey">
+{{-- <section class="featured-video pb-5 bg-grey">
     <div class="container">
         <div class="section-title mb-6 pb-1 w-75 mx-auto text-center">
             <h2 class="m-0"><span>منشورات</span> ذات صله</h2>
@@ -447,7 +196,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- featured-video ends -->
 
 @endsection

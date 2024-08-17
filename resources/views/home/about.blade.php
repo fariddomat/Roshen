@@ -189,23 +189,15 @@
                         <div class="about-content">
                             <h4 class="theme">من نحن</h4>
                             <p class="border-b mb-2 pb-2">
-                                إحدى الشركات الرائدة في مجال التطوير العقاري في المملكة
-                                العربية السعودية .<br />
-                                تأسست الشركة في عام 2003م<br>
-                                نفذنا العديد من المشاريع العقارية
-                                المتميزة منها:<br />
-                                نفذنا 641 وحدة سكنية.<br />
-                                قمنا ببيع أكثر من 756 وحدة سكنية .<br />
-                                نتولى تسويق أكثر من821 وحدة سكنية حالياً.<br />
-                                نتولى إدارة أملاك 384 وحدة سكنية.<br />
-                                نتولى إدارة أملاك 46 وحدات تجارية (محلات ).<br />
-                                لدينا مشاريع تحت الدراسة لتنفيذ 558 وحدة سكنية.
+                            <div dir="rtl" style="text-align: right">
+                            {!! $about->who_are_we !!}    
+                            </div>    
                             </p>
                         </div>
                     </div>
                     <div class="col-lg-5 col-sm-12 mb-4">
                         <div class="about-image p-3 box-shadow position-relative">
-                            <img src="{{ asset('home') }}/images/Background.png" alt="" class="w-100" />
+                            <img src="{{ asset('asset/images/Background.png') }}" alt="" class="w-100" />
                         </div>
                     </div>
                 </div>
@@ -290,10 +282,7 @@
                             رسالتنا
                         </h3>
                         <p class="description text-center" style="font-size: 20px; line-height: 2">
-                            رسالتنا في روشم هي توفير حلول عقارية متكاملة ومبتكرة في مجال
-                            التسويق والتطوير العقاري وإدارة الأملاك. نحن نسعى لتحقيق التميز
-                            والابتكار في كل جانب من جوانب عملنا، وتقديم قيمة استثنائية
-                            لعملائنا وشركائنا.
+                         <div>  {!! $about->message !!}</div>
                         </p>
                     </div>
                 </div>
@@ -306,11 +295,7 @@
                             رؤيتنا
                         </h3>
                         <p class="description text-center" style="font-size: 20px; line-height: 2">
-                            أن نصبح شركة عقارية رائدة ومرموقة في مجال التسويق وتطوير الوحدات
-                            السكنية عالية الجودة والاستثمار وإدارة الأملاك. نسعى لتحقيق
-                            التميز والابتكار في كل جانب من جوانب عملنا، وتوفير منتجات وخدمات
-                            تفوق توقعات عملائنا. نهدف إلى بناء علاقات طويلة المدى مع عملائنا
-                            وشركائنا، وتحقيق قيمة مستدامة للمساهمين والمجتمع المحيط.
+                            {!! $about->vision !!}    
                         </p>
                     </div>
                 </div>
@@ -323,10 +308,7 @@
                             اهدافنا
                         </h3>
                         <p class="description text-center" style="font-size: 20px; line-height: 2">
-                            توفير وحدات سكنية عالية الجودة ومبتكرة تلبي احتياجات وتطلعات العملاء، وتقديم خدمات تسويقية
-                            متميزة ومبتكرة تساهم في تحقيق أعلى قيمة استثمارية لعملائنا. نسعى لتطوير وإدارة محافظ عقارية
-                            تتمتع بالاستدامة والعائد الجيد للمساهمين. كما نهدف إلى المساهمة في تنمية المجتمعات التي نعمل
-                            فيها وتحقيق تأثير إيجابي على المستوى الاقتصادي والاجتماعي والبيئي.
+                            {!! $about->goals !!}    
                         </p>
                     </div>
                 </div>
@@ -339,48 +321,7 @@
                             قيمنا
                         </h3>
                         <div class="d-flex gap-5 justify-content-center flex-wrap align-items-center">
-                            <div>
-                                <p class="description text-center" style="font-size: 20px; line-height: 2">
-                                    التميز
-                                </p>
-                                <p class="text-center" style="max-width: 350px">نسعى دائمًا لتحقيق أعلى مستويات الجودة في كل
-                                    جانب من جوانب أعمالنا، سواء في التصميم والبناء أو في تقديم الخدمات لعملائنا.
-                                </p>
-                            </div>
-                            <div>
-                                <p class="description text-center" style="font-size: 20px; line-height: 2">
-                                    الابتكار
-                                </p>
-                                <p class="text-center" style="max-width: 350px">نحن ملتزمون بالابتكار والتطوير المستدام في
-                                    كل مشروع نقوم به. نسعى لتقديم حلول فريدة ومبتكرة تلبي احتياجات وتطلعات العملاء.
-                                </p>
-                            </div>
-                            <div>
-                                <p class="description text-center" style="font-size: 20px; line-height: 2">
-                                    النزاهة والأخلاق
-                                </p>
-                                <p class="text-center" style="max-width: 350px">نؤمن بأهمية النزاهة والأخلاق في كل جانب من
-                                    عملنا. نحرص على المصداقية والشفافية في التعامل مع عملائنا وشركائنا والمجتمع بشكل عام.
-                                </p>
-                            </div>
-                            <div>
-                                <p class="description text-center" style="font-size: 20px; line-height: 2">
-                                    التعاون
-                                </p>
-                                <p class="text-center" style="max-width: 350px">نؤمن بأهمية التعاون والشراكة في تحقيق
-                                    النجاح. نسعى لبناء علاقات قوية ومستدامة مع عملائنا وشركائنا والموردين والجهات الحكومية
-                                    والمجتمع المحيط.
-                                </p>
-                            </div>
-                            <div>
-                                <p class="description text-center" style="font-size: 20px; line-height: 2">
-                                    الاستدامة
-                                </p>
-                                <p class="text-center" style="max-width: 350px">نحرص على تطبيق مبادئ الاستدامة في جميع جوانب
-                                    أعمالنا، سواء في استخدام الموارد بشكل فعال أو في تأمين بيئة مستدامة للمجتمعات التي نعمل
-                                    فيها.<br><br>
-                                </p>
-                            </div>
+                            {!! $about->values !!}
                         </div>
                     </div>
                 </div>
@@ -396,57 +337,13 @@
             </div>
             <div style="direction: ltr" class="partner-wrapper bg-lgrey p-4">
                 <ul class="attract-slider">
+                    @foreach ($partners as $partner)
                     <li class="px-3">
-                        <a href="#"><img src="images/partner/Untitled design.zip - 1.png" alt="" /></a>
+                        <a href="#"><img src="{{ asset($partner->img) }}"
+                                alt="" /></a>
                     </li>
-                    <li class="px-3">
-                        <a href="#"><img src="images/partner/Untitled design.zip - 2.png" alt="" /></a>
-                    </li>
-                    <li class="px-3">
-                        <a href="#"><img src="images/partner/Untitled design.zip - 3.png" alt="" /></a>
-                    </li>
-                    <li class="px-3">
-                        <a href="#"><img src="images/partner/Untitled design.zip - 4.png" alt="" /></a>
-                    </li>
-                    <li class="px-3">
-                        <a href="#"><img src="images/partner/Untitled design.zip - 5.png" alt="" /></a>
-                    </li>
-                    <li class="px-3">
-                        <a href="#"><img src="images/partner/Untitled design.zip - 6.png" alt="" /></a>
-                    </li>
-                    <li class="px-3">
-                        <a href="#"><img src="images/partner/Untitled design.zip - 7.png" alt="" /></a>
-                    </li>
-                    <li class="px-3">
-                        <a href="#"><img src="images/partner/Untitled design.zip - 8.png" alt="" /></a>
-                    </li>
-                    <li class="px-3">
-                        <a href="#"><img src="images/partner/Untitled design.zip - 9.png" alt="" /></a>
-                    </li>
-                    <li class="px-3">
-                        <a href="#"><img src="images/partner/Untitled design.zip - 10.png" alt="" /></a>
-                    </li>
-                    <li class="px-3">
-                        <a href="#"><img src="images/partner/Untitled design.zip - 11.png" alt="" /></a>
-                    </li>
-                    <li class="px-3">
-                        <a href="#"><img src="images/partner/Untitled design.zip - 12.png" alt="" /></a>
-                    </li>
-                    <li class="px-3">
-                        <a href="#"><img src="images/partner/Untitled design.zip - 13.png" alt="" /></a>
-                    </li>
-                    <li class="px-3">
-                        <a href="#"><img src="images/partner/Untitled design.zip - 14.png" alt="" /></a>
-                    </li>
-                    <li class="px-3">
-                        <a href="#"><img src="images/partner/Untitled design.zip - 15.png" alt="" /></a>
-                    </li>
-                    <li class="px-3">
-                        <a href="#"><img src="images/partner/Untitled design.zip - 16.png" alt="" /></a>
-                    </li>
-                    <li class="px-3">
-                        <a href="#"><img src="images/partner/Untitled design.zip - 17.png" alt="" /></a>
-                    </li>
+                    @endforeach
+
                 </ul>
             </div>
             <div class="text-center mt-3">

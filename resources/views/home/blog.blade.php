@@ -31,7 +31,7 @@
         <div class="container">
             <div class="cover-content text-center text-md-start">
                 <h1 class="lh-sm text-center">
-                    Apple honors eight developers with annual Apple Design Awards.
+                  {{ $blog->title }}
                 </h1>
             </div>
         </div>
@@ -48,10 +48,7 @@
                             <div class="sidebar-item mb-4">
                                 <h4 class="">جدول المحتويات</h4>
                                 <ul class="sidebar-category">
-                                    <li><a href="#">All</a></li>
-                                    <li class="active"><a href="#">Featured</a></li>
-                                    <li><a href="#">Sliders</a></li>
-                                    <li><a href="#">Manage Listings</a></li>
+                                   {!! $blog->content_table !!}
                                 </ul>
                             </div>
                             <div class="author-news mb-4 box-shadow p-5 text-center">
@@ -59,15 +56,13 @@
                                     <h3 class="title mb-1"><a href="#">كاتب المقال</a></h3>
 
                                     <div class="author-thumb mb-1">
-                                        <img src="https://joeleclinics.com/storage/doctor_image/2251-Web_Site_Pic_-_F.jpg"
+                                        <img src="{{ asset($blog->author_image) }}"
                                             alt="author" />
                                     </div>
                                     <div class="author-content">
-                                        <h3 class="title mb-1"><a href="#">الاسم</a></h3>
+                                        <h3 class="title mb-1"><a href="#">{{ $blog->author_image }}</a></h3>
                                         <p class="mb-2">
-                                            Hello, We’re content writer who is fascinated by content
-                                            fashion, celebrity and lifestyle. We helps clients bring
-                                            the right content to the right people.
+                                            {!! $blog->author_title !!}
                                         </p>
                                     </div>
                                 </div>
@@ -81,7 +76,7 @@
                             <div class="blog-single-in-cont text-center">
                                 <div class="blog-content">
                                     <h2 class="blog-title mb-0">
-                                        <a href="#" class="">Winners are recognized for outstanding app design</a>
+                                        <a href="#" class="">{{ $blog->title }}</a>
                                     </h2>
                                 </div>
                             </div>
@@ -90,7 +85,7 @@
                         <div class="blog-wrapper">
                             <div class="blog-content">
                                 <div class="blog-imagelist mb-3">
-                                    <img src="{{ asset('asset') }}/images/slide1.jpeg" alt="image" />
+                                    <img src="{{ asset($blog->image) }}" alt="image" />
                                 </div>
                                 <h3>المقدمه</h3>
                                 <p class="mb-3 shadow-sm" style="
@@ -98,61 +93,27 @@
                       padding: 10px;
                       border-radius: 8px;
                     ">
-                                    Lorem ipsum dolor sit amet, consectetur adipis Vi ales elit
-                                    vitae lo bortis faucibus. Lorem ipsum dolor sit amet, conse
-                                    dolor sit amet, consectetu ctetur adipis Viales. Lorem ipsum
-                                    dolor sit amet, cons sit amet, consectetur adi ectetur
-                                    adipis Vi.
+                                  {!! $blog->introduction !!}
                                 </p>
                             </div>
-                            <h3>عنوان محتوى المقاله</h3>
                             <!-- blog blockquote -->
                             <p class="mb-3 shadow-sm" style="
                     border-right: 2px solid #10887c;
                     padding: 10px;
                     border-radius: 8px;
                   ">
-                                as opposed to using 'Content here, content here', making it
-                                look like readable English. Many desktop publishing packages
-                                and web page editors now use Lorem Ipsum as their default
-                                model text, and a search for 'lorem ipsum' will uncover many
-                                web sites still in their infancy. as opposed to using 'Content
-                                here, content here', making it look like readable English.
-                                Many desktop publishing packages and web page editors now use
-                                Lorem Ipsum as their default model text, and a search for
+                               {!! $blog->first_paragraph !!}
                             </p>
-                            <h3>عنوان محتوى المقاله</h3>
+                            {{-- <h3>عنوان محتوى المقاله</h3> --}}
                             <!-- blog blockquote -->
                             <p class="mb-3 shadow-sm" style="
                     border-right: 2px solid #10887c;
                     padding: 10px;
                     border-radius: 8px;
                   ">
-                                as opposed to using 'Content here, content here', making it
-                                look like readable English. Many desktop publishing packages
-                                and web page editors now use Lorem Ipsum as their default
-                                model text, and a search for 'lorem ipsum' will uncover many
-                                web sites still in their infancy. as opposed to using 'Content
-                                here, content here', making it look like readable English.
-                                Many desktop publishing packages and web page editors now use
-                                Lorem Ipsum as their default model text, and a search for
+                               {!! $blog->description !!}
                             </p>
-                            <h3>عنوان محتوى المقاله</h3>
-                            <!-- blog blockquote -->
-                            <p class="mb-3 shadow-sm" style="
-                    border-right: 2px solid #10887c;
-                    padding: 10px;
-                    border-radius: 8px;
-                  ">
-                                as opposed to using 'Content here, content here', making it
-                                look like readable English. Many desktop publishing packages
-                                and web page editors now use Lorem Ipsum as their default
-                                model text, and a search for 'lorem ipsum' will uncover many
-                                web sites still in their infancy. as opposed to using 'Content
-                                here, content here', making it look like readable English.
-                                Many desktop publishing packages and web page editors now use
-                                Lorem Ipsum as their default model text, and a search for
-                            </p>
+
                         </div>
                     </div>
                 </div>
@@ -164,7 +125,7 @@
     <!-- blog Ends -->
 
     <!-- top deal starts -->
-    <section class="top-post pt-0">
+    {{-- <section class="top-post pt-0">
         <div class="container">
             <div class="section-title mb-6 pb-1 w-75 mx-auto text-center">
                 <h2 class="m-0">Related <span>Posts</span></h2>
@@ -286,7 +247,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- top deal ends -->
 
 @endsection

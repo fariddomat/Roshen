@@ -9,10 +9,7 @@
 <section class="contact-main pt-0 pb-10 bg-grey">
     <div class="map">
         <div style="width: 100%">
-            <iframe
-                    height="500"
-                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(mangal%20bazar)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-            ></iframe>
+            {!! setting('site_title') !!}
         </div>
     </div>
     <div class="container">
@@ -32,7 +29,7 @@
                                         <i class="fa fa-map-marker"></i>
                                     </div>
                                     <div class="info-content">
-                                        <p style="font-size: 18px" class="m-0"> السعودية جدة</p>
+                                        <p style="font-size: 18px" class="m-0"> {{setting('site_location')}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -44,7 +41,7 @@
                                         <i class="fa fa-phone"></i>
                                     </div>
                                     <div class="info-content">
-                                        <p style="font-size: 18px" class="m-0"><a href="tel:+966554115160">00966554115160</a></p>
+                                        <p style="font-size: 18px" class="m-0"><a href="tel:{{setting('site_phone')}}">{{setting('site_phone')}}</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -56,7 +53,7 @@
                                         <i class="fa fa-envelope"></i>
                                     </div>
                                     <div class="info-content ps-4">
-                                        <p style="font-size: 18px" class="m-0"> info@roshem.sa</p>
+                                        <p style="font-size: 18px" class="m-0"> {{setting('site_email')}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -72,12 +69,14 @@
 
                             <form
                                     method="post"
-                                    action="#"
+                                    action="{{ route('contact') }}"
                                     name="contactform"
                                     id="contactform">
+                                    @include('layouts._error')
+                                    @csrf
 
                                 <div class="form-group mb-2">
-                                    <input type="text" name="last_name" class="form-control" id="llastname"
+                                    <input type="text" name="name" class="form-control" id="llastname"
                                            placeholder=" *الاسم "/>
                                 </div>
                                 <div class="form-group mb-2">
@@ -89,21 +88,19 @@
                                            placeholder=" *رقم  الجوال"
                                     />
 
-                                    <div class="form-group mb-2">
+                                    {{-- <div class="form-group mb-2">
                                         <select class="form-control mt-2" id="dropdown" name="dropdown">
                                             <option value="" disabled selected>اختر الخدمة</option>
                                             <option value="option1">خيار 1</option>
                                             <option value="option2">خيار 2</option>
                                             <option value="option3">خيار 3</option>
                                         </select>
-                                    </div>
+                                    </div> --}}
                                     <div class="textarea mb-2">
-                                        <textarea name="comments" placeholder=" *اكتب رسالتك نسعد بها"></textarea>
+                                        <textarea name="message" placeholder=" *اكتب رسالتك نسعد بها"></textarea>
                                     </div>
-                                    <div class="comment-btn text-center"><input type="submit"
-                                                                                style="background-color: #6f42c1; color: white"
-                                                                                class="btn px-5" id="submit2"
-                                                                                value="ارسال الرسالة"/>
+                                    <div class="comment-btn text-center">
+                                        <button type="submit" style="background-color: #6f42c1; color: white" class="btn px-5" id="submit2">ارسال الرسالة</button>
                                     </div>
                                 </div>
                             </form>

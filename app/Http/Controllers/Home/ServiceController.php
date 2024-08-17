@@ -5,41 +5,34 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use App\Models\Apartment;
 use App\Models\Category;
+use App\Models\Counter;
 use App\Models\Project;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
     public function index(Request $request)
     {
-        $category = (object)[
-            'name' => 'كل التصنيفات'
-        ];
-        // dd($category->name);
-        $projects = Project::orderBy('created_at')->paginate(6);
-        return view('home.services', compact('category', 'projects'));
+
+        $services = Service::orderBy('id')->get();
+        
+        $counters = Counter::all();
+        return view('home.services', compact('services', 'counters'));
     }
 
     public function show($id)
     {
 
-        $project = Project::find($id);
+        $service = Service::find($id);
 
-        if ($project) {
-            if ($project->status == 'غير متاح للعرض') {
-                abort(404);
-            }
+        if ($service) {
 
-            $category_list = Category::all();
-            $max_price = Apartment::max('price');
-            $max_room_count = Apartment::max('room_count');
-            $max_area = Apartment::max('area');
-
-            $projects= Project::where('category_id', $project->category_id)->where('id', '<>', $id)->limit(6)->get();
-            return view('home.service', compact('project', 'category_list', 'max_price', 'max_room_count', 'max_area', 'projects'));
+        $counters = Counter::all();
+            return view('home.service', compact('service'));
         } else {
             # code...
             abort(404);
         }
-}
+    }
 }

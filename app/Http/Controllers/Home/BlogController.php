@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use App\Models\Apartment;
+use App\Models\Blog;
+use App\Models\BlogCategory;
 use App\Models\Category;
 use App\Models\Project;
 use Illuminate\Http\Request;
@@ -14,31 +16,20 @@ class BlogController extends Controller
     //
     public function index(Request $request)
     {
-        $category = (object)[
-            'name' => 'كل التصنيفات'
-        ];
-        // dd($category->name);
-        $projects = Project::orderBy('created_at')->paginate(6);
-        return view('home.blogs', compact('category', 'projects'));
+
+        $blogs = Blog::orderBy('created_at')->paginate(4);
+        $blogCategories = BlogCategory::all();
+        return view('home.blogs', compact('blogs', 'blogCategories'));
     }
 
     public function show($id)
     {
 
-        $project = Project::find($id);
+        $blog = Blog::find($id);
 
-        if ($project) {
-            if ($project->status == 'غير متاح للعرض') {
-                abort(404);
-            }
+        if ($blog) {
 
-            $category_list = Category::all();
-            $max_price = Apartment::max('price');
-            $max_room_count = Apartment::max('room_count');
-            $max_area = Apartment::max('area');
-
-            $projects= Project::where('category_id', $project->category_id)->where('id', '<>', $id)->limit(6)->get();
-            return view('home.blog', compact('project', 'category_list', 'max_price', 'max_room_count', 'max_area', 'projects'));
+            return view('home.blog', compact('blog'));
         } else {
             # code...
             abort(404);

@@ -7,10 +7,17 @@ use App\Http\Controllers\Controller;
 use App\Models\About;
 use App\Models\Apartment;
 use App\Models\Category;
+use App\Models\Certificate;
+use App\Models\Counter;
+use App\Models\Facil;
+use App\Models\Partners;
 use App\Models\Privacy;
 use App\Models\ProfileDownload;
 use App\Models\Project;
 use App\Models\Promoter;
+use App\Models\Review;
+use App\Models\Service;
+use App\Models\Why;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 
@@ -20,15 +27,24 @@ class HomeController extends Controller
     public function index()
     {
 
-        $projects = Project::latest()->limit(4)->get();
+        $projects = Project::latest()->limit(6)->get();
         $category_list=Category::limit(3)->get(['id','name']);
         $max_price=Apartment::max('price');
         $max_room_count=Apartment::max('room_count');
         $max_area=Apartment::max('area');
         $about=About::first()?:'';
+        $services=Service::orderBy('id')->get();
+
+        $categories=Category::all();
 
         $count = Project::count();
-        return view('home.index', compact('projects', 'count', 'category_list', 'max_price', 'max_room_count', 'max_area', 'about'));
+        $counters = Counter::all();
+        $partners = Partners::all();
+        $certs = Certificate::all();
+        $reviews = Review::all();
+        $whies = Why::all();
+        $facils = Facil::all();
+        return view('home.index', compact('projects', 'count', 'category_list', 'max_price', 'max_room_count', 'max_area', 'about', 'services', 'counters','partners', 'certs', 'reviews', 'whies', 'facils', 'categories'));
     }
 
     public function contact(Request $request)

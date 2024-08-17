@@ -1,4 +1,4 @@
-@extends('layouts.site')
+@extends('home._layouts._app')
 
 @section('title', "هذه الصفحة غير متوفرة")
 @section('content')

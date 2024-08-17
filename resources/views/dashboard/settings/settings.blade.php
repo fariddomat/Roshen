@@ -32,7 +32,7 @@
                                     <input type="text" class="form-control" name="site_name" id="site_name"
                                         value="{{setting('site_name')}}" aria-describedby="helpId" placeholder="">
                                 </div>
-                                {{-- Site title --}}
+                                {{-- Site title --}} 
                                 <div class="form-group">
                                     <label for="site_title" class="text-capitalize">عنوان الموقع</label>
                                     <input type="text" class="form-control" name="site_title" id="site_title"
