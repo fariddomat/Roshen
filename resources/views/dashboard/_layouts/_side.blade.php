@@ -52,6 +52,10 @@
                     لماذا تختارنا</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{ route('dashboard.facils.index') }}"><i class="icon-note "></i>
+                    الضمانات</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{ route('dashboard.setting.contact') }}"><i class="fa fa-comments-o  "></i>
                     الرسائل</a>
             </li>
@@ -76,10 +80,10 @@
                 <a class="nav-link" href="{{ route('dashboard.privacies.index') }}"><i class="icon-info "></i>
                     سياسة الخصوصية</a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="{{ route('dashboard.setting.chart') }}"><i class="icon-info "></i>
                     الاسهم</a>
-            </li>
+            </li> --}}
             <li class="nav-title">
                 الأدوات
             </li>

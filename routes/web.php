@@ -75,6 +75,7 @@ Route::prefix('dashboard')
             Route::resource('whies', 'Dashboard\WhyController');
             Route::resource('certs', 'Dashboard\CertificateController');
             Route::resource('reviews', 'Dashboard\ReviewController');
+            Route::resource('facils', 'Dashboard\FacilController');
 
             Route::resource('projects', 'Dashboard\ProjectController');
             Route::get('/projects/{id}/clone', 'Dashboard\ProjectController@clone')->name('projects.clone');
