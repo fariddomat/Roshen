@@ -42,46 +42,51 @@
                     </div>
                     <div class="trend-box">
                         <div class="row">
-                            @foreach ($projects as $project)
-                            <div class="col-lg-6 col-md-6 col-sm-6 mb-4  p-3 box-shadow" style="direction: rtl">
-                                <div style="border-radius: 8px" class="trend-item box-shadow rounded">
+                            @foreach ($projects as $project)   <div class="col-lg-6 col-md-6 mb-4  p-3 box-shadow">
+                                <div class="trend-item box-shadow rounded">
                                     <div class="trend-image">
-                                        <img src="{{ asset($project->poster_path) }}" alt="image" />
-                                        <a href="#" class="flash bg-theme1 white px-3 py-2"><i class="fa fa-flash"></i></a>
-                                        <div class="trend-meta d-flex align-items-center justify-content-between">
-                                            <div class="entry-author">
-                                                <img src="{{ asset($project->poster_path) }}" alt=""
-                                                    class="rounded-circle me-1" />
-                                                <span>{{ $project->category->name }} </span>
-                                            </div>
-                                            <a href="{{ route('projects') }}" class="tags bg-theme2 white px-3 py-1">للبيع</a>
+                                        <img src="{{ asset($project->poster_path) }}" alt="image"/>
+                                        <a href="#" class="flash bg-theme1 white px-3 py-2"></a>
+                                        <div
+                                                class="trend-meta d-flex align-items-center justify-content-between"
+                                        >
+                                           
+                                            <a href="{{ route('project', $project->id) }}" class="tags bg-theme2 white px-3 py-1">استعراض
+                                                المشروع</a>
                                         </div>
                                     </div>
                                     <div class="trend-content p-4">
-                                        <h3 class="theme">{{ $project->name }}</h3>
+                                        <h5 class="theme">{{ $project->category->name }}</h5>
                                         <h4>
-                                            <a href="{{ route('project',$project->id) }}">{{ $project->category->projects->count() }} وحدة سكنية </a>
+                                            <a href="{{ route('project', $project->id) }}"
+                                            >{{ $project->name }}  </a
+                                            >
                                         </h4>
                                         <div
-                                            class="entry-meta d-flex align-items-center justify-content-between border-b pb-1 mb-2">
-                                            <div class="entry-author">
+                                                class="entry-meta d-flex align-items-center justify-content-between border-b pb-1 mb-2">
+                                            {{-- <div class="entry-author">
                                                 <p>
-                                                    {{-- السعر يبدا من<span class="d-block theme fw-bold">{{ $project->apartments }}</span> --}}
+                                                    السعر يبدا من <span class="d-block theme fw-bold"
+                                                >$63,000.00</span
+                                                >
                                                 </p>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                         <p class="mb-0">
-                                           {!! $project->details !!}
+                                            {!! $project->details !!}
                                         </p>
                                     </div>
-                                    {{-- <ul class="d-flex align-items-center justify-content-between bg-grey p-3 px-4">
+                                    {{-- <ul
+                                            class="d-flex align-items-center justify-content-between bg-grey p-3 px-4"
+                                    >
                                         <li class="me-2">عدد الغرف</li>
-                                        <li class="me-2">الدور</li>
-                                        <li class="me-2">الحي</li>
+                                        <li class="me-2">2 الدور</li>
+                                        <li>الحي</li>
                                         <li>المساحة</li>
                                     </ul> --}}
                                 </div>
                             </div>
+                           
                             @endforeach
                         </div>
                         <div class="pagination-main text-center">

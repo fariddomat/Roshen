@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use App\Models\Apartment;
 use App\Models\Category;
+use App\Models\Facil;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
@@ -36,8 +37,10 @@ class ProjectControlelr extends Controller
             $max_room_count = Apartment::max('room_count');
             $max_area = Apartment::max('area');
 
-            $projects= Project::where('category_id', $project->category_id)->where('id', '<>', $id)->limit(6)->get();
-            return view('home.project', compact('project', 'category_list', 'max_price', 'max_room_count', 'max_area', 'projects'));
+            $projects = Project::where('category_id', $project->category_id)->where('id', '<>', $id)->limit(6)->get();
+
+            $facils = Facil::all();
+            return view('home.project', compact('project', 'category_list', 'max_price', 'max_room_count', 'max_area', 'projects', 'facils'));
         } else {
             # code...
             abort(404);
