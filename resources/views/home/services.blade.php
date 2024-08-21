@@ -1,7 +1,19 @@
 @extends('home._layouts._app')
 
 @section('style')
+<style>/* Ensure all service boxes have the same height */
+    .why-us .why-us-box .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
 
+    .why-us .why-us-box .why-us-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+    </style>
 
 @endsection
 @section('scripts')
@@ -10,7 +22,7 @@
 @section('content')
 
 <!-- Our Services -->
-<section class="about-us pb-6 pt-2 bg-pattern">
+<section class="about-us pb-6 pt-4 bg-pattern">
     <div class="container">
         <div class="section-title mb-6 pb-1 w-75 text-center mx-auto">
             <h2 class="m-0">خدماتنا</h2>
@@ -20,22 +32,21 @@
             <div class="why-us-box">
                 <div class="row">
                     @foreach ($services as $service)
-                    <div class="col-lg-4 rounded-2 col-md-6 mb-4">
-                        <div style="border-radius: 8px" class="why-us-item text-center bg-lgrey">
-                            <div class="why-us-icon">
-                                <i class="{{ $service->icon }} theme"></i>
-                            </div>
-                            <div class="why-us-content">
-                                <h3>
-                                    <a href="{{ route('service', $service->id) }}">{{ $service->name }}</a>
-                                </h3>
-                                <p class="mb-0">
-                                    {!! Str::limit($service->description, 190, ' ...') !!}
-
-                                </p>
+                        <div class="col-lg-4 rounded-2 col-md-6 mb-4">
+                            <div style="border-radius: 8px" class="why-us-item text-center bg-lgrey">
+                                <div class="why-us-icon">
+                                    <i class="{{ $service->icon }} theme" style="margin-bottom: 10px"></i>
+                                </div>
+                                <div class="why-us-content">
+                                    <h3>
+                                        <a href="{{ route('service', $service->id) }}">{{ $service->name }}</a>
+                                    </h3>
+                                    <p class="mb-0">
+                                        {!! Str::limit($service->description, 190, ' ...') !!}
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     @endforeach
                 </div>
             </div>

@@ -24,6 +24,20 @@
             -webkit-box-shadow: 0 10px 30px 0 rgba(90, 75, 147, 0.3) !important;
             box-shadow: 0 10px 30px 0 rgba(90, 75, 147, 0.3) !important;
         }
+
+        /* Ensure all service boxes have the same height */
+.why-us .why-us-box .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.why-us .why-us-box .why-us-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
     </style>
 @endsection
 @section('nav')
@@ -142,7 +156,7 @@
                             <div class="col-lg-4 rounded-2 col-md-6 mb-4">
                                 <div style="border-radius: 8px" class="why-us-item text-center bg-lgrey">
                                     <div class="why-us-icon">
-                                        <i class="{{ $service->icon }} theme"></i>
+                                        <i class="{{ $service->icon }} theme" style="margin-bottom: 10px"></i>
                                     </div>
                                     <div class="why-us-content">
                                         <h3>
@@ -150,23 +164,22 @@
                                         </h3>
                                         <p class="mb-0">
                                             {!! Str::limit($service->description, 190, ' ...') !!}
-
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         @endforeach
-
                     </div>
                 </div>
             </div>
             <!-- why us ends -->
         </div>
     </section>
+
     <!-- Our Services -->
 
     <!-- Counter -->
-    <section style="border-radius: 8px" class="counter-main pb-0 pt-0">
+    <section style="border-radius: 8px" class="counter-main pb-3 pt-0">
         <div class="container text-center">
             <div class="section-title mb-6 pb-1 w-75 text-center mx-auto">
                 <h2 class="m-0">ارقامنا تتحدث</h2>
@@ -332,7 +345,7 @@
                         <div class="testimonial-item1 text-center">
                             <div class="details">
                                 <p class="m-0">
-                                    {{ $review->description }}
+                                    {!! $review->description !!}
                                 </p>
                             </div>
                             <div class="author-info mt-2">

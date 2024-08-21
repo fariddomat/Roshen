@@ -23,7 +23,7 @@
 
     <!-- Breadcrumb -->
     <div class="page-cover pt-10 pb-10 bg-lgrey border-b d-flex align-items-center" style="
-        background-image: url(images/slide1.jpeg) !important;
+        background-image: url({{ asset($blog->image) }}) !important;
         background-position: 8% !important;
         background-size: cover !important;
         height: 75vh;
@@ -60,7 +60,6 @@
                                             alt="author" />
                                     </div>
                                     <div class="author-content">
-                                        <h3 class="title mb-1"><a href="#">{{ $blog->author_image }}</a></h3>
                                         <p class="mb-2">
                                             {!! $blog->author_title !!}
                                         </p>
@@ -88,31 +87,31 @@
                                     <img src="{{ asset($blog->image) }}" alt="image" />
                                 </div>
                                 <h3>المقدمه</h3>
-                                <p class="mb-3 shadow-sm" style="
+                                <div class="mb-3 shadow-sm" style="
                       border-right: 2px solid #10887c;
                       padding: 10px;
                       border-radius: 8px;
                     ">
                                   {!! $blog->introduction !!}
-                                </p>
+                            </div>
                             </div>
                             <!-- blog blockquote -->
-                            <p class="mb-3 shadow-sm" style="
+                            <div class="mb-3 shadow-sm" style="
                     border-right: 2px solid #10887c;
                     padding: 10px;
                     border-radius: 8px;
                   ">
                                {!! $blog->first_paragraph !!}
-                            </p>
+                        </div>
                             {{-- <h3>عنوان محتوى المقاله</h3> --}}
                             <!-- blog blockquote -->
-                            <p class="mb-3 shadow-sm" style="
+                            <div class="mb-3 shadow-sm" style="
                     border-right: 2px solid #10887c;
                     padding: 10px;
                     border-radius: 8px;
                   ">
                                {!! $blog->description !!}
-                            </p>
+                    </div>
 
                         </div>
                     </div>

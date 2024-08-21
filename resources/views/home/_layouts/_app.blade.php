@@ -81,7 +81,7 @@
                                         role="button" aria-haspopup="true" aria-expanded="false">المدونة
                                     </a>
                                 </li>
-                                <li><a class="" href="contactPage">تواصل معنا</a></li>
+                                <li><a class="" href="{{ route('contactPage') }}">تواصل معنا</a></li>
                                 {{-- <li class="search-main">
                                     <a href="#search1" class="mt_search"><i class="fa fa-search"></i></a>
                                 </li> --}}

@@ -27,7 +27,7 @@ Route::group([], function () {
     Route::get('/', 'Home\HomeController@index')->name('home');
     Route::get('/profileDownload', 'Home\HomeController@profileDownload')->name('profileDownload');
     Route::post('/contact', 'Home\HomeController@contact')->name('contact');
-    Route::get('/contactPage', 'Home\HomeController@contactPage')->name('contactPage');
+    Route::get('/contact-us', 'Home\HomeController@contactPage')->name('contactPage');
     Route::post('/promoters', 'Home\HomeController@promoters')->name('promoters');
     Route::get('/categories', 'Home\CategoryControlelr@index')->name('categories');
     Route::get('/category/{id}', 'Home\CategoryControlelr@show')->name('category');
@@ -35,7 +35,7 @@ Route::group([], function () {
 
     Route::get('/about', 'Home\AboutController@index')->name('about');
     Route::get('/blogs', 'Home\BlogController@index')->name('blogs');
-    Route::get('/blog/{id}', 'Home\BlogController@show')->name('blog');
+    Route::get('/blog/{slug}', 'Home\BlogController@show')->name('blog');
 
     Route::get('/services', 'Home\ServiceController@index')->name('services');
     Route::get('/services/{id}', 'Home\ServiceController@show')->name('service');

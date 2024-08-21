@@ -6,7 +6,7 @@
 @endsection
 @section('content')
     <div class="container">
-        <div class="page-cover pb-3"
+        {{-- <div class="page-cover pb-3"
             style="
         background-image: url({{ asset($service->image_path) }}) !important;
         background-position: center !important;
@@ -14,7 +14,7 @@
         height: 400px;
         border-radius: 8px;
       ">
-        </div>
+        </div> --}}
     </div>
     <!-- about-us starts -->
     <section class="about-us pb-10">
@@ -32,7 +32,7 @@
                                 {!! $service->description !!}
                                </div>
                             </p>
-                            <a href="{{ route('contactPage') }}" class="btn-btn d-block m-auto" style="width: fit-content">طلب الخدمه</a>
+                            <a href="{{ route('contactPage') }}" class="btn-btn d-block m-auto" style="width: fit-content;font-size: 1.5rem;">طلب الخدمه</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-12 ps-4">

@@ -44,13 +44,13 @@
                        <div class="col-lg-6 mb-4">
                         <div class="trend-item box-shadow bg-white">
                             <div class="trend-image">
-                                <img src="{{ asset('asset') }}/images/Background.png" alt="image" />
+                                <img src="{{ asset($blog->image) }}" alt="image" />
                             </div>
                             <div class="trend-content-main p-4">
                                 <div class="trend-content">
                                     <h5 class="theme">{{$blog->category->name}}</h5>
                                     <h4>
-                                        <a href="{{ route('blog', $blog->id) }}"
+                                        <a href="{{ route('blog', $blog->slug) }}"
                                         >{{$blog->title}}</a
                                         >
                                     </h4>

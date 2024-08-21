@@ -22,10 +22,10 @@ class BlogController extends Controller
         return view('home.blogs', compact('blogs', 'blogCategories'));
     }
 
-    public function show($id)
+    public function show($slug)
     {
 
-        $blog = Blog::find($id);
+        $blog = Blog::where('slug', $slug)->first();
 
         if ($blog) {
 
