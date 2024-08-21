@@ -32,7 +32,7 @@
                                 {!! $service->description !!}
                                </div>
                             </p>
-                            <a href="contactPage" class="btn-btn d-block m-auto" style="width: fit-content">طلب الخدمه</a>
+                            <a href="{{ route('contactPage') }}" class="btn-btn d-block m-auto" style="width: fit-content">طلب الخدمه</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-12 ps-4">

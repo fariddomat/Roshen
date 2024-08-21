@@ -17,9 +17,9 @@
                 color: transparent;
                 position: relative;
                 transform: skewY(-50deg);
-                /* translate: 0px 14px;
+                translate: 0px 14px;
                 -ms-transform: 0px 14px;
-                -webkit-transform:  0px 14px; */
+                -webkit-transform:  0px 14px;
                 box-shadow: 0px 6px 8px #aaa !important;
                 background: linear-gradient(#cc9933, #d19426, #cc9933);
 
@@ -34,9 +34,9 @@
                 background: linear-gradient(#cc9933, #d19426, #cc9933);
 
                 position: relative;
-                /* translate: 0px 14px;
+                translate: 0px 14px;
                 -ms-transform: 0px 14px;
-                -webkit-transform:  0px 14px; */
+                -webkit-transform:  0px 14px;
                 box-shadow: 0px 6px 8px #aaa !important;
                 width: 20px !important;
 
@@ -45,12 +45,12 @@
             /*  push 3:rd another extra 10px       */
             td.back {
                 position: relative;
-                /* translate: 0px 28px;
+                translate: 0px 28px;
 
                 -ms-transform: 0px 28px;
-                -webkit-transform:  0px 28px; */
+                -webkit-transform:  0px 28px;
                 /* right: 5px; */
-                /* margin-top: 24px; */
+                margin-top: 24px;
                 font-size: 13px !important;
                 box-shadow: 0px 12px 8px #aaa !important;
                 width: 167px !important;
@@ -278,7 +278,7 @@
                                 </ul>
                             </div>
                         </div>
-                        
+
                         <div class="row">
                             <div class="col-lg-6">
                                 <p class="text-center" style="font-size: 22px; margin-bottom: 12px">
@@ -300,58 +300,63 @@
     </div>
 
       <!-- حالات الشقق -->
-  @if ($project->floors->count() > 0)
-    <!-- apartment check Area-->
-    <div class="room-details-area pt-100 pb-70" style="background: url({{ asset('b.png') }});">
-        <div class="container-fluid m-0 p-0">
-            <div class="section-title-two text-center">
-                <h2 class="margin-auto" style="color: #cc9933; margin-bottom: 35px;margin-right: 25px;">حالة الشقق</h2>
-            </div>
-            <div class="container" style="color: white">
-                <div class="table-responsive">
-                    <table class="table mt-2 center" style="margin-left: auto !important; margin-right: auto !important; width: fit-content; margin-bottom: 35px;">
-                        @if ($project->FloorRow($project->floors_count)->count() > 0)
-                            <tr>
-                                <td>الملاحق</td>
-                                @foreach ($project->FloorRow($project->floors_count) as $key => $floor)
-                                    <td class="@if ($floor->status == 'متاح') td1 @elseif ($floor->status == 'محجوز') td2 @else td3 @endif">
-                                        {{ $floor->apartment->type }}
-                                    </td>
-                                    @if ($key == 0)
-                                        <td style="width: 33% !important; color:transparent!important;box-shadow: none !important; translate: 0px 24px;">.</td>
-                                    @endif
-                                @endforeach
-                            </tr>
-                        @endif
+ <!-- حالات الشقق -->
+ @if ($project->floors->count() > 0)
+ <!-- apartment check Area-->
+ <div class="room-details-area pt-100 pb-70" style="background: url({{ asset('b.png') }});">
+     <div class="container-fluid m-0 p-0">
+         <div class="section-title-two text-center">
+             <h2 class="margin-auto" style="color: #cc9933; margin-bottom: 35px;margin-right: 25px;">حالة الشقق</h2>
+         </div>
+         <div class="container" style="color: white">
+             <div class="table-responsive">
+                 <table class="table mt-2 center" style="margin-left: auto !important; margin-right: auto !important; width: fit-content; margin-bottom: 35px;">
+                     @if ($project->FloorRow($project->floors_count)->count() > 0)
+                         <tr>
+                             <td>الملاحق</td>
+                             @foreach ($project->FloorRow($project->floors_count) as $key => $floor)
+                                 <td class="@if ($floor->status == 'متاح') td1 @elseif ($floor->status == 'محجوز') td2 @else td3 @endif">
+                                     {{ $floor->apartment->type }}
+                                 </td>
+                                 @if ($key == 0)
+                                     <td style="width: 33% !important; color:transparent!important;box-shadow: none !important; translate: 0px 24px;">.</td>
+                                 @endif
+                             @endforeach
+                         </tr>
+                     @endif
 
-                        @for ($i = $project->floors_count - 1; $i >= 1; $i--)
-                            <tr>
-                                <td>الدور {{ $i }}</td>
-                                @php $check = false; @endphp
-                                @foreach ($project->FloorRow($i) as $key => $floor)
-                                    
+                     @for ($i = $project->floors_count - 1; $i >= 1; $i--)
+                         <tr>
+                             <td>الدور {{ $i }}</td>
+                             @php $check = false; @endphp
+                             @foreach ($project->FloorRow($i) as $key => $floor)
+                                 @if ($key == $project->FloorRow($i)->count() - 1 && $floor->apartment->type == 'أمامية' && $project->backCount2($i) > 0)
+                                     <td class="m2">.</td>
+                                 @endif
 
-                                   
-                                    <td style="width:@if ($project->backCount2($i) == 2 && $floor->apartment->type == 'خلفية') 69px !important @endif; " class="@if ($floor->status == 'متاح') td1 @elseif ($floor->status == 'محجوز') td2 @else td3 @endif @if ($floor->apartment->type == 'خلفية') back @endif">
-                                        {{ $floor->apartment->room_count }}
-                                        {{ $floor->apartment->type }}
-                                    </td>
+                                 @if (!$check && $floor->apartment->type == 'خلفية')
+                                     <td class="m1">.</td>
+                                 @endif
+                                 <td style="width:@if ($project->backCount2($i) == 2 && $floor->apartment->type == 'خلفية') 69px !important @endif; border-radius: @if ($key == 0) 0 15px 15px 0px @elseif ($key == $project->FloorRow($i)->count() - 1) 15px 0 0 15px @elseif($project->backCount2($i) == 2 && $key == 1) 15px 0 0 15px @elseif($project->backCount2($i) == 2 && $key == 2) 0 15px 15px 0px @endif;" class="@if ($floor->status == 'متاح') td1 @elseif ($floor->status == 'محجوز') td2 @else td3 @endif @if ($floor->apartment->type == 'خلفية') back @endif">
+                                     {{ $floor->apartment->room_count }}
+                                     {{ $floor->apartment->type }}
+                                 </td>
 
-                                    @if ($project->backCount2($i) == 2 && $check == false && $floor->apartment->type == 'خلفية')
-                                        @php $check = true; @endphp
-                                        <td style="color: transparent; width: 10px !important; border:none !important; box-shadow: none !important;">.</td>
-                                    @endif
-                                @endforeach
-                            </tr>
-                        @endfor
-                    </table>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-    <!-- End -->
-  @endif
+                                 @if ($project->backCount2($i) == 2 && $check == false && $floor->apartment->type == 'خلفية')
+                                     @php $check = true; @endphp
+                                     <td style="color: transparent; width: 10px !important; border:none !important; box-shadow: none !important;">.</td>
+                                 @endif
+                             @endforeach
+                         </tr>
+                     @endfor
+                 </table>
+             </div>
+
+         </div>
+     </div>
+ </div>
+ <!-- End -->
+@endif
     <!-- المشاريع المشابهة -->
     {{-- <div class="project_images my-5">
         <div class="container">
@@ -375,14 +380,14 @@
         </div>
     </div> --}}
 
-    <a class="btn-btn m-auto d-block"
+    <a class="btn-btn m-auto d-block mt-4"
         style="width: fit-content; font-size: 22px; font-weight: bold; padding: 10px 20px; border-radius: 8px;"
         href="{{ route('contactPage') }}">
         احجز وحدتك السكنية الآن
     </a>
 
     <!-- Damns -->
-    <section class="counter-main pb-0 pt-0" style="margin-top: 50px">
+    <section class="counter-main pb-0 p2-0 bg-pattern" style="margin-top: 50px">
         <div class="container text-center">
             <div class="section-title mb-4 pb-1 w-75 mx-auto text-center">
                 <h2 class="m-0">الضمانات</h2>

@@ -190,8 +190,8 @@
                             <h4 class="theme">من نحن</h4>
                             <p class="border-b mb-2 pb-2">
                             <div dir="rtl" style="text-align: right">
-                            {!! $about->who_are_we !!}    
-                            </div>    
+                            {!! $about->who_are_we !!}
+                            </div>
                             </p>
                         </div>
                     </div>
@@ -270,7 +270,7 @@
             </div>
         </div>
     </section>
-    <section class="our-mission">
+    <section class="our-mission bg-pattern">
         <div class="container">
             <div class="row gap-5">
                 <div class="col-lg-12">
@@ -295,7 +295,7 @@
                             رؤيتنا
                         </h3>
                         <p class="description text-center" style="font-size: 20px; line-height: 2">
-                            {!! $about->vision !!}    
+                            {!! $about->vision !!}
                         </p>
                     </div>
                 </div>
@@ -308,7 +308,7 @@
                             اهدافنا
                         </h3>
                         <p class="description text-center" style="font-size: 20px; line-height: 2">
-                            {!! $about->goals !!}    
+                            {!! $about->goals !!}
                         </p>
                     </div>
                 </div>

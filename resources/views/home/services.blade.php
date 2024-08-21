@@ -10,7 +10,7 @@
 @section('content')
 
 <!-- Our Services -->
-<section class="about-us bg-white pb-6 pt-0">
+<section class="about-us pb-6 pt-2 bg-pattern">
     <div class="container">
         <div class="section-title mb-6 pb-1 w-75 text-center mx-auto">
             <h2 class="m-0">خدماتنا</h2>
@@ -47,7 +47,7 @@
 
 
 <!-- Counter -->
-<section class="counter-main pt-5">
+<section class="counter-main pt-5 ">
     <div class="container">
         <div class="counter text-center bg-lgrey p-5 pb-1 border">
             <div class="row">

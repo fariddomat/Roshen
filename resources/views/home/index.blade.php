@@ -91,7 +91,7 @@
     <!-- banner ends -->
 
     <!-- about-us starts -->
-    <section class="about-us pt-5 pb-6">
+    <section class="about-us pt-5 pb-2">
         <div class="container">
             <div class="about-image-box">
                 <div class="row d-flex align-items-center justify-content-between">
@@ -114,7 +114,7 @@
     </section>
     <!-- about-us ends -->
     <!-- Our Services -->
-    <section class="about-us bg-white pb-6 pt-0">
+    <section class="about-us pb-6 pt-4 bg-pattern">
         <div class="container">
             <div class="section-title mb-6 pb-1 w-75 text-center mx-auto">
                 <h2 class="m-0">خدماتنا</h2>
@@ -177,7 +177,7 @@
     <!-- End Counter -->
 
     <!-- Trending Starts -->
-    <section class="trending">
+    <section class="trending bg-pattern">
         <div class="container">
             <div class="section-title mb-6 pb-1 w-75 mx-auto text-center">
                 <h2 class="m-0">مشاريعنا</h2>
@@ -186,7 +186,7 @@
                 <div class="row item-slider">
                     @foreach ($projects as $project)
                     <div class="col-lg-4 col-md-6 col-sm-6 mb-4  p-3 box-shadow" style="direction: rtl">
-                        <div style="border-radius: 8px" class="trend-item box-shadow rounded">
+                        <div style="border-radius: 8px" class="trend-item bg-white box-shadow rounded">
                             <div class="trend-image">
                                 <img src="{{ asset($project->poster_path) }}" alt="image" />
                                 <a href="#" class="flash bg-theme1 white px-3 py-2"><i class="fa fa-flash"></i></a>
@@ -264,7 +264,7 @@
     <!-- Our Company -->
 
     <!-- about-us starts -->
-    <section class="about-us bg-white pb-6 pt-0">
+    <section class="about-us bg-pattern pb-6 pt-2">
         <div class="container">
             <div class="row align-items-center my-6 text-center text-lg-end">
                 <div class="col-lg-8">
@@ -279,7 +279,7 @@
             </div>
             <!-- why us starts -->
             <div class="why-us">
-                <div class="why-us-box bg-lgrey">
+                <div class="why-us-box ">
                     <div class="row p-5 rosem_bg">
                         @foreach ($whies as $why)
                         <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
@@ -307,7 +307,7 @@
     <section class="testimonial pb-5 pt-9">
         <div class="container">
             <div class="section-title mb-4 pb-1 w-75 mx-auto text-center">
-                <h2 class="m-0">اراء العملاء</h2>
+                <h2 class="m-0">آراء العملاء</h2>
             </div>
             <div class="row review-slider bg-lgrey" style="direction: ltr">
                 @foreach ($reviews as $review)
@@ -360,7 +360,7 @@
     </div>
     <!--certificate-->
     <!-- Damns -->
-    <section class="counter-main pb-0 pt-0">
+    <section class="counter-main pb-0 pt-2 bg-pattern">
         <div class="container text-center">
             <div class="section-title mb-4 pb-1 w-75 mx-auto text-center">
                 <h2 class="m-0">الضمانات</h2>

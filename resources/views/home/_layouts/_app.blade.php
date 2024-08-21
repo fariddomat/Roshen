@@ -31,6 +31,16 @@
                 font-size: 18px;
             }
         }
+
+        .bg-pattern {
+            background-image: url("{{ asset('asset/images/bg2.png') }}");
+            background-repeat: repeat;
+            background-size: auto;
+            background-attachment: fixed;
+            background-color: rgba(255, 255, 255, 0.7) !important;
+            background-blend-mode: lighten !important;
+            box-shadow: inset 0 -8px 8px #fff !important;
+        }
     </style>
     @yield('style')
 </head>
@@ -48,13 +58,13 @@
             <nav class="navbar navbar-default">
                 <div class="container">
                     <div class="navbar-flex d-flex align-items-center justify-content-between w-100 pb-3 pt-3">
-                           <!-- Collect the nav links, forms, and other content for toggling -->
+                        <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="navbar-collapse1 d-flex align-items-center justify-content-center"
                             id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav" id="responsive-menu">
                                 <li class="dropdown submenu active">
-                                    <a href="{{ route('home') }}" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                        aria-haspopup="true" aria-expanded="false">الرئيسية</a>
+                                    <a href="{{ route('home') }}" class="dropdown-toggle" data-toggle="dropdown"
+                                        role="button" aria-haspopup="true" aria-expanded="false">الرئيسية</a>
                                 </li>
                                 <li><a class="" href="{{ route('about') }}">من نحن</a></li>
                                 <li class="submenu dropdown">

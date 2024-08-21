@@ -40,17 +40,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="trend-box">
+                    <div class="trend-box bg-pattern p-2">
                         <div class="row">
                             @foreach ($projects as $project)   <div class="col-lg-6 col-md-6 mb-4  p-3 box-shadow">
-                                <div class="trend-item box-shadow rounded">
+                                <div class="trend-item bg-white box-shadow rounded">
                                     <div class="trend-image">
                                         <img src="{{ asset($project->poster_path) }}" alt="image"/>
                                         <a href="#" class="flash bg-theme1 white px-3 py-2"></a>
                                         <div
                                                 class="trend-meta d-flex align-items-center justify-content-between"
                                         >
-                                           
+
                                             <a href="{{ route('project', $project->id) }}" class="tags bg-theme2 white px-3 py-1">استعراض
                                                 المشروع</a>
                                         </div>
@@ -86,7 +86,7 @@
                                     </ul> --}}
                                 </div>
                             </div>
-                           
+
                             @endforeach
                         </div>
                         <div class="pagination-main text-center">

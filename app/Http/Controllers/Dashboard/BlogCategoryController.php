@@ -16,8 +16,8 @@ class BlogCategoryController extends Controller
 
     public function index()
     {
-        $blogCategories = BlogCategory::orderBy('id', 'asc')->get();
-        return view('dashboard.blogcategories.index', compact('blogCategories'));
+        $blogcategories = BlogCategory::orderBy('id', 'asc')->get();
+        return view('dashboard.blogcategories.index', compact('blogcategories'));
     }
 
     public function create()
