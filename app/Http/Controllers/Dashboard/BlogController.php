@@ -66,11 +66,7 @@ class BlogController extends Controller
             $fullPath = $helper->storeImageInPublicDirectory($image, $directory, 200, 200);
             $blog->author_image = $fullPath;
         }
-        $blog->author_instagram  = $validatedData['author_instagram'] ?? null;
-        $blog->author_snapchat  = $validatedData['author_snapchat'] ?? null;
-        $blog->author_twitter  = $validatedData['author_twitter'] ?? null;
-        $blog->author_tiktok  = $validatedData['author_tiktok'] ?? null;
-        $blog->author_linkedin  = $validatedData['author_linkedin'] ?? null;
+
 
         $helper = new ImageHelper;
         $image = $request->file('image');
@@ -148,11 +144,6 @@ class BlogController extends Controller
             $fullPath = $helper->storeImageInPublicDirectory($image, $directory, 200, 200);
             $blog->author_image = $fullPath;
         }
-        $blog->author_instagram  = $validatedData['author_instagram'] ?? null;
-        $blog->author_snapchat  = $validatedData['author_snapchat'] ?? null;
-        $blog->author_twitter  = $validatedData['author_twitter'] ?? null;
-        $blog->author_tiktok  = $validatedData['author_tiktok'] ?? null;
-        $blog->author_linkedin  = $validatedData['author_linkedin'] ?? null;
 
             $helper = new ImageHelper;
         if ($request->has('image')) {

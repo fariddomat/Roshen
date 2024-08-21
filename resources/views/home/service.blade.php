@@ -41,10 +41,11 @@
                                 <div class="sidebar-item mb-4">
                                     <h3 class="">خدمات أخرى</h3>
                                     <ul class="sidebar-category">
-                                        <li><a href="#">Property Management</a></li>
-                                        <li><a href="#">Mortage Services</a></li>
-                                        <li><a href="#">Consulting</a></li>
-                                        <li class="active"><a href="#">Home Buying</a></li>
+                                        @foreach ($services as $item)
+                                        @if ($item->id != $service->id)
+                                        <li><a href="{{ route('service', $item->id) }}">{{ $item->name }}</a></li>
+                                        @endif
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>

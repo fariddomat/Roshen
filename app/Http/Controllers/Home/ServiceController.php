@@ -16,7 +16,7 @@ class ServiceController extends Controller
     {
 
         $services = Service::orderBy('id')->get();
-        
+
         $counters = Counter::all();
         return view('home.services', compact('services', 'counters'));
     }
@@ -24,12 +24,13 @@ class ServiceController extends Controller
     public function show($id)
     {
 
+        $services = Service::orderBy('id')->get();
         $service = Service::find($id);
 
         if ($service) {
 
         $counters = Counter::all();
-            return view('home.service', compact('service'));
+            return view('home.service', compact('service', 'services'));
         } else {
             # code...
             abort(404);

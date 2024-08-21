@@ -16,7 +16,7 @@ class BlogCategoryController extends Controller
 
     public function index()
     {
-        $blogcategories = BlogCategory::orderBy('id', 'asc')->get();
+        $blogcategories = BlogCategory::orderBy('id', 'asc')->paginate(10);
         return view('dashboard.blogcategories.index', compact('blogcategories'));
     }
 
@@ -57,6 +57,15 @@ class BlogCategoryController extends Controller
 
         $blogcategory->save();
         session()->flash('success', 'Blog Category Updated Successfully');
+        return redirect()->route('dashboard.blogcategories.index');
+    }
+
+    public function destroy(BlogCategory $blogcategory)
+    {
+
+
+        $blogcategory->delete();
+        session()->flash('success', 'Blog Category Deleted Successfully');
         return redirect()->route('dashboard.blogcategories.index');
     }
 

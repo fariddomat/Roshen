@@ -82,9 +82,9 @@
                                     </a>
                                 </li>
                                 <li><a class="" href="contactPage">تواصل معنا</a></li>
-                                <li class="search-main">
+                                {{-- <li class="search-main">
                                     <a href="#search1" class="mt_search"><i class="fa fa-search"></i></a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
                         <!-- Brand and toggle get grouped for better mobile display -->

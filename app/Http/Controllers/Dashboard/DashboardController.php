@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Models\Category;
 use App\Http\Controllers\Controller;
+use App\Models\Apartment;
+use App\Models\Contact;
 use App\Models\LogSystem;
 use App\Models\ProfileDownload;
 use App\Models\Project;
@@ -16,15 +18,12 @@ class DashboardController extends Controller
 
     public function index()
     {
-        $categories=Category::count();
-        $projects=Project::count();
-        $pcounter=ProfileDownload::find(1);
-        $counter=0;
-        if ($pcounter) {
-            $counter=$pcounter->count;
-        }
+        $categories = Category::count();
+        $projects = Project::count();
+        $apartments = Apartment::count();
+        $contacts = Contact::count();
 
-        $logs=LogSystem::latest()->take(5)->get();
-        return view('dashboard.index', compact('categories', 'projects', 'counter', 'logs'));
+        // Pass the counts to the view
+        return view('dashboard.index', compact('categories', 'projects', 'apartments', 'contacts'));
     }
 }

@@ -17,6 +17,8 @@
     <!-- CoreUI main scripts -->
 
     <script src="{{ asset('dashboard/js/app.js') }}"></script>
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('dashboard/js/about.js') }}"></script>
 
     <!-- Plugins and scripts required by this views -->
     <!-- Custom scripts required by this view -->

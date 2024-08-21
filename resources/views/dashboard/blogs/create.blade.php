@@ -33,13 +33,13 @@
                     @csrf()
 
                     <div class="form-group mb-3">
-                        <label for="ar[title]" class="form-label">العنوان</label>
-                        <input type="text" name="ar[title]" class="form-control" value="{{ old('ar.title') }}"
+                        <label for="title" class="form-label">العنوان</label>
+                        <input type="text" name="title" class="form-control" value="{{ old('ar.title') }}"
                             dir="rtl">
                     </div>
                     {{-- <div class="form-group mb-3">
-                    <label for="en[title]" class="form-label">Title in English</label>
-                    <input type="text" name="en[title]" class="form-control" value="{{ old('en.title') }}">
+                    <label for="title" class="form-label">Title in English</label>
+                    <input type="text" name="title" class="form-control" value="{{ old('en.title') }}">
                 </div> --}}
 
                     <div class="form-group mb-3">
@@ -48,46 +48,46 @@
                     </div>
 
                     <div class="form-group mb-3">
-                        <label for="ar[introduction]" class="form-label">التعريف - introduction</label>
-                        <textarea class="form-control" id="ar[introduction]" name="ar[introduction]" rows="5" dir="rtl">{{ old('ar.introduction') }}</textarea>
+                        <label for="introduction" class="form-label">التعريف - introduction</label>
+                        <textarea class="form-control" id="introduction" name="introduction" rows="5" dir="rtl">{{ old('ar.introduction') }}</textarea>
                     </div>
 
                     {{-- <div class="form-group mb-3">
-                    <label for="en[introduction]" class="form-label">Introduction in English</label>
-                    <textarea class="form-control" id="en[introduction]" name="en[introduction]"
+                    <label for="introduction" class="form-label">Introduction in English</label>
+                    <textarea class="form-control" id="introduction" name="introduction"
                         rows="5">{{ old('en.introduction') }}</textarea>
                 </div> --}}
 
                     <div class="form-group mb-3">
-                        <label for="ar[content_table]" class="form-label">جدول المحتويات - Content table</label>
-                        <textarea class="form-control" id="ar[content_table]" name="ar[content_table]" rows="5" dir="rtl">{{ old('ar.content_table') }}</textarea>
+                        <label for="content_table" class="form-label">جدول المحتويات - Content table</label>
+                        <textarea class="form-control" id="content_table" name="content_table" rows="5" dir="rtl">{{ old('ar.content_table') }}</textarea>
                     </div>
 
                     {{-- <div class="form-group mb-3">
-                    <label for="en[content_table]" class="form-label">Content table in English</label>
-                    <textarea class="form-control" id="en[content_table]" name="en[content_table]"
+                    <label for="content_table" class="form-label">Content table in English</label>
+                    <textarea class="form-control" id="content_table" name="content_table"
                         rows="5">{{ old('en.content_table') }}</textarea>
                 </div> --}}
 
                     <div class="form-group mb-3">
-                        <label for="ar[first_paragraph]" class="form-label">النص الأول - First paragraph</label>
-                        <textarea class="form-control" id="ar[first_paragraph]" name="ar[first_paragraph]" rows="5" dir="rtl">{{ old('ar.first_paragraph') }}</textarea>
+                        <label for="first_paragraph" class="form-label">النص الأول - First paragraph</label>
+                        <textarea class="form-control" id="first_paragraph" name="first_paragraph" rows="5" dir="rtl">{{ old('ar.first_paragraph') }}</textarea>
                     </div>
 
                     {{-- <div class="form-group mb-3">
-                    <label for="en[first_paragraph]" class="form-label">First paragraph in English</label>
-                    <textarea class="form-control" id="en[first_paragraph]" name="en[first_paragraph]"
+                    <label for="first_paragraph" class="form-label">First paragraph in English</label>
+                    <textarea class="form-control" id="first_paragraph" name="first_paragraph"
                         rows="5">{{ old('en.first_paragraph') }}</textarea>
                 </div> --}}
 
                     <div class="form-group mb-3">
-                        <label for="ar[description]" class="form-label">الوصف - Description</label>
-                        <textarea class="form-control" id="ar[description]" name="ar[description]" rows="5" dir="rtl">{{ old('ar.description') }}</textarea>
+                        <label for="description" class="form-label">الوصف - Description</label>
+                        <textarea class="form-control" id="description" name="description" rows="5" dir="rtl">{{ old('ar.description') }}</textarea>
                     </div>
 
                     {{-- <div class="form-group mb-3">
-                    <label for="en[description]" class="form-label">Description in English</label>
-                    <textarea class="form-control" id="en[description]" name="en[description]" rows="5">{{old('en.description')}}</textarea>
+                    <label for="description" class="form-label">Description in English</label>
+                    <textarea class="form-control" id="description" name="description" rows="5">{{old('en.description')}}</textarea>
                 </div> --}}
 
                     <div class="form-group mb-3">
@@ -119,24 +119,24 @@
                         </label>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="ar[author_name]" class="form-label">اسم الكاتب</label>
-                        <input type="text" name="ar[author_name]" class="form-control"
+                        <label for="author_name" class="form-label">اسم الكاتب</label>
+                        <input type="text" name="author_name" class="form-control"
                             value="{{ old('ar.author_name') }}" dir="rtl">
                     </div>
                     {{-- <div class="form-group mb-3">
-                    <label for="en[author_name]" class="form-label">Author Name in English</label>
-                    <input type="text" name="en[author_name]" class="form-control"
+                    <label for="author_name" class="form-label">Author Name in English</label>
+                    <input type="text" name="author_name" class="form-control"
                         value="{{ old('en.author_name') }}">
                 </div> --}}
 
                     <div class="form-group mb-3">
-                        <label for="ar[author_title]" class="form-label">وصف الكاتب</label>
-                        <input type="text" name="ar[author_title]" class="form-control"
+                        <label for="author_title" class="form-label">وصف الكاتب</label>
+                        <input type="text" name="author_title" class="form-control"
                             value="{{ old('ar.author_title') }}" dir="rtl">
                     </div>
                     {{-- <div class="form-group mb-3">
-                    <label for="en[author_title]" class="form-label">Author Title in English</label>
-                    <input type="text" name="en[author_title]" class="form-control"
+                    <label for="author_title" class="form-label">Author Title in English</label>
+                    <input type="text" name="author_title" class="form-control"
                         value="{{ old('en.author_title') }}">
                 </div> --}}
 

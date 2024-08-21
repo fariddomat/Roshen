@@ -9,6 +9,21 @@
         .discount-action {
             width: 100%;
         }
+
+        .testimonial .testimonial-item1 i {
+            right: -45px;
+        }
+
+        .author-title>.theme2 {
+            /* color: #5A4B93  !important; */
+            color: #11857a !important;
+        }
+
+        .testimonial .testimonial-item1::before,
+        .testimonial .testimonial-item1::after {
+            -webkit-box-shadow: 0 10px 30px 0 rgba(90, 75, 147, 0.3) !important;
+            box-shadow: 0 10px 30px 0 rgba(90, 75, 147, 0.3) !important;
+        }
     </style>
 @endsection
 @section('nav')
@@ -124,22 +139,22 @@
                 <div class="why-us-box">
                     <div class="row">
                         @foreach ($services as $service)
-                        <div class="col-lg-4 rounded-2 col-md-6 mb-4">
-                            <div style="border-radius: 8px" class="why-us-item text-center bg-lgrey">
-                                <div class="why-us-icon">
-                                    <i class="{{ $service->icon }} theme"></i>
-                                </div>
-                                <div class="why-us-content">
-                                    <h3>
-                                        <a href="{{ route('service', $service->id) }}">{{ $service->name }}</a>
-                                    </h3>
-                                    <p class="mb-0">
-                                        {!! Str::limit($service->description, 190, ' ...') !!}
+                            <div class="col-lg-4 rounded-2 col-md-6 mb-4">
+                                <div style="border-radius: 8px" class="why-us-item text-center bg-lgrey">
+                                    <div class="why-us-icon">
+                                        <i class="{{ $service->icon }} theme"></i>
+                                    </div>
+                                    <div class="why-us-content">
+                                        <h3>
+                                            <a href="{{ route('service', $service->id) }}">{{ $service->name }}</a>
+                                        </h3>
+                                        <p class="mb-0">
+                                            {!! Str::limit($service->description, 190, ' ...') !!}
 
-                                    </p>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
 
                     </div>
@@ -159,15 +174,15 @@
             <div class="counter text-center bg-lgrey p-5 pb-1 border">
                 <div class="row d-flex align-items-center justify-content-center">
                     @foreach ($counters as $counter)
-                    <div class="col-lg-3 d-flex align-items-center justify-content-center col-md-6 col-sm-6 mb-4">
-                        <div class="counter-item d-flex align-items-center text-start border-end px-4">
-                            <div class="counter-content d-flex flex-column align-items-center gap-2">
-                                <i class="{{ $counter->icon }} theme" style="font-size: 40px"></i>
-                                <h3 class="value mb-0 text-center">{{ $counter->value }}</h3>
-                                <span class="m-0 text-center">{{ $counter->name }}</span>
+                        <div class="col-lg-3 d-flex align-items-center justify-content-center col-md-6 col-sm-6 mb-4">
+                            <div class="counter-item d-flex align-items-center text-start border-end px-4">
+                                <div class="counter-content d-flex flex-column align-items-center gap-2">
+                                    <i class="{{ $counter->icon }} theme" style="font-size: 40px"></i>
+                                    <h3 class="value mb-0 text-center">{{ $counter->value }}</h3>
+                                    <span class="m-0 text-center">{{ $counter->name }}</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     @endforeach
 
                 </div>
@@ -185,45 +200,48 @@
             <div class="trend-box  p-3 pb-5 box-shadow" style="direction: ltr">
                 <div class="row item-slider">
                     @foreach ($projects as $project)
-                    <div class="col-lg-4 col-md-6 col-sm-6 mb-4  p-3 box-shadow" style="direction: rtl">
-                        <div style="border-radius: 8px" class="trend-item bg-white box-shadow rounded">
-                            <div class="trend-image">
-                                <img src="{{ asset($project->poster_path) }}" alt="image" />
-                                <a href="#" class="flash bg-theme1 white px-3 py-2"><i class="fa fa-flash"></i></a>
-                                <div class="trend-meta d-flex align-items-center justify-content-between">
-                                    <div class="entry-author">
-                                        <img src="{{ asset($project->poster_path) }}" alt=""
-                                            class="rounded-circle me-1" />
-                                        <span>{{ $project->category->name }} </span>
-                                    </div>
-                                    <a href="{{ route('projects') }}" class="tags bg-theme2 white px-3 py-1">للبيع</a>
-                                </div>
-                            </div>
-                            <div class="trend-content p-4">
-                                <h3 class="theme">{{ $project->name }}</h3>
-                                <h4>
-                                    <a href="{{ route('project',$project->id) }}">{{ $project->category->projects->count() }} وحدة سكنية </a>
-                                </h4>
-                                <div
-                                    class="entry-meta d-flex align-items-center justify-content-between border-b pb-1 mb-2">
-                                    <div class="entry-author">
-                                        <p>
-                                            {{-- السعر يبدا من<span class="d-block theme fw-bold">{{ $project->apartments }}</span> --}}
-                                        </p>
+                        <div class="col-lg-4 col-md-6 col-sm-6 mb-4  p-3 box-shadow" style="direction: rtl">
+                            <div style="border-radius: 8px" class="trend-item bg-white box-shadow rounded">
+                                <div class="trend-image">
+                                    <img src="{{ asset($project->poster_path) }}" alt="image" />
+                                    <a href="#" class="flash bg-theme1 white px-3 py-2"><i
+                                            class="fa fa-flash"></i></a>
+                                    <div class="trend-meta d-flex align-items-center justify-content-between">
+                                        <div class="entry-author">
+                                            <img src="{{ asset($project->poster_path) }}" alt=""
+                                                class="rounded-circle me-1" />
+                                            <span>{{ $project->category->name }} </span>
+                                        </div>
+                                        <a href="{{ route('projects') }}"
+                                            class="tags bg-theme2 white px-3 py-1">للبيع</a>
                                     </div>
                                 </div>
-                                <p class="mb-0">
-                                   {!! $project->details !!}
-                                </p>
-                            </div>
-                            {{-- <ul class="d-flex align-items-center justify-content-between bg-grey p-3 px-4">
+                                <div class="trend-content p-4">
+                                    <h3 class="theme">{{ $project->name }}</h3>
+                                    <h4>
+                                        <a href="{{ route('project', $project->id) }}">{{ $project->category->projects->count() }}
+                                            وحدة سكنية </a>
+                                    </h4>
+                                    <div
+                                        class="entry-meta d-flex align-items-center justify-content-between border-b pb-1 mb-2">
+                                        <div class="entry-author">
+                                            <p>
+                                                {{-- السعر يبدا من<span class="d-block theme fw-bold">{{ $project->apartments }}</span> --}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <p class="mb-0">
+                                        {!! $project->details !!}
+                                    </p>
+                                </div>
+                                {{-- <ul class="d-flex align-items-center justify-content-between bg-grey p-3 px-4">
                                 <li class="me-2">عدد الغرف</li>
                                 <li class="me-2">الدور</li>
                                 <li class="me-2">الحي</li>
                                 <li>المساحة</li>
                             </ul> --}}
+                            </div>
                         </div>
-                    </div>
                     @endforeach
 
                 </div>
@@ -246,10 +264,9 @@
             <div style="direction: ltr" class="partner-wrapper bg-lgrey p-4">
                 <ul class="attract-slider">
                     @foreach ($partners as $partner)
-                    <li class="px-3">
-                        <a href="#"><img src="{{ asset($partner->img) }}"
-                                alt="" /></a>
-                    </li>
+                        <li class="px-3">
+                            <a href="#"><img src="{{ asset($partner->img) }}" alt="" /></a>
+                        </li>
                     @endforeach
 
                 </ul>
@@ -282,19 +299,19 @@
                 <div class="why-us-box ">
                     <div class="row p-5 rosem_bg">
                         @foreach ($whies as $why)
-                        <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-                            <div style="border-radius: 8px" class="why-us-item text-center bg-lgrey">
-                                <div class="why-us-icon">
-                                    <i class="{{ $why->icon }} theme"></i>
-                                </div>
-                                <div class="why-us-content">
-                                    <h4><a href="{{ route('about') }}">{{ $why->name }}</a></h4>
-                                    <p class="mb-0">
-                                       {{$why->value}}
-                                    </p>
+                            <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                                <div style="border-radius: 8px" class="why-us-item text-center bg-lgrey">
+                                    <div class="why-us-icon">
+                                        <i class="{{ $why->icon }} theme"></i>
+                                    </div>
+                                    <div class="why-us-content">
+                                        <h4><a href="{{ route('about') }}">{{ $why->name }}</a></h4>
+                                        <p class="mb-0">
+                                            {{ $why->value }}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
                     </div>
                 </div>
@@ -311,31 +328,31 @@
             </div>
             <div class="row review-slider bg-lgrey" style="direction: ltr">
                 @foreach ($reviews as $review)
-                <div style="border-radius: 8px" class="col-sm-4 item">
-                    <div class="testimonial-item1 text-center">
-                        <div class="details">
-                            <p class="m-0">
-                               {{$review->description}}
-                            </p>
-                        </div>
-                        <div class="author-info mt-2">
-                            <a href="#">
-                                <img style="
+                    <div style="border-radius: 8px" class="col-sm-4 item">
+                        <div class="testimonial-item1 text-center">
+                            <div class="details">
+                                <p class="m-0">
+                                    {{ $review->description }}
+                                </p>
+                            </div>
+                            <div class="author-info mt-2">
+                                <a>
+                                    <img style="
                         width: 100px;
                         height: 100px;
                         border-radius: 100%;
                         margin: auto;
                       "
-                                    src="{{ asset($review->image_path) }}" alt="" />
-                            </a>
-                            <div class="author-title">
-                                <h4 class="m-0 theme2">{{ $review->name }}</h4>
-                                <span>{{ $review->title }}</span>
+                                        src="{{ asset($review->image_path) }}" alt="" />
+                                </a>
+                                <div class="author-title">
+                                    <h4 class="m-0 theme2">{{ $review->name }}</h4>
+                                    <span>{{ $review->title }}</span>
+                                </div>
                             </div>
+                            <i class="fa fa-quote-left mb-2"></i>
                         </div>
-                        <i class="fa fa-quote-left mb-2"></i>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
@@ -350,10 +367,10 @@
             </div>
             <div class="row bg-lgrey py-3 px-2">
                 @foreach ($certs as $cert)
-                <div class="col-lg-3 d-flex align-items-center justify-content-center">
-                    <img style="width: 100%; max-height: 220px; max-width: 100%" src="{{ asset($cert->img) }}"
-                        alt="" />
-                </div>
+                    <div class="col-lg-3 d-flex align-items-center justify-content-center">
+                        <img style="width: 100%; max-height: 220px; max-width: 100%" src="{{ asset($cert->img) }}"
+                            alt="" />
+                    </div>
                 @endforeach
             </div>
         </div>
@@ -368,26 +385,26 @@
             <div class="counter text-center bg-lgrey p-5 pb-1 border">
                 <div class="row">
                     @foreach ($facils as $facil)
-                    <div
-                    class="col-lg-3 d-flex align-items-center justify-content-center text-center col-md-6 col-sm-6 mb-4">
-                    <div class="counter-item d-flex align-items-center text-start border-end px-4">
-                        <div class="counter-content">
-                            <img style="
+                        <div
+                            class="col-lg-3 d-flex align-items-center justify-content-center text-center col-md-6 col-sm-6 mb-4">
+                            <div class="counter-item d-flex align-items-center text-start border-end px-4">
+                                <div class="counter-content">
+                                    <img style="
                     width: 100px;
                     height: 100px;
                     margin: 10px auto;
                     display: block;
                   "
-                                src="{{ asset($facil->icon) }}" alt="" />
-                            <h2 style="color: #605098" class="value mb-0 text-center">
-                                {{ $facil->value }}
-                            </h2>
-                            <span style="color: #605098; font-size: 18px" class="m-0">
-                              {{ $facil->name }}
-                            </span>
+                                        src="{{ asset($facil->icon) }}" alt="" />
+                                    <h2 style="color: #605098" class="value mb-0 text-center">
+                                        {{ $facil->value }}
+                                    </h2>
+                                    <span style="color: #605098; font-size: 18px" class="m-0">
+                                        {{ $facil->name }}
+                                    </span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
                     @endforeach
 
                 </div>

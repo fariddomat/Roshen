@@ -276,19 +276,6 @@
                 <div class="col-lg-12">
                     <div class="serviceBox">
                         <div class="service-icon">
-                            <span><i class="fa-solid fa-message"></i></span>
-                        </div>
-                        <h3 class="title text-center" style="font-size: 32px; margin-bottom: 15px">
-                            رسالتنا
-                        </h3>
-                        <p class="description text-center" style="font-size: 20px; line-height: 2">
-                         <div>  {!! $about->message !!}</div>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="serviceBox">
-                        <div class="service-icon">
                             <span><i class="fa-solid fa-eye"></i></span>
                         </div>
                         <h3 class="title text-center" style="font-size: 32px; margin-bottom: 15px">
@@ -296,6 +283,19 @@
                         </h3>
                         <p class="description text-center" style="font-size: 20px; line-height: 2">
                             {!! $about->vision !!}
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="serviceBox">
+                        <div class="service-icon">
+                            <span><i class="fa-solid fa-message"></i></span>
+                        </div>
+                        <h3 class="title text-center" style="font-size: 32px; margin-bottom: 15px">
+                            رسالتنا
+                        </h3>
+                        <p class="description text-center" style="font-size: 20px; line-height: 2">
+                         <div>  {!! $about->message !!}</div>
                         </p>
                     </div>
                 </div>

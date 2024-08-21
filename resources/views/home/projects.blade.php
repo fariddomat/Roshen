@@ -30,13 +30,13 @@
                             <div
                                     class="sortby d-flex align-items-center justify-content-between ml-2"
                             >
-                                <select class="niceSelect">
-                                    <option value="1">فلترة بواسطة</option>
-                                    <option value="2">الاقدم</option>
-                                    <option value="2">الاحدث</option>
-                                    <option value="3">من الأقل إلى الأعلى</option>
-                                    <option value="4">من الاعلي الي الاقل</option>
-                                </select>
+                            <select class="niceSelect">
+                                <option value="1">فلترة بواسطة</option>
+                                <option value="2">الأقرب إلى البلد</option>
+                                <option value="3">الأقرب إلى المطار</option>
+                                <option value="4">الأقرب إلى البحر</option>
+                            </select>
+
                             </div>
                         </div>
                     </div>
@@ -105,13 +105,10 @@
                         <div class="sidebar-item mb-4 box-shadow p-4 text-centerb">
                             <h3>ابحث عن منزلك</h3>
                             <form class="form-find">
-                                <!--                                <div class="form-group mb-2">-->
-                                <!--                                    <input type="text" placeholder="Enter Keywords"/>-->
-                                <!--                                </div>-->
                                 <div class="form-group mb-2">
                                     <div class="input-box">
                                         <select class="niceSelect">
-                                            <option value="1">الموقع</option>
+                                            <option value="1">الحي</option>
                                             <option value="2">جدة</option>
                                             <option value="3">الرياض</option>
                                             <option value="4">الدمام</option>
@@ -121,37 +118,41 @@
                                 <div class="form-group mb-2">
                                     <div class="input-box">
                                         <select class="niceSelect">
-                                            <option value="1">نوع المكان</option>
-                                            <option value="2">شقة</option>
-                                            <option value="3">فيلا</option>
-                                            <option value="5">حجرة</option>
-                                            <option value="5">منزل كامل</option>
+                                            <option value="1">اتجاه الشقة</option>
+                                            <option value="2">أمامية</option>
+                                            <option value="3">خلفية</option>
+                                            <option value="4">على زاوية</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group mb-2">
                                     <div class="input-box">
                                         <select class="niceSelect">
-                                            <option value="1">كل الحالات</option>
-                                            <option value="2">للايجار</option>
-                                            <option value="3">للبيع</option>
+                                            <option value="1">حالات الشقق</option>
+                                            <option value="2">جاهز</option>
+                                            <option value="3">تحت الإنشاء</option>
+                                            <option value="4">قيد التشطيب</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group mb-2 d-flex justify-content-between">
                                     <div class="input-box w-50 me-1">
                                         <select class="niceSelect">
-                                            <option value="1">عدد الحجرات</option>
-                                            <option value="2">5</option>
-                                            <option value="3">3</option>
-                                            <option value="3">4</option>
+                                            <option value="1">عدد الغرف</option>
+                                            <option value="2">1</option>
+                                            <option value="3">2</option>
+                                            <option value="4">3</option>
+                                            <option value="5">4</option>
+                                            <option value="6">5</option>
                                         </select>
                                     </div>
                                     <div class="input-box w-50 ms-1">
                                         <select class="niceSelect">
                                             <option value="1">الحمامات</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
+                                            <option value="2">1</option>
+                                            <option value="3">2</option>
+                                            <option value="4">3</option>
+                                            <option value="5">4</option>
                                         </select>
                                     </div>
                                 </div>
@@ -159,19 +160,19 @@
                                     <div class="range-slider mt-0">
                                         <p class="text-start mb-2">نطاق السعر</p>
                                         <div
-                                                data-min="0"
-                                                data-max="2000"
-                                                data-unit="$"
-                                                data-min-name="min_price"
-                                                data-max-name="max_price"
-                                                class="range-slider-ui ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
-                                                aria-disabled="false"
+                                            data-min="0"
+                                            data-max="20000"
+                                            data-unit="ريال"
+                                            data-min-name="min_price"
+                                            data-max-name="max_price"
+                                            class="range-slider-ui ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
+                                            aria-disabled="false"
                                         >
-                                            <span class="min-value">500 $</span>
-                                            <span class="max-value">20000 $</span>
+                                            <span class="min-value">500 ريال</span>
+                                            <span class="max-value">20000 ريال</span>
                                             <div
-                                                    class="ui-slider-range ui-widget-header ui-corner-all full"
-                                                    style="left: 0%; width: 100%"
+                                                class="ui-slider-range ui-widget-header ui-corner-all full"
+                                                style="left: 0%; width: 100%"
                                             ></div>
                                         </div>
                                         <div class="clearfix"></div>
@@ -179,10 +180,16 @@
                                 </div>
                                 <div class="form-group text-center w-100">
                                     <input
-                                            type="submit"
-                                            class="nir-btn w-100"
-                                            id="submit3"
-                                            value="بحث"
+                                        type="submit"
+                                        class="nir-btn w-100"
+                                        id="submit3"
+                                        value="بحث"
+                                        style="
+                                            background-color: #6f42c1;
+                                            border-radius: 10px;
+                                            font-size: 20px;
+                                            color: #fff;
+                                        "
                                     />
                                 </div>
                             </form>
@@ -190,6 +197,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
