@@ -47,7 +47,7 @@
                                         <input value="{{ old('area', $apartment->area) }}" name="area" type="number"
                                             min="0" class="form-control" id="basicInput" required>
                                         <h5 class="mt-2">معلومات عن الشقة</h5>
-                                        <textarea name="about" id="" class="form-control">{{ old('about', $apartment->about) }}</textarea>
+                                        <textarea name="about" id="ab" class="form-control">{{ old('about', $apartment->about) }}</textarea>
                                         <h5 class="mt-2">السعر (اختياري)</h5>
                                         <input value="{{ old('price', $apartment->price) }}" name="price" type="number"
                                             min="0" class="form-control" id="basicInput">
@@ -57,16 +57,16 @@
 
 
                                         <h5 class="mt-2"> التفاصيل</h5>
-                                        <textarea id="" name="details" class="form-control" id="" cols="30" rows="10">
+                                        <textarea id="de" name="details" class="form-control" id="" cols="30" rows="10">
                                                 {{ old('details', $apartment->details) }}
                                             </textarea>
                                         <h5 class="mt-2">@lang('site.image')</h5>
                                         <input name="img" type="file" class="form-control image" id="basicInput">
                                         <h5 class="mt-2">جولة افتراضية - iframe (اختياري)</h5>
-                                        <textarea name="virtual_location" class="form-control" id="basicTextarea" rows="3">{{ old('virtual_location', $apartment->virtual_location) }}</textarea>
+                                        <textarea name="virtual_location" class="form-control" id="" rows="3">{{ old('virtual_location', $apartment->virtual_location) }}</textarea>
 
                                         <h5 class="mt-2">يتوتيوب - Youtube (اختياري)</h5>
-                                        <textarea name="youtube" class="form-control" id="basicTextarea" rows="3">{{ old('youtube', $apartment->youtube) }}</textarea>
+                                        <textarea name="youtube" class="form-control" id="" rows="3">{{ old('youtube', $apartment->youtube) }}</textarea>
 
                                     </div>
                                     <div class="col-lg-6">

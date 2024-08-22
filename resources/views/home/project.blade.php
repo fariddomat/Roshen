@@ -1,6 +1,7 @@
 @extends('home._layouts._app')
 @section('style')
     <style>
+
          td:first-child {
                 left: : 0px !important;
                 width: 100px !important;
@@ -264,13 +265,16 @@
                         <div class="inner col-lg-6 col-md-12">
                             <div class="tags">
                                 <ul style="direction: rtl">
+                                    <li class="mt-4">معلومات عن الشقة: {!! $item->about !!}</li>
+                                    <br />
                                     <li class="mt-4">عدد الغرف: {{ $item->room_count }}</li>
                                     <br />
                                     <li class="mt-4">السعر: {{ $item->price }} ريال</li>
                                     <br />
                                     <li class="mt-4">المساحة: {{ $item->area }} متر²</li>
                                     <br />
-
+                                    <li class="mt-4">تفاصيل: {!! $item->details !!}</li>
+                                    <br />
                                     <br />
                                     <li class="mt-3">
                                         <a href="{{ route('contactPage') }}" class="btn-btn">احجز الشقة</a>
@@ -318,12 +322,14 @@
                                  <td class="@if ($floor->status == 'متاح') td1 @elseif ($floor->status == 'محجوز') td2 @else td3 @endif">
                                      {{ $floor->apartment->type }}
                                  </td>
-                                 @if ($key == 0)
+                                 {{-- @if ($key == 0)
                                      <td style="width: 33% !important; color:transparent!important;box-shadow: none !important; translate: 0px 24px;">.</td>
-                                 @endif
+                                 @endif --}}
                              @endforeach
                          </tr>
                      @endif
+                 </table>
+                 <table class="table mt-2 center" style="margin-left: auto !important; margin-right: auto !important; width: fit-content; margin-bottom: 35px;">
 
                      @for ($i = $project->floors_count - 1; $i >= 1; $i--)
                          <tr>

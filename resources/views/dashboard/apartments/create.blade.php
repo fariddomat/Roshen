@@ -42,7 +42,7 @@
                                         <input value="{{ old('area') }}" name="area" type="number" min="0"
                                             class="form-control" id="basicInput" required>
                                         <h5 class="mt-2">معلومات عن الشقة</h5>
-                                        <textarea name="about" id="" class="form-control">{{ old('about') }}</textarea>
+                                        <textarea name="about" id="ab" class="form-control">{{ old('about') }}</textarea>
 
                                         <h5 class="mt-2">السعر (اختياري)</h5>
                                         <input value="{{ old('price') }}" name="price" type="number" min="0"
@@ -53,7 +53,7 @@
 
 
                                         <h5 class="mt-2"> التفاصيل</h5>
-                                        <textarea id="" name="details" class="form-control" id="" cols="30" rows="10">
+                                        <textarea id="de" name="details" class="form-control" id="" cols="30" rows="10">
                                                 {{ old('details') }}
                                             </textarea>
                                         <h5 class="mt-2">@lang('site.image')</h5>
@@ -62,12 +62,12 @@
 
 
                                         <h5 class="mt-2">جولة افتراضية - iframe (اختياري)</h5>
-                                        <textarea name="virtual_location" class="form-control" id="basicTextarea" rows="3">{{ old('virtual_location') }}</textarea>
+                                        <textarea name="virtual_location" class="form-control" id="" rows="3">{{ old('virtual_location') }}</textarea>
 
 
 
                                         <h5 class="mt-2">يتوتيوب - Youtube (اختياري)</h5>
-                                        <textarea name="youtube" class="form-control" id="basicTextarea" rows="3">{{ old('youtube') }}</textarea>
+                                        <textarea name="youtube" class="form-control" id="" rows="3">{{ old('youtube') }}</textarea>
 
                                     </div>
                                     <div class="col-lg-6">
