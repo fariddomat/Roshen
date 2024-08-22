@@ -63,10 +63,10 @@
 
                                     {{-- address_location --}}
                                     <h5 class="mt-2">الموقع على الخريطة - iframe (اختياري)</h5>
-                                    <textarea name="address_location" class="form-control" id="basicTextarea" rows="3">{{ old('address_location', $project->address_location) }}</textarea>
+                                    <textarea name="address_location" class="form-control" id="" rows="3">{{ old('address_location', $project->address_location) }}</textarea>
 
-                                    <h5 class="mt-2">جولة افتراضية - iframe (اختياري)</h5>
-                                    <textarea name="virtual_location" class="form-control" id="basicTextarea" rows="3">{{ old('virtual_location', $project->virtual_location) }}</textarea>
+                                    <h5 class="mt-2">يوتيوب (اختياري)</h5>
+                                    <textarea name="virtual_location" class="form-control" id="" rows="3">{{ old('virtual_location', $project->virtual_location) }}</textarea>
 
                                     <h5 class="mt-2">حالة المشروع</h5>
                                     <select name="status" id="" class="form-control">
@@ -323,7 +323,7 @@
             </div>
         </div>
 
-      
+
 
         <div class="row">
             <div class="col-12">

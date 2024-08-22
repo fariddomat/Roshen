@@ -212,6 +212,7 @@
                             <div class="text">
                                 <p style="color: #605098; font-size: 20px" class="fw-bold">
                                     مشروع {{ $project->name }} هو مشروع مبني على المواصفات التالية:
+                                    {!! $project->details !!}
                                 </p>
                                 <ul>
                                     <li style="margin-top: 15px">تاريخ البناء: {{ $project->date_of_build }}</li>
@@ -235,16 +236,39 @@
                         </div>
                     </div>
                     <div class="col-lg-6 mb-4">
-                        <div class="about-image bordernone mb-3" style="text-align: left">
-                            <img src="{{ asset($project->poster_path) }}" alt=""
-                                style="max-width: 100%;max-height: 350px" class="shadow-lg">
-                            </iframe>
+                        <div class="about-image bordernone mb-3" >
+                            {!! $project->virtual_location !!}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project_images my-5">
+                <div class="container">
+                    <h4 class="text-center my-4">صور المشروع</h4>
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-10">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <!-- Slide 1 -->
+                                    @foreach ($project->images_path as $image)
+
+                                    <div class="swiper-slide">
+                                        <img src="{{ $image }}" alt="project_image" />
+                                    </div>
+                                    @endforeach
+
+
+                                    <!-- Add more slides as needed -->
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 
     <!-- نماذج الشقق -->
     <div class="container">
@@ -284,19 +308,24 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-lg-6 d-flex flex-column">
                                 <p class="text-center" style="font-size: 22px; margin-bottom: 12px">
-                                    Youtube
+                                    عنوان الخريطة
                                 </p>
-                                {!! $item->youtube !!}
+                                <div class="content-box flex-grow-1">
+                                    {!! $item->project->address_location !!}
+                                </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-6 d-flex flex-column">
                                 <p class="text-center" style="font-size: 22px; margin-bottom: 12px">
                                     الجولة الافتراضية
                                 </p>
-                                {!! $item->virtual_location !!}
+                                <div class="content-box flex-grow-1">
+                                    {!! $item->virtual_location !!}
+                                </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             @endforeach
