@@ -29,7 +29,7 @@
                                         <i class="fa fa-map-marker"></i>
                                     </div>
                                     <div class="info-content">
-                                        <p style="font-size: 18px" class="m-0"> {{setting('site_location')}}</p>
+                                        <p style="font-size: 18px" class="m-0"> <a href="{{setting('site_location')}}">جدة، المملكة العربية السعودية</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
                                         <i class="fa fa-envelope"></i>
                                     </div>
                                     <div class="info-content ps-4">
-                                        <p style="font-size: 18px" class="m-0"> {{setting('site_email')}}</p>
+                                        <p style="font-size: 18px" class="m-0"> <a href="mailto:{{setting('site_email')}}">{{setting('site_email')}}</a></p>
                                     </div>
                                 </div>
                             </div>

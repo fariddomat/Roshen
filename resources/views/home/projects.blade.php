@@ -108,10 +108,10 @@
                                 <div class="form-group mb-2">
                                     <div class="input-box">
                                         <select class="niceSelect">
-                                            <option value="1">الحي</option>
-                                            <option value="2">جدة</option>
-                                            <option value="3">الرياض</option>
-                                            <option value="4">الدمام</option>
+                                            <option>الحي</option>
+                                            @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>

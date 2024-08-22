@@ -2,7 +2,13 @@
 
 @section('style')
 
-<style>.scroll {
+<style>
+.blog-content p:first-child::first-letter {
+    font-size: inherit !important;
+  color: unset !important;
+  float: inherit !important;
+}
+.scroll {
     position: fixed;
     z-index: 1000;
     right: 0;
@@ -84,7 +90,7 @@
                         <div class="blog-wrapper">
                             <div class="blog-content">
                                 <div class="blog-imagelist mb-3">
-                                    <img src="{{ asset($blog->image) }}" alt="image" />
+                                    <img src="{{ asset($blog->index_image) }}" alt="image" />
                                 </div>
                                 <h3>المقدمه</h3>
                                 <div class="mb-3 shadow-sm" style="
@@ -113,6 +119,7 @@
                                {!! $blog->description !!}
                     </div>
 
+                    <a href="{{ route('contactPage') }}" class="btn-btn d-block m-auto" style="width: fit-content;font-size: 1.5rem;">تواصل معنا</a>
                         </div>
                     </div>
                 </div>

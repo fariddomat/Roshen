@@ -190,7 +190,7 @@
                             <h4 class="theme">من نحن</h4>
                             <p class="border-b mb-2 pb-2">
                             <div dir="rtl" style="text-align: right">
-                            {!! $about->who_are_we !!}
+                                {!! $about->who_are_we !!}
                             </div>
                             </p>
                         </div>
@@ -295,7 +295,7 @@
                             رسالتنا
                         </h3>
                         <p class="description text-center" style="font-size: 20px; line-height: 2">
-                         <div>  {!! $about->message !!}</div>
+                        <div> {!! $about->message !!}</div>
                         </p>
                     </div>
                 </div>
@@ -320,9 +320,37 @@
                         <h3 class="title text-center" style="font-size: 32px; margin-bottom: 15px">
                             قيمنا
                         </h3>
+                        @php
+                            // تقسيم النص إلى فقرات منفصلة
+                            $paragraphs = explode('</p>', $about->values);
+
+                            // تهيئة مصفوفة لتخزين العناوين والوصف
+                            $sections = [];
+
+                            for ($i = 0; $i < count($paragraphs) - 1; $i += 2) {
+                                $title = strip_tags($paragraphs[$i]);
+                                $description = strip_tags($paragraphs[$i + 1]);
+
+                                $sections[] = [
+                                    'title' => $title,
+                                    'description' => $description,
+                                ];
+                            }
+                        @endphp
+
                         <div class="d-flex gap-5 justify-content-center flex-wrap align-items-center">
-                            {!! $about->values !!}
+                            @foreach ($sections as $section)
+                                <div>
+                                    <p class="description text-center" style="font-size: 20px; line-height: 2">
+                                        {!! $section['title'] !!}
+                                    </p>
+                                    <p class="text-center" style="max-width: 350px">
+                                        {!! $section['description'] !!}
+                                    </p>
+                                </div>
+                            @endforeach
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -338,10 +366,9 @@
             <div style="direction: ltr" class="partner-wrapper bg-lgrey p-4">
                 <ul class="attract-slider">
                     @foreach ($partners as $partner)
-                    <li class="px-3">
-                        <a href="#"><img src="{{ asset($partner->img) }}"
-                                alt="" /></a>
-                    </li>
+                        <li class="px-3">
+                            <a href="#"><img src="{{ asset($partner->img) }}" alt="" /></a>
+                        </li>
                     @endforeach
 
                 </ul>

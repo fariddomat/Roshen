@@ -95,7 +95,7 @@
                                                 <a href="{{ route('blog', $blog->slug) }}" class="btn btn-info btn-sm"
                                                     target="_blank"> عرض</a>
                                                 <a href="{{ route('dashboard.blogs.edit', $blog->id) }}"
-                                                    class="btn btn-info btn-sm"><i class="fas fa-edit"></i> </a>
+                                                    class="btn btn-info btn-sm">تعديل<i class="fas fa-edit"></i> </a>
                                                 <form action="{{ route('dashboard.blogs.destroy', $blog->id) }}"
                                                     method="post" style="display: inline-block">
                                                     @csrf()
