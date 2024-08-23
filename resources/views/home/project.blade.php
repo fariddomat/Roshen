@@ -137,6 +137,21 @@
         .rounded-3 {
             width: 100%;
         }
+
+        .content-box iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    min-height: 480px !important;
+}
+
+.content-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
     </style>
 @endsection
 
@@ -271,7 +286,8 @@
 
 
     <!-- نماذج الشقق -->
-    <div class="container">
+    <div class="container pt-3 pb-3" style="border: 1px solid #dfdfdb;
+  border-radius: 15px; ">
         <div class="section-title mb-6 pb-1 w-75 text-center mx-auto">
             <h2 class="m-0">نماذج شقق المشروع</h2>
         </div>
@@ -308,7 +324,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-lg-6 d-flex flex-column">
+                            <div class="col-lg-{{ $item->virtual_location ? '6' : '12' }} d-flex flex-column">
                                 <p class="text-center" style="font-size: 22px; margin-bottom: 12px">
                                     عنوان الخريطة
                                 </p>
@@ -316,16 +332,19 @@
                                     {!! $item->project->address_location !!}
                                 </div>
                             </div>
-                            <div class="col-lg-6 d-flex flex-column">
-                                <p class="text-center" style="font-size: 22px; margin-bottom: 12px">
-                                    الجولة الافتراضية
-                                </p>
-                                <div class="content-box flex-grow-1">
-                                    {!! $item->virtual_location !!}
+                        
+                            @if ($item->virtual_location)
+                                <div class="col-lg-6 d-flex flex-column">
+                                    <p class="text-center" style="font-size: 22px; margin-bottom: 12px">
+                                        الجولة الافتراضية
+                                    </p>
+                                    <div class="content-box flex-grow-1">
+                                        {!! $item->virtual_location !!}
+                                    </div>
                                 </div>
-                            </div>
+                            @endif
                         </div>
-
+                        
                     </div>
                 </div>
             @endforeach
@@ -336,7 +355,7 @@
  <!-- حالات الشقق -->
  @if ($project->floors->count() > 0)
  <!-- apartment check Area-->
- <div class="room-details-area pt-100 pb-70" style="background: url({{ asset('b.png') }});">
+ <div class="room-details-area pt-3 pb-70" style="background: url({{ asset('b.png') }});">
      <div class="container-fluid m-0 p-0">
          <div class="section-title-two text-center">
              <h2 class="margin-auto" style="color: #cc9933; margin-bottom: 35px;margin-right: 25px;">حالة الشقق</h2>
