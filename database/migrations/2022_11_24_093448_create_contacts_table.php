@@ -18,6 +18,7 @@ class CreateContactsTable extends Migration
             $table->string('name');
             $table->string('email')->nullable();
             $table->string('phone');
+            $table->unsignedBigInteger('service_id');
             $table->text('message');
             $table->string('status')->default('unread');
             $table->timestamps();

@@ -1,115 +1,109 @@
 @extends('home._layouts._app')
 @section('style')
-
 @endsection
 @section('content')
-
-
-<!-- contact starts -->
-<section class="contact-main pt-0 pb-10 bg-grey">
-    <div class="map">
-        <div style="width: 100%">
-            {!! setting('site_title') !!}
+    <!-- contact starts -->
+    <section class="contact-main pt-0 pb-10 bg-grey">
+        <div class="map">
+            <div style="width: 100%">
+                {!! setting('site_title') !!}
+            </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="contact-info-main">
-            <div class="row">
-                <div class="col-lg-10 col-offset-lg-1 mx-auto">
-                    <div class="contact-info bg-white pt-10 pb-10 px-5">
-                        <div class="contact-info-title text-center mb-4 px-5">
-                            <h3 class="mb-1">معلومات التواصل معنا</h3>
-                            <p class="mb-0">يكون نسعى لارضائكم دائماً من خلال قسم خدمات العملاء لدينا</p>
-                        </div>
-                        <div class="contact-info-content row mb-1">
-                            <div class="col-lg-4 col-md-6 mb-4">
-                                <div
-                                        class="info-item bg-lgrey px-4 py-5 border-all text-center">
-                                    <div class="info-icon mb-2">
-                                        <i class="fa fa-map-marker"></i>
-                                    </div>
-                                    <div class="info-content">
-                                        <p style="font-size: 18px" class="m-0"> <a href="{{setting('site_location')}}">جدة، المملكة العربية السعودية</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 mb-4">
-                                <div
-                                        class="info-item bg-lgrey px-4 py-5 border-all text-center"
-                                >
-                                    <div class="info-icon mb-2">
-                                        <i class="fa fa-phone"></i>
-                                    </div>
-                                    <div class="info-content">
-                                        <p style="font-size: 18px" class="m-0"><a href="tel:{{setting('site_phone')}}">{{setting('site_phone')}}</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-12 mb-4">
-                                <div
-                                        class="info-item bg-lgrey px-4 py-5 border-all text-center"
-                                >
-                                    <div class="info-icon mb-2">
-                                        <i class="fa fa-envelope"></i>
-                                    </div>
-                                    <div class="info-content ps-4">
-                                        <p style="font-size: 18px" class="m-0"> <a href="mailto:{{setting('site_email')}}">{{setting('site_email')}}</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="contact-form1" class="contact-form px-5">
+        <div class="container">
+            <div class="contact-info-main">
+                <div class="row">
+                    <div class="col-lg-10 col-offset-lg-1 mx-auto">
+                        <div class="contact-info bg-white pt-10 pb-10 px-5">
                             <div class="contact-info-title text-center mb-4 px-5">
-                                <h3 class="mb-1">خدمة عملاء مميزة ورد سريع</h3>
-                                <p class="mb-0">
-                                    اسعي لارضائك دايما بالعمل ولا ينتهي العمل الا وانت راض عنة
-                                </p>
+                                <h3 class="mb-1">معلومات التواصل معنا</h3>
+                                <p class="mb-0">يكون نسعى لارضائكم دائماً من خلال قسم خدمات العملاء لدينا</p>
                             </div>
-                            <div id="contactform-error-msg"></div>
+                            <div class="contact-info-content row mb-1">
+                                <div class="col-lg-4 col-md-6 mb-4">
+                                    <div class="info-item bg-lgrey px-4 py-5 border-all text-center">
+                                        <div class="info-icon mb-2">
+                                            <i class="fa fa-map-marker"></i>
+                                        </div>
+                                        <div class="info-content">
+                                            <p style="font-size: 18px" class="m-0"> <a
+                                                    href="{{ setting('site_location') }}">جدة، المملكة العربية السعودية</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 mb-4">
+                                    <div class="info-item bg-lgrey px-4 py-5 border-all text-center">
+                                        <div class="info-icon mb-2">
+                                            <i class="fa fa-phone"></i>
+                                        </div>
+                                        <div class="info-content">
+                                            <p style="font-size: 18px" class="m-0"><a
+                                                    href="tel:{{ setting('site_phone') }}">{{ setting('site_phone') }}</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-12 mb-4">
+                                    <div class="info-item bg-lgrey px-4 py-5 border-all text-center">
+                                        <div class="info-icon mb-2">
+                                            <i class="fa fa-envelope"></i>
+                                        </div>
+                                        <div class="info-content ps-4">
+                                            <p style="font-size: 18px" class="m-0"> <a
+                                                    href="mailto:{{ setting('site_email') }}">{{ setting('site_email') }}</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="contact-form1" class="contact-form px-5">
+                                <div class="contact-info-title text-center mb-4 px-5">
+                                    <h3 class="mb-1">خدمة عملاء مميزة ورد سريع</h3>
+                                    <p class="mb-0">
+                                        اسعي لارضائك دايما بالعمل ولا ينتهي العمل الا وانت راض عنة
+                                    </p>
+                                </div>
+                                <div id="contactform-error-msg"></div>
 
-                            <form
-                                    method="post"
-                                    action="{{ route('contact') }}"
-                                    name="contactform"
-                                    id="contactform">
+                                <form method="post" action="{{ route('contact') }}" name="contactform" id="contactform">
                                     @include('layouts._error')
                                     @csrf
 
-                                <div class="form-group mb-2">
-                                    <input type="text" name="name" class="form-control" id="llastname"
-                                           placeholder=" *الاسم "/>
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="email" name="email" class="form-control" id="email"
-                                           placeholder="البريد الالكتروني"/>
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="text" name="phone" class="form-control" id="phnumber"
-                                           placeholder=" *رقم  الجوال"
-                                    />
+                                    <div class="form-group mb-2">
+                                        <input type="text" name="name" class="form-control" id="llastname"
+                                            placeholder=" *الاسم " />
+                                    </div>
+                                    <div class="form-group mb-2">
+                                        <input type="email" name="email" class="form-control" id="email"
+                                            placeholder="البريد الالكتروني" />
+                                    </div>
+                                    <div class="form-group mb-2">
+                                        <input type="text" name="phone" class="form-control" id="phnumber"
+                                            placeholder=" *رقم  الجوال" />
 
-                                    {{-- <div class="form-group mb-2">
-                                        <select class="form-control mt-2" id="dropdown" name="dropdown">
+                                        <div class="form-group mb-2">
+                                        <select class="form-control mt-2" id="dropdown" name="service_id">
                                             <option value="" disabled selected>اختر الخدمة</option>
-                                            <option value="option1">خيار 1</option>
-                                            <option value="option2">خيار 2</option>
-                                            <option value="option3">خيار 3</option>
+                                           @foreach ($services as $service)
+                                               <option value="{{ $service->id }}">{{ $service->name }}</option>
+                                           @endforeach
                                         </select>
-                                    </div> --}}
-                                    <div class="textarea mb-2">
-                                        <textarea name="message" placeholder=" *اكتب رسالتك نسعد بها"></textarea>
                                     </div>
-                                    <div class="comment-btn text-center">
-                                        <button type="submit" style="background-color: #6f42c1; color: white" class="btn px-5" id="submit2">ارسال الرسالة</button>
+                                        <div class="textarea mb-2">
+                                            <textarea name="message" placeholder=" *اكتب رسالتك نسعد بها"></textarea>
+                                        </div>
+                                        <div class="comment-btn text-center">
+                                            <button type="submit" style="background-color: #6f42c1; color: white"
+                                                class="btn px-5" id="submit2">ارسال الرسالة</button>
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- contact Ends -->
+    </section>
+    <!-- contact Ends -->
 @endsection

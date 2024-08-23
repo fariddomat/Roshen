@@ -52,6 +52,7 @@ class HomeController extends Controller
         $request->validate([
             'name' => 'required',
             'phone' => 'required',
+            'service_id' => 'required',
             'message' => 'required',
         ]);
 
@@ -62,7 +63,8 @@ class HomeController extends Controller
 
     public function contactPage()
     {
-        return view('home.contact');
+        $services= Service::all();
+        return view('home.contact', compact('services'));
     }
 
     public function promoters(Request $request)
