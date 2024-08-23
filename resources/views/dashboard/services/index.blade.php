@@ -46,7 +46,8 @@
                                         <tr dir="rtl" style=" text-align: right;">
                                             <th scope="row">{{ $index + 1 }}</th>
                                             <td dir="rtl">{{ $service->name }}</td>
-                                            <td>{{ $service->description }}</td>
+                                            <td>{!! Str::limit($service->description, 190, ' ...') !!}
+                                            </td>
                                             <td class="form-group">
 
                                                 <a href="{{ route('dashboard.services.edit', $service->id) }}" type="button"
