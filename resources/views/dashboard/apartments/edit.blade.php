@@ -60,9 +60,12 @@
                                         <textarea id="de" name="details" class="form-control" id="" cols="30" rows="10">
                                                 {{ old('details', $apartment->details) }}
                                             </textarea>
-                                        <h5 class="mt-2">@lang('site.image')</h5>
-                                        <input name="img" type="file" class="form-control image" id="basicInput">
-                                        <h5 class="mt-2">جولة افتراضية - iframe (اختياري)</h5>
+                                        
+                                            <h5 class="mt-2">صور المشروع</h5>
+                                            <input value="{{ old('img[]') }}" name="img[]" multiple type="file"
+                                                class="form-control" id="basicInput">
+                                            
+                                            <h5 class="mt-2">جولة افتراضية - iframe (اختياري)</h5>
                                         <textarea name="virtual_location" class="form-control" id="" rows="3">{{ old('virtual_location', $apartment->virtual_location) }}</textarea>
 
                                         <h5 class="mt-2">يتوتيوب - Youtube (اختياري)</h5>
@@ -71,9 +74,13 @@
                                     </div>
                                     <div class="col-lg-6">
 
-                                        <div class="mt-2">
-                                            <img src="{{ $apartment->image_path }}" alt="" class="img-thumbnail image-preview">
-                                        </div>
+                                        @if ($apartment->apartmentImages->count() > 0)
+                                                <div class="row mt-1">
+                                                    @foreach ($apartment->images_path as $item)
+                                                        <img class="col-lg-3"  src="{{ $item }}" alt="Images" style="max-width: 300px; margin:15px 0">
+                                                    @endforeach
+                                                </div>
+                                            @endif
                                     </div>
 
 

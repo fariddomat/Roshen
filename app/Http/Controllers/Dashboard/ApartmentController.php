@@ -12,6 +12,7 @@ use Intervention\Image\Facades\Image;
 use App\Models\Propertie;
 
 use App\Models\Apartment;
+use App\Models\ApartmentImage;
 use App\Models\LogSystem;
 use Illuminate\Support\Facades\Redirect;
 
@@ -65,18 +66,15 @@ class ApartmentController extends Controller
             'price' => 'nullable|numeric|min:0',
             'price_bank' => 'nullable|numeric|min:0',
             'details' => 'required',
-            'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
+            'img.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
         ]);
 
         $request_data = $request->except(['img']);
-        $img = Image::make($request->img)->resize(500, null, function ($constraint) {
-            $constraint->aspectRatio();
-        })
-            ->encode('webp', 90);
-        Storage::disk('public')->put('images/' . $request->project_id . '/' . $request->img->hashName(), (string)$img, 'public');
-        $request_data['img'] = $request->img->hashName();
+        
+        
         $project = Project::find($request->project_id);
 
+        
         // $reservation = null;
 
         // if ($request->appendix) {
@@ -98,7 +96,22 @@ class ApartmentController extends Controller
             $request_data['appendix'] = 'on';
 
         }
-        Apartment::create($request_data);
+        $apartment=Apartment::create($request_data);
+
+        foreach ($request->file('img') as $file) {
+
+            $img = Image::make($file)
+                ->resize(800, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->encode('webp', 90);
+
+            Storage::disk('public')->put('images/apartments/' . $apartment->id . '/' . $file->hashName(), (string)$img, 'public');
+
+            ApartmentImage::create([
+                'apartment_id' => $apartment->id,
+                'img' => $file->hashName()
+            ]);
+        }
 
         LogSystem::success('تم إضافة ' . $request->type . ' بنجاح - اسم المشروع: ' . $project->name);
 
@@ -181,23 +194,14 @@ class ApartmentController extends Controller
             'price' => 'nullable|numeric|min:0',
             'price_bank' => 'nullable|numeric|min:0',
             'details' => 'required',
-            'img' => 'image|mimes:jpeg,png,jpg,gif,svg,webp',
+            'img.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp',
 
         ]);
 
         $apartment = Apartment::find($id);
         $request_data = $request->except(['img', 'appendix']);
-        if ($request->img) {
-            Storage::disk('public')->delete('images/' . $request->project_id . '/' . $apartment->img);
-
-            $img = Image::make($request->img)->resize(500, null, function ($constraint) {
-                $constraint->aspectRatio();
-            })
-                ->encode('webp', 90);
-
-            Storage::disk('public')->put('images/' . $request->project_id . '/' . $request->img->hashName(), (string)$img, 'public');
-            $request_data['img'] = $request->img->hashName();
-        }
+       
+        
         if($request->type == "ملحق"){
 
             $request_data['appendix'] = 'on';
@@ -210,6 +214,30 @@ class ApartmentController extends Controller
         $apartment->update($request_data);
         $project = Project::find($apartment->project_id);
 
+        if ($request->img) {
+
+            $projectImages = ApartmentImage::where('apartment_id', $apartment->id);
+            // dd($projectImages);
+            foreach ($projectImages->get() as $key => $item) {
+                // dd($item->img);
+                Storage::disk('public')->delete('images/apartments/' . $apartment->id . '/' . $item->img);
+            }
+            $projectImages->delete();
+            foreach ($request->file('img') as $file) {
+                // dd(true);
+                $img = Image::make($file)
+                    ->resize(null, 800, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->encode('webp', 90);
+
+                Storage::disk('public')->put('images/apartments/' . $apartment->id . '/' . $file->hashName(), (string)$img, 'public');
+
+                ApartmentImage::create([
+                    'apartment_id' => $apartment->id,
+                    'img' => $file->hashName()
+                ]);
+            }
+        }
         LogSystem::info('تم تعديل ' . $apartment->type . ' بنجاح - اسم المشروع: ' . $project->name);
 
         session()->flash('success', 'Successfully updated !');

@@ -258,29 +258,7 @@
                     </div>
                 </div>
             </div>
-            <div class="project_images my-5">
-                <div class="container">
-                    <h4 class="text-center my-4">صور المشروع</h4>
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-md-10">
-                            <div class="swiper-container">
-                                <div class="swiper-wrapper">
-                                    <!-- Slide 1 -->
-                                    @foreach ($project->images_path as $image)
-
-                                    <div class="swiper-slide">
-                                        <img src="{{ $image }}" alt="project_image" />
-                                    </div>
-                                    @endforeach
-
-
-                                    <!-- Add more slides as needed -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          
         </div>
     </div>
 
@@ -344,6 +322,32 @@
                                 </div>
                             @endif
                         </div>
+                        @if ($item->images_path)
+                        <div class="project_images my-5">
+                            <div class="container">
+                                <h4 class="text-center my-4">صور الشقة</h4>
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-10">
+                                        <div class="swiper-container">
+                                            <div class="swiper-wrapper">
+                                                <!-- Slide 1 -->
+                                                @foreach ($item->images_path as $image)
+            
+                                                <div class="swiper-slide">
+                                                    <img src="{{ $image }}" alt="project_image" />
+                                                </div>
+                                                @endforeach
+            
+            
+                                                <!-- Add more slides as needed -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        @endif
                         
                     </div>
                 </div>
