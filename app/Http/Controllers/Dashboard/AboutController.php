@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Models\About;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\File;
 
 class AboutController extends Controller
 {
@@ -35,6 +38,20 @@ class AboutController extends Controller
         $about->who_are_we = $validatedData['who_are_we'];
         $about->message = $validatedData['message'];
         $about->vision = $validatedData['vision'];
+
+        if ($request->who_are_we_image) {
+            Storage::disk('public')->delete('about/' . $about->who_are_we_image);
+            $who_are_we_image = Image::make($request->who_are_we_image)
+                ->resize(1200, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->encode('webp', 90);
+
+            Storage::disk('public')->put('about/' . $request->who_are_we_image->hashName(), (string)$who_are_we_image, 'public');
+            $about->update([
+                'who_are_we_image' => $request->who_are_we_image->hashName()
+            ]);
+        }
+
         $about->save();
         session()->flash('success', 'About Updated Successfully');
         return redirect()->back();

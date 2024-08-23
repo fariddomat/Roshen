@@ -23,6 +23,14 @@
                     @include('dashboard._layouts._error')
 
                     <div class="form-group mb-3">
+                        <label for="who" class="form-label">صورة من نحن؟</label>
+                        <input type="file" name="who_are_we_image" class="form-control">    
+                    </div>
+                    <div class="form-group mb-3">
+                       <img src="{{ asset('uploads/about/'.$about->who_are_we_image) }}" style="max-width: 150px" alt="">
+                    </div>
+
+                    <div class="form-group mb-3">
                         <label for="who" class="form-label">من نحن؟</label>
                         <textarea class="form-control" id="who_are_we" name="who_are_we" rows="5" dir="rtl">{{ old('who_are_we') ?? isset($about) ? $about->who_are_we : '' }}</textarea>
                     </div>
