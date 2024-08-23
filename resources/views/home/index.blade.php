@@ -25,7 +25,7 @@
             box-shadow: 0 10px 30px 0 rgba(90, 75, 147, 0.3) !important;
         }
 
-        /* Ensure all service boxes have the same height */
+        
 .why-us .why-us-box .row {
     display: flex;
     flex-wrap: wrap;
@@ -143,40 +143,38 @@
     </section>
     <!-- about-us ends -->
     <!-- Our Services -->
-    <section class="about-us pb-6 pt-4 bg-pattern">
-        <div class="container">
-            <div class="section-title mb-6 pb-1 w-75 text-center mx-auto">
-                <h2 class="m-0">خدماتنا</h2>
-            </div>
-            <!-- why us starts -->
-            <div class="why-us">
-                <div class="why-us-box">
-                    <div class="row">
-                        @foreach ($services as $service)
-                            <div class="col-lg-4 rounded-2 col-md-6 mb-4">
-                                <div style="border-radius: 8px" class="why-us-item text-center bg-lgrey">
-                                    <div class="why-us-icon">
-                                        <i class="{{ $service->icon }} theme" style="margin-bottom: 10px"></i>
-                                    </div>
-                                    <div class="why-us-content">
-                                        <h3>
-                                            <a href="{{ route('service', $service->id) }}">{{ $service->name }}</a>
-                                        </h3>
-                                        <p class="mb-0">
-                                            {!! Str::limit($service->description, 190, ' ...') !!}
-                                        </p>
-                                    </div>
-                                </div>
+<section class="about-us pb-6 pt-4 bg-pattern">
+    <div class="container">
+        <div class="section-title mb-6 pb-1 w-75 text-center mx-auto">
+            <h2 class="m-0">خدماتنا</h2>
+        </div>
+        <!-- why us starts -->
+        <div class="why-us">
+            <div class="why-us-box">
+                <div class="row">
+                    @foreach ($services as $service)
+                    <div class="col-lg-4 rounded-2 col-md-6 mb-4">
+                        <div style="border-radius: 8px" class="why-us-item text-center bg-lgrey">
+                            <div class="why-us-icon">
+                                <i class="{{ $service->icon }} theme"></i>
                             </div>
-                        @endforeach
+                            <div class="why-us-content">
+                                <h3>
+                                    <a href="{{ route('service', $service->id) }}">{{ $service->name }}</a>
+
+                                </h3>
+
+                            </div>
+                        </div>
                     </div>
+                    @endforeach
                 </div>
             </div>
-            <!-- why us ends -->
         </div>
-    </section>
-
-    <!-- Our Services -->
+        <!-- why us ends -->
+    </div>
+</section>
+<!-- Our Services -->
 
     <!-- Counter -->
     <section style="border-radius: 8px" class="counter-main pb-3 pt-0">

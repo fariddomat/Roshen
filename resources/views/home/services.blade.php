@@ -1,7 +1,7 @@
 @extends('home._layouts._app')
 
 @section('style')
-<style>/* Ensure all service boxes have the same height */
+<style>
     .why-us .why-us-box .row {
         display: flex;
         flex-wrap: wrap;
@@ -14,7 +14,6 @@
         height: 100%;
     }
     </style>
-
 @endsection
 @section('scripts')
 
@@ -32,21 +31,20 @@
             <div class="why-us-box">
                 <div class="row">
                     @foreach ($services as $service)
-                        <div class="col-lg-4 rounded-2 col-md-6 mb-4">
-                            <div style="border-radius: 8px" class="why-us-item text-center bg-lgrey">
-                                <div class="why-us-icon">
-                                    <i class="{{ $service->icon }} theme" style="margin-bottom: 10px"></i>
-                                </div>
-                                <div class="why-us-content">
-                                    <h3>
-                                        <a href="{{ route('service', $service->id) }}">{{ $service->name }}</a>
-                                    </h3>
-                                    <p class="mb-0">
-                                        {!! Str::limit($service->description, 190, ' ...') !!}
-                                    </p>
-                                </div>
+                    <div class="col-lg-4 rounded-2 col-md-6 mb-4">
+                        <div style="border-radius: 8px" class="why-us-item text-center bg-lgrey">
+                            <div class="why-us-icon">
+                                <i class="{{ $service->icon }} theme"></i>
+                            </div>
+                            <div class="why-us-content">
+                                <h3>
+                                    <a href="{{ route('service', $service->id) }}">{{ $service->name }}</a>
+
+                                </h3>
+
                             </div>
                         </div>
+                    </div>
                     @endforeach
                 </div>
             </div>
@@ -55,6 +53,7 @@
     </div>
 </section>
 <!-- Our Services -->
+
 
 
 <!-- Counter -->
