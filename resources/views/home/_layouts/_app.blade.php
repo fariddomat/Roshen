@@ -116,42 +116,37 @@
             <div class="wave" id="wave4"></div>
         </div>
         <ul class="social_icon">
-            <li>
-                <a href="https://web.facebook.com/profile.php?id=100087543796287&_rdc=1&_rdr">
-                    <ion-icon name="logo-facebook"></ion-icon>
-                </a>
-            </li>
-            <li>
-                <a href="https://twitter.com/roshemcompany">
-                    <ion-icon name="logo-twitter"></ion-icon>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa-brands fa-x-twitter fs-2"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa-brands fa-youtube"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa-brands fa-snapchat fs-2"></i>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.instagram.com/roshemcompany/">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                </a>
-            </li>
+            @php
+                $social_sites = ['facebook', 'twitter', 'instagram', 'whatsapp', 'youtube', 'snapchat'];
+                $social_icons = [
+                    'facebook' => 'fa-facebook',
+                    'twitter' => 'fa-x-twitter',
+                    'instagram' => 'fa-instagram',
+                    'whatsapp' => 'fa-whatsapp',
+                    'youtube' => 'fa-youtube',
+                    'snapchat' => 'fa-snapchat',
+                ];
+            @endphp
+
+            @foreach ($social_sites as $social_site)
+                @php
+                    $social_link = setting($social_site.'_link');
+                @endphp
+                    <li>
+                        <a href="{{ $social_link }}" target="_blank">
+
+                                <i class="fa-brands {{ $social_icons[$social_site] }} fs-2"></i>
+
+                        </a>
+                    </li>
+            @endforeach
         </ul>
+
         <ul class="menu">
             <li><a href="{{ route('home') }}">المدونة</a></li>
             <li><a href="{{ route('about') }}">من نحن</a></li>
             <li><a href="{{ route('services') }}">خدماتنا</a></li>
-            <li><a href="contactPage">سياسية الخصوصية</a></li>
+            <li><a href="{{ route('contactPage') }}">سياسية الخصوصية</a></li>
         </ul>
         <p>حقوق النشر والملكية ل روشم</p>
     </footer>

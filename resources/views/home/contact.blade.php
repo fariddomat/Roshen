@@ -3,20 +3,20 @@
 @endsection
 @section('content')
     <!-- contact starts -->
-    <section class="contact-main pt-0 pb-10 bg-grey">
+    <section class="contact-main pt-0 pb-10 bg-white">
         <div class="map">
             <div style="width: 100%">
                 {!! setting('site_title') !!}
             </div>
         </div>
         <div class="container">
-            <div class="contact-info-main">
+            <div class="contact-info-main bg-grey">
                 <div class="row">
                     <div class="col-lg-10 col-offset-lg-1 mx-auto">
-                        <div class="contact-info bg-white pt-10 pb-10 px-5">
+                        <div class="contact-info pt-10 pb-10 px-5">
                             <div class="contact-info-title text-center mb-4 px-5">
                                 <h3 class="mb-1">معلومات التواصل معنا</h3>
-                                <p class="mb-0">يكون نسعى لارضائكم دائماً من خلال قسم خدمات العملاء لدينا</p>
+                                <p class="mb-0"> نسعى لارضائكم دائماً من خلال قسم خدمات العملاء لدينا</p>
                             </div>
                             <div class="contact-info-content row mb-1">
                                 <div class="col-lg-4 col-md-6 mb-4">
@@ -59,9 +59,7 @@
                             <div id="contact-form1" class="contact-form px-5">
                                 <div class="contact-info-title text-center mb-4 px-5">
                                     <h3 class="mb-1">خدمة عملاء مميزة ورد سريع</h3>
-                                    <p class="mb-0">
-                                        اسعي لارضائك دايما بالعمل ولا ينتهي العمل الا وانت راض عنة
-                                    </p>
+
                                 </div>
                                 <div id="contactform-error-msg"></div>
 
