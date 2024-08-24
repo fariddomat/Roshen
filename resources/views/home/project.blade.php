@@ -1,99 +1,98 @@
 @extends('home._layouts._app')
 @section('style')
     <style>
+        td:first-child {
+            left: : 0px !important;
+            width: 100px !important;
+            box-shadow: none !important;
 
-         td:first-child {
-                left: : 0px !important;
-                width: 100px !important;
-                box-shadow: none !important;
+        }
 
-            }
+        tr:last-child {
+            margin-bottom: 40px !important;
 
-            tr:last-child {
-                margin-bottom: 40px !important;
+        }
 
-            }
+        td.m1 {
+            color: transparent;
+            position: relative;
+            transform: skewY(-50deg);
+            translate: 0px 14px;
+            -ms-transform: 0px 14px;
+            -webkit-transform: 0px 14px;
+            box-shadow: 0px 6px 8px #aaa !important;
+            background: linear-gradient(#cc9933, #d19426, #cc9933);
 
-            td.m1 {
-                color: transparent;
-                position: relative;
-                transform: skewY(-50deg);
-                translate: 0px 14px;
-                -ms-transform: 0px 14px;
-                -webkit-transform:  0px 14px;
-                box-shadow: 0px 6px 8px #aaa !important;
-                background: linear-gradient(#cc9933, #d19426, #cc9933);
-
-                width: 20px !important;
-            }
-
+            width: 20px !important;
+        }
 
 
-            td.m2 {
-                color: transparent;
-                transform: skewY(50deg);
-                background: linear-gradient(#cc9933, #d19426, #cc9933);
 
-                position: relative;
-                translate: 0px 14px;
-                -ms-transform: 0px 14px;
-                -webkit-transform:  0px 14px;
-                box-shadow: 0px 6px 8px #aaa !important;
-                width: 20px !important;
+        td.m2 {
+            color: transparent;
+            transform: skewY(50deg);
+            background: linear-gradient(#cc9933, #d19426, #cc9933);
 
-            }
+            position: relative;
+            translate: 0px 14px;
+            -ms-transform: 0px 14px;
+            -webkit-transform: 0px 14px;
+            box-shadow: 0px 6px 8px #aaa !important;
+            width: 20px !important;
 
-            /*  push 3:rd another extra 10px       */
-            td.back {
-                position: relative;
-                translate: 0px 28px;
+        }
 
-                -ms-transform: 0px 28px;
-                -webkit-transform:  0px 28px;
-                /* right: 5px; */
-                margin-top: 24px;
-                font-size: 13px !important;
-                box-shadow: 0px 12px 8px #aaa !important;
-                width: 167px !important;
-            }
+        /*  push 3:rd another extra 10px       */
+        td.back {
+            position: relative;
+            translate: 0px 28px;
 
-            .table-striped tbody tr:nth-of-type(2n+1) {
-                background-color: none !important;
-            }
+            -ms-transform: 0px 28px;
+            -webkit-transform: 0px 28px;
+            /* right: 5px; */
+            margin-top: 24px;
+            font-size: 13px !important;
+            box-shadow: 0px 12px 8px #aaa !important;
+            width: 167px !important;
+        }
+
+        .table-striped tbody tr:nth-of-type(2n+1) {
+            background-color: none !important;
+        }
 
 
-            .td1 {
-                min-width: 150px !important;
-                text-align: center;
-                color: white;
-                font-weight: bolder;
-                font-size: 16px;
-                background-color: #198754 !important;
-                border-radius: 0.3rem !important;
-                padding: 0 15px;
-            }
+        .td1 {
+            min-width: 150px !important;
+            text-align: center;
+            color: white;
+            font-weight: bolder;
+            font-size: 16px;
+            background-color: #198754 !important;
+            border-radius: 0.3rem !important;
+            padding: 0 15px;
+        }
 
-            .td2 {
-                min-width: 150px !important;
-                text-align: center;
-                color: white;
-                font-weight: bolder;
-                font-size: 16px;
-                background-color: #605098 !important;
-                border-radius: 0.3rem !important;
-                padding: 0 15px;
-            }
+        .td2 {
+            min-width: 150px !important;
+            text-align: center;
+            color: white;
+            font-weight: bolder;
+            font-size: 16px;
+            background-color: #605098 !important;
+            border-radius: 0.3rem !important;
+            padding: 0 15px;
+        }
 
-            .td3 {
-                min-width: 150px !important;
-                text-align: center;
-                color: white;
-                font-weight: bolder;
-                font-size: 16px;
-                background-color: #c10808 !important;
-                border-radius: 0.3rem !important;
-                padding: 0 15px;
-            }
+        .td3 {
+            min-width: 150px !important;
+            text-align: center;
+            color: white;
+            font-weight: bolder;
+            font-size: 16px;
+            background-color: #c10808 !important;
+            border-radius: 0.3rem !important;
+            padding: 0 15px;
+        }
 
         .virtual-tour {
             width: 100%;
@@ -139,19 +138,18 @@
         }
 
         .content-box iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    min-height: 480px !important;
-}
+            width: 100%;
+            height: 100%;
+            border: 0;
+            min-height: 480px !important;
+        }
 
-.content-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
+        .content-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 @endsection
 
@@ -251,14 +249,38 @@
                         </div>
                     </div>
                     <div class="col-lg-6 mb-4">
-                        <div class="about-image bordernone mb-3" >
+                        <div class="about-image bordernone mb-3">
                             {!! $project->virtual_location !!}
 
                         </div>
                     </div>
+                    @if ($project->images_path)
+                    <div class="project_images my-5">
+                        <div class="container">
+                            <h4 class="text-center my-4">صور المشروع</h4>
+                            <div class="row justify-content-center">
+                                <div class="col-12 col-md-10">
+                                    <div class="swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <!-- Slide 1 -->
+                                            @foreach ($project->images_path as $pimage)
+                                                <div class="swiper-slide">
+                                                    <img src="{{ $pimage }}" alt="project_image" />
+                                                </div>
+                                            @endforeach
+
+
+                                            <!-- Add more slides as needed -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
                 </div>
             </div>
-          
+
         </div>
     </div>
 
@@ -310,7 +332,7 @@
                                     {!! $item->project->address_location !!}
                                 </div>
                             </div>
-                        
+
                             @if ($item->virtual_location)
                                 <div class="col-lg-6 d-flex flex-column">
                                     <p class="text-center" style="font-size: 22px; margin-bottom: 12px">
@@ -323,98 +345,102 @@
                             @endif
                         </div>
                         @if ($item->images_path)
-                        <div class="project_images my-5">
-                            <div class="container">
-                                <h4 class="text-center my-4">صور الشقة</h4>
-                                <div class="row justify-content-center">
-                                    <div class="col-12 col-md-10">
-                                        <div class="swiper-container">
-                                            <div class="swiper-wrapper">
-                                                <!-- Slide 1 -->
-                                                @foreach ($item->images_path as $image)
-            
-                                                <div class="swiper-slide">
-                                                    <img src="{{ $image }}" alt="project_image" />
+                            <div class="project_images my-5">
+                                <div class="container">
+                                    <h4 class="text-center my-4">صور الشقة</h4>
+                                    <div class="row justify-content-center">
+                                        <div class="col-12 col-md-10">
+                                            <div class="swiper-container">
+                                                <div class="swiper-wrapper">
+                                                    <!-- Slide 1 -->
+                                                    @foreach ($item->images_path as $image)
+                                                        <div class="swiper-slide">
+                                                            <img src="{{ $image }}" alt="project_image" />
+                                                        </div>
+                                                    @endforeach
+
+
+                                                    <!-- Add more slides as needed -->
                                                 </div>
-                                                @endforeach
-            
-            
-                                                <!-- Add more slides as needed -->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                            
                         @endif
-                        
+
                     </div>
                 </div>
             @endforeach
         </div>
     </div>
 
-      <!-- حالات الشقق -->
- <!-- حالات الشقق -->
- @if ($project->floors->count() > 0)
- <!-- apartment check Area-->
- <div class="room-details-area pt-3 pb-70" style="background: url({{ asset('b.png') }});">
-     <div class="container-fluid m-0 p-0">
-         <div class="section-title-two text-center">
-             <h2 class="margin-auto" style="color: #cc9933; margin-bottom: 35px;margin-right: 25px;">حالة الشقق</h2>
-         </div>
-         <div class="container" style="color: white">
-             <div class="table-responsive">
-                 <table class="table mt-2 center" style="margin-left: auto !important; margin-right: auto !important; width: fit-content; margin-bottom: 35px;">
-                     @if ($project->FloorRow($project->floors_count)->count() > 0)
-                         <tr>
-                             <td>الملاحق</td>
-                             @foreach ($project->FloorRow($project->floors_count) as $key => $floor)
-                                 <td class="@if ($floor->status == 'متاح') td1 @elseif ($floor->status == 'محجوز') td2 @else td3 @endif">
-                                     {{ $floor->apartment->type }}
-                                 </td>
-                                 {{-- @if ($key == 0)
+    <!-- حالات الشقق -->
+    <!-- حالات الشقق -->
+    @if ($project->floors->count() > 0)
+        <!-- apartment check Area-->
+        <div class="room-details-area pt-3 pb-70" style="background: url({{ asset('b.png') }});">
+            <div class="container-fluid m-0 p-0">
+                <div class="section-title-two text-center">
+                    <h2 class="margin-auto" style="color: #cc9933; margin-bottom: 35px;margin-right: 25px;">حالة الشقق</h2>
+                </div>
+                <div class="container" style="color: white">
+                    <div class="table-responsive">
+                        <table class="table mt-2 center"
+                            style="margin-left: auto !important; margin-right: auto !important; width: fit-content; margin-bottom: 35px;">
+                            @if ($project->FloorRow($project->floors_count)->count() > 0)
+                                <tr>
+                                    <td>الملاحق</td>
+                                    @foreach ($project->FloorRow($project->floors_count) as $key => $floor)
+                                        <td
+                                            class="@if ($floor->status == 'متاح') td1 @elseif ($floor->status == 'محجوز') td2 @else td3 @endif">
+                                            {{ $floor->apartment->type }}
+                                        </td>
+                                        {{-- @if ($key == 0)
                                      <td style="width: 33% !important; color:transparent!important;box-shadow: none !important; translate: 0px 24px;">.</td>
                                  @endif --}}
-                             @endforeach
-                         </tr>
-                     @endif
-                 </table>
-                 <table class="table mt-2 center" style="margin-left: auto !important; margin-right: auto !important; width: fit-content; margin-bottom: 35px;">
+                                    @endforeach
+                                </tr>
+                            @endif
+                        </table>
+                        <table class="table mt-2 center"
+                            style="margin-left: auto !important; margin-right: auto !important; width: fit-content; margin-bottom: 35px;">
 
-                     @for ($i = $project->floors_count - 1; $i >= 1; $i--)
-                         <tr>
-                             <td>الدور {{ $i }}</td>
-                             @php $check = false; @endphp
-                             @foreach ($project->FloorRow($i) as $key => $floor)
-                                 @if ($key == $project->FloorRow($i)->count() - 1 && $floor->apartment->type == 'أمامية' && $project->backCount2($i) > 0)
-                                     <td class="m2">.</td>
-                                 @endif
+                            @for ($i = $project->floors_count - 1; $i >= 1; $i--)
+                                <tr>
+                                    <td>الدور {{ $i }}</td>
+                                    @php $check = false; @endphp
+                                    @foreach ($project->FloorRow($i) as $key => $floor)
+                                        @if ($key == $project->FloorRow($i)->count() - 1 && $floor->apartment->type == 'أمامية' && $project->backCount2($i) > 0)
+                                            <td class="m2">.</td>
+                                        @endif
 
-                                 @if (!$check && $floor->apartment->type == 'خلفية')
-                                     <td class="m1">.</td>
-                                 @endif
-                                 <td style="width:@if ($project->backCount2($i) == 2 && $floor->apartment->type == 'خلفية') 69px !important @endif; border-radius: @if ($key == 0) 0 15px 15px 0px @elseif ($key == $project->FloorRow($i)->count() - 1) 15px 0 0 15px @elseif($project->backCount2($i) == 2 && $key == 1) 15px 0 0 15px @elseif($project->backCount2($i) == 2 && $key == 2) 0 15px 15px 0px @endif;" class="@if ($floor->status == 'متاح') td1 @elseif ($floor->status == 'محجوز') td2 @else td3 @endif @if ($floor->apartment->type == 'خلفية') back @endif">
-                                     {{ $floor->apartment->room_count }}
-                                     {{ $floor->apartment->type }}
-                                 </td>
+                                        @if (!$check && $floor->apartment->type == 'خلفية')
+                                            <td class="m1">.</td>
+                                        @endif
+                                        <td style="width:@if ($project->backCount2($i) == 2 && $floor->apartment->type == 'خلفية') 69px !important @endif; border-radius: @if ($key == 0) 0 15px 15px 0px @elseif ($key == $project->FloorRow($i)->count() - 1) 15px 0 0 15px @elseif($project->backCount2($i) == 2 && $key == 1) 15px 0 0 15px @elseif($project->backCount2($i) == 2 && $key == 2) 0 15px 15px 0px @endif;"
+                                            class="@if ($floor->status == 'متاح') td1 @elseif ($floor->status == 'محجوز') td2 @else td3 @endif @if ($floor->apartment->type == 'خلفية') back @endif">
+                                            {{ $floor->apartment->room_count }}
+                                            {{ $floor->apartment->type }}
+                                        </td>
 
-                                 @if ($project->backCount2($i) == 2 && $check == false && $floor->apartment->type == 'خلفية')
-                                     @php $check = true; @endphp
-                                     <td style="color: transparent; width: 10px !important; border:none !important; box-shadow: none !important;">.</td>
-                                 @endif
-                             @endforeach
-                         </tr>
-                     @endfor
-                 </table>
-             </div>
+                                        @if ($project->backCount2($i) == 2 && $check == false && $floor->apartment->type == 'خلفية')
+                                            @php $check = true; @endphp
+                                            <td
+                                                style="color: transparent; width: 10px !important; border:none !important; box-shadow: none !important;">
+                                                .</td>
+                                        @endif
+                                    @endforeach
+                                </tr>
+                            @endfor
+                        </table>
+                    </div>
 
-         </div>
-     </div>
- </div>
- <!-- End -->
-@endif
+                </div>
+            </div>
+        </div>
+        <!-- End -->
+    @endif
     <!-- المشاريع المشابهة -->
     {{-- <div class="project_images my-5">
         <div class="container">
