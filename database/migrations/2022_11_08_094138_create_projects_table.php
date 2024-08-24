@@ -27,7 +27,7 @@ class CreateProjectsTable extends Migration
             // $table->integer('floor_apartments_count');
             // $table->integer('apartments_count')->default(0);
             // $table->integer('appendix_count')->default(0);
-            $table->text('details')->nullable();
+            $table->longText('details')->nullable();
             $table->string('img');
             $table->string('cover_img')->nullable();
             $table->string('status')->default('مكتمل');

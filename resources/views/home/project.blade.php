@@ -1,6 +1,10 @@
 @extends('home._layouts._app')
 @section('style')
     <style>
+        .text > ul li,
+        .tags > ul li {
+            display: block;
+        }
         td:first-child {
             left: : 0px !important;
             width: 100px !important;
@@ -217,23 +221,21 @@
     </div> --}}
     <div class="about-us">
         <div class="container">
-            <div class="desc col-lg-6">تفاصيل المشروع</div>
+            <div class="desc col-lg-6 " style="color: #605098; font-size: 20px; font-weight: bold;">تفاصيل المشروع</div>
             <div class="about-image-box">
                 <div class="row align-items-center">
                     <div class="col-lg-5 mb-3">
                         <div class="info">
                             <div class="text">
                                 <p style="color: #605098; font-size: 20px" class="fw-bold">
-                                    مشروع {{ $project->name }} هو مشروع مبني على المواصفات التالية:
-                                    {!! $project->details !!}
+                                    مشروع {{ $project->name }} :
+
                                 </p>
+                                {!! $project->details !!}
                                 <ul>
                                     <li style="margin-top: 15px">تاريخ البناء: {{ $project->date_of_build }}</li>
-                                    <br />
                                     <li style="margin-top: 15px">عدد الأدوار: {{ $project->floors_count }}</li>
-                                    <br />
-                                    <li style="margin-top: 15px">عدد الغرف: {{ $project->floors->count() }}</li>
-                                    <br />
+                                    <li style="margin-top: 15px">عدد الشقق: {{ $project->floors->count() }}</li>
                                     <li style="margin-top: 15px">عدد الملاحق: {{ $project->appendixx_count }}</li>
                                     <br />
                                     @if ($project->pdfs)
@@ -295,7 +297,7 @@
         <div class="accrodion-grp faq-accrodion mb-3" style="direction: ltr" data-grp-name="faq-accrodion1">
             @foreach ($project->apartments as $index => $item)
                 <div class="accrodion">
-                    <div class="accrodion-title text-center">
+                    <div class="accrodion-title text-center ">
                         <h5>نموذج {{ $item->type }} (( {{ $item->code }} ))</h5>
                     </div>
                     <div class="accrodion-content row justify-content-between align-items-center" style="display: none">
@@ -305,16 +307,11 @@
                         <div class="inner col-lg-6 col-md-12">
                             <div class="tags">
                                 <ul style="direction: rtl">
-                                    <li class="mt-4">معلومات عن الشقة: {!! $item->about !!}</li>
-                                    <br />
-                                    <li class="mt-4">عدد الغرف: {{ $item->room_count }}</li>
-                                    <br />
-                                    <li class="mt-4">السعر: {{ $item->price }} ريال</li>
-                                    <br />
-                                    <li class="mt-4">المساحة: {{ $item->area }} متر²</li>
-                                    <br />
-                                    <li class="mt-4">تفاصيل: {!! $item->details !!}</li>
-                                    <br />
+                                    <li class="mt-2"><span style="font-size: 20px; font-weight: bold;color:#5a4b93">معلومات عن الشقة:</span> {!! $item->about !!}</li>
+                                    <li class="mt-2">عدد الغرف: {{ $item->room_count }}</li>
+                                    <li class="mt-2">السعر: {{ $item->price }} ريال</li>
+                                    <li class="mt-2">المساحة: {{ $item->area }} متر²</li>
+                                    <li class="mt-2"><span style="font-size: 20px; font-weight: bold;color:#5a4b93">تفاصيل:</span> {!! $item->details !!}</li>
                                     <br />
                                     <li class="mt-3">
                                         <a href="{{ route('contactPage') }}" class="btn-btn">احجز الشقة</a>
@@ -471,8 +468,8 @@
     </a>
 
     <!-- Damns -->
-    <section class="counter-main pb-0 p2-0 bg-pattern" style="margin-top: 50px">
-        <div class="container text-center">
+    <section class="counter-main pb-0 p2-0 bg-pattern" style="margin-top: 50px; padding-bottom: 50px">
+        <div class="container text-center" style="  padding-bottom: 50px;">
             <div class="section-title mb-4 pb-1 w-75 mx-auto text-center">
                 <h2 class="m-0">الضمانات</h2>
             </div>

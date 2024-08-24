@@ -16,7 +16,7 @@ class CreatePropertiesTable extends Migration
         Schema::create('properties', function (Blueprint $table) {
             $table->engine = "InnoDB";
             $table->bigIncrements('id');
-            $table->string('details');
+            $table->longText('details');
             $table->unsignedBigInteger('project_id');
             $table->timestamps();
 

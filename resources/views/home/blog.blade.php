@@ -66,6 +66,11 @@
                                             alt="author" />
                                     </div>
                                     <div class="author-content">
+                                        <p class="mb-2" style="color: #000; font-size: 20px">
+                                            {!! $blog->author_name !!}
+                                        </p>
+                                    </div>
+                                    <div class="author-content">
                                         <p class="mb-2">
                                             {!! $blog->author_title !!}
                                         </p>

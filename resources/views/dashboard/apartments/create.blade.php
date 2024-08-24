@@ -20,7 +20,7 @@
 
                                     @include('dashboard._layouts._error')
                                     <input type="hidden" name="project_id" value="{{ $project->id }}">
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-12">
                                         <h5 class="mt-2">نوع الشقة</h5>
                                         <select name="type" id="" class="form-control">
                                             <option value="أمامية">أمامية</option>
@@ -56,10 +56,10 @@
                                         <textarea id="de" name="details" class="form-control" id="" cols="30" rows="10">
                                                 {{ old('details') }}
                                             </textarea>
-                                            <h5 class="mt-2">صور المشروع</h5>
+                                            <h5 class="mt-2">صور الشقة</h5>
                                             <input value="{{ old('img[]') }}" name="img[]" multiple type="file"
                                                 class="form-control" id="basicInput">
-        
+
 
                                         <h5 class="mt-2">جولة افتراضية - iframe (اختياري)</h5>
                                         <textarea name="virtual_location" class="form-control" id="" rows="3">{{ old('virtual_location') }}</textarea>
