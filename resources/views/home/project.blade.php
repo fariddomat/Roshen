@@ -311,7 +311,7 @@
                                     <li class="mt-2">عدد الغرف: {{ $item->room_count }}</li>
                                     <li class="mt-2">السعر: {{ $item->price }} ريال</li>
                                     <li class="mt-2">المساحة: {{ $item->area }} متر²</li>
-                                    <li class="mt-2"><span style="font-size: 20px; font-weight: bold;color:#5a4b93">تفاصيل:</span> {!! $item->details !!}</li>
+                                    {{-- <li class="mt-2"><span style="font-size: 20px; font-weight: bold;color:#5a4b93">تفاصيل:</span> {!! $item->details !!}</li> --}}
                                     <br />
                                     <li class="mt-3">
                                         <a href="{{ route('contactPage') }}" class="btn-btn">احجز الشقة</a>
