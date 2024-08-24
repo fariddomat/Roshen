@@ -364,9 +364,9 @@
                 <h2 class="m-0">شركاء النجاح</h2>
             </div>
             <div style="direction: ltr" class="partner-wrapper bg-lgrey p-4">
-                <ul class="attract-slider">
+                <ul class="row">
                     @foreach ($partners as $partner)
-                        <li class="px-3">
+                        <li class="px-3 col-lg-2">
                             <a href="#"><img src="{{ asset($partner->img) }}" alt="" /></a>
                         </li>
                     @endforeach
@@ -374,9 +374,9 @@
                 </ul>
             </div>
             <div class="text-center mt-3">
-                <a style="border-radius: 8px" href="{{ route('about') }}" class="btn-btn">
+                {{-- <a style="border-radius: 8px" href="{{ route('about') }}" class="btn-btn">
                     عرض المزيد
-                </a>
+                </a> --}}
             </div>
         </div>
     </section>

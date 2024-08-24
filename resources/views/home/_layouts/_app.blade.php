@@ -201,7 +201,7 @@
     <script src="{{ asset('asset') }}/js/jquery-3.5.1.min.js"></script>
     <script src="{{ asset('asset') }}/js/bootstrap.min.js"></script>
     <script src="{{ asset('asset') }}/js/plugin.js"></script>
-    <script src="{{ asset('asset') }}/js/main.js"></script>
+    <script src="{{ asset('asset') }}/js/main.js?v=3"></script>
     <script src="{{ asset('asset') }}/js/custom-swiper.js"></script>
     <script src="{{ asset('asset') }}/js/custom-nav.js"></script>
 

@@ -216,7 +216,7 @@
 
   $(".attract-slider").slick({
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: 6,
     slidesToScroll: 1,
     arrows: false,
     dots: false,
