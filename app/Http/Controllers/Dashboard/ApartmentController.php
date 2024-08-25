@@ -69,12 +69,12 @@ class ApartmentController extends Controller
             'img.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
         ]);
 
-        $request_data = $request->except(['img']);
-        
-        
+        $request_data = $request->except(['img', 'pdfs']);
+
+
         $project = Project::find($request->project_id);
 
-        
+
         // $reservation = null;
 
         // if ($request->appendix) {
@@ -113,6 +113,17 @@ class ApartmentController extends Controller
             ]);
         }
 
+
+        if ($request->hasFile('pdfs')) {
+            foreach ($request->file('pdfs') as $file) {
+                $path = $file->store('images/' . $project->id . '/pdfs','public');
+
+                $apartment->pdfs()->create([
+                    'name' => $file->getClientOriginalName(),
+                    'file_path' => $path,
+                ]);
+            }
+        }
         LogSystem::success('تم إضافة ' . $request->type . ' بنجاح - اسم المشروع: ' . $project->name);
 
         session()->flash('success', 'Successfully Created !');
@@ -199,9 +210,9 @@ class ApartmentController extends Controller
         ]);
 
         $apartment = Apartment::find($id);
-        $request_data = $request->except(['img', 'appendix']);
-       
-        
+        $request_data = $request->except(['img', 'appendix','pdfs']);
+
+
         if($request->type == "ملحق"){
 
             $request_data['appendix'] = 'on';
@@ -235,6 +246,22 @@ class ApartmentController extends Controller
                 ApartmentImage::create([
                     'apartment_id' => $apartment->id,
                     'img' => $file->hashName()
+                ]);
+            }
+        }
+
+        if ($request->hasFile('pdfs')) {
+            // Delete old PDFs
+            foreach ($apartment->pdfs as $key => $pdf) {
+                Storage::disk('public')->delete($pdf->file_path);
+            }
+            $apartment->pdfs()->delete();
+            foreach ($request->file('pdfs') as $file) {
+                $path = $file->store('images/' . $project->id . '/pdfs', 'public');
+
+                $apartment->pdfs()->create([
+                    'name' => $file->getClientOriginalName(),
+                    'file_path' => $path,
                 ]);
             }
         }

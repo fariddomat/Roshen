@@ -345,8 +345,17 @@
                                     <li class="mt-2">المساحة: {{ $item->area }} متر²</li>
                                     {{-- <li class="mt-2"><span style="font-size: 20px; font-weight: bold;color:#5a4b93">تفاصيل:</span> {!! $item->details !!}</li> --}}
                                     <br />
+
                                     <li class="mt-3">
+                                        @if ($item->pdfs)
+                                        @if ($item->pdfs->count() > 0)
+                                                <a href="{{ asset('/uploads/' . $item->pdfs->first()->file_path) }}"
+                                                    class="btn-btn">تنزيل البرشور</a>
+                                           
+                                        @endif
+                                    @endif
                                         <a href="{{ route('contactPage') }}" class="btn-btn">احجز الشقة</a>
+
                                     </li>
                                 </ul>
                             </div>

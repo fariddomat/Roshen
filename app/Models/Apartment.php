@@ -62,4 +62,9 @@ class Apartment extends Model
         }
         return $array;
     }
+
+    public function pdfs()
+    {
+        return $this->hasMany(ApartmentPdf::class);
+    }
 }

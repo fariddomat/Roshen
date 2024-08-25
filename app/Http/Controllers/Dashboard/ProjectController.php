@@ -380,7 +380,7 @@ class ProjectController extends Controller
             ]);
 
             // facility
-          
+
             LogSystem::info('تم تعديل مشروع - اسم المشروع: ' . $project->name);
 
             session()->flash('success', 'Successfully updated !');

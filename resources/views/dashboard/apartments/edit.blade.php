@@ -71,6 +71,14 @@
                                         <h5 class="mt-2">يتوتيوب - Youtube (اختياري)</h5>
                                         <textarea name="youtube" class="form-control" id="" rows="3">{{ old('youtube', $apartment->youtube) }}</textarea>
 
+                                        <h5 class="mt-2"> pdf ملفات المشروع (اختياري)</h5>
+                                        <input type="file"  value="{{ old('pdfs[]') }}"  name="pdfs[]" multiple
+                                        class="form-control" id="basicInput">
+                                        <h5 class="mt-2">لديك {{ $apartment->pdfs->count() }} ملف
+                                        </h5>
+                                        {{-- @if($project->pdfs->count() > 0)
+                                        <a href="{{ route('dashboard.projects.deletePdf', $project->id) }}" class="btn btn-danger">حذف ال pdf</a>
+                                        @endif --}}
                                     </div>
                                     <div class="col-lg-6">
 

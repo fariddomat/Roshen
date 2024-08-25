@@ -69,6 +69,10 @@
                                         <h5 class="mt-2">يتوتيوب - Youtube (اختياري)</h5>
                                         <textarea name="youtube" class="form-control" id="" rows="3">{{ old('youtube') }}</textarea>
 
+                                        <h5 class="mt-2"> pdf ملفات المشروع (اختياري)</h5>
+                                        <input type="file" value="{{ old('pdfs[]') }}" name="pdfs[]" multiple
+                                            class="form-control" id="basicInput">
+                                
                                     </div>
                                     <div class="col-lg-6">
 
