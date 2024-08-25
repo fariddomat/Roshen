@@ -26,6 +26,7 @@ Route::group([], function () {
     });
     Route::get('/', 'Home\HomeController@index')->name('home');
     Route::get('/profileDownload', 'Home\HomeController@profileDownload')->name('profileDownload');
+    Route::post('/newsletter', 'Home\HomeController@newsletter')->name('newsletter');
     Route::post('/contact', 'Home\HomeController@contact')->name('contact');
     Route::get('/contact-us', 'Home\HomeController@contactPage')->name('contactPage');
     Route::post('/promoters', 'Home\HomeController@promoters')->name('promoters');
@@ -108,6 +109,7 @@ Route::prefix('dashboard')
             Route::get('/settings/chart', 'Dashboard\SettingController@chart')->name('setting.chart');
 
             Route::get('/settings/contact', 'Dashboard\SettingController@contact')->name('setting.contact');
+            Route::get('/settings/newsletter', 'Dashboard\SettingController@newsletter')->name('setting.newsletter');
             Route::get('/settings/export-csv', 'Dashboard\SettingController@exportCSV')->name('setting.export-csv');
             Route::post('/settings/markAsRead/{id}', 'Dashboard\SettingController@markAsRead')->name('setting.markAsRead');
 

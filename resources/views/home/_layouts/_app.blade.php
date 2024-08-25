@@ -42,6 +42,46 @@
             box-shadow: inset 0 -8px 8px #fff !important;
         }
     </style>
+
+    <style>.newsletter-subscription {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .newsletter-subscription form {
+        display: inline-block;
+        position: relative;
+    }
+
+    .newsletter-subscription input[type="tel"] {
+        width: 300px;
+        padding: 10px 15px;
+        border-radius: 50px;
+        border: 1px solid #ccc;
+        outline: none;
+        font-size: 16px;
+        text-align: right;
+    }
+
+    .newsletter-subscription button {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background-color: #605098; /* Purple color */
+        color: #fff;
+        border: none;
+        border-radius: 50px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .newsletter-subscription button:hover {
+        background-color: #483d8b; /* Darker purple */
+    }
+    </style>
     @yield('style')
 </head>
 
@@ -115,6 +155,8 @@
             <div class="wave" id="wave3"></div>
             <div class="wave" id="wave4"></div>
         </div>
+
+        <!-- Social Icons -->
         <ul class="social_icon">
             @php
                 $social_sites = ['facebook', 'twitter', 'instagram', 'whatsapp', 'youtube', 'snapchat'];
@@ -132,16 +174,24 @@
                 @php
                     $social_link = setting($social_site.'_link');
                 @endphp
-                    <li>
-                        <a href="{{ $social_link }}" target="_blank">
-
-                                <i class="fa-brands {{ $social_icons[$social_site] }} fs-2"></i>
-
-                        </a>
-                    </li>
+                <li>
+                    <a href="{{ $social_link }}" target="_blank">
+                        <i class="fa-brands {{ $social_icons[$social_site] }} fs-2"></i>
+                    </a>
+                </li>
             @endforeach
         </ul>
 
+        <!-- Newsletter Subscription -->
+        <div class="newsletter-subscription">
+            <form action="{{ route('newsletter') }}" method="POST">
+                @csrf
+                <input type="tel" name="mobile" placeholder="أدخل رقمك" required>
+                <button type="submit">اشتراك</button>
+            </form>
+        </div>
+
+        <!-- Footer Menu -->
         <ul class="menu">
             <li><a href="{{ route('home') }}">المدونة</a></li>
             <li><a href="{{ route('about') }}">من نحن</a></li>
@@ -150,6 +200,7 @@
         </ul>
         <p>حقوق النشر والملكية ل روشم</p>
     </footer>
+
     <!-- footer ends -->
 
     <!-- Back to top start -->

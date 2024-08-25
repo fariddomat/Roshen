@@ -60,6 +60,10 @@
                     الرسائل</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{ route('dashboard.setting.newsletter') }}"><i class="fa fa-comments-o  "></i>
+                    طلبات الانضمام</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{ route('dashboard.setting.social') }}"><i class="icon-share "></i>
                     مواقع التواصل</a>
             </li>

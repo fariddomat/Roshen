@@ -18,7 +18,7 @@ class ProjectControlelr extends Controller
             'name' => 'كل التصنيفات'
         ];
         // dd($category->name);
-        $projects = Project::orderBy('created_at')->paginate(4);
+        $projects = Project::orderBy('created_at')->paginate(16);
 
         $categories = Category::all();
         return view('home.projects', compact('category', 'projects', 'categories'));

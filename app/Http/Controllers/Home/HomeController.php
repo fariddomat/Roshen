@@ -10,6 +10,7 @@ use App\Models\Category;
 use App\Models\Certificate;
 use App\Models\Counter;
 use App\Models\Facil;
+use App\Models\NewsLetter;
 use App\Models\Partners;
 use App\Models\Privacy;
 use App\Models\ProfileDownload;
@@ -57,6 +58,17 @@ class HomeController extends Controller
         ]);
 
         Contact::create($request->all());
+
+        return redirect()->back();
+    }
+
+    public function newsletter(Request $request)
+    {
+        $request->validate([
+            'mobile' => 'required',
+        ]);
+
+        NewsLetter::create($request->all());
 
         return redirect()->back();
     }

@@ -2,6 +2,9 @@
 
 @section('style')
     <style>
+        .trend-content{
+            text-align: right;
+        }
         .overlay {
             opacity: 0.2 !important;
         }
@@ -25,19 +28,18 @@
             box-shadow: 0 10px 30px 0 rgba(90, 75, 147, 0.3) !important;
         }
 
-        
-.why-us .why-us-box .row {
-    display: flex;
-    flex-wrap: wrap;
-}
 
-.why-us .why-us-box .why-us-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-}
+        .why-us .why-us-box .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
 
+        .why-us .why-us-box .why-us-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
     </style>
 @endsection
 @section('nav')
@@ -134,7 +136,8 @@
                     </div>
                     <div class="col-lg-5 col-sm-12 mb-4">
                         <div class="about-image p-3 box-shadow position-relative">
-                            <img src="{{ asset('uploads/about/'.$about->who_are_we_image) }}" alt="" class="w-100" />
+                            <img src="{{ asset('uploads/about/' . $about->who_are_we_image) }}" alt=""
+                                class="w-100" />
                         </div>
                     </div>
                 </div>
@@ -143,38 +146,38 @@
     </section>
     <!-- about-us ends -->
     <!-- Our Services -->
-<section class="about-us pb-6 pt-4 bg-pattern">
-    <div class="container">
-        <div class="section-title mb-6 pb-1 w-75 text-center mx-auto">
-            <h2 class="m-0">خدماتنا</h2>
-        </div>
-        <!-- why us starts -->
-        <div class="why-us">
-            <div class="why-us-box">
-                <div class="row">
-                    @foreach ($services as $service)
-                    <div class="col-lg-4 rounded-2 col-md-6 mb-4">
-                        <div style="border-radius: 8px" class="why-us-item text-center bg-lgrey">
-                            <div class="why-us-icon">
-                                <i class="{{ $service->icon }} theme"></i>
-                            </div>
-                            <div class="why-us-content">
-                                <h3>
-                                    <a href="{{ route('service', $service->id) }}">{{ $service->name }}</a>
+    <section class="about-us pb-6 pt-4 bg-pattern">
+        <div class="container">
+            <div class="section-title mb-6 pb-1 w-75 text-center mx-auto">
+                <h2 class="m-0">خدماتنا</h2>
+            </div>
+            <!-- why us starts -->
+            <div class="why-us">
+                <div class="why-us-box">
+                    <div class="row">
+                        @foreach ($services as $service)
+                            <div class="col-lg-4 rounded-2 col-md-6 mb-4">
+                                <div style="border-radius: 8px" class="why-us-item text-center bg-lgrey">
+                                    <div class="why-us-icon">
+                                        <i class="{{ $service->icon }} theme"></i>
+                                    </div>
+                                    <div class="why-us-content">
+                                        <h3>
+                                            <a href="{{ route('service', $service->id) }}">{{ $service->name }}</a>
 
-                                </h3>
+                                        </h3>
 
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        @endforeach
                     </div>
-                    @endforeach
                 </div>
             </div>
+            <!-- why us ends -->
         </div>
-        <!-- why us ends -->
-    </div>
-</section>
-<!-- Our Services -->
+    </section>
+    <!-- Our Services -->
 
     <!-- Counter -->
     <section style="border-radius: 8px" class="counter-main pb-3 pt-0">
@@ -211,48 +214,38 @@
             <div class="trend-box  p-3 pb-5 box-shadow" style="direction: ltr">
                 <div class="row item-slider">
                     @foreach ($projects as $project)
-                        <div class="col-lg-4 col-md-6 col-sm-6 mb-4  p-3 box-shadow" style="direction: rtl">
-                            <div style="border-radius: 8px" class="trend-item bg-white box-shadow rounded">
-                                <div class="trend-image">
-                                    <img src="{{ asset($project->poster_path) }}" alt="image" />
-                                    <a href="#" class="flash bg-theme1 white px-3 py-2"><i
-                                            class="fa fa-flash"></i></a>
-                                    <div class="trend-meta d-flex align-items-center justify-content-between">
-                                        <div class="entry-author">
-                                            <img src="{{ asset($project->poster_path) }}" alt=""
-                                                class="rounded-circle me-1" />
-                                            <span>{{ $project->category->name }} </span>
-                                        </div>
-                                        <a href="{{ route('projects') }}"
-                                            class="tags bg-theme2 white px-3 py-1">للبيع</a>
-                                    </div>
+                    <div class="col-lg-4 col-md-4 mb-4  p-3 box-shadow">
+                        <div class="trend-item bg-white box-shadow rounded">
+                            <div class="trend-image">
+                                <img src="{{ asset($project->poster_path) }}" alt="image" />
+                                <a href="#" class="flash bg-theme1 white px-3 py-2"></a>
+                                <div class="trend-meta d-flex align-items-center justify-content-between">
+
+                                    <a href="{{ route('project', $project->id) }}"
+                                        class="tags bg-theme2 white px-3 py-1">استعراض
+                                        المشروع</a>
+
+                                    @if ($project->pdfs)
+                                        @if ($project->pdfs->count() > 0)
+                                            <a href="{{ asset('/uploads/' . $project->pdfs->first()->file_path) }}"
+                                                class="tags bg-theme2 white px-3 py-1">تنزيل البرشور</a>
+                                        @endif
+                                    @endif
                                 </div>
-                                <div class="trend-content p-4">
-                                    <h3 class="theme">{{ $project->name }}</h3>
-                                    <h4>
-                                        <a href="{{ route('project', $project->id) }}">{{ $project->category->projects->count() }}
-                                            وحدة سكنية </a>
-                                    </h4>
-                                    <div
-                                        class="entry-meta d-flex align-items-center justify-content-between border-b pb-1 mb-2">
-                                        <div class="entry-author">
-                                            <p>
-                                                {{-- السعر يبدا من<span class="d-block theme fw-bold">{{ $project->apartments }}</span> --}}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <p class="mb-0">
-                                        {!! $project->details !!}
-                                    </p>
+                            </div>
+                            <div class="trend-content p-4">
+                                <h5 class="theme">{{ $project->category->name }}</h5>
+                                <h4>
+                                    <a href="{{ route('project', $project->id) }}">{{ $project->name }} </a>
+                                </h4>
+                                <div
+                                    class="entry-meta d-flex align-items-center justify-content-between border-b pb-1 mb-2">
+
                                 </div>
-                                {{-- <ul class="d-flex align-items-center justify-content-between bg-grey p-3 px-4">
-                                <li class="me-2">عدد الغرف</li>
-                                <li class="me-2">الدور</li>
-                                <li class="me-2">الحي</li>
-                                <li>المساحة</li>
-                            </ul> --}}
+
                             </div>
                         </div>
+                    </div>
                     @endforeach
 
                 </div>

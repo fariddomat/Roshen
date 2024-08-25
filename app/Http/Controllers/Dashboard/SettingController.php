@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Models\Contact;
 use App\Http\Controllers\Controller;
 use App\Models\LogSystem;
+use App\Models\NewsLetter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -106,6 +107,12 @@ class SettingController extends Controller
     {
         $contacts = Contact::latest()->paginate(5);
         return view('dashboard.settings.contacts', compact('contacts'));
+    }
+
+    public function newsletter()
+    {
+        $newsletters = NewsLetter::latest()->paginate(5);
+        return view('dashboard.settings.newsletters', compact('newsletters'));
     }
 
     public function exportCSV(Request $request)
