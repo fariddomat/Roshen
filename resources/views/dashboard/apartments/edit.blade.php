@@ -64,7 +64,26 @@
                                             <h5 class="mt-2">صور الشقة</h5>
                                             <input value="{{ old('img[]') }}" name="img[]" multiple type="file"
                                                 class="form-control" id="basicInput">
-
+                                                @if ($apartment->apartmentImages->count() > 0)
+                                                <div class="row mt-1">
+                                                    @foreach ($apartment->apartmentImages as $projectImage)
+                                                        <div class="col-lg-3 col-md-4 col-sm-6 position-relative"
+                                                            style="margin: 15px 0;">
+                                                            <img src="{{ asset('uploads/images/apartments/' . $apartment->id . '/' . $projectImage->img) }}"
+                                                                alt="Images"
+                                                                style="max-width: 100%; height: auto; display: block;">
+                                                            <form action="{{ route('dashboard.removeImage.apartment', $projectImage->id) }}"
+                                                                method="POST" class="position-absolute"
+                                                                style="top: 10px; right: 10px;">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit" class="btn btn-danger btn-sm"
+                                                                    style="padding: 0 5px;">X</button>
+                                                            </form>
+                                                        </div>
+                                                    @endforeach
+                                                </div>
+                                            @endif
                                             <h5 class="mt-2">جولة افتراضية - iframe (اختياري)</h5>
                                         <textarea name="virtual_location" class="form-control" id="" rows="3">{{ old('virtual_location', $apartment->virtual_location) }}</textarea>
 
@@ -82,13 +101,13 @@
                                     </div>
                                     <div class="col-lg-6">
 
-                                        @if ($apartment->apartmentImages->count() > 0)
+                                        {{-- @if ($apartment->apartmentImages->count() > 0)
                                                 <div class="row mt-1">
                                                     @foreach ($apartment->images_path as $item)
                                                         <img class="col-lg-3"  src="{{ $item }}" alt="Images" style="max-width: 300px; margin:15px 0">
                                                     @endforeach
                                                 </div>
-                                            @endif
+                                            @endif --}}
                                     </div>
 
 

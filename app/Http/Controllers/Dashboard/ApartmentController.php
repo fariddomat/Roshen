@@ -229,11 +229,11 @@ class ApartmentController extends Controller
 
             $projectImages = ApartmentImage::where('apartment_id', $apartment->id);
             // dd($projectImages);
-            foreach ($projectImages->get() as $key => $item) {
-                // dd($item->img);
-                Storage::disk('public')->delete('images/apartments/' . $apartment->id . '/' . $item->img);
-            }
-            $projectImages->delete();
+            // foreach ($projectImages->get() as $key => $item) {
+            //     // dd($item->img);
+            //     Storage::disk('public')->delete('images/apartments/' . $apartment->id . '/' . $item->img);
+            // }
+            // $projectImages->delete();
             foreach ($request->file('img') as $file) {
                 // dd(true);
                 $img = Image::make($file)
@@ -292,5 +292,21 @@ class ApartmentController extends Controller
 
        session()->flash('success', 'Successfully deleted !');
         return redirect()->route('dashboard.apartments.index', ['projectId' => $apartment->project_id]);
+    }
+
+    public function removeImage($id)
+    {
+        $apartmentImage = ApartmentImage::findOrFail($id);
+
+        // Remove the image file
+        $imagePath = 'uploads/images/apartments/' . $apartmentImage->apartment_id . '/' . $apartmentImage->img;
+        if (Storage::exists($imagePath)) {
+            Storage::delete($imagePath);
+        }
+
+        // Remove the image entry from the database
+        $apartmentImage->delete();
+
+        return redirect()->back()->with('success', 'تم حذف الصورة بنجاح');
     }
 }

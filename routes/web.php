@@ -121,6 +121,9 @@ Route::prefix('dashboard')
             Route::get('/imageGallery/browser', 'Dashboard\ImageGalleryController@browser')->name('imageGallery.browser');
             Route::post('/imageGallery/uploader', 'Dashboard\ImageGalleryController@uploader')->name('imageGallery.uploader');
 
+            Route::delete('/project-image/{id}', 'Dashboard\ProjectController@removeImage')->name('removeImage');
+            Route::delete('/apartment-image/{id}', 'Dashboard\ApartmentController@removeImage')->name('removeImage.apartment');
+
             Route::get('/about', 'Dashboard\AboutController@create')->name('about.create');
             Route::post('/about', 'Dashboard\AboutController@store')->name('about.store');
         }

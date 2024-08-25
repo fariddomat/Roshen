@@ -1,13 +1,13 @@
 @extends('dashboard._layouts._app')
 @section('scripts')
-<script src="{{asset('dashboard/js/image_preview.js?v=1')}}"></script>
+    <script src="{{ asset('dashboard/js/image_preview.js?v=1') }}"></script>
 
-<script type="text/javascript">
-    var imageGalleryBrowseUrl = "{{ route('dashboard.imageGallery.browser') }}";
-    var imageGalleryUploadUrl = "{{ route('dashboard.imageGallery.uploader') }}";
-</script>
-<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-<script src="{{ asset('dashboard/js/about.js') }}"></script>
+    <script type="text/javascript">
+        var imageGalleryBrowseUrl = "{{ route('dashboard.imageGallery.browser') }}";
+        var imageGalleryUploadUrl = "{{ route('dashboard.imageGallery.uploader') }}";
+    </script>
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('dashboard/js/about.js') }}"></script>
 @endsection
 @section('content')
     <form action="{{ route('dashboard.projects.update', $project->id) }}" method="post" enctype="multipart/form-data">
@@ -81,7 +81,8 @@
                                             على وشك الانتهاء</option>
                                         <option value="غير متاح للعرض" @if ($project->status == 'غير متاح للعرض') selected @endif>غير
                                             متاح للعرض</option>
-                                            <option value="تم البيع" @if ($project->status == 'تم البيع') selected @endif>تم البيع</option>
+                                        <option value="تم البيع" @if ($project->status == 'تم البيع') selected @endif>تم البيع
+                                        </option>
 
                                     </select>
                                     <h5 class="mt-2">نسبة التنفيذ</h5>
@@ -100,17 +101,19 @@
                                     <h5 class="mt-2">@lang('site.description')</h5>
                                     <textarea id="quality_safty" name="details" class="form-control" id="basicTextarea" rows="3" required>{{ old('details', $project->details) }}</textarea>
                                     <h5 class="mt-2">@lang('site.image') رئيسية</h5>
-                                    <input value="{{ old('poster') }}" name="poster" type="file" class="form-control image"
-                                        id="basicInput">
+                                    <input value="{{ old('poster') }}" name="poster" type="file"
+                                        class="form-control image" id="basicInput">
                                     <div class="row mt-1">
-                                        <img class="col-lg-3 img-thumbnail image-preview" src="{{ $project->poster_path }}" alt="Images" >
+                                        <img class="col-lg-3 img-thumbnail image-preview"
+                                            src="{{ $project->poster_path }}" alt="Images">
                                     </div>
 
                                     <h5 class="mt-2">@lang('site.image') الغلاف</h5>
-                                    <input value="{{ old('cover_img') }}" name="cover_img" type="file" class="form-control image2"
-                                        id="basicInput">
+                                    <input value="{{ old('cover_img') }}" name="cover_img" type="file"
+                                        class="form-control image2" id="basicInput">
                                     <div class="row mt-1">
-                                        <img class="col-lg-3 img-thumbnail image2-preview" src="{{ $project->cover_img_path }}" alt="Images" >
+                                        <img class="col-lg-3 img-thumbnail image2-preview"
+                                            src="{{ $project->cover_img_path }}" alt="Images">
                                     </div>
 
                                     <h5 class="mt-2">صور المشروع</h5>
@@ -118,20 +121,36 @@
                                         class="form-control" id="basicInput">
                                     @if ($project->projectImages->count() > 0)
                                         <div class="row mt-1">
-                                            @foreach ($project->images_path as $item)
-                                                <img class="col-lg-3"  src="{{ $item }}" alt="Images" style="max-width: 300px; margin:15px 0">
+                                            @foreach ($project->projectImages as $projectImage)
+                                                <div class="col-lg-3 col-md-4 col-sm-6 position-relative"
+                                                    style="margin: 15px 0;">
+                                                    <img src="{{ asset('uploads/images/' . $project->id . '/' . $projectImage->img) }}"
+                                                        alt="Images"
+                                                        style="max-width: 100%; height: auto; display: block;">
+                                                    <form action="{{ route('dashboard.removeImage', $projectImage->id) }}"
+                                                        method="POST" class="position-absolute"
+                                                        style="top: 10px; right: 10px;">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger btn-sm"
+                                                            style="padding: 0 5px;">X</button>
+                                                    </form>
+                                                </div>
                                             @endforeach
                                         </div>
                                     @endif
 
 
+
+
                                     <h5 class="mt-2"> pdf ملفات المشروع (اختياري)</h5>
-                                    <input type="file"  value="{{ old('pdfs[]') }}"  name="pdfs[]" multiple
-                                    class="form-control" id="basicInput">
+                                    <input type="file" value="{{ old('pdfs[]') }}" name="pdfs[]" multiple
+                                        class="form-control" id="basicInput">
                                     <h5 class="mt-2">لديك {{ $project->pdfs->count() }} ملف
                                     </h5>
-                                    @if($project->pdfs->count() > 0)
-                                    <a href="{{ route('dashboard.projects.deletePdf', $project->id) }}" class="btn btn-danger">حذف ال pdf</a>
+                                    @if ($project->pdfs->count() > 0)
+                                        <a href="{{ route('dashboard.projects.deletePdf', $project->id) }}"
+                                            class="btn btn-danger">حذف ال pdf</a>
                                     @endif
                                 </div>
 

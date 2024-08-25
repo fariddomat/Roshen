@@ -109,28 +109,28 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-            $request->validate([
-                'category' => 'required',
-                'name' => 'required|unique:projects,name',
-                'date_of_build' => 'required',
-                'address' => 'required',
-                'scheme_name' => 'required',
-                'status' => 'required',
-                'status_percent' => 'required|numeric|min:0|max:100',
-                'floors_count' => 'required|numeric|min:1',
-                // 'floor_apartments_count' => 'required|numeric|min:2|max:4',
+        $request->validate([
+            'category' => 'required',
+            'name' => 'required|unique:projects,name',
+            'date_of_build' => 'required',
+            'address' => 'required',
+            'scheme_name' => 'required',
+            'status' => 'required',
+            'status_percent' => 'required|numeric|min:0|max:100',
+            'floors_count' => 'required|numeric|min:1',
+            // 'floor_apartments_count' => 'required|numeric|min:2|max:4',
 
-                // 'appendix_count' => 'required|numeric|min:0|default',
-                'poster' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
-                'cover_img' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
-                'img' => 'required',
-                'img.*' => 'image|mimes:jpeg,png,jpg,gif,svg,webp',
+            // 'appendix_count' => 'required|numeric|min:0|default',
+            'poster' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
+            'cover_img' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
+            'img' => 'required',
+            'img.*' => 'image|mimes:jpeg,png,jpg,gif,svg,webp',
 
-                'pdfs.*' => 'nullable|mimes:pdf',
+            'pdfs.*' => 'nullable|mimes:pdf',
 
-                'pdetails' => 'required',
+            'pdetails' => 'required',
 
-            ]);
+        ]);
         try {
 
             $percent = 100;
@@ -186,7 +186,7 @@ class ProjectController extends Controller
 
             if ($request->hasFile('pdfs')) {
                 foreach ($request->file('pdfs') as $file) {
-                    $path = $file->store('images/' . $project->id . '/pdfs','public');
+                    $path = $file->store('images/' . $project->id . '/pdfs', 'public');
 
                     $project->pdfs()->create([
                         'name' => $file->getClientOriginalName(),
@@ -250,31 +250,32 @@ class ProjectController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {$request->validate([
+    {
+        $request->validate([
 
-                'category' => 'required',
-                'name' => 'required|unique:projects,name,' . $id,
-                'date_of_build' => 'required',
-                'address' => 'required',
-                'scheme_name' => 'required',
-                // 'floors_count' => 'required|numeric|min:1',
-                // 'floor_apartments_count' => 'required|numeric|min:2|max:4',
+            'category' => 'required',
+            'name' => 'required|unique:projects,name,' . $id,
+            'date_of_build' => 'required',
+            'address' => 'required',
+            'scheme_name' => 'required',
+            // 'floors_count' => 'required|numeric|min:1',
+            // 'floor_apartments_count' => 'required|numeric|min:2|max:4',
 
-                // 'appendix_count' => 'required|numeric|min:0',
-                'status' => 'required',
-                'status_percent' => 'required|numeric|min:0|max:100',
-
-
-                'poster' => 'image|mimes:jpeg,png,jpg,gif,svg,webp',
-                'cover_img' => 'image|mimes:jpeg,png,jpg,gif,svg,webp',
-                // 'img' => 'required',
-                'img.*' => 'image|mimes:jpeg,png,jpg,gif,svg,webp',
+            // 'appendix_count' => 'required|numeric|min:0',
+            'status' => 'required',
+            'status_percent' => 'required|numeric|min:0|max:100',
 
 
-                'pdfs.*' => 'nullable|mimes:pdf',
-                'pdetails' => 'required',
+            'poster' => 'image|mimes:jpeg,png,jpg,gif,svg,webp',
+            'cover_img' => 'image|mimes:jpeg,png,jpg,gif,svg,webp',
+            // 'img' => 'required',
+            'img.*' => 'image|mimes:jpeg,png,jpg,gif,svg,webp',
 
-            ]);
+
+            'pdfs.*' => 'nullable|mimes:pdf',
+            'pdetails' => 'required',
+
+        ]);
 
         try {
 
@@ -286,7 +287,7 @@ class ProjectController extends Controller
             if ($request->poster) {
                 Storage::disk('public')->delete('images/' . $project->id . '/' . $project->img);
                 $poster = Image::make($request->poster)
-                    ->resize( 538, 720)->encode('webp', 90);
+                    ->resize(538, 720)->encode('webp', 90);
 
                 Storage::disk('public')->put('images/' . $project->id . '/' . $request->poster->hashName(), (string)$poster, 'public');
                 $project->update([
@@ -312,11 +313,11 @@ class ProjectController extends Controller
 
                 $projectImages = ProjectImage::where('project_id', $project->id);
                 // dd($projectImages);
-                foreach ($projectImages->get() as $key => $item) {
-                    // dd($item->img);
-                    Storage::disk('public')->delete('images/' . $project->id . '/' . $item->img);
-                }
-                $projectImages->delete();
+                // foreach ($projectImages->get() as $key => $item) {
+                //     // dd($item->img);
+                //     Storage::disk('public')->delete('images/' . $project->id . '/' . $item->img);
+                // }
+                // $projectImages->delete();
                 foreach ($request->file('img') as $file) {
                     // dd(true);
                     $img = Image::make($file)
@@ -334,22 +335,21 @@ class ProjectController extends Controller
             }
 
 
-    if ($request->hasFile('pdfs')) {
-            // Delete old PDFs
-            foreach ($project->pdfs as $key => $pdf) {
-                Storage::disk('public')->delete($pdf->file_path);
+            if ($request->hasFile('pdfs')) {
+                // Delete old PDFs
+                foreach ($project->pdfs as $key => $pdf) {
+                    Storage::disk('public')->delete($pdf->file_path);
+                }
+                $project->pdfs()->delete();
+                foreach ($request->file('pdfs') as $file) {
+                    $path = $file->store('images/' . $project->id . '/pdfs', 'public');
 
+                    $project->pdfs()->create([
+                        'name' => $file->getClientOriginalName(),
+                        'file_path' => $path,
+                    ]);
+                }
             }
-        $project->pdfs()->delete();
-        foreach ($request->file('pdfs') as $file) {
-            $path = $file->store('images/' . $project->id . '/pdfs', 'public');
-
-            $project->pdfs()->create([
-                'name' => $file->getClientOriginalName(),
-                'file_path' => $path,
-            ]);
-        }
-    }
 
             $percent = 100;
             if ($request->status != 'complete') {
@@ -441,15 +441,29 @@ class ProjectController extends Controller
 
     public function deletePdf($id)
     {
-        $project=Project::findOrFail($id);
+        $project = Project::findOrFail($id);
         foreach ($project->pdfs as $key => $pdf) {
             Storage::disk('public')->delete($pdf->file_path);
-
         }
         $project->pdfs()->delete();
 
         session()->flash('success', 'Successfully PDF deleted !');
         return redirect()->back();
+    }
 
+    public function removeImage($id)
+    {
+        $projectImage = ProjectImage::findOrFail($id);
+
+        // Remove the image file
+        $imagePath = 'uploads/images/' . $projectImage->project_id . '/' . $projectImage->img;
+        if (Storage::exists($imagePath)) {
+            Storage::delete($imagePath);
+        }
+
+        // Remove the image entry from the database
+        $projectImage->delete();
+
+        return redirect()->back()->with('success', 'تم حذف الصورة بنجاح');
     }
 }
