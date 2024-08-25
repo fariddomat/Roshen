@@ -1,5 +1,24 @@
 @extends('home._layouts._app')
 @section('style')
+<style>
+ h3 {
+  font-size: 2.5rem !important;
+  }
+   p {
+  font-size: 1.5rem !important;
+}
+
+ a{
+
+  font-size: 1rem !important;
+  font-weight: bold !important;}
+
+input[type="text"],
+input[type="email"],
+textarea{
+    font-size: 1.3rem !important;
+}
+</style>
 @endsection
 @section('content')
     <!-- contact starts -->
