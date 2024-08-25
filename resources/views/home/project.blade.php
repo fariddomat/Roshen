@@ -1,10 +1,11 @@
 @extends('home._layouts._app')
 @section('style')
     <style>
-        .text > ul li,
-        .tags > ul li {
+        .text>ul li,
+        .tags>ul li {
             display: block;
         }
+
         td:first-child {
             left: : 0px !important;
             width: 100px !important;
@@ -205,6 +206,35 @@
     </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        var interleaveOffset = 0.5;
+        var swiperOptions = {
+            loop: true,
+            speed: 3000,
+            grabCursor: true,
+            slidesPerView: 3, // Correct casing
+            spaceBetween: 30,
+            watchSlidesProgress: true,
+            mousewheel: true, // Corrected option
+            keyboard: true, // Corrected option
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev"
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 3000,
+            },
+            fadeEffect: {
+                crossFade: true
+            },
+        };
+
+        var swiper = new Swiper(".swiper-container", swiperOptions);
+    </script>
 @endsection
 @section('content')
     <!-- about-us starts -->
@@ -257,29 +287,29 @@
                         </div>
                     </div>
                     @if ($project->images_path)
-                    <div class="project_images my-5">
-                        <div class="container">
-                            <h4 class="text-center my-4">صور المشروع</h4>
-                            <div class="row justify-content-center">
-                                <div class="col-12 col-md-10">
-                                    <div class="swiper-container">
-                                        <div class="swiper-wrapper">
-                                            <!-- Slide 1 -->
-                                            @foreach ($project->images_path as $pimage)
-                                                <div class="swiper-slide">
-                                                    <img src="{{ $pimage }}" alt="project_image" />
-                                                </div>
-                                            @endforeach
+                        <div class="project_images my-5">
+                            <div class="container">
+                                <h4 class="text-center my-4">صور المشروع</h4>
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-10">
+                                        <div class="swiper-container">
+                                            <div class="swiper-wrapper">
+                                                <!-- Slide 1 -->
+                                                @foreach ($project->images_path as $pimage)
+                                                    <div class="swiper-slide">
+                                                        <img src="{{ $pimage }}" alt="project_image" />
+                                                    </div>
+                                                @endforeach
 
 
-                                            <!-- Add more slides as needed -->
+                                                <!-- Add more slides as needed -->
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                @endif
+                    @endif
                 </div>
             </div>
 
@@ -307,7 +337,9 @@
                         <div class="inner col-lg-6 col-md-12">
                             <div class="tags">
                                 <ul style="direction: rtl">
-                                    <li class="mt-2"><span style="font-size: 20px; font-weight: bold;color:#5a4b93">معلومات عن الشقة:</span> {!! $item->about !!}</li>
+                                    <li class="mt-2"><span
+                                            style="font-size: 20px; font-weight: bold;color:#5a4b93">معلومات عن
+                                            الشقة:</span> {!! $item->about !!}</li>
                                     <li class="mt-2">عدد الغرف: {{ $item->room_count }}</li>
                                     <li class="mt-2">السعر: {{ $item->price }} ريال</li>
                                     <li class="mt-2">المساحة: {{ $item->area }} متر²</li>
