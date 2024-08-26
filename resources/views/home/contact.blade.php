@@ -110,7 +110,7 @@ textarea{
                                             <textarea name="message" placeholder=" *اكتب رسالتك نسعد بها"></textarea>
                                         </div>
                                         <div class="comment-btn text-center">
-                                            <button type="submit" style="background-color: #6f42c1; color: white"
+                                            <button type="submit" style="background-color: #6f42c1; color: white;  font-size: 1.5rem;"
                                                 class="btn px-5" id="submit2">ارسال الرسالة</button>
                                         </div>
                                     </div>
