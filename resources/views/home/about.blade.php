@@ -31,6 +31,13 @@
         p {
             text-align: right !important;
         }
+        .serviceBox > p{
+            text-align: center !important;
+        }
+
+        .serviceBox > div > p{
+            text-align: center !important;
+        }
 
         .why-us-content {
             h3 {
@@ -344,10 +351,10 @@
                         <div class="d-flex gap-5 justify-content-center flex-wrap align-items-center">
                             @foreach ($sections as $section)
                                 <div>
-                                    <p class="description text-center" style="font-size: 20px; line-height: 2">
+                                    <p class="description text-center" style="font-family: Al-Jazeera-Arabic-Regular;  font-weight: bold; color:#605098; font-size:22px; line-height: 2">
                                         {!! $section['title'] !!}
                                     </p>
-                                    <p class="text-center" style="max-width: 350px">
+                                    <p class="text-center" style="max-width: 350px;font-family: Al-Jazeera-Arabic-Regular; font-size:20px">
                                         {!! $section['description'] !!}
                                     </p>
                                 </div>

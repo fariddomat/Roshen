@@ -1,7 +1,5 @@
 @extends('home._layouts._app')
-@section('header')
-    header_menu-g
-@endsection
+
 @section('style')
     <style>
         .text>ul li,
@@ -263,7 +261,7 @@
       ">
         </div>
     </div> --}}
-    <div class="about-us mt-4">
+    <div class="about-us">
         <div class="container">
             <div class="desc col-lg-6 " style="color: #605098; font-size: 20px; font-weight: bold;">تفاصيل المشروع</div>
             <div class="about-image-box">
@@ -308,17 +306,23 @@
                                     <div class="col-12 col-md-10">
                                         <div class="swiper-container">
                                             <div class="swiper-wrapper">
-                                                <!-- Slide 1 -->
                                                 @foreach ($project->images_path as $pimage)
                                                     <div class="swiper-slide">
-                                                        <img src="{{ $pimage }}" alt="project_image" />
+                                                        <!-- رابط التكبير -->
+                                                        <a href="{{ $pimage }}" data-fancybox="gallery">
+                                                            <!-- الصورة نفسها -->
+                                                            <img src="{{ $pimage }}" alt="project_image" />
+                                                        </a>
                                                     </div>
                                                 @endforeach
-
-
-                                                <!-- Add more slides as needed -->
                                             </div>
+                                            <!-- أزرار التنقل -->
+                                            <div class="swiper-button-next"></div>
+                                            <div class="swiper-button-prev"></div>
+                                            <!-- ترقيم الصفحات -->
+                                            <div class="swiper-pagination"></div>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -403,17 +407,23 @@
                                         <div class="col-12 col-md-10">
                                             <div class="swiper-container">
                                                 <div class="swiper-wrapper">
-                                                    <!-- Slide 1 -->
-                                                    @foreach ($item->images_path as $image)
+                                                    @foreach ($item->images_path as $pimage)
                                                         <div class="swiper-slide">
-                                                            <img src="{{ $image }}" alt="project_image" />
+                                                            <!-- رابط التكبير -->
+                                                            <a href="{{ $pimage }}" data-fancybox="gallery">
+                                                                <!-- الصورة نفسها -->
+                                                                <img src="{{ $pimage }}" alt="project_image" />
+                                                            </a>
                                                         </div>
                                                     @endforeach
-
-
-                                                    <!-- Add more slides as needed -->
                                                 </div>
+                                                <!-- أزرار التنقل -->
+                                                <div class="swiper-button-next"></div>
+                                                <div class="swiper-button-prev"></div>
+                                                <!-- ترقيم الصفحات -->
+                                                <div class="swiper-pagination"></div>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>

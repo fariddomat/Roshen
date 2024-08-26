@@ -269,7 +269,7 @@
     <script src="{{ asset('asset') }}/js/bootstrap.min.js"></script>
     <script src="{{ asset('asset') }}/js/plugin.js"></script>
     <script src="{{ asset('asset') }}/js/main.js?v=4"></script>
-    <script src="{{ asset('asset') }}/js/custom-swiper.js"></script>
+    {{-- <script src="{{ asset('asset') }}/js/custom-swiper.js"></script> --}}
     <script src="{{ asset('asset') }}/js/custom-nav.js"></script>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

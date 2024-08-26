@@ -46,6 +46,8 @@
     headerstye-1
 @endsection
 @section('scripts')
+   <script src="{{ asset('asset') }}/js/custom-swiper.js"></script>
+
 @endsection
 
 @section('content')

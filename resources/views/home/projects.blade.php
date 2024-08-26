@@ -143,8 +143,8 @@
                                                 data-max-name="max_price"
                                                 class="range-slider-ui ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
                                                 aria-disabled="false">
-                                                <span class="min-value">500 ريال</span>
-                                                <span class="max-value">20000 ريال</span>
+                                                <span class="min-value">200 ألف ريال</span>
+                                                <span class="max-value">2 مليون ريال</span>
                                                 <div class="ui-slider-range ui-widget-header ui-corner-all full"
                                                     style="left: 0%; width: 100%"></div>
                                             </div>
