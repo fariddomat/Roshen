@@ -2269,9 +2269,13 @@ header #navbar {
     background: #fff;
 }
 
+.main_header_area .header_menu {
+    top: -20px;
+    /* animation-name: slideInUp; */
+}
 .main_header_area .header_menu.hide {
     top: -20px;
-    animation-name: slideInUp;
+    /* animation-name: slideInUp; */
 }
 
 .main_header_area .register-login a {

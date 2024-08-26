@@ -1,5 +1,7 @@
 @extends('home._layouts._app')
-
+@section('header')
+    header_menu-g
+@endsection
 @section('style')
 <style>
     .why-us .why-us-box .row {

@@ -3077,29 +3077,29 @@ button.swiper-pagination-bullet {
 }
 @-webkit-keyframes slideInDown {
     from {
-        -webkit-transform: translate3d(0, -100%, 0);
+        /* -webkit-transform: translate3d(0, -100%, 0);
         transform: translate3d(0, -100%, 0);
-        visibility: visible
+        visibility: visible */
     }
     to {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0)
+        /* -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0) */
     }
 }
 @keyframes slideInDown {
     from {
-        -webkit-transform: translate3d(0, -100%, 0);
+        /* -webkit-transform: translate3d(0, -100%, 0);
         transform: translate3d(0, -100%, 0);
-        visibility: visible
+        visibility: visible */
     }
     to {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0)
+        /* -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0) */
     }
 }
 .slideInDown {
-    -webkit-animation-name: slideInDown;
-    animation-name: slideInDown
+    /* -webkit-animation-name: slideInDown;
+    animation-name: slideInDown */
 }
 @-webkit-keyframes slideInLeft {
     from {
@@ -3730,7 +3730,7 @@ Slicknav - a Mobile Menu
 .slicknav_menu {
     *zoom: 1
 }
-/* 
+/*
 User Default Style
 Change the following styles to modify the appearance of the menu.
 */

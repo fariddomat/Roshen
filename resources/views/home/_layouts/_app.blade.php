@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Real Estate</title>
+    <title>روشم العقارية</title>
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('asset/') }}images/logo.webp" />
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('asset') }}/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!--Custom CSS-->
-    <link href="{{ asset('asset') }}/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('asset') }}/css/style.css?v=1" rel="stylesheet" type="text/css" />
     <!--Plugin CSS-->
-    <link href="{{ asset('asset') }}/css/plugin.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('asset') }}/css/plugin.css?v=1" rel="stylesheet" type="text/css" />
     <!--Flaticons CSS-->
     <link href="{{ asset('asset') }}/fonts/flaticon.css" rel="stylesheet" type="text/css" />
     <!--Font Awesome-->
@@ -43,44 +43,65 @@
         }
     </style>
 
-    <style>.newsletter-subscription {
-        text-align: center;
-        margin: 20px 0;
-    }
+    <style>
+        .newsletter-subscription {
+            text-align: center;
+            margin: 20px 0;
+        }
 
-    .newsletter-subscription form {
-        display: inline-block;
-        position: relative;
-    }
+        .newsletter-subscription form {
+            display: inline-block;
+            position: relative;
+        }
 
-    .newsletter-subscription input[type="tel"] {
-        width: 300px;
-        padding: 10px 15px;
-        border-radius: 50px;
-        border: 1px solid #ccc;
-        outline: none;
-        font-size: 16px;
-        text-align: right;
-    }
+        .newsletter-subscription input[type="tel"] {
+            width: 300px;
+            padding: 10px 15px;
+            border-radius: 50px;
+            border: 1px solid #ccc;
+            outline: none;
+            font-size: 16px;
+            text-align: right;
+        }
 
-    .newsletter-subscription button {
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        background-color: #605098; /* Purple color */
-        color: #fff;
-        border: none;
-        border-radius: 50px;
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
+        .newsletter-subscription button {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background-color: #605098;
+            /* Purple color */
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
 
-    .newsletter-subscription button:hover {
-        background-color: #483d8b; /* Darker purple */
-    }
+        .newsletter-subscription button:hover {
+            background-color: #483d8b;
+            /* Darker purple */
+        }
+    </style>
+
+    <style>
+        /* .header_menu-g .navbar.navbar-default {
+            background: rgb(16, 136, 124);
+            background: linear-gradient(180deg, rgba(16, 136, 124, 1) 0%, rgba(44, 172, 159, 1) 50%, rgba(255, 255, 255, 1) 100%);
+        } */
+
+        .main_header_area .header_menu .navbar.navbar-default .nav.navbar-nav li a {
+            /* color: #fff; */
+            font-weight: bold !important;
+        }
+
+        /* .header_menu-g .navbar.navbar-default .nav.navbar-nav li:hover a,
+        .header_menu-g .navbar.navbar-default .nav.navbar-nav li.active a {
+            color: #605098 !important;
+            background: transparent;
+        } */
     </style>
     @yield('style')
 </head>
@@ -94,7 +115,7 @@
 
     <header class="main_header_area  @yield('nav')">
         <!-- Navigation Bar -->
-        <div class="header_menu" id="header_menu">
+        <div class="header_menu @yield('header')" id="header_menu">
             <nav class="navbar navbar-default">
                 <div class="container">
                     <div class="navbar-flex d-flex align-items-center justify-content-between w-100 pb-3 pt-3">
@@ -172,7 +193,7 @@
 
             @foreach ($social_sites as $social_site)
                 @php
-                    $social_link = setting($social_site.'_link');
+                    $social_link = setting($social_site . '_link');
                 @endphp
                 <li>
                     <a href="{{ $social_link }}" target="_blank">

@@ -1,5 +1,7 @@
 @extends('home._layouts._app')
-
+@section('header')
+    header_menu-g
+@endsection
 @section('style')
 @endsection
 @section('scripts')

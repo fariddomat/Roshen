@@ -1,5 +1,7 @@
 @extends('home._layouts._app')
-
+@section('header')
+    header_menu-g
+@endsection
 @section('style')
     <style>
         .list-results .nice-select {
@@ -197,7 +199,8 @@
                     </div>
                     <div class="col-lg-5 col-sm-12 mb-4">
                         <div class="about-image p-3 box-shadow position-relative">
-                            <img src="{{ asset('uploads/about/'.$about->who_are_we_image) }}" alt="" class="w-100" />
+                            <img src="{{ asset('uploads/about/' . $about->who_are_we_image) }}" alt=""
+                                class="w-100" />
                         </div>
                     </div>
                 </div>

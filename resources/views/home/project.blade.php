@@ -1,4 +1,7 @@
 @extends('home._layouts._app')
+@section('header')
+    header_menu-g
+@endsection
 @section('style')
     <style>
         .text>ul li,
@@ -155,6 +158,17 @@
             justify-content: center;
             align-items: center;
         }
+
+        .youtube iframe {
+            max-width: 100%;
+            height: auto;
+            aspect-ratio: 16/9;
+            /* هذا يحافظ على نسبة العرض إلى الارتفاع للفيديو */
+            border: none;
+            /* إزالة الحواف من الإطار */
+            display: block;
+            margin: 0 auto;
+        }
     </style>
 @endsection
 
@@ -249,7 +263,7 @@
       ">
         </div>
     </div> --}}
-    <div class="about-us">
+    <div class="about-us mt-4">
         <div class="container">
             <div class="desc col-lg-6 " style="color: #605098; font-size: 20px; font-weight: bold;">تفاصيل المشروع</div>
             <div class="about-image-box">
@@ -319,7 +333,7 @@
 
     <!-- نماذج الشقق -->
     <div class="container pt-3 pb-3" style="border: 1px solid #dfdfdb;
-  border-radius: 15px; ">
+         border-radius: 15px; ">
         <div class="section-title mb-6 pb-1 w-75 text-center mx-auto">
             <h2 class="m-0">نماذج شقق المشروع</h2>
         </div>
@@ -331,10 +345,10 @@
                         <h5>نموذج {{ $item->type }} (( {{ $item->code }} ))</h5>
                     </div>
                     <div class="accrodion-content row justify-content-between align-items-center" style="display: none">
-                        <div class="col-lg-6 col-md-12">
+                        <div class="col-lg-7 col-md-12 youtube">
                             {!! $item->youtube !!}
                         </div>
-                        <div class="inner col-lg-6 col-md-12">
+                        <div class="inner col-lg-5 col-md-12">
                             <div class="tags">
                                 <ul style="direction: rtl">
                                     <li class="mt-2"><span
@@ -348,12 +362,11 @@
 
                                     <li class="mt-3">
                                         @if ($item->pdfs)
-                                        @if ($item->pdfs->count() > 0)
+                                            @if ($item->pdfs->count() > 0)
                                                 <a href="{{ asset('/uploads/' . $item->pdfs->first()->file_path) }}"
                                                     class="btn-btn">تنزيل البرشور</a>
-                                           
+                                            @endif
                                         @endif
-                                    @endif
                                         <a href="{{ route('contactPage') }}" class="btn-btn">احجز الشقة</a>
 
                                     </li>
