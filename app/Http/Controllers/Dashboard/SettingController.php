@@ -40,7 +40,7 @@ class SettingController extends Controller
         }
         if ($request->cover2) {
 
-            // Storage::disk('public_html')->delete('/home/images/2.jpg');
+            Storage::disk('public_html')->delete('/home/images/2.jpg');
             $img = Image::make($request->cover2)->encode('webp', 90);
             Storage::disk('public_html')->put('/home/images/2.jpg', (string)$img, 'public');
         }

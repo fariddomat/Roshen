@@ -119,26 +119,7 @@
                                     <h5 class="mt-2">صور المشروع</h5>
                                     <input value="{{ old('img[]') }}" name="img[]" multiple type="file"
                                         class="form-control" id="basicInput">
-                                    @if ($project->projectImages->count() > 0)
-                                        <div class="row mt-1">
-                                            @foreach ($project->projectImages as $projectImage)
-                                                <div class="col-lg-3 col-md-4 col-sm-6 position-relative"
-                                                    style="margin: 15px 0;">
-                                                    <img src="{{ asset('uploads/images/' . $project->id . '/' . $projectImage->img) }}"
-                                                        alt="Images"
-                                                        style="max-width: 100%; height: auto; display: block;">
-                                                    <form action="{{ route('dashboard.removeImage', $projectImage->id) }}"
-                                                        method="POST" class="position-absolute"
-                                                        style="top: 10px; right: 10px;">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger btn-sm"
-                                                            style="padding: 0 5px;">X</button>
-                                                    </form>
-                                                </div>
-                                            @endforeach
-                                        </div>
-                                    @endif
+
 
 
 
@@ -351,7 +332,7 @@
                     <div class="card-block">
                         <div class="card-body " style="float: right">
                             <div class="col-lg-12">
-                                <button class="btn btn-icon btn-info mr-1 mt-3">@lang('site.update') <i class="fa fa-save"
+                                <button type="submit" class="btn btn-icon btn-info mr-1 mt-3">@lang('site.update') <i class="fa fa-save"
                                         style="position: relative"></i></button>
                             </div>
                         </div>
@@ -361,4 +342,27 @@
         </div>
 
     </form>
+
+    <div class="row">
+        @if ($project->projectImages->count() > 0)
+        <div class="row mt-1">
+            @foreach ($project->projectImages as $projectImage)
+                <div class="col-lg-3 col-md-4 col-sm-6 position-relative"
+                    style="margin: 15px 0;">
+                    <img src="{{ asset('uploads/images/' . $project->id . '/' . $projectImage->img) }}"
+                        alt="Images"
+                        style="max-width: 100%; height: auto; display: block;">
+                    <form action="{{ route('dashboard.removeImage', $projectImage->id) }}"
+                        method="POST" class="position-absolute"
+                        style="top: 10px; right: 10px;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger btn-sm"
+                            style="padding: 0 5px;">X</button>
+                    </form>
+                </div>
+            @endforeach
+        </div>
+    @endif
+    </div>
 @endsection

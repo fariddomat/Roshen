@@ -184,6 +184,7 @@ class ProjectController extends Controller
                 ]);
             }
 
+
             if ($request->hasFile('pdfs')) {
                 foreach ($request->file('pdfs') as $file) {
                     $path = $file->store('images/' . $project->id . '/pdfs', 'public');
