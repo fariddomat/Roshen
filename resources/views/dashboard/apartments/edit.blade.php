@@ -25,8 +25,8 @@
                                         <select name="type" id="" class="form-control">
                                             <option value="أمامية"
                                                 @if ($apartment->type == 'أمامية') selectedselected @endif>أمامية</option>
-                                            <option value="خلفية" @if ($apartment->type == 'خلفية') selected @endif>خلفية
-                                            </option>
+                                            {{-- <option value="خلفية" @if ($apartment->type == 'خلفية') selected @endif>خلفية
+                                            </option> --}}
                                             <option value="داخلية" @if ($apartment->type == 'داخلية') selected @endif>داخلية
                                             </option>
 
@@ -51,9 +51,9 @@
                                         <h5 class="mt-2">السعر (اختياري)</h5>
                                         <input value="{{ old('price', $apartment->price) }}" name="price" type="number"
                                             min="0" class="form-control" id="basicInput">
-                                        <h5 class="mt-2">سعر البنك (اختياري)</h5>
+                                        {{-- <h5 class="mt-2">سعر البنك (اختياري)</h5>
                                         <input value="{{ old('price_bank', $apartment->price_bank) }}" name="price_bank" type="number"
-                                            min="0" class="form-control" id="basicInput">
+                                            min="0" class="form-control" id="basicInput"> --}}
 
 
                                         <h5 class="mt-2"> التفاصيل</h5>

@@ -2,9 +2,10 @@
 
 @section('style')
     <style>
-        .trend-content{
+        .trend-content {
             text-align: right;
         }
+
         .overlay {
             opacity: 0.2 !important;
         }
@@ -46,8 +47,25 @@
     headerstye-1
 @endsection
 @section('scripts')
-   <script src="{{ asset('asset') }}/js/custom-swiper.js"></script>
+    <script src="{{ asset('asset') }}/js/custom-swiper.js"></script>
+    <script>
+        window.onload = function() {
+    var items = document.querySelectorAll('.item-rev');
+    var maxHeight = 0;
 
+    items.forEach(function(item) {
+        var itemHeight = item.offsetHeight;
+        if (itemHeight > maxHeight) {
+            maxHeight = itemHeight;
+        }
+    });
+
+    items.forEach(function(item) {
+        item.style.height = maxHeight + 'px';
+    });
+};
+
+    </script>
 @endsection
 
 @section('content')
@@ -105,11 +123,7 @@
                                 <h1 class="mb-1">
                                     <a class="text-white">{{ setting('cover3_text') }}</a>
                                 </h1>
-                                <p class="white mb-4">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do eiusmod tempor incididunt ut labore et dolore magna
-                                    aliqua
-                                </p>
+
                             </div>
                             <div class="overlay"></div>
                         </div>
@@ -129,9 +143,9 @@
             <div class="about-image-box">
                 <div class="row d-flex align-items-center justify-content-between">
                     <div class="col-lg-7 col-sm-12 mb-4">
-                        <div class="about-content text-lg-end">
+                        <div class="about-content text-lg-end box-shadow p-3">
                             <h4 class="theme fs-3 d-inline-block">من نحن</h4>
-                            <p class="border-b mb-2 pb-2">
+                            <p class="border-b mb-2 pb-2 ">
                                 {!! $about->who_are_we !!}
                             </p>
                         </div>
@@ -216,38 +230,38 @@
             <div class="trend-box  p-3 pb-5 box-shadow" style="direction: ltr">
                 <div class="row item-slider">
                     @foreach ($projects as $project)
-                    <div class="col-lg-4 col-md-4 mb-4  p-3 box-shadow">
-                        <div class="trend-item bg-white box-shadow rounded">
-                            <div class="trend-image">
-                                <img src="{{ asset($project->poster_path) }}" alt="image" />
-                                <a href="#" class="flash bg-theme1 white px-3 py-2"></a>
-                                <div class="trend-meta d-flex align-items-center justify-content-between">
+                        <div class="col-lg-4 col-md-4 mb-4  p-3 box-shadow">
+                            <div class="trend-item bg-white box-shadow rounded">
+                                <div class="trend-image">
+                                    <img src="{{ asset($project->poster_path) }}" alt="image" />
+                                    <a href="#" class="flash bg-theme1 white px-3 py-2"></a>
+                                    <div class="trend-meta d-flex align-items-center justify-content-between">
 
-                                    <a href="{{ route('project', $project->id) }}"
-                                        class="tags bg-theme2 white px-3 py-1">استعراض
-                                        المشروع</a>
+                                        <a href="{{ route('project', $project->id) }}"
+                                            class="tags bg-theme2 white px-3 py-1">استعراض
+                                            المشروع</a>
 
-                                    @if ($project->pdfs)
-                                        @if ($project->pdfs->count() > 0)
-                                            <a href="{{ asset('/uploads/' . $project->pdfs->first()->file_path) }}"
-                                                class="tags bg-theme2 white px-3 py-1">تنزيل البرشور</a>
+                                        @if ($project->pdfs)
+                                            @if ($project->pdfs->count() > 0)
+                                                <a href="{{ asset('/uploads/' . $project->pdfs->first()->file_path) }}"
+                                                    class="tags bg-theme2 white px-3 py-1">تحميل البرشور</a>
+                                            @endif
                                         @endif
-                                    @endif
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="trend-content p-4">
-                                <h5 class="theme">{{ $project->category->name }}</h5>
-                                <h4>
-                                    <a href="{{ route('project', $project->id) }}">{{ $project->name }} </a>
-                                </h4>
-                                <div
-                                    class="entry-meta d-flex align-items-center justify-content-between border-b pb-1 mb-2">
+                                <div class="trend-content p-4">
+                                    <h5 class="theme">{{ $project->category->name }}</h5>
+                                    <h4>
+                                        <a href="{{ route('project', $project->id) }}">{{ $project->name }} </a>
+                                    </h4>
+                                    <div
+                                        class="entry-meta d-flex align-items-center justify-content-between border-b pb-1 mb-2">
+
+                                    </div>
 
                                 </div>
-
                             </div>
                         </div>
-                    </div>
                     @endforeach
 
                 </div>
@@ -277,11 +291,11 @@
 
                 </ul>
             </div>
-            <div class="text-center mt-3">
+            {{-- <div class="text-center mt-3">
                 <a style="border-radius: 8px" href="{{ route('about') }}" class="btn-btn">
                     عرض المزيد
                 </a>
-            </div>
+            </div> --}}
         </div>
     </section>
     <!-- Our Company -->
@@ -312,7 +326,7 @@
                                     </div>
                                     <div class="why-us-content">
                                         <h4><a href="{{ route('about') }}">{{ $why->name }}</a></h4>
-                                        <p class="mb-0">
+                                        <p class="mb-0" spellcheck="text-align: justify;">
                                             {{ $why->value }}
                                         </p>
                                     </div>
@@ -332,10 +346,10 @@
             <div class="section-title mb-4 pb-1 w-75 mx-auto text-center">
                 <h2 class="m-0">آراء العملاء</h2>
             </div>
-            <div class="row review-slider bg-lgrey" style="direction: ltr">
+            <div class="row review-slider bg-lgrey d-flex flex-wrap" style="direction: ltr">
                 @foreach ($reviews as $review)
-                    <div style="border-radius: 8px" class="col-sm-4 item">
-                        <div class="testimonial-item1 text-center">
+                    <div style="border-radius: 8px" class="col-sm-4 item d-flex item-rev">
+                        <div class="testimonial-item1 text-center d-flex flex-column justify-content-between" style="width: 100%;">
                             <div class="details">
                                 <p class="m-0">
                                     {!! $review->description !!}
@@ -363,6 +377,7 @@
             </div>
         </div>
     </section>
+
     <!-- testomonial-->
 
     <!--certificate-->

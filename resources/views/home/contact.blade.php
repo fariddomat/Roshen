@@ -80,7 +80,7 @@ textarea{
                             </div>
                             <div id="contact-form1" class="contact-form px-5">
                                 <div class="contact-info-title text-center mb-4 px-5">
-                                    <h3 class="mb-1">خدمة عملاء مميزة ورد سريع</h3>
+                                    <h3 class="mb-1">خدمة عملاء مميزة</h3>
 
                                 </div>
                                 <div id="contactform-error-msg"></div>

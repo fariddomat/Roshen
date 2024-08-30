@@ -16,11 +16,19 @@ class BlogController extends Controller
     //
     public function index(Request $request)
     {
+        $query = Blog::orderBy('created_at');
 
-        $blogs = Blog::orderBy('created_at')->paginate(4);
+        // تصفية المقالات بناءً على الفئة إذا تم تحديدها
+        if ($request->has('category')) {
+            $query->where('blog_category_id', $request->category);
+        }
+
+        $blogs = $query->paginate(4);
         $blogCategories = BlogCategory::all();
+
         return view('home.blogs', compact('blogs', 'blogCategories'));
     }
+
 
     public function show($slug)
     {

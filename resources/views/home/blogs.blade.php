@@ -94,17 +94,20 @@
                         <div class="sidebar-item mb-4">
                             <h4 class="">جميع الفئات</h4>
                             <ul class="sidebar-category">
-                                <li class="active"><a href="#">الكل</a></li>
+                                <li class="{{ request('category') ? '' : 'active' }}"><a href="{{ route('blogs') }}">الكل</a></li>
                                 @foreach ($blogCategories as $blogCategory)
-                                <li class=""><a href="#">{{ $blogCategory->name }}</a></li>
-
+                                    <li class="{{ request('category') == $blogCategory->id ? 'active' : '' }}">
+                                        <a href="{{ route('blogs', ['category' => $blogCategory->id]) }}">
+                                            {{ $blogCategory->name }}
+                                        </a>
+                                    </li>
                                 @endforeach
                             </ul>
                         </div>
-
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>

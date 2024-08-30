@@ -8,7 +8,7 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('dashboard.categories.index') }}"><i class="icon-layers "></i>
-                    المخططات</a>
+                    الأحياء</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('dashboard.projects.index') }}"><i class="icon-home "></i>
@@ -45,7 +45,7 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('dashboard.reviews.index') }}"><i class="icon-star "></i>
-                    القييمات</a>
+                    التقييمات</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('dashboard.whies.index') }}"><i class="icon-note "></i>

@@ -29,7 +29,7 @@
                                 @include('dashboard._layouts._error')
                                 <div class="col-lg-6">
 
-                                    <h5 class="mt-2">@lang('site.category')</h5>
+                                    <h5 class="mt-2">الحي</h5>
                                     <select name="category" id="" class="form-control">
                                         @foreach ($categories as $item)
                                             <option value="{{ $item->id }}">{{ $item->name }}</option>

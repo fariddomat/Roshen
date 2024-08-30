@@ -208,13 +208,13 @@
             <form action="{{ route('newsletter') }}" method="POST">
                 @csrf
                 <input type="tel" name="mobile" placeholder="أدخل رقمك" required>
-                <button type="submit">اشتراك</button>
+                <button type="submit">تابعنا</button>
             </form>
         </div>
 
         <!-- Footer Menu -->
         <ul class="menu">
-            <li><a href="{{ route('home') }}">المدونة</a></li>
+            <li><a href="{{ route('blogs') }}">المدونة</a></li>
             <li><a href="{{ route('about') }}">من نحن</a></li>
             <li><a href="{{ route('services') }}">خدماتنا</a></li>
             <li><a href="{{ route('contactPage') }}">سياسية الخصوصية</a></li>

@@ -5,6 +5,32 @@
 @section('style')
 @endsection
 @section('scripts')
+<script>
+    $(function() {
+    var slider = $("#price-slider");
+    var minPriceInput = $("#min_price");
+    var maxPriceInput = $("#max_price");
+
+    slider.slider({
+        range: true,
+        min: slider.data('min'),
+        max: slider.data('max'),
+        step: slider.data('step'),
+        values: [slider.data('min-value'), slider.data('max-value')],
+        slide: function(event, ui) {
+            $(".min-value").text(ui.values[0] + " ريال");
+            $(".max-value").text(ui.values[1] + " ريال");
+            minPriceInput.val(ui.values[0]);
+            maxPriceInput.val(ui.values[1]);
+        }
+    });
+
+    // Set initial values for display
+    $(".min-value").text(slider.slider("values", 0) + " ريال");
+    $(".max-value").text(slider.slider("values", 1) + " ريال");
+});
+
+</script>
 @endsection
 @section('content')
     <!-- blog starts -->
@@ -49,7 +75,7 @@
                                                     @if ($project->pdfs)
                                                         @if ($project->pdfs->count() > 0)
                                                             <a href="{{ asset('/uploads/' . $project->pdfs->first()->file_path) }}"
-                                                                class="tags bg-theme2 white px-3 py-1">تنزيل البرشور</a>
+                                                                class="tags bg-theme2 white px-3 py-1">تحميل البرشور</a>
                                                         @endif
                                                     @endif
                                                 </div>
@@ -84,87 +110,85 @@
                         <div class="list-sidebar">
                             <div class="sidebar-item mb-4 box-shadow p-4 text-centerb">
                                 <h3>ابحث عن منزلك</h3>
-                                <form class="form-find">
+                                <form class="form-find" method="GET" action="{{ route('projects') }}">
                                     <div class="form-group mb-2">
                                         <div class="input-box">
-                                            <select class="niceSelect">
-                                                <option>الحي</option>
+                                            <select name="category" class="niceSelect">
+                                                <option value="">الحي</option>
                                                 @foreach ($categories as $category)
-                                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                                    <option value="{{ $category->id }}" {{ request('category') == $category->id ? 'selected' : '' }}>
+                                                        {{ $category->name }}
+                                                    </option>
                                                 @endforeach
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group mb-2">
                                         <div class="input-box">
-                                            <select class="niceSelect">
-                                                <option value="1">اتجاه الشقة</option>
-                                                <option value="2">أمامية</option>
-                                                <option value="3">خلفية</option>
-                                                <option value="4">على زاوية</option>
+                                            <select name="direction" class="niceSelect">
+                                                <option value="">اتجاه الشقة</option>
+                                                <option value="أمامية" {{ request('direction') == 'أمامية' ? 'selected' : '' }}>أمامية</option>
+                                                <option value="داخلية" {{ request('direction') == 'داخلية' ? 'selected' : '' }}>داخلية</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group mb-2">
                                         <div class="input-box">
-                                            <select class="niceSelect">
-                                                <option value="1">حالات الشقق</option>
-                                                <option value="2">جاهز</option>
-                                                <option value="3">تحت الإنشاء</option>
-                                                <option value="4">قيد التشطيب</option>
+                                            <select name="status" class="niceSelect">
+                                                <option value="">حالات الشقق</option>
+                                                <option value="جاهز" {{ request('status') == 'جاهز' ? 'selected' : '' }}>جاهز</option>
+                                                <option value="تحت الإنشاء" {{ request('status') == 'تحت الإنشاء' ? 'selected' : '' }}>تحت الإنشاء</option>
+                                                <option value="قيد التشطيب" {{ request('status') == 'قيد التشطيب' ? 'selected' : '' }}>قيد التشطيب</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group mb-2 d-flex justify-content-between">
                                         <div class="input-box w-50 me-1">
-                                            <select class="niceSelect">
-                                                <option value="1">عدد الغرف</option>
-                                                <option value="2">1</option>
-                                                <option value="3">2</option>
-                                                <option value="4">3</option>
-                                                <option value="5">4</option>
-                                                <option value="6">5</option>
+                                            <select name="rooms" class="niceSelect">
+                                                <option value="">عدد الغرف</option>
+                                                @for ($i = 2; $i <= 7; $i++)
+                                                    <option value="{{ $i }}" {{ request('rooms') == $i ? 'selected' : '' }}>{{ $i }}</option>
+                                                @endfor
                                             </select>
                                         </div>
                                         <div class="input-box w-50 ms-1">
-                                            <select class="niceSelect">
-                                                <option value="1">الحمامات</option>
-                                                <option value="2">1</option>
-                                                <option value="3">2</option>
-                                                <option value="4">3</option>
-                                                <option value="5">4</option>
+                                            <select name="bathrooms" class="niceSelect">
+                                                <option value="">الحمامات</option>
+                                                @for ($i = 1; $i <= 5; $i++)
+                                                    <option value="{{ $i }}" {{ request('bathrooms') == $i ? 'selected' : '' }}>{{ $i }}</option>
+                                                @endfor
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group mb-2">
                                         <div class="range-slider mt-0">
                                             <p class="text-start mb-2">نطاق السعر</p>
-                                            <div data-min="0" data-max="20000" data-unit="ريال" data-min-name="min_price"
-                                                data-max-name="max_price"
-                                                class="range-slider-ui ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
-                                                aria-disabled="false">
-                                                <span class="min-value">200 ألف ريال</span>
-                                                <span class="max-value">2 مليون ريال</span>
-                                                <div class="ui-slider-range ui-widget-header ui-corner-all full"
-                                                    style="left: 0%; width: 100%"></div>
+                                            <div id="price-slider"
+                                                 class="range-slider-ui ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
+                                                 data-min="0"
+                                                 data-max="2000000"
+                                                 data-step="10000"
+                                                 data-min-value="{{ request('min_price', 0) }}"
+                                                 data-max-value="{{ request('max_price', 2000000) }}">
+                                                <span class="min-value">0 ريال</span>
+                                                <span class="max-value">2000000 ريال</span>
+                                                <div class="ui-slider-range ui-widget-header ui-corner-all full"></div>
                                             </div>
-                                            <div class="clearfix"></div>
+                                            <input type="hidden" name="min_price" id="min_price" value="{{ request('min_price', 0) }}">
+                                            <input type="hidden" name="max_price" id="max_price" value="{{ request('max_price', 2000000) }}">
                                         </div>
                                     </div>
+
                                     <div class="form-group text-center w-100">
                                         <input type="submit" class="nir-btn w-100" id="submit3" value="بحث"
-                                            style="
-                                            background-color: #6f42c1;
-                                            border-radius: 10px;
-                                            font-size: 20px;
-                                            color: #fff;
-                                        " />
+                                            style="background-color: #6f42c1; border-radius: 10px; font-size: 20px; color: #fff;" />
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
+
 
             </div>
         </div>

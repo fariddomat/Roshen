@@ -284,7 +284,7 @@
                                         @if ($project->pdfs->count() > 0)
                                             <li style="margin-top: 15px">
                                                 <a href="{{ asset('/uploads/' . $project->pdfs->first()->file_path) }}"
-                                                    class="btn btn-success my-3">تنزيل البرشور</a>
+                                                    class="btn btn-success my-3">تحميل البرشور</a>
                                             </li>
                                         @endif
                                     @endif
@@ -368,7 +368,7 @@
                                         @if ($item->pdfs)
                                             @if ($item->pdfs->count() > 0)
                                                 <a href="{{ asset('/uploads/' . $item->pdfs->first()->file_path) }}"
-                                                    class="btn-btn">تنزيل البرشور</a>
+                                                    class="btn-btn">تحميل البرشور</a>
                                             @endif
                                         @endif
                                         <a href="{{ route('contactPage') }}" class="btn-btn">احجز الشقة</a>

@@ -6,7 +6,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header card-header d-flex justify-content-between align-items-center">
-                    <h4 class="card-title">المخططات</h4>
+                    <h4 class="card-title">الاحياء</h4>
                     <a href="{{ route('dashboard.categories.create') }}" class="btn btn-icon btn-info mr-1">@lang('site.create')
                         <i class="fa fa-plus" style="position: relative"></i></a>
 

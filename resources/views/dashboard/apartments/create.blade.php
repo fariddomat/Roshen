@@ -24,7 +24,7 @@
                                         <h5 class="mt-2">نوع الشقة</h5>
                                         <select name="type" id="" class="form-control">
                                             <option value="أمامية">أمامية</option>
-                                            <option value="خلفية">خلفية</option>
+                                            {{-- <option value="خلفية">خلفية</option> --}}
                                             <option value="داخلية">داخلية</option>
                                             <option value="ملحق">ملحق</option>
                                         </select>
@@ -47,9 +47,9 @@
                                         <h5 class="mt-2">السعر (اختياري)</h5>
                                         <input value="{{ old('price') }}" name="price" type="number" min="0"
                                             class="form-control" id="basicInput">
-                                        <h5 class="mt-2">سعر البنك (اختياري)</h5>
+                                        {{-- <h5 class="mt-2">سعر البنك (اختياري)</h5>
                                         <input value="{{ old('price_bank') }}" name="price_bank" type="number"
-                                            min="0" class="form-control" id="basicInput">
+                                            min="0" class="form-control" id="basicInput"> --}}
 
 
                                         <h5 class="mt-2"> التفاصيل</h5>
@@ -72,7 +72,7 @@
                                         <h5 class="mt-2"> pdf ملفات المشروع (اختياري)</h5>
                                         <input type="file" value="{{ old('pdfs[]') }}" name="pdfs[]" multiple
                                             class="form-control" id="basicInput">
-                                
+
                                     </div>
                                     <div class="col-lg-6">
 

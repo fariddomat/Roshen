@@ -16,7 +16,7 @@
                 <div class="card-body">
                     <h5 class="card-title">
                         <a href="{{ route('dashboard.categories.index') }}" style="text-decoration: none; color: inherit;">
-                            الأقسام
+                            الأحياء
                             <span class="badge badge-light">{{ $categories }}</span>
                             <i class="fa fa-list-alt float-right"></i>
                         </a>

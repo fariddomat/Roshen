@@ -7,7 +7,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">@lang('site.add') مخطط</h4>
+                <h4 class="card-title">@lang('site.add') حي</h4>
             </div>
             <div class="card-block" dir="rtl" style="text-align: right">
                 <div class="col-lg-6">
