@@ -73,7 +73,7 @@
             color: white;
             font-weight: bolder;
             font-size: 16px;
-            background-color: #198754 !important;
+            background-color: #11857A !important;
             border-radius: 0.3rem !important;
             padding: 0 15px;
         }
@@ -84,7 +84,7 @@
             color: white;
             font-weight: bolder;
             font-size: 16px;
-            background-color: #605098 !important;
+            background-color: #5A4B93 !important;
             border-radius: 0.3rem !important;
             padding: 0 15px;
         }
@@ -95,7 +95,7 @@
             color: white;
             font-weight: bolder;
             font-size: 16px;
-            background-color: #c10808 !important;
+            background-color: #DDD0C0 !important;
             border-radius: 0.3rem !important;
             padding: 0 15px;
         }
@@ -445,6 +445,20 @@
                 <div class="section-title-two text-center">
                     <h2 class="margin-auto" style="color: #cc9933; margin-bottom: 35px;margin-right: 25px;">حالة الشقق</h2>
                 </div>
+                <div class="color-guide my-4" style="width: 98%">
+                    <div class="row" style="justify-content: center; text-align: center; font-weight: bold;color:#fff">
+                        <div class="col-md-2" style="background: #11857A;padding: 15px">
+                            <span class="ml-2" style="color: #fff">متاح</span>
+                        </div>
+                        <div class="col-md-2" style="background: #5A4B93;padding: 15px">
+                            <span class="ml-2">محجوز</span>
+                        </div>
+                        <div class="col-md-2" style="background: #DDD0C0;padding: 15px">
+                            <span class="ml-2">مباع</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="container" style="color: white">
                     <div class="table-responsive">
                         <table class="table mt-2 center"

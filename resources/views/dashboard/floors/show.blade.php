@@ -1,5 +1,25 @@
 @extends('dashboard._layouts._app')
+@section('head')
+<style>
 
+
+
+.td1 {
+    background-color: #11857A !important;
+    color: #fff !important;
+}
+
+.td2 {
+    background-color: #5A4B93  !important;
+    color: #fff !important;
+}
+
+.td3 {
+    background-color: #DDD0C0 !important;
+    color: #fff !important;
+
+}</style>
+@endsection
 @section('content')
     <section class="basic-inputs">
         <div class="row match-height">
@@ -67,21 +87,21 @@
                                    color: white;
                                    font-weight: bolder;
                                    font-size: 16px;
-                                       background: #4a716f">
+                                       background: #11857A">
                                                         متاح</td>
                                                     <td
                                                         style="text-align: center;
                                    color: white;
                                    font-weight: bolder;
                                    font-size: 16px;
-                                       background-color: #ba8e42;">
+                                       background-color: #5A4B93 ;">
                                                         محجوز</td>
                                                     <td
                                                         style="text-align: center;
                                    color: white;
                                    font-weight: bolder;
                                    font-size: 16px;
-                                        background-color: #dd5452">
+                                        background-color: #DDD0C0">
                                                         مباع</td>
                                                 </tr>
 
