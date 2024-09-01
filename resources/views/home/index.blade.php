@@ -231,6 +231,12 @@
                 <div class="row item-slider">
                     @foreach ($projects as $project)
                         <div class="col-lg-4 col-md-4 mb-4  p-3 box-shadow">
+                            @if ($project->status =='تم البيع')
+                            <div class="badge success-badge" style="position: absolute;
+                                z-index: 5555555;
+                                background: gray;
+                                padding: 8px 22px;"> تم البيع</div>
+                            @endif
                             <div class="trend-item bg-white box-shadow rounded">
                                 <div class="trend-image">
                                     <img src="{{ asset($project->poster_path) }}" alt="image" />
