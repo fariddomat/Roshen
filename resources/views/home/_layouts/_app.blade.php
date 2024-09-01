@@ -41,6 +41,10 @@
             background-blend-mode: lighten !important;
             box-shadow: inset 0 -8px 8px #fff !important;
         }
+
+        .bg-roshem{
+            background-color: #DDD0C0 !important;
+        }
     </style>
 
     <style>

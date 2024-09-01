@@ -24,6 +24,10 @@ use Illuminate\Support\Facades\File;
 class ProjectController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware(['role:superadministrator|Manager']);
+    }
     /**
      * Display a listing of the resource.
      *

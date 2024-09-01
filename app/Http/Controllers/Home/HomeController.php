@@ -17,6 +17,7 @@ use App\Models\ProfileDownload;
 use App\Models\Project;
 use App\Models\Promoter;
 use App\Models\Review;
+use App\Models\Role;
 use App\Models\Service;
 use App\Models\Why;
 use Illuminate\Http\Request;
@@ -28,6 +29,8 @@ class HomeController extends Controller
     //
     public function index()
     {
+
+        // $hrRole = Role::create(['name' => 'Manager']);
 
         $projects = Project::latest()->limit(6)->get();
         $category_list = Category::limit(3)->get(['id', 'name']);

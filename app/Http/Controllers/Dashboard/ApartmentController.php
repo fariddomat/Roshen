@@ -18,6 +18,10 @@ use Illuminate\Support\Facades\Redirect;
 
 class ApartmentController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['role:superadministrator|Manager']);
+    }
     /**
      * Display a listing of the resource.
      *

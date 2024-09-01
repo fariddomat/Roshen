@@ -12,6 +12,10 @@ use Illuminate\Http\Request;
 class FloorController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware(['role:superadministrator|Manager']);
+    }
 
     public function index($id)
     {

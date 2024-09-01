@@ -43,9 +43,9 @@
             <div class="card text-white bg-warning mb-3">
                 <div class="card-body">
                     <h5 class="card-title">
-                        <a href="{{ route('dashboard.apartments.index') }}" style="text-decoration: none; color: inherit;">
-                            الشقق
-                            <span class="badge badge-light">{{ $apartments }}</span>
+                        <a href="{{ route('dashboard.setting.newsletter') }}" style="text-decoration: none; color: inherit;">
+                            طلبات الانضمام
+                            <span class="badge badge-light">{{ $newsLetter }}</span>
                             <i class="fa fa-home float-right"></i>
                         </a>
                     </h5>

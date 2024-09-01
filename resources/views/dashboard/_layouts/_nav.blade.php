@@ -18,8 +18,8 @@
                     <div class="dropdown-header text-xs-center">
                         <strong>Account</strong>
                     </div>
-                    <a class="dropdown-item" href=""><i class="fa fa-bell-o"></i>
-                        الملف الشخصي</a>
+                    <a class="dropdown-item" href="{{ route('dashboard.setting.changePassword') }}"><i class="fa fa-bell-o"></i>
+                        الاعدادات</a>
                     <div class="dropdown-header text-xs-center">
                         <strong>Settings</strong>
                     </div><a class="dropdown-item" href="{{ route('logout') }}"

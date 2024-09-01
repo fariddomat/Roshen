@@ -336,7 +336,7 @@
 
 
     <!-- نماذج الشقق -->
-    <div class="container pt-3 pb-3" style="border: 1px solid #dfdfdb;
+    <div class="container pt-3 pb-3 " style="border: 1px solid #dfdfdb;
          border-radius: 15px; ">
         <div class="section-title mb-6 pb-1 w-75 text-center mx-auto">
             <h2 class="m-0">نماذج شقق المشروع</h2>

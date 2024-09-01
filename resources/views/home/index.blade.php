@@ -138,11 +138,11 @@
     <!-- banner ends -->
 
     <!-- about-us starts -->
-    <section class="about-us pt-5 pb-2">
+    <section class="about-us pt-5 pb-2 ">
         <div class="container">
             <div class="about-image-box">
                 <div class="row d-flex align-items-center justify-content-between">
-                    <div class="col-lg-7 col-sm-12 mb-4">
+                    <div class="col-lg-7 col-sm-12 mb-4 bg-white">
                         <div class="about-content text-lg-end box-shadow p-3">
                             <h4 class="theme fs-3 d-inline-block">من نحن</h4>
                             <p class="border-b mb-2 pb-2 ">

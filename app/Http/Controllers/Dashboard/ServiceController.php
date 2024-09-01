@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 class ServiceController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['role:superadministrator|Manager']);
+    }
     /**
      * Display a listing of the resource.
      *

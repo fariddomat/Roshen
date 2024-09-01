@@ -20,6 +20,10 @@ use Intervention\Image\Facades\Image;
 class SettingController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware(['role:superadministrator|Call Center']);
+    }
 
     public function cover()
     {
