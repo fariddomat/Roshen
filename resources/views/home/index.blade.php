@@ -2,6 +2,13 @@
 
 @section('style')
     <style>
+        .trend-meta .tags {
+    width: 49%; /* عرض ثابت لكل زر */
+    text-align: center; /* لجعل النص في الوسط */
+    font-size: 14px;
+    border-radius: 10px;
+}
+
         .trend-content {
             text-align: right;
         }
@@ -256,10 +263,7 @@
                                     </div>
                                 </div>
                                 <div class="trend-content p-4">
-                                    <h5 class="theme">{{ $project->category->name }}</h5>
-                                    <h4>
-                                        <a href="{{ route('project', $project->id) }}">{{ $project->name }} </a>
-                                    </h4>
+                                    <h5 class="theme">{{ $project->name }}</h5>
                                     <div
                                         class="entry-meta d-flex align-items-center justify-content-between border-b pb-1 mb-2">
 

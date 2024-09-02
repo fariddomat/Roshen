@@ -29,7 +29,9 @@ class ProjectControlelr extends Controller
         // تصفية المشاريع بناءً على اتجاه الشقة
         if ($request->has('direction') && !empty($request->direction)) {
             // هنا تفترض وجود عمود في جدول المشاريع باسم `direction`
-            $query->where('direction', $request->direction);
+            $query->whereHas('apartments', function ($q) use ($request) {
+                $q->where('type', $request->direction);
+            });
         }
 
         // تصفية المشاريع بناءً على حالة الشقة
@@ -48,7 +50,7 @@ class ProjectControlelr extends Controller
         // تصفية المشاريع بناءً على عدد الحمامات
         if ($request->has('bathrooms') && !empty($request->bathrooms)) {
             $query->whereHas('apartments', function ($q) use ($request) {
-                $q->where('bathroom_count', $request->bathrooms);
+                $q->where('about','like' ,'%'.$request->bathrooms.'%');
             });
         }
 

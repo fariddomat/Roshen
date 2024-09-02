@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="شركة روشم العقارية، خيارك الأول للسكن والاستثمار">
+
     <title>روشم العقارية</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('asset/') }}images/logo.webp" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('asset/') }}/images/logo.webp" />
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('asset') }}/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!--Custom CSS-->
@@ -221,7 +223,7 @@
             <li><a href="{{ route('blogs') }}">المدونة</a></li>
             <li><a href="{{ route('about') }}">من نحن</a></li>
             <li><a href="{{ route('services') }}">خدماتنا</a></li>
-            <li><a href="{{ route('contactPage') }}">سياسية الخصوصية</a></li>
+            <li><a href="{{ route('contactPage') }}">اتصل بنا</a></li>
         </ul>
         <p>حقوق النشر والملكية ل روشم</p>
     </footer>
@@ -254,20 +256,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $(".js-video-button").fancybox({
-                type: "iframe",
-                iframe: {
-                    preload: false, // prevents preloading, ensuring no unnecessary requests
-                    css: {
-                        width: "80%",
-                        height: "80%",
-                    },
-                },
-            });
-        });
-    </script>
+
     <!-- *Scripts* -->
     <script src="{{ asset('asset') }}/js/jquery-3.5.1.min.js"></script>
     <script src="{{ asset('asset') }}/js/bootstrap.min.js"></script>

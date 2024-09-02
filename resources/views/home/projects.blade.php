@@ -3,6 +3,15 @@
     header_menu-g
 @endsection
 @section('style')
+<style>
+    .trend-meta .tags {
+    width: 49%; /* عرض ثابت لكل زر */
+    text-align: center; /* لجعل النص في الوسط */
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+</style>
 @endsection
 @section('scripts')
 <script>
@@ -143,8 +152,9 @@
                                             <select name="status" class="niceSelect">
                                                 <option value="">حالات الشقق</option>
                                                 <option value="جاهز" {{ request('status') == 'جاهز' ? 'selected' : '' }}>جاهز</option>
-                                                <option value="تحت الإنشاء" {{ request('status') == 'تحت الإنشاء' ? 'selected' : '' }}>تحت الإنشاء</option>
+                                                <option value="تحت الانشاء" {{ request('status') == 'تحت الإنشاء' ? 'selected' : '' }}>تحت الإنشاء</option>
                                                 <option value="قيد التشطيب" {{ request('status') == 'قيد التشطيب' ? 'selected' : '' }}>قيد التشطيب</option>
+                                                <option value="تم البيع" {{ request('status') == 'تم البيع' ? 'selected' : '' }}>تم البيع</option>
                                             </select>
                                         </div>
                                     </div>

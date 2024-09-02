@@ -227,7 +227,7 @@
             slidesPerView: 3, // Correct casing
             spaceBetween: 30,
             watchSlidesProgress: true,
-            mousewheel: true, // Corrected option
+            mousewheel: false, // Corrected option
             keyboard: true, // Corrected option
             navigation: {
                 nextEl: ".swiper-button-next",
