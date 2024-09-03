@@ -12,6 +12,9 @@
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('asset') }}/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!--Custom CSS-->
+    <style>
+    @import url("{{ asset('editorFonts/Al-Jazeera-Arabic-Regular.ttf') }}");
+    </style>
     <link href="{{ asset('asset') }}/css/style.css?v=1" rel="stylesheet" type="text/css" />
     <!--Plugin CSS-->
     <link href="{{ asset('asset') }}/css/plugin.css?v=1" rel="stylesheet" type="text/css" />

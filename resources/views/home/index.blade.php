@@ -83,7 +83,7 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="slide-inner">
-                            <div class="slide-image" style="background-image: url({{ asset('home/images/1.jpg') }})">
+                            <div class="slide-image" style="background-image: url({{ asset('home/images/1.jpg?v=1') }})">
                             </div>
                             <div class="swiper-content">
                                 <div class="entry-meta mb-0">
@@ -101,7 +101,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="slide-inner">
-                            <div class="slide-image" style="background-image: url({{ asset('home/images/2.jpg') }})">
+                            <div class="slide-image" style="background-image: url({{ asset('home/images/2.jpg?v=1') }})">
                             </div>
                             <div class="swiper-content">
                                 <div class="entry-meta mb-0">
@@ -119,7 +119,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="slide-inner">
-                            <div class="slide-image" style="background-image: url({{ asset('home/images/3.jpg') }})">
+                            <div class="slide-image" style="background-image: url({{ asset('home/images/3.jpg?v=1') }})">
                             </div>
                             <div class="swiper-content">
                                 <div class="entry-meta mb-0">
