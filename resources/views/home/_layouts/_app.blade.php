@@ -264,12 +264,29 @@
     <script src="{{ asset('asset') }}/js/jquery-3.5.1.min.js"></script>
     <script src="{{ asset('asset') }}/js/bootstrap.min.js"></script>
     <script src="{{ asset('asset') }}/js/plugin.js"></script>
-    <script src="{{ asset('asset') }}/js/main.js?v=4"></script>
+    <script src="{{ asset('asset') }}/js/main.js?v=5"></script>
     {{-- <script src="{{ asset('asset') }}/js/custom-swiper.js"></script> --}}
     <script src="{{ asset('asset') }}/js/custom-nav.js"></script>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script defer>
+        // Disable scroll inside the slider
+$(".review-slider, .item-slider").on("mouseenter", function () {
+    $('body').css('overflow', 'visible');
+});
+
+// Re-enable scroll when mouse leaves the slider
+$(".review-slider, .item-slider").on("mouseleave", function () {
+    $('body').css('overflow', 'visible');
+});
+
+$(".attract-slider, .item-slider").on("mouseleave", function () {
+    $('body').css('overflow', 'visible');
+});
+
+
+    </script>
     @yield('scripts')
 </body>
 

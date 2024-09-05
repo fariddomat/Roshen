@@ -131,7 +131,6 @@
     rows: 0,
     autoplay: true,
     speed: 2000,
-    loop: true,
     responsive: [
       {
         breakpoint: 916,
@@ -281,7 +280,6 @@
     autoplay: true,
     speed: 2000,
     rows: 0,
-    loop: true,
     responsive: [
       {
         breakpoint: 1000,
@@ -297,7 +295,6 @@
       },
     ],
   });
-
   $(".shop-slider").slick({
     infinite: true,
     slidesToShow: 4,

@@ -145,12 +145,12 @@
     <!-- banner ends -->
 
     <!-- about-us starts -->
-    <section class="about-us pt-5 pb-2 ">
+    <section class="about-us pt-5 pb-2 " style="background: #fbfbfb !important">
         <div class="container">
             <div class="about-image-box">
                 <div class="row d-flex align-items-center justify-content-between">
                     <div class="col-lg-7 col-sm-12 mb-4 bg-white">
-                        <div class="about-content text-lg-end box-shadow p-3">
+                        <div class="about-content text-lg-end p-3">
                             <h4 class="theme fs-3 d-inline-block">من نحن</h4>
                             <p class="border-b mb-2 pb-2 ">
                                 {!! $about->who_are_we !!}
@@ -248,7 +248,8 @@
                                 <div class="trend-image">
                                     <img src="{{ asset($project->poster_path) }}" alt="image" />
                                     <a href="#" class="flash bg-theme1 white px-3 py-2"></a>
-                                    <div class="trend-meta d-flex align-items-center justify-content-between">
+                                    <div class="trend-meta d-flex align-items-center justify-content-between" style="border-radius: 15px;
+  opacity: 0.9;">
 
                                         <a href="{{ route('project', $project->id) }}"
                                             class="tags bg-theme2 white px-3 py-1">استعراض
@@ -264,10 +265,6 @@
                                 </div>
                                 <div class="trend-content p-4">
                                     <h5 class="theme">{{ $project->name }}</h5>
-                                    <div
-                                        class="entry-meta d-flex align-items-center justify-content-between border-b pb-1 mb-2">
-
-                                    </div>
 
                                 </div>
                             </div>
@@ -287,7 +284,7 @@
 
     <!-- Our Company -->
     <section class="discount-action pt-0">
-        <div class="container">
+        <div class="container" style="max-width: 99% !important;">
             <div class="section-title my-6 pb-1 w-75 mx-auto text-center">
                 <h2 class="m-0">شركاء النجاح</h2>
             </div>
@@ -399,7 +396,7 @@
             <div class="row bg-lgrey py-3 px-2">
                 @foreach ($certs as $cert)
                     <div class="col-lg-3 d-flex align-items-center justify-content-center">
-                        <img style="width: 100%; max-height: 220px; max-width: 100%" src="{{ asset($cert->img) }}"
+                        <img style="max-height: 220px; max-width: 100%" src="{{ asset($cert->img) }}"
                             alt="" />
                     </div>
                 @endforeach
