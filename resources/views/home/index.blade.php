@@ -106,7 +106,7 @@
                             <div class="swiper-content">
                                 <div class="entry-meta mb-0">
                                     <span class="entry-category">
-                                        <a class="text-white"> Real Estate Agency</a>
+                                        <a class="text-white"></a>
                                     </span>
                                 </div>
                                 <h1 class="mb-1">
@@ -124,7 +124,7 @@
                             <div class="swiper-content">
                                 <div class="entry-meta mb-0">
                                     <span class="entry-category">
-                                        <a class="text-white"> Real Estate Agency</a>
+                                        <a class="text-white"></a>
                                     </span>
                                 </div>
                                 <h1 class="mb-1">
