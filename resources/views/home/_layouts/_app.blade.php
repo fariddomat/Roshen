@@ -13,7 +13,7 @@
     <link href="{{ asset('asset') }}/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!--Custom CSS-->
     <style>
-    @import url("{{ asset('editorFonts/Al-Jazeera-Arabic-Regular.ttf') }}");
+        @import url("{{ asset('editorFonts/Al-Jazeera-Arabic-Regular.ttf') }}");
     </style>
     <link href="{{ asset('asset') }}/css/style.css?v=1" rel="stylesheet" type="text/css" />
     <!--Plugin CSS-->
@@ -27,7 +27,14 @@
     <!-- FancyBox CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="{{ asset('asset') }}/fonts/line-icons.css" type="text/css" />
+
+    <link rel="stylesheet" href="{{ asset('noty/noty.css') }}">
+    <script src="{{ asset('noty/noty.min.js') }}" defer></script>
     <style>
+        .slicknav_nav {
+            height: 244px;
+        }
+
         @media (min-width: 1300px) {
 
             .main_header_area .header_menu .navbar.navbar-default .nav.navbar-nav li a,
@@ -47,7 +54,7 @@
             box-shadow: inset 0 -8px 8px #fff !important;
         }
 
-        .bg-roshem{
+        .bg-roshem {
             background-color: #DDD0C0 !important;
         }
     </style>
@@ -128,6 +135,13 @@
             <nav class="navbar navbar-default">
                 <div class="container">
                     <div class="navbar-flex d-flex align-items-center justify-content-between w-100 pb-3 pt-3">
+                         <!-- Brand and toggle get grouped for better mobile display -->
+                         <div class="navbar-header">
+                            <a class="navbar-brand" href="{{ route('home') }}">
+                                <img src="{{ asset('asset') }}/images/logo.webp" alt="image" />
+                                <img src="{{ asset('asset') }}/images/logo.webp" alt="image" />
+                            </a>
+                        </div>
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="navbar-collapse1 d-flex align-items-center justify-content-center"
                             id="bs-example-navbar-collapse-1">
@@ -151,18 +165,19 @@
                                         role="button" aria-haspopup="true" aria-expanded="false">المدونة
                                     </a>
                                 </li>
-                                <li><a class="" href="{{ route('contactPage') }}">تواصل معنا</a></li>
+                                <li class="submenu dropdown">
+                                    <a href="{{ route('contactPage') }}" class="dropdown-toggle" data-toggle="dropdown"
+                                        role="button" aria-haspopup="true" aria-expanded="false">تواصل معنا
+                                    </a>
+                                </li>
                                 {{-- <li class="search-main">
                                     <a href="#search1" class="mt_search"><i class="fa fa-search"></i></a>
                                 </li> --}}
                             </ul>
                         </div>
-                        <!-- Brand and toggle get grouped for better mobile display -->
-                        <div class="navbar-header">
-                            <a class="navbar-brand" href="{{ route('home') }}">
-                                <img src="{{ asset('asset') }}/images/logo.webp" alt="image" />
-                                <img src="{{ asset('asset') }}/images/logo.webp" alt="image" />
-                            </a>
+
+                        <div class="navbar-body">
+
                         </div>
 
                         <div id="slicknav-mobile"></div>
@@ -272,21 +287,21 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script defer>
         // Disable scroll inside the slider
-$(".review-slider, .item-slider").on("mouseenter", function () {
-    $('body').css('overflow', 'visible');
-});
+        $(".review-slider, .item-slider").on("mouseenter", function() {
+            $('body').css('overflow', 'visible');
+        });
 
-// Re-enable scroll when mouse leaves the slider
-$(".review-slider, .item-slider").on("mouseleave", function () {
-    $('body').css('overflow', 'visible');
-});
+        // Re-enable scroll when mouse leaves the slider
+        $(".review-slider, .item-slider").on("mouseleave", function() {
+            $('body').css('overflow', 'visible');
+        });
 
-$(".attract-slider, .item-slider").on("mouseleave", function () {
-    $('body').css('overflow', 'visible');
-});
-
-
+        $(".attract-slider, .item-slider").on("mouseleave", function() {
+            $('body').css('overflow', 'visible');
+        });
     </script>
+
+    @extends('dashboard._layouts._noty')
     @yield('scripts')
 </body>
 

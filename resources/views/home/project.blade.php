@@ -348,7 +348,7 @@
                     <div class="accrodion-title text-center ">
                         <h5>نموذج {{ $item->type }} (( {{ $item->code }} ))</h5>
                     </div>
-                    <div class="accrodion-content row justify-content-between align-items-center" style="display: none">
+                    <div class="accrodion-content row justify-content-between align-items-center" style="">
                         <div class="col-lg-7 col-md-12 youtube">
                             {!! $item->youtube !!}
                         </div>

@@ -88,7 +88,7 @@
                             <div class="swiper-content">
                                 <div class="entry-meta mb-0">
                                     <span class="entry-category">
-                                        <a class="text-white"> Real Estate Agency</a>
+                                        <a class="text-white"></a>
                                     </span>
                                 </div>
                                 <h1 class="mb-1">
@@ -145,7 +145,7 @@
     <!-- banner ends -->
 
     <!-- about-us starts -->
-    <section class="about-us pt-5 pb-2 " style="background: #fbfbfb !important">
+    <section class="about-us pt-5 pb-2 " style="background: #eae8e8  !important">
         <div class="container">
             <div class="about-image-box">
                 <div class="row d-flex align-items-center justify-content-between">

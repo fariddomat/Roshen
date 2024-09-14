@@ -57,8 +57,8 @@ class HomeController extends Controller
         $request->validate([
             'name' => 'required',
             'phone' => 'required',
-            'service_id' => 'required',
-            'message' => 'required',
+            // 'service_id' => 'required',
+            // 'message' => 'required',
         ]);
 
         // حفظ البيانات في قاعدة البيانات
@@ -73,21 +73,24 @@ class HomeController extends Controller
             'email' => $request->email ?? 'غير متوفر', // التحقق من وجود البريد الإلكتروني
             'phone' => $request->phone,
             'service' => $service ? $service->name : 'غير متوفر',
-            'data' => $request->message,
+            'data' => $request->message ? $service->message : 'غير متوفر',
         ];
 
+        session()->flash('success', 'شكرا لك !');
         // إرسال البريد الإلكتروني
        try {
         Mail::send('mail', $info, function ($message) {
             $message->to("info@roshem.sa", "Roshem Info")
                 ->subject('New Contact Order');
             $message->from('support@roshem.sa', 'Roshem Support');
+
         });
        } catch (\Throwable $th) {
         //throw $th;
        }
 
-        return redirect()->route('home');
+       session()->flash('success', 'شكرا لك !');
+       return redirect()->back();
     }
 
 

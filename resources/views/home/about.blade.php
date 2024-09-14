@@ -230,7 +230,7 @@
                                     <i class="fa-solid fa-calendar-days fa-lg"></i>2003
                                 </div>
                                 <h3>البداية</h3>
-                                <p>
+                                <p style="font-weight: bolder;">
                                     كانت البداية في مدينة الرياض ببناء فيلات سكنية وإدارة أملاك لعدة مشاريع سكنية
                                     وتجارية
                                 </p>
@@ -242,7 +242,7 @@
                                     <i class="fa-solid fa-calendar-days fa-lg"></i>2010
                                 </div>
                                 <h3>التوسع في مدينة الرياض</h3>
-                                <p>
+                                <p style="font-weight: bolder;">
                                     توسعت الشركة وزادت من حجم المشاريع لتشمل العديد من الأحياء في مدينة الرياض وضواحيها.
                                 </p>
                             </div>
@@ -257,7 +257,7 @@
                                     <i class="fa-solid fa-calendar-days fa-lg"></i>2020
                                 </div>
                                 <h3>التوسع في مدينة جدة</h3>
-                                <p>
+                                <p style="font-weight: bolder;">
                                     انطلقت الشركة نحو التوسع في مدينة جدة، حيث تم تنفيذ عدة مشاريع عمائر سكنية في مختلف
                                     الأحياء.
                                 </p>
@@ -269,7 +269,7 @@
                                     <i class="fa-solid fa-calendar-days fa-lg"></i> 2023
                                 </div>
                                 <h3>التحالف</h3>
-                                <p>
+                                <p style="font-weight: bolder;">
                                     أبرمت الشركة تحالفات استراتيجية مع شركة خليجية لتطوير مجموعة من المشاريع في عدة
                                     أحياء بمدينة جدة.
                                 </p>
@@ -351,10 +351,10 @@
                         <div class="d-flex gap-5 justify-content-center flex-wrap align-items-center">
                             @foreach ($sections as $section)
                                 <div>
-                                    <p class="description text-center" style="font-family: Al-Jazeera-Arabic-Regular;  font-weight: bold; color:#605098; font-size:22px; line-height: 2">
+                                    <p class="description text-center" style="font-family: Al-Jazeera-Arabic-Regular;  font-weight: bolder; color:#605098; font-size:24px !important; line-height: 2">
                                         {!! $section['title'] !!}
                                     </p>
-                                    <p class="text-center" style="max-width: 350px;font-family: Al-Jazeera-Arabic-Regular; font-size:20px">
+                                    <p class="text-center" style="max-width: 350px;font-family: Al-Jazeera-Arabic-Regular; font-size:20px;font-weight: bolder;">
                                         {!! $section['description'] !!}
                                     </p>
                                 </div>

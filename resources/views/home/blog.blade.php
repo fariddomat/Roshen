@@ -111,7 +111,7 @@
                             <!-- blog blockquote -->
                             <div class="mb-3 shadow-sm" style="
                     border-right: 2px solid #10887c;
-                    padding: 10px;
+                    padding: 1.5rem;
                     border-radius: 8px;
                   ">
                                {!! $blog->first_paragraph !!}

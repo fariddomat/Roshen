@@ -4,6 +4,10 @@
 @endsection
 @section('style')
 <style>
+.nice-select {
+  color: black;
+  font-weight: bold;
+}
     .trend-meta .tags {
     width: 49%; /* عرض ثابت لكل زر */
     text-align: center; /* لجعل النص في الوسط */

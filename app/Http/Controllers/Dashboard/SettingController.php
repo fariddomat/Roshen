@@ -109,7 +109,7 @@ class SettingController extends Controller
 
     public function contact()
     {
-        $contacts = Contact::latest()->paginate(5);
+        $contacts = Contact::latest()->paginate(25);
         return view('dashboard.settings.contacts', compact('contacts'));
     }
 
