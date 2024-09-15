@@ -100,6 +100,8 @@
     fade: true,
     autoplay: true,
     asNavFor: ".slider-thumbs",
+
+    draggable: false, // Disable mouse interaction
   });
 
   $(".slider-thumbs").slick({
@@ -112,6 +114,8 @@
     direction: "vertical",
     centerMode: true,
     focusOnSelect: true,
+
+    draggable: false, // Disable mouse interaction
     responsive: [
       {
         breakpoint: 800,
@@ -131,6 +135,8 @@
     rows: 0,
     autoplay: true,
     speed: 2000,
+
+    draggable: false, // Disable mouse interaction
     responsive: [
       {
         breakpoint: 916,
@@ -151,6 +157,8 @@
     autoplay: true,
     speed: 5000,
     loop: true,
+
+    draggable: false, // Disable mouse interaction
     responsive: [
       {
         breakpoint: 1100,
@@ -171,6 +179,8 @@
     rows: 0,
     speed: 4000,
     loop: true,
+
+    draggable: false, // Disable mouse interaction
     responsive: [
       {
         breakpoint: 700,
@@ -191,6 +201,8 @@
     autoplay: true,
     speed: 4000,
     loop: true,
+
+    draggable: false, // Disable mouse interaction
     responsive: [
       {
         breakpoint: 1000,
@@ -223,6 +235,7 @@
     rows: 0,
     autoplay: true,
     draggable: false,
+
     responsive: [
       {
         breakpoint: 1000,
@@ -255,6 +268,8 @@
     speed: 1000,
     rows: 0,
     loop: true,
+
+    draggable: false, // Disable mouse interaction
     responsive: [
       {
         breakpoint: 1000,
@@ -280,6 +295,8 @@
     autoplay: true,
     speed: 2000,
     rows: 0,
+
+    draggable: false, // Disable mouse interaction
     responsive: [
       {
         breakpoint: 1000,
@@ -305,6 +322,8 @@
     speed: 8000,
     rows: 0,
     loop: true,
+
+    draggable: false, // Disable mouse interaction
     responsive: [
       {
         breakpoint: 1000,
@@ -338,6 +357,8 @@
     rows: 0,
     cursor: false,
     loop: true,
+
+    draggable: false, // Disable mouse interaction
     responsive: [
       {
         breakpoint: 1000,
@@ -367,6 +388,8 @@
     arrows: false,
     dots: false,
     adaptiveHeight: true,
+
+    draggable: false, // Disable mouse interaction
   });
 
   $(".partner-slider").slick({
@@ -379,6 +402,8 @@
     speed: 2000,
     rows: 0,
     loop: true,
+
+    draggable: false, // Disable mouse interaction
     responsive: [
       {
         breakpoint: 1000,

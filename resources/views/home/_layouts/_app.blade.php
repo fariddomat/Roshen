@@ -31,6 +31,12 @@
     <link rel="stylesheet" href="{{ asset('noty/noty.css') }}">
     <script src="{{ asset('noty/noty.min.js') }}" defer></script>
     <style>
+        :root{
+  behavior: smooth !important;
+}
+html, body {
+    height: 100% !important;
+}
         .slicknav_nav {
             height: 244px;
         }
@@ -279,7 +285,7 @@
     <script src="{{ asset('asset') }}/js/jquery-3.5.1.min.js"></script>
     <script src="{{ asset('asset') }}/js/bootstrap.min.js"></script>
     <script src="{{ asset('asset') }}/js/plugin.js"></script>
-    <script src="{{ asset('asset') }}/js/main.js?v=5"></script>
+    <script src="{{ asset('asset') }}/js/main.js?v=6"></script>
     {{-- <script src="{{ asset('asset') }}/js/custom-swiper.js"></script> --}}
     <script src="{{ asset('asset') }}/js/custom-nav.js"></script>
 
