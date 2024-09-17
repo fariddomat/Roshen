@@ -5,7 +5,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="شركة روشم العقارية، خيارك الأول للسكن والاستثمار">
-
+<meta name="google-site-verification" content="EA25pmn7jYA1WLJ7W_JU1-I_8s6NHDWeFss2cGYj0lE" />
+ <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQ6QZ5RX');</script>
+<!-- End Google Tag Manager -->
     <title>روشم العقارية</title>
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('asset/') }}/images/logo.webp" />
@@ -14,6 +21,10 @@
     <!--Custom CSS-->
     <style>
         @import url("{{ asset('editorFonts/Al-Jazeera-Arabic-Regular.ttf') }}");
+        @font-face {
+            font-family: 'Al-Jazeera-Arabic-Regular';
+            src: url("{{ asset('editorFonts/Al-Jazeera-Arabic-Regular.ttf') }}") format('truetype');
+        }
     </style>
     <link href="{{ asset('asset') }}/css/style.css?v=1" rel="stylesheet" type="text/css" />
     <!--Plugin CSS-->
@@ -31,14 +42,22 @@
     <link rel="stylesheet" href="{{ asset('noty/noty.css') }}">
     <script src="{{ asset('noty/noty.min.js') }}" defer></script>
     <style>
-        :root{
-  behavior: smooth !important;
-}
-html, body {
-    height: 100% !important;
-}
+        :root {
+            behavior: smooth !important;
+        }
+
+        html,
+        body {
+            height: 100% !important;
+        }
+
         .slicknav_nav {
             height: 244px;
+        }
+
+        .slick-prev,
+        .slick-next {
+            background: #605098;
         }
 
         @media (min-width: 1300px) {
@@ -129,6 +148,10 @@ html, body {
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQ6QZ5RX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
     <!-- Preloader -->
     <div id="preloader">
         <div id="status"></div>
@@ -141,8 +164,8 @@ html, body {
             <nav class="navbar navbar-default">
                 <div class="container">
                     <div class="navbar-flex d-flex align-items-center justify-content-between w-100 pb-3 pt-3">
-                         <!-- Brand and toggle get grouped for better mobile display -->
-                         <div class="navbar-header">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
                             <a class="navbar-brand" href="{{ route('home') }}">
                                 <img src="{{ asset('asset') }}/images/logo.webp" alt="image" />
                                 <img src="{{ asset('asset') }}/images/logo.webp" alt="image" />
@@ -285,7 +308,7 @@ html, body {
     <script src="{{ asset('asset') }}/js/jquery-3.5.1.min.js"></script>
     <script src="{{ asset('asset') }}/js/bootstrap.min.js"></script>
     <script src="{{ asset('asset') }}/js/plugin.js"></script>
-    <script src="{{ asset('asset') }}/js/main.js?v=6"></script>
+    <script src="{{ asset('asset') }}/js/main.js?v=7"></script>
     {{-- <script src="{{ asset('asset') }}/js/custom-swiper.js"></script> --}}
     <script src="{{ asset('asset') }}/js/custom-nav.js"></script>
 

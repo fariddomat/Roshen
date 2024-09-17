@@ -5,7 +5,7 @@
         .trend-meta .tags {
     width: 49%; /* عرض ثابت لكل زر */
     text-align: center; /* لجعل النص في الوسط */
-    font-size: 14px;
+    font-size: 14px !important;
     border-radius: 10px;
 }
 
@@ -13,6 +13,12 @@
             text-align: right;
         }
 
+        @media (max-width: 480px){
+            .trend-meta .tags {
+    width: 45%; /* عرض ثابت لكل زر */
+    font-size: 10px !important;
+}
+        }
         .overlay {
             opacity: 0.2 !important;
         }
@@ -158,9 +164,8 @@
                         </div>
                     </div>
                     <div class="col-lg-5 col-sm-12 mb-4">
-                        <div class="about-image p-3 box-shadow position-relative">
-                            <img src="{{ asset('uploads/about/' . $about->who_are_we_image) }}" alt=""
-                                class="w-100" />
+                        <div class="about-image p-3 box-shadow position-relative" style="text-align: center;">
+                            <iframe width="300" height="500" src="https://www.youtube.com/embed/WnF3-33LhME" title="روشم فايف تاورز درب الحرمين - 3D" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: auto"></iframe>
                         </div>
                     </div>
                 </div>
@@ -230,7 +235,7 @@
 
     <!-- Trending Starts -->
     <section class="trending bg-pattern">
-        <div class="container">
+        <div class="container" style="max-width: 90%;">
             <div class="section-title mb-6 pb-1 w-75 mx-auto text-center">
                 <h2 class="m-0">مشاريعنا</h2>
             </div>
@@ -247,7 +252,7 @@
                             <div class="trend-item bg-white box-shadow rounded">
                                 <div class="trend-image">
                                     <img src="{{ asset($project->poster_path) }}" alt="image" />
-                                    <a href="#" class="flash bg-theme1 white px-3 py-2"></a>
+                                    <a href="#" class="flash white px-3 py-2"></a>
                                     <div class="trend-meta d-flex align-items-center justify-content-between" style="border-radius: 15px;
   opacity: 0.9;">
 
@@ -349,7 +354,7 @@
     <!-- about-us ends -->
     <!-- testomonial start -->
     <section class="testimonial pb-5 pt-9">
-        <div class="container">
+        <div class="container" style="max-width: 95%">
             <div class="section-title mb-4 pb-1 w-75 mx-auto text-center">
                 <h2 class="m-0">آراء العملاء</h2>
             </div>
