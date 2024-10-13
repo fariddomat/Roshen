@@ -115,7 +115,7 @@ class SettingController extends Controller
 
     public function newsletter()
     {
-        $newsletters = NewsLetter::latest()->paginate(5);
+        $newsletters = NewsLetter::latest()->paginate(25);
         return view('dashboard.settings.newsletters', compact('newsletters'));
     }
 
@@ -163,6 +163,13 @@ class SettingController extends Controller
         $contacts->update([
             'status' => 'read'
         ]);
+        return redirect()->back();
+    }
+
+    public function contactdestroy($id)
+    {
+        $contacts = Contact::find($id);
+        $contacts->delete();
         return redirect()->back();
     }
 }

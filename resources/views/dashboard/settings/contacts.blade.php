@@ -65,6 +65,16 @@
                                                         style=""> <i class="fa fa-eye"
                                                         style="position: relative;"></i></button>
                                                 </form>
+
+                                                <form action="{{ route('dashboard.setting.contactdestroy', $contact->id) }}"
+                                                    method="POST" style="display: inline-block">
+                                                    @csrf
+                                                    @method('Post')
+
+                                                    <button type="submit" class="btn btn-icon btn-danger mr-1 destroy"
+                                                        style=""> <i class="fa fa-trash"
+                                                        style="position: relative;"></i></button>
+                                                </form>
                                                 @else
 
                                                 @endif

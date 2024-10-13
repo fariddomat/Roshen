@@ -398,9 +398,9 @@
             <div class="section-title mt-3 mb-3 pb-1 w-75 mx-auto text-center">
                 <h2 class="mt-3">الشهادات</h2>
             </div>
-            <div class="row bg-lgrey py-3 px-2">
+            <div class="row bg-lgrey py-3 px-2" style="justify-content:center !important">
                 @foreach ($certs as $cert)
-                    <div class="col-lg-3 d-flex align-items-center justify-content-center">
+                    <div class="col-lg-2 d-flex align-items-center justify-content-center">
                         <img style="max-height: 220px; max-width: 100%" src="{{ asset($cert->img) }}"
                             alt="" />
                     </div>

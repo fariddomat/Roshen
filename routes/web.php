@@ -112,6 +112,7 @@ Route::prefix('dashboard')
             Route::get('/settings/newsletter', 'Dashboard\SettingController@newsletter')->name('setting.newsletter');
             Route::get('/settings/export-csv', 'Dashboard\SettingController@exportCSV')->name('setting.export-csv');
             Route::post('/settings/markAsRead/{id}', 'Dashboard\SettingController@markAsRead')->name('setting.markAsRead');
+            Route::post('/settings/contactdestroy/{id}', 'Dashboard\SettingController@contactdestroy')->name('setting.contactdestroy');
 
 
             Route::get('/settings/changePassword', 'Dashboard\SettingController@changePassword')->name('setting.changePassword');
