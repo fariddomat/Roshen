@@ -104,10 +104,7 @@
                                                 <h4>
                                                     <a href="{{ route('project', $project->id) }}">{{ $project->name }} </a>
                                                 </h4>
-                                                <div
-                                                    class="entry-meta d-flex align-items-center justify-content-between border-b pb-1 mb-2">
-
-                                                </div>
+                                              
 
                                             </div>
                                         </div>

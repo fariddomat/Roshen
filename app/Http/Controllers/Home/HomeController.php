@@ -56,9 +56,12 @@ class HomeController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'phone' => 'required',
-            // 'service_id' => 'required',
-            // 'message' => 'required',
+            'phone' => [
+                'required',
+                'regex:/^(\+|00|0)[0-9]{6,14}$/'
+            ],
+            'service_id' => 'required',
+            'message' => 'required',
         ]);
 
         // حفظ البيانات في قاعدة البيانات

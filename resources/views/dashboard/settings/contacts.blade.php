@@ -52,7 +52,7 @@
                                             <td>{{ $contact->phone }}</td>
                                             <td>{{ $contact->email }}</td>
                                             <td>{{ $contact->service?->name }}</td>
-                                            {{-- <td>{{ $contact->message }}</td> --}}
+                                            <td>{{ $contact->message }}</td>
                                             <td>{{ $contact->created_at->diffforhumans() }}</td>
                                             <td>
                                                 @if ($contact->status != 'read')
