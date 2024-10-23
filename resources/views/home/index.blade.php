@@ -242,19 +242,16 @@
             <div class="trend-box  p-3 pb-5 box-shadow" style="direction: ltr">
                 <div class="row item-slider">
                     @foreach ($projects as $project)
-                        <div class="col-lg-4 col-md-4 mb-4  p-3 box-shadow">
+                        <div class="col-lg-4 col-md-4 mb-4  p-3 box-shadow" style="position: relative">
                             @if ($project->status =='تم البيع')
-                            <div class="badge success-badge" style="position: absolute;
-                                z-index: 5555555;
-                                background: gray;
-                                padding: 8px 22px;"> تم البيع</div>
+                            <img src="{{ asset('home/sell.png') }}" alt="" style="position: absolute; z-index: 9999; max-width: 80% !important;   left: 10%;">
                             @endif
                             <div class="trend-item bg-white box-shadow rounded">
                                 <div class="trend-image">
                                     <img src="{{ asset($project->poster_path) }}" alt="image" />
                                     <a href="#" class="flash white px-3 py-2"></a>
                                     <div class="trend-meta d-flex align-items-center justify-content-between" style="border-radius: 15px;
-  opacity: 0.9;">
+  opacity: 0.9; z-index: 999999;">
 
                                         <a href="{{ route('project', $project->id) }}"
                                             class="tags bg-theme2 white px-3 py-1">استعراض

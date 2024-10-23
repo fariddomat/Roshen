@@ -74,12 +74,9 @@
                         <div class="trend-box bg-pattern p-2">
                             <div class="row">
                                 @foreach ($projects as $project)
-                                    <div class="col-lg-6 col-md-6 mb-4  p-3 box-shadow">
+                                    <div class="col-lg-6 col-md-6 mb-4  p-3 box-shadow" style="position: relative">
                                         @if ($project->status =='تم البيع')
-                                        <div class="badge success-badge" style="position: absolute;
-                                            z-index: 5555555;
-                                            background: gray;
-                                            padding: 8px 22px;"> تم البيع</div>
+                                        <img src="{{ asset('home/sell.png') }}" alt="" style="position: absolute; z-index: 9999; max-width: 80% !important;   left: 10%;">
                                         @endif
                                         <div class="trend-item bg-white box-shadow rounded">
                                             <div class="trend-image">
@@ -104,7 +101,7 @@
                                                 <h4>
                                                     <a href="{{ route('project', $project->id) }}">{{ $project->name }} </a>
                                                 </h4>
-                                              
+
 
                                             </div>
                                         </div>
