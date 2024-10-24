@@ -58,10 +58,11 @@ class HomeController extends Controller
             'name' => 'required',
             'phone' => [
                 'required',
-                'regex:/^(\+|00|0)[0-9]{6,14}$/'
+                'regex:/^05[0-9]{8}$/', // Start with 05 and exactly 10 digits in total
             ],
-            'service_id' => 'required',
             'message' => 'required',
+        ], [
+            'phone.regex' => 'يجب أن يبدأ رقم الهاتف بـ 05 وأن يتكون من 10 أرقام.', // Custom error message in Arabic
         ]);
 
         // حفظ البيانات في قاعدة البيانات
