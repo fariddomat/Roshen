@@ -21,12 +21,12 @@ class ServiceController extends Controller
         return view('home.services', compact('services', 'counters'));
     }
 
-    public function show($id)
+    public function show($slug)
     {
 
         $services = Service::orderBy('id')->get();
-        $service = Service::find($id);
-
+        $service = Service::where('slug', $slug)->first();
+        //dd($service);
         if ($service) {
 
         $counters = Counter::all();

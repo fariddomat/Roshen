@@ -84,7 +84,7 @@
                                                 <a href="#" class="flash bg-theme1 white px-3 py-2"></a>
                                                 <div class="trend-meta d-flex align-items-center justify-content-between">
 
-                                                    <a href="{{ route('project', $project->id) }}"
+                                                    <a href="{{ route('project', $project->slug) }}"
                                                         class="tags bg-theme2 white px-3 py-1">استعراض
                                                         المشروع</a>
 

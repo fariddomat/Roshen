@@ -38,6 +38,11 @@
                                     <h5 class="mt-2">@lang('site.name')</h5>
                                     <input value="{{ old('name') }}" name="name" type="text" class="form-control"
                                         id="basicInput" required>
+
+                                    <h5 for="slug" class="mt-2"> الرابط Link </h5>
+                                    <input type="text" name="slug" class="form-control" value="{{ old('slug') }}"
+                                        required>
+
                                     <h5 class="mt-2">@lang('site.scheme_name')</h5>
                                     <input value="{{ old('scheme_name') }}" name="scheme_name" type="text"
                                         class="form-control" id="basicInput" required>
@@ -114,8 +119,8 @@
                                     <input value="{{ old('img[]') }}" name="img[]" multiple type="file"
                                         class="form-control" id="basicInput">
 
-                                        <h5 class="mt-2"> pdf ملفات المشروع (اختياري)</h5>
-                                        <input type="file"  value="{{ old('pdfs[]') }}"  name="pdfs[]" multiple
+                                    <h5 class="mt-2"> pdf ملفات المشروع (اختياري)</h5>
+                                    <input type="file" value="{{ old('pdfs[]') }}" name="pdfs[]" multiple
                                         class="form-control" id="basicInput">
                                 </div>
 

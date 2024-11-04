@@ -67,10 +67,10 @@ class ProjectControlelr extends Controller
         return view('home.projects', compact('category', 'projects', 'categories'));
     }
 
-    public function show($id)
+    public function show($slug)
     {
 
-        $project = Project::find($id);
+        $project = Project::where('slug',$slug)->first();
 
         if ($project) {
             if ($project->status == 'غير متاح للعرض') {
@@ -82,7 +82,7 @@ class ProjectControlelr extends Controller
             $max_room_count = Apartment::max('room_count');
             $max_area = Apartment::max('area');
 
-            $projects = Project::where('category_id', $project->category_id)->where('id', '<>', $id)->limit(6)->get();
+            $projects = Project::where('category_id', $project->category_id)->where('id', '<>', $project->id)->limit(6)->get();
 
             $facils = Facil::all();
             return view('home.project', compact('project', 'category_list', 'max_price', 'max_room_count', 'max_area', 'projects', 'facils'));

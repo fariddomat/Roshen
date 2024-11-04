@@ -29,6 +29,17 @@ class BlogController extends Controller
         return view('home.blogs', compact('blogs', 'blogCategories'));
     }
 
+    public function category(BlogCategory $category)
+    {
+        $query = Blog::orderBy('created_at')->where('blog_category_id', $category);
+
+
+        $blogs = $query->paginate(4);
+        $blogCategories = BlogCategory::all();
+
+        return view('home.blogs', compact('blogs', 'blogCategories'));
+    }
+
 
     public function show($slug)
     {

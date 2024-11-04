@@ -45,7 +45,7 @@
                                     <ul class="sidebar-category">
                                         @foreach ($services as $item)
                                         @if ($item->id != $service->id)
-                                        <li><a href="{{ route('service', $item->id) }}">{{ $item->name }}</a></li>
+                                        <li><a href="{{ route('service', $item->slug) }}">{{ $item->name }}</a></li>
                                         @endif
                                         @endforeach
                                     </ul>

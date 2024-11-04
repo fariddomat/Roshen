@@ -21,6 +21,9 @@ use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\File;
 
+use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
+
 class ProjectController extends Controller
 {
 
@@ -142,6 +145,8 @@ class ProjectController extends Controller
                 $percent = $request->status_percent;
             }
             $project = Project::create([
+
+                'slug' => Str::slug($request->slug, '-'),
                 'category_id' => $request->category,
                 'name' => $request->name,
                 'date_of_build' => $request->date_of_build,
@@ -361,6 +366,8 @@ class ProjectController extends Controller
                 $percent = $request->status_percent;
             }
             $project->update([
+
+                'slug' => Str::slug($request->slug, '-'),
                 'category_id' => $request->category,
                 'name' => $request->name,
                 'date_of_build' => $request->date_of_build,

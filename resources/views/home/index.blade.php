@@ -191,7 +191,7 @@
                                     </div>
                                     <div class="why-us-content">
                                         <h3>
-                                            <a href="{{ route('service', $service->id) }}">{{ $service->name }}</a>
+                                            <a href="{{ route('service', $service->slug) }}">{{ $service->name }}</a>
 
                                         </h3>
 
@@ -253,7 +253,7 @@
                                     <div class="trend-meta d-flex align-items-center justify-content-between" style="border-radius: 15px;
   opacity: 0.9; z-index: 999999;">
 
-                                        <a href="{{ route('project', $project->id) }}"
+                                        <a href="{{ route('project', $project->slug) }}"
                                             class="tags bg-theme2 white px-3 py-1">استعراض
                                             المشروع</a>
 

@@ -36,13 +36,14 @@ Route::group([], function () {
 
     Route::get('/about', 'Home\AboutController@index')->name('about');
     Route::get('/blogs', 'Home\BlogController@index')->name('blogs');
+    Route::get('/category/{slug}', 'Home\BlogController@category')->name('blogs.category');
     Route::get('/blog/{slug}', 'Home\BlogController@show')->name('blog');
 
     Route::get('/services', 'Home\ServiceController@index')->name('services');
-    Route::get('/services/{id}', 'Home\ServiceController@show')->name('service');
+    Route::get('/services/{slug}', 'Home\ServiceController@show')->name('service');
 
     Route::get('/projects', 'Home\ProjectControlelr@index')->name('projects');
-    Route::get('/projects/{id}', 'Home\ProjectControlelr@show')->name('project');
+    Route::get('/projects/{slug}', 'Home\ProjectControlelr@show')->name('project');
     Route::get('/privacy', 'Home\HomeController@privacy')->name('privacy');
 
 

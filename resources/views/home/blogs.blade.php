@@ -97,7 +97,7 @@
                                 <li class="{{ request('category') ? '' : 'active' }}"><a href="{{ route('blogs') }}">الكل</a></li>
                                 @foreach ($blogCategories as $blogCategory)
                                     <li class="{{ request('category') == $blogCategory->id ? 'active' : '' }}">
-                                        <a href="{{ route('blogs', ['category' => $blogCategory->id]) }}">
+                                        <a href="{{ route('blogs.category', ['slug' => $blogCategory->slug]) }}">
                                             {{ $blogCategory->name }}
                                         </a>
                                     </li>

@@ -8,6 +8,9 @@ use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+
+use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 class ServiceController extends Controller
 {
     public function __construct()
@@ -60,6 +63,7 @@ class ServiceController extends Controller
         Storage::disk('public')->put('images/' . $request->img->hashName(), (string)$img, 'public');
         $request_data['img'] = $request->img->hashName();
 
+        $request_data['slug'] = Str::slug($request->slug, '-');
         Service::create($request_data);
         LogSystem::success('تم إضافة الخدمة جديد بنجاح : ' . $request->name);
         session()->flash('success', 'Successfully Created !');
@@ -123,6 +127,7 @@ class ServiceController extends Controller
 
         }
 
+        $request_data['slug'] = Str::slug($request->slug, '-');
         $service->update($request_data);
         LogSystem::info('تم تعديل الخدمة بنجاح : ' . $request->name);
 

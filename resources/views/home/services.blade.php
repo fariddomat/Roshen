@@ -40,7 +40,7 @@
                             </div>
                             <div class="why-us-content">
                                 <h3>
-                                    <a href="{{ route('service', $service->id) }}">{{ $service->name }}</a>
+                                    <a href="{{ route('service', $service->slug) }}">{{ $service->name }}</a>
 
                                 </h3>
 

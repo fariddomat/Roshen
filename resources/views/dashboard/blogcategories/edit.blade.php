@@ -21,7 +21,9 @@
                                 <h5 class="mt-2">@lang('site.name')</h5>
                                 <input value="{{ old('name', $blogcategory->name) }}" name="name" type="text"
                                     class="form-control" id="basicInput" required>
-
+                                    <h5 for="slug" class="mt-2"> الرابط Link </h5>
+                                    <input type="text" name="slug" class="form-control" value="{{ old('slug',$blogcategory->slug) }}"
+                                        required>
 
                                 <button class="btn btn-icon btn-info mr-1 mt-2">@lang('site.edit') <i class="fa fa-edit"
                                         style="position: relative"></i></button>

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->engine = "InnoDB";
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('slug')->nullable();
             $table->text('description');
             $table->string('icon')->nullable();
             $table->string('img')->nullable();

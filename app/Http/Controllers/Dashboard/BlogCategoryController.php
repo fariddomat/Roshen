@@ -7,6 +7,9 @@ use App\Models\BlogCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
+use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
+
 class BlogCategoryController extends Controller
 {
     public function __construct()
@@ -36,6 +39,7 @@ class BlogCategoryController extends Controller
         $blogCategory->name = $validatedData['name'];
 
 
+        $blogCategory->slug = Str::slug($request->slug, '-');
 
         $blogCategory->save();
         session()->flash('success', 'Blog Category Added Successfully');
@@ -54,6 +58,7 @@ class BlogCategoryController extends Controller
         $validatedData = $request->validate($rules);
 
         $blogcategory->name = $validatedData['name'];
+        $blogcategory->slug = Str::slug($request->slug, '-');
 
         $blogcategory->save();
         session()->flash('success', 'Blog Category Updated Successfully');

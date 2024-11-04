@@ -48,6 +48,9 @@
                                     <h5 class="mt-2">@lang('site.name')</h5>
                                     <input value="{{ old('name', $project->name) }}" name="name" type="text"
                                         class="form-control" id="basicInput" required>
+                                    <h5 for="slug" class="mt-2"> الرابط Link </h5>
+                                    <input type="text" name="slug" class="form-control" value="{{ old('slug', $project->slug) }}"
+                                        required>
                                     <h5 class="mt-2">@lang('site.scheme_name')</h5>
                                     <input value="{{ old('scheme_name', $project->scheme_name) }}" name="scheme_name"
                                         type="text" class="form-control" id="basicInput" required>
@@ -332,8 +335,8 @@
                     <div class="card-block">
                         <div class="card-body " style="float: right">
                             <div class="col-lg-12">
-                                <button type="submit" class="btn btn-icon btn-info mr-1 mt-3">@lang('site.update') <i class="fa fa-save"
-                                        style="position: relative"></i></button>
+                                <button type="submit" class="btn btn-icon btn-info mr-1 mt-3">@lang('site.update') <i
+                                        class="fa fa-save" style="position: relative"></i></button>
                             </div>
                         </div>
                     </div>
@@ -345,24 +348,20 @@
 
     <div class="row">
         @if ($project->projectImages->count() > 0)
-        <div class="row mt-1">
-            @foreach ($project->projectImages as $projectImage)
-                <div class="col-lg-3 col-md-4 col-sm-6 position-relative"
-                    style="margin: 15px 0;">
-                    <img src="{{ asset('uploads/images/' . $project->id . '/' . $projectImage->img) }}"
-                        alt="Images"
-                        style="max-width: 100%; height: auto; display: block;">
-                    <form action="{{ route('dashboard.removeImage', $projectImage->id) }}"
-                        method="POST" class="position-absolute"
-                        style="top: 10px; right: 10px;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-sm"
-                            style="padding: 0 5px;">X</button>
-                    </form>
-                </div>
-            @endforeach
-        </div>
-    @endif
+            <div class="row mt-1">
+                @foreach ($project->projectImages as $projectImage)
+                    <div class="col-lg-3 col-md-4 col-sm-6 position-relative" style="margin: 15px 0;">
+                        <img src="{{ asset('uploads/images/' . $project->id . '/' . $projectImage->img) }}"
+                            alt="Images" style="max-width: 100%; height: auto; display: block;">
+                        <form action="{{ route('dashboard.removeImage', $projectImage->id) }}" method="POST"
+                            class="position-absolute" style="top: 10px; right: 10px;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm" style="padding: 0 5px;">X</button>
+                        </form>
+                    </div>
+                @endforeach
+            </div>
+        @endif
     </div>
 @endsection
