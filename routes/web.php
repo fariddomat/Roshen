@@ -47,7 +47,7 @@ Route::group([], function () {
     Route::get('/privacy', 'Home\HomeController@privacy')->name('privacy');
 
 
-    Route::get('/updates', 'Home\HomeController@updates')->name('updates');
+    // Route::get('/updates', 'Home\HomeController@updates')->name('updates');
 
 
     Route::get('/sitemap.xml', 'Home\SitemapXmlController@index')->name('sitemap');
