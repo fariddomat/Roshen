@@ -138,6 +138,10 @@
                     <a class="nav-link" href="{{ route('dashboard.setting.logs') }}"><i class="icon-magnifier "></i>
                         سجل العمليات</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('dashboard.meta-tags.index') }}"><i class="icon-tag "></i>
+                        Meta Tags</a>
+                </li>
             @endif
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('dashboard.setting.changePassword') }}"><i

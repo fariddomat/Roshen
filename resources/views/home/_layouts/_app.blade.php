@@ -4,16 +4,29 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="شركة روشم العقارية، خيارك الأول للسكن والاستثمار">
-<meta name="google-site-verification" content="EA25pmn7jYA1WLJ7W_JU1-I_8s6NHDWeFss2cGYj0lE" />
- <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PQ6QZ5RX');</script>
-<!-- End Google Tag Manager -->
-    <title>روشم العقارية</title>
+    <title>{{ $metaTitle ?? 'روشم العقارية' }}</title>
+    <meta name="description" content="{{ $metaDescription ?? 'شركة روشم العقارية، خيارك الأول للسكن والاستثمار' }}">
+
+    <meta name="google-site-verification" content="EA25pmn7jYA1WLJ7W_JU1-I_8s6NHDWeFss2cGYj0lE" />
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PQ6QZ5RX');
+    </script>
+    <!-- End Google Tag Manager -->
+
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('asset/') }}/images/logo.webp" />
     <!-- Bootstrap core CSS -->
@@ -21,6 +34,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!--Custom CSS-->
     <style>
         @import url("{{ asset('editorFonts/Al-Jazeera-Arabic-Regular.ttf') }}");
+
         @font-face {
             font-family: 'Al-Jazeera-Arabic-Regular';
             src: url("{{ asset('editorFonts/Al-Jazeera-Arabic-Regular.ttf') }}") format('truetype');
@@ -149,9 +163,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQ6QZ5RX"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQ6QZ5RX" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-- Preloader -->
     <div id="preloader">
         <div id="status"></div>
