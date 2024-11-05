@@ -12,4 +12,4 @@ Disallow: /vendor/
 Allow: /
 
 # Sitemap location
-Sitemap: https://www.almohtarif-office.com/sitemap.xml
+Sitemap: https://roshem.sa//sitemap.xml
