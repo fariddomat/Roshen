@@ -142,6 +142,10 @@
                     <a class="nav-link" href="{{ route('dashboard.meta-tags.index') }}"><i class="icon-tag "></i>
                         Meta Tags</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('dashboard.redirects.index') }}"><i class="icon-info "></i>
+                        Redirects</a>
+                </li>
             @endif
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('dashboard.setting.changePassword') }}"><i

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard\MetaTagController;
+use App\Http\Controllers\Dashboard\RedirectController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -63,6 +64,8 @@ Route::prefix('dashboard')
             Route::get('/home', 'Dashboard\DashboardController@index')->name('home');
 
             Route::resource('meta-tags', MetaTagController::class);
+            Route::resource('redirects', RedirectController::class);
+
             Route::resource('users', 'Dashboard\UserController');
             Route::resource('privacies', 'Dashboard\PrivacyController');
 
