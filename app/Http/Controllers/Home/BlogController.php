@@ -29,15 +29,24 @@ class BlogController extends Controller
         return view('home.blogs', compact('blogs', 'blogCategories'));
     }
 
-    public function category(BlogCategory $category)
+    public function category($slug)
     {
-        $query = Blog::orderBy('created_at')->where('blog_category_id', $category);
+        // Find the category by slug
+        $category = BlogCategory::where('slug', $slug)->first();
 
+        // Check if the category exists
+        if (!$category) {
+            abort(404, 'Category not found');
+        }
 
-        $blogs = $query->paginate(4);
+        // Get blogs that belong to the found category
+        $blogs = Blog::where('blog_category_id', $category->id)
+                     ->orderBy('created_at', 'desc')
+                     ->paginate(16);
+
         $blogCategories = BlogCategory::all();
 
-        return view('home.blogs', compact('blogs', 'blogCategories'));
+        return view('home.blogsCategory', compact('blogs', 'blogCategories', 'category'));
     }
 
 
