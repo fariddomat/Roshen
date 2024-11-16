@@ -6,7 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ $metaTitle ?? 'روشم العقارية' }}</title>
     <meta name="description" content="{{ $metaDescription ?? 'شركة روشم العقارية، خيارك الأول للسكن والاستثمار' }}">
-
+    @if ($metaTag)
+        @if ($metaTag->canonical_link)
+            <link rel="canonical" href="{{ $metaTag->canonical_link }}">
+        @endif
+        @if ($metaTag->schema_markup)
+            <script type="application/ld+json">
+        {!! $metaTag->schema_markup !!}
+    </script>
+        @endif
+    @endif
     <meta name="google-site-verification" content="EA25pmn7jYA1WLJ7W_JU1-I_8s6NHDWeFss2cGYj0lE" />
     <!-- Google Tag Manager -->
     <script>

@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="col-lg-8 col-sm-12 pe-4">
                         <div class="about-content">
-                            <h2 class="mb-3">{{ $service->name }}</h2>
+                            <h1 class="mb-3" style="font-size: 42px;">{{ $service->name }}</h1>
                             <div class="about-image bordernone mb-3">
                                 <img src="{{ asset($service->image_path) }}" alt="" class="w-100" />
                             </div>

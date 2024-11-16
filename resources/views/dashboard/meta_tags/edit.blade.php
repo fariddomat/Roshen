@@ -32,6 +32,17 @@
                                     <textarea name="meta_description" class="form-control" required>{{ $metaTag->meta_description }}</textarea>
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="canonical_link">Canonical Link</label>
+                                    <input type="url" name="canonical_link" class="form-control" value="{{ $metaTag->canonical_link }}" placeholder="Enter canonical link">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="schema_markup">Schema Markup</label>
+                                    <textarea name="schema_markup" class="form-control" rows="5" placeholder="Enter schema markup">{{ $metaTag->schema_markup }}</textarea>
+                                </div>
+
+
                                 <button class="btn btn-icon btn-info mr-1 mt-2">@lang('site.edit') <i class="fa fa-edit"
                                         style="position: relative"></i></button>
                             </form>

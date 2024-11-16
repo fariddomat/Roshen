@@ -20,6 +20,7 @@ class InjectMetaTags
         if ($metaTag) {
             view()->share('metaTitle', $metaTag->meta_title);
             view()->share('metaDescription', $metaTag->meta_description);
+            view()->share('metaTag', $metaTag);
         }
         return $next($request);
     }

@@ -2,6 +2,11 @@
 
 @section('style')
     <style>
+    .banner .slider .swiper-container .swiper-slide .slide-inner .swiper-content > h2 {
+  letter-spacing: 1px !important;
+  font-weight: 600 !important;
+  font-size: 54px !important;
+}
         .trend-meta .tags {
     width: 49%; /* عرض ثابت لكل زر */
     text-align: center; /* لجعل النص في الوسط */
@@ -97,9 +102,9 @@
                                         <a class="text-white"></a>
                                     </span>
                                 </div>
-                                <h1 class="mb-1">
+                                <h2 class="mb-1">
                                     <a class="text-white">{{ setting('cover1_text') }}</a>
-                                </h1>
+                                </h2>
 
                             </div>
                             <div class="overlay"></div>
@@ -115,9 +120,9 @@
                                         <a class="text-white"></a>
                                     </span>
                                 </div>
-                                <h1 class="mb-1">
+                                <h2 class="mb-1">
                                     <a class="text-white">{{ setting('cover2_text') }}</a>
-                                </h1>
+                                </h2>
 
                             </div>
                             <div class="overlay"></div>
@@ -133,9 +138,9 @@
                                         <a class="text-white"></a>
                                     </span>
                                 </div>
-                                <h1 class="mb-1">
+                                <h2 class="mb-1">
                                     <a class="text-white">{{ setting('cover3_text') }}</a>
-                                </h1>
+                                </h2>
 
                             </div>
                             <div class="overlay"></div>

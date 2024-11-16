@@ -28,6 +28,17 @@
                                     <label for="meta_description">Meta Description</label>
                                     <textarea name="meta_description" class="form-control" required></textarea>
                                 </div>
+
+                                <div class="form-group">
+                                    <label for="canonical_link">Canonical Link</label>
+                                    <input type="url" name="canonical_link" class="form-control" placeholder="Enter canonical link">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="schema_markup">Schema Markup</label>
+                                    <textarea name="schema_markup" class="form-control" rows="5" placeholder="Enter schema markup"></textarea>
+                                </div>
+
                                 <button class="btn btn-icon btn-info mr-1 mt-2">@lang('site.create') <i class="fa fa-save"
                                         style="position: relative"></i></button>
                             </form>

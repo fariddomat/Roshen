@@ -269,10 +269,10 @@
                     <div class="col-lg-5 mb-3">
                         <div class="info">
                             <div class="text">
-                                <p style="color: #605098; font-size: 20px" class="fw-bold">
+                                <h1 style="color: #605098; font-size: 20px" class="fw-bold">
                                     مشروع {{ $project->name }} :
 
-                                </p>
+                                </h1>
                                 {!! $project->details !!}
                                 <ul>
                                     <li style="margin-top: 15px">تاريخ البناء: {{ $project->date_of_build }}</li>
@@ -301,7 +301,7 @@
                     @if ($project->images_path)
                         <div class="project_images my-5">
                             <div class="container">
-                                <h4 class="text-center my-4">صور المشروع</h4>
+                                <h2 class="text-center my-4">صور المشروع<h2>
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-10">
                                         <div class="swiper-container">
@@ -346,7 +346,7 @@
             @foreach ($project->apartments as $index => $item)
                 <div class="accrodion">
                     <div class="accrodion-title text-center ">
-                        <h5>نموذج {{ $item->type }} (( {{ $item->code }} ))</h5>
+                        <h3>نموذج {{ $item->type }} (( {{ $item->code }} ))</h3>
                     </div>
                     <div class="accrodion-content row justify-content-between align-items-center" style="">
                         <div class="col-lg-7 col-md-12 youtube">
