@@ -159,6 +159,14 @@
     <section class="about-us pt-5 pb-2 " style="background: #eae8e8  !important">
         <div class="container">
             <div class="about-image-box">
+                <h1 class="fw-bold" style="text-align: center;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  color: #10887c;
+  font-size: 3rem;">
+                    شركة روشم للتطوير العقاري
+
+                </h1>
                 <div class="row d-flex align-items-center justify-content-between">
                     <div class="col-lg-7 col-sm-12 mb-4 bg-white">
                         <div class="about-content text-lg-end p-3">

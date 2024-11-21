@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ $metaTitle ?? 'روشم العقارية' }}</title>
     <meta name="description" content="{{ $metaDescription ?? 'شركة روشم العقارية، خيارك الأول للسكن والاستثمار' }}">
-    @if ($metaTag)
+    @isset ($metaTag)
         @if ($metaTag->canonical_link)
             <link rel="canonical" href="{{ $metaTag->canonical_link }}">
         @endif
