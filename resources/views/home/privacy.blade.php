@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-lg-12 short-image-title">
-                    <h5 class="subtitle-margin second-color">AlQodsi</h5>
+                    {{-- <h5 class="subtitle-margin second-color">AlQodsi</h5> --}}
                     <h1 class="second-color">سياسة الخصوصية</h1>
                     <div class="short-title-separator"></div>
                 </div>

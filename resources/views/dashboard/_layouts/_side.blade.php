@@ -139,6 +139,10 @@
                         سجل العمليات</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('dashboard.privacies.index') }}"><i class="icon-magnifier "></i>
+                        سياسة الخصوصية</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('dashboard.meta-tags.index') }}"><i class="icon-tag "></i>
                         Meta Tags</a>
                 </li>

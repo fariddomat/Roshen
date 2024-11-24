@@ -2,28 +2,33 @@
 
 @section('style')
     <style>
-    .banner .slider .swiper-container .swiper-slide .slide-inner .swiper-content > h2 {
-  letter-spacing: 1px !important;
-  font-weight: 600 !important;
-  font-size: 54px !important;
-}
+        .banner .slider .swiper-container .swiper-slide .slide-inner .swiper-content>h2 {
+            letter-spacing: 1px !important;
+            font-weight: 600 !important;
+            font-size: 54px !important;
+        }
+
         .trend-meta .tags {
-    width: 49%; /* عرض ثابت لكل زر */
-    text-align: center; /* لجعل النص في الوسط */
-    font-size: 14px !important;
-    border-radius: 10px;
-}
+            width: 49%;
+            /* عرض ثابت لكل زر */
+            text-align: center;
+            /* لجعل النص في الوسط */
+            font-size: 14px !important;
+            border-radius: 10px;
+        }
 
         .trend-content {
             text-align: right;
         }
 
-        @media (max-width: 480px){
+        @media (max-width: 480px) {
             .trend-meta .tags {
-    width: 45%; /* عرض ثابت لكل زر */
-    font-size: 10px !important;
-}
+                width: 45%;
+                /* عرض ثابت لكل زر */
+                font-size: 10px !important;
+            }
         }
+
         .overlay {
             opacity: 0.2 !important;
         }
@@ -68,21 +73,20 @@
     <script src="{{ asset('asset') }}/js/custom-swiper.js"></script>
     <script>
         window.onload = function() {
-    var items = document.querySelectorAll('.item-rev');
-    var maxHeight = 0;
+            var items = document.querySelectorAll('.item-rev');
+            var maxHeight = 0;
 
-    items.forEach(function(item) {
-        var itemHeight = item.offsetHeight;
-        if (itemHeight > maxHeight) {
-            maxHeight = itemHeight;
-        }
-    });
+            items.forEach(function(item) {
+                var itemHeight = item.offsetHeight;
+                if (itemHeight > maxHeight) {
+                    maxHeight = itemHeight;
+                }
+            });
 
-    items.forEach(function(item) {
-        item.style.height = maxHeight + 'px';
-    });
-};
-
+            items.forEach(function(item) {
+                item.style.height = maxHeight + 'px';
+            });
+        };
     </script>
 @endsection
 
@@ -159,7 +163,8 @@
     <section class="about-us pt-5 pb-2 " style="background: #eae8e8  !important">
         <div class="container">
             <div class="about-image-box">
-                <h1 class="fw-bold" style="text-align: center;
+                <h1 class="fw-bold"
+                    style="text-align: center;
   margin-top: 25px;
   margin-bottom: 50px;
   color: #10887c;
@@ -178,7 +183,11 @@
                     </div>
                     <div class="col-lg-5 col-sm-12 mb-4">
                         <div class="about-image p-3 box-shadow position-relative" style="text-align: center;">
-                            <iframe width="300" height="500" src="https://www.youtube.com/embed/WnF3-33LhME" title="روشم فايف تاورز درب الحرمين - 3D" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: auto"></iframe>
+                            <iframe width="300" height="500" src="https://www.youtube.com/embed/WnF3-33LhME"
+                                title="روشم فايف تاورز درب الحرمين - 3D" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                                style="width: auto"></iframe>
                         </div>
                     </div>
                 </div>
@@ -256,14 +265,16 @@
                 <div class="row item-slider">
                     @foreach ($projects as $project)
                         <div class="col-lg-4 col-md-4 mb-4  p-3 box-shadow" style="position: relative">
-                            @if ($project->status =='تم البيع')
-                            <img src="{{ asset('home/sell.png') }}" alt="" style="position: absolute; z-index: 9999; max-width: 80% !important;   left: 10%;">
+                            @if ($project->status == 'تم البيع')
+                                <img src="{{ asset('home/sell.png') }}" alt=""
+                                    style="position: absolute; z-index: 9999; max-width: 80% !important;   left: 10%;">
                             @endif
                             <div class="trend-item bg-white box-shadow rounded">
                                 <div class="trend-image">
                                     <img src="{{ asset($project->poster_path) }}" alt="image" />
                                     <a href="#" class="flash white px-3 py-2"></a>
-                                    <div class="trend-meta d-flex align-items-center justify-content-between" style="border-radius: 15px;
+                                    <div class="trend-meta d-flex align-items-center justify-content-between"
+                                        style="border-radius: 15px;
   opacity: 0.9; z-index: 999999;">
 
                                         <a href="{{ route('project', $project->slug) }}"
@@ -371,7 +382,8 @@
             <div class="row review-slider bg-lgrey d-flex flex-wrap" style="direction: ltr">
                 @foreach ($reviews as $review)
                     <div style="border-radius: 8px" class="col-sm-4 item d-flex item-rev">
-                        <div class="testimonial-item1 text-center d-flex flex-column justify-content-between" style="width: 100%;">
+                        <div class="testimonial-item1 text-center d-flex flex-column justify-content-between"
+                            style="width: 100%;">
                             <div class="details">
                                 <p class="m-0">
                                     {!! $review->description !!}
@@ -411,8 +423,7 @@
             <div class="row bg-lgrey py-3 px-2" style="justify-content:center !important">
                 @foreach ($certs as $cert)
                     <div class="col-lg-2 d-flex align-items-center justify-content-center">
-                        <img style="max-height: 220px; max-width: 100%" src="{{ asset($cert->img) }}"
-                            alt="" />
+                        <img style="max-height: 220px; max-width: 100%" src="{{ asset($cert->img) }}" alt="" />
                     </div>
                 @endforeach
             </div>
