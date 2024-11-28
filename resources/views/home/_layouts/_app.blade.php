@@ -307,6 +307,8 @@
                 <li><a href="{{ route('services') }}">خدماتنا</a></li>
                 <li><a href="{{ route('contactPage') }}">اتصل بنا</a></li>
                 <li><a href="{{ route('privacy') }}">سياسية الخصوصية</a></li>
+                <li><a href="{{ route('terms') }}">الشروط والأحكام</a></li>
+
             </ul>
             <p>حقوق النشر والملكية ل روشم</p>
         </footer>
