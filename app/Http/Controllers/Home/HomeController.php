@@ -19,6 +19,7 @@ use App\Models\Promoter;
 use App\Models\Review;
 use App\Models\Role;
 use App\Models\Service;
+use App\Models\Terms;
 use App\Models\Why;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
@@ -59,10 +60,13 @@ class HomeController extends Controller
             'phone' => [
                 'required',
                 'regex:/^05[0-9]{8}$/', // Start with 05 and exactly 10 digits in total
+                'unique:contacts,phone',
             ],
             'message' => 'required',
         ], [
             'phone.regex' => 'يجب أن يبدأ رقم الهاتف بـ 05 وأن يتكون من 10 أرقام.', // Custom error message in Arabic
+            'phone.unique' => 'رقم الهاتف موجود بالفعل في قاعدة البيانات.', // Custom error message for duplicate phone numbers
+
         ]);
 
         // حفظ البيانات في قاعدة البيانات
@@ -82,19 +86,18 @@ class HomeController extends Controller
 
         session()->flash('success', 'شكرا لك !');
         // إرسال البريد الإلكتروني
-       try {
-        Mail::send('mail', $info, function ($message) {
-            $message->to("info@roshem.sa", "Roshem Info")
-                ->subject('New Contact Order');
-            $message->from('support@roshem.sa', 'Roshem Support');
+        try {
+            Mail::send('mail', $info, function ($message) {
+                $message->to("info@roshem.sa", "Roshem Info")
+                    ->subject('New Contact Order');
+                $message->from('support@roshem.sa', 'Roshem Support');
+            });
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
 
-        });
-       } catch (\Throwable $th) {
-        //throw $th;
-       }
-
-       session()->flash('success', 'شكرا لك !');
-       return redirect()->back();
+        session()->flash('success', 'شكرا لك !');
+        return redirect()->back();
     }
 
 
@@ -162,5 +165,10 @@ class HomeController extends Controller
     {
         $privacies = Privacy::orderBy('id')->get();
         return view('home.privacy', compact('privacies'));
+    }
+    public function terms()
+    {
+        $terms = Terms::orderBy('id')->get();
+        return view('home.terms', compact('terms'));
     }
 }

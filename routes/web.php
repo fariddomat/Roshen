@@ -45,6 +45,7 @@ Route::group([], function () {
     Route::get('/projects', 'Home\ProjectControlelr@index')->name('projects');
     Route::get('/projects/{slug}', 'Home\ProjectControlelr@show')->name('project');
     Route::get('/privacy', 'Home\HomeController@privacy')->name('privacy');
+    Route::get('/terms', 'Home\HomeController@terms')->name('privacy');
 
 
     // Route::get('/updates', 'Home\HomeController@updates')->name('updates');
@@ -68,6 +69,7 @@ Route::prefix('dashboard')
 
             Route::resource('users', 'Dashboard\UserController');
             Route::resource('privacies', 'Dashboard\PrivacyController');
+            Route::resource('terms', 'Dashboard\TermController');
 
             Route::resource('blogcategories', 'Dashboard\BlogCategoryController');
             Route::resource('blogs', 'Dashboard\BlogController');

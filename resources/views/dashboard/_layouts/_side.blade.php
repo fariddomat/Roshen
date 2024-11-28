@@ -143,6 +143,10 @@
                         سياسة الخصوصية</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('dashboard.terms.index') }}"><i class="icon-magnifier "></i>
+                        الشروط والاحكام</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('dashboard.meta-tags.index') }}"><i class="icon-tag "></i>
                         Meta Tags</a>
                 </li>
