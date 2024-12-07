@@ -23,7 +23,7 @@ class BlogController extends Controller
             $query->where('blog_category_id', $request->category);
         }
 
-        $blogs = $query->paginate(4);
+        $blogs = $query->paginate(8);
         $blogCategories = BlogCategory::all();
 
         return view('home.blogs', compact('blogs', 'blogCategories'));
