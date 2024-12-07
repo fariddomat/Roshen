@@ -3,6 +3,7 @@
 use App\Http\Controllers\Dashboard\MetaTagController;
 use App\Http\Controllers\Dashboard\RedirectController;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,8 +45,8 @@ Route::group([], function () {
 
     Route::get('/projects', 'Home\ProjectControlelr@index')->name('projects');
     Route::get('/projects/{slug}', 'Home\ProjectControlelr@show')->name('project');
-    Route::get('/privacy', 'Home\HomeController@privacy')->name('privacy');
-    Route::get('/terms', 'Home\HomeController@terms')->name('privacy');
+    Route::get('/privacy-policy', 'Home\HomeController@privacy')->name('privacy');
+    Route::get('/terms', 'Home\HomeController@terms')->name('terms');
 
 
     // Route::get('/updates', 'Home\HomeController@updates')->name('updates');

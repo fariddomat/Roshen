@@ -77,6 +77,11 @@
         <link rel="stylesheet" href="{{ asset('noty/noty.css') }}">
         <script src="{{ asset('noty/noty.min.js') }}" defer></script>
         <style>
+            @media (max-width: 480px) {
+            .menu-f {
+                display: block !important;
+            }
+        }
             :root {
                 behavior: smooth !important;
             }
@@ -301,7 +306,7 @@
             </div>
 
             <!-- Footer Menu -->
-            <ul class="menu">
+            <ul class="menu menu-f">
                 <li><a href="{{ route('blogs') }}">المدونة</a></li>
                 <li><a href="{{ route('about') }}">من نحن</a></li>
                 <li><a href="{{ route('services') }}">خدماتنا</a></li>
