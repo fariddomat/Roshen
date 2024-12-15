@@ -16,7 +16,9 @@ return new class extends Migration
             $table->string('slug');
             $table->unsignedBigInteger('blog_category_id');
             $table->string('image');
+            $table->string('image_alt')->nullable();
             $table->string('index_image')->nullable();
+            $table->string('index_image_alt')->nullable();
             $table->boolean('showed');
             $table->boolean('show_at_home');
 

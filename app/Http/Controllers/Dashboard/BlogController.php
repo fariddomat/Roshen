@@ -42,6 +42,8 @@ class BlogController extends Controller
             'category' => ['required', 'exists:blog_categories,id'],
             'image' => ['required', 'image', 'mimes:jpeg,png,jpg,webp'],
             'showed' => ['nullable'],
+            'image_alt' => ['nullable'],
+            'index_image_alt' => ['nullable'],
             'show_at_home' => ['nullable'],
             'author_name' => ['required'],
             'author_title' => ['required'],
@@ -58,6 +60,9 @@ class BlogController extends Controller
         $blog->blog_category_id = $validatedData['category'];
         $blog->author_name = $validatedData['author_name'];
         $blog->author_title = $validatedData['author_title'];
+
+        $blog->image_alt = $validatedData['image_alt'];
+        $blog->index_image_alt = $validatedData['index_image_alt'];
 
         if ($request->has('author_image')) {
             $helper = new ImageHelper;
@@ -118,9 +123,10 @@ class BlogController extends Controller
             'show_at_home' => ['nullable'],
             'author_name' => ['required'],
             'author_title' => ['required'],
-
-
             'author_image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,webp'],
+
+            'image_alt' => ['nullable'],
+            'index_image_alt' => ['nullable'],
 
         ];
         $validatedData = $request->validate($rules);
@@ -135,6 +141,9 @@ class BlogController extends Controller
         $blog->author_name = $validatedData['author_name'];
         $blog->author_title = $validatedData['author_title'];
 
+
+        $blog->image_alt = $validatedData['image_alt'];
+        $blog->index_image_alt = $validatedData['index_image_alt'];
 
         if ($request->has('author_image')) {
             $helper = new ImageHelper;

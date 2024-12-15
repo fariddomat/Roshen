@@ -150,6 +150,13 @@
                         <input type="file" name="image" class="form-control image">
                     </div>
 
+
+                    <div class="form-group mb-3">
+                        <label for="image_alt" class="form-label">وصف الصورة المصغرة - alt</label>
+                        <input type="text" name="image_alt" class="form-control" value="{{ old('image_alt') }}"
+                            dir="rtl">
+                    </div>
+
                     <div class="form-group mb-3">
                         <img src="" style="width: 300px; display: none;" class="img-thumbnail image-preview"
                             alt="">
@@ -159,6 +166,13 @@
                     <div class="form-group mb-3">
                         <label>الصورة الرئيسية</label>
                         <input type="file" name="index_image" class="form-control logo">
+                    </div>
+
+
+                    <div class="form-group mb-3">
+                        <label for="index_image_alt" class="form-label">وصف الصورة الرئيسية - alt</label>
+                        <input type="text" name="index_image_alt" class="form-control" value="{{ old('index_image_alt') }}"
+                            dir="rtl">
                     </div>
 
                     <div class="form-group mb-3">

@@ -97,7 +97,7 @@
                         <div class="blog-wrapper">
                             <div class="blog-content">
                                 <div class="blog-imagelist mb-3">
-                                    <img src="{{ asset($blog->index_image) }}" alt="image" />
+                                    <img src="{{ asset($blog->index_image) }}" alt="{{ $blog->index_image_alt }}" />
                                 </div>
                                 <h3>المقدمه</h3>
                                 <div class="mb-3 shadow-sm" style="
@@ -137,131 +137,6 @@
     </section>
     <!-- blog Ends -->
 
-    <!-- top deal starts -->
-    {{-- <section class="top-post pt-0">
-        <div class="container">
-            <div class="section-title mb-6 pb-1 w-75 mx-auto text-center">
-                <h2 class="m-0">Related <span>Posts</span></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div class="row team-slider swiper-wrapper" style="direction: ltr !important">
-                <div class="col-lg-4 swiper-slide">
-                    <div class="trend-item">
-                        <div class="trend-image">
-                            <img src="https://joeleclinics.com/storage/doctor_image/2251-Web_Site_Pic_-_F.jpg"
-                                alt="image" />
-                            <div class="trend-content p-4 bg-lgrey border-b">
-                                <h5 class="theme">Inspiration</h5>
-                                <h4>
-                                    <a href="#">Inspire Runner with Autism Graces the Latest Cover</a>
-                                </h4>
-                                <p class="mb-2">
-                                    A wonderful serenity has taken possession of my entire soul,
-                                    like these sweet mornings.
-                                </p>
-                                <div class="entry-meta d-flex align-items-center justify-content-between border-t pt-2">
-                                    <div class="entry-author d-flex align-items-center">
-                                        <img src="https://joeleclinics.com/storage/doctor_image/2251-Web_Site_Pic_-_F.jpg"
-                                            alt="" class="rounded-circle me-1" />
-                                        <span>John Bolden</span>
-                                    </div>
-                                    <div class="entry-metalist">
-                                        <small><a href="#" class="grey"><i class="fa fa-calendar"></i> 10 Apr
-                                                2021</a></small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 swiper-slide">
-                    <div class="trend-item">
-                        <div class="trend-image">
-                            <img src="https://joeleclinics.com/storage/doctor_image/2251-Web_Site_Pic_-_F.jpg"
-                                alt="image" />
-                            <div class="trend-content p-4 bg-lgrey border-b">
-                                <h5 class="theme">Inspiration</h5>
-                                <h4>
-                                    <a href="#">Inspire Runner with Autism Graces the Latest Cover</a>
-                                </h4>
-                                <p class="mb-2">
-                                    A wonderful serenity has taken possession of my entire soul,
-                                    like these sweet mornings.
-                                </p>
-                                <div class="entry-meta d-flex align-items-center justify-content-between border-t pt-2">
-                                    <div class="entry-author d-flex align-items-center">
-                                        <img src="{{ asset('asset') }}/images/reviewer/3.jpg" alt="" class="rounded-circle me-1" />
-                                        <span>John Bolden</span>
-                                    </div>
-                                    <div class="entry-metalist">
-                                        <small><a href="#" class="grey"><i class="fa fa-calendar"></i> 10 Apr
-                                                2021</a></small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 swiper-slide">
-                    <div class="trend-item">
-                        <div class="trend-image">
-                            <img src="https://joeleclinics.com/storage/doctor_image/2251-Web_Site_Pic_-_F.jpg"
-                                alt="image" />
-                            <div class="trend-content p-4 bg-lgrey border-b">
-                                <h5 class="theme">Inspiration</h5>
-                                <h4>
-                                    <a href="#">Inspire Runner with Autism Graces the Latest Cover</a>
-                                </h4>
-                                <p class="mb-2">
-                                    A wonderful serenity has taken possession of my entire soul,
-                                    like these sweet mornings.
-                                </p>
-                                <div class="entry-meta d-flex align-items-center justify-content-between border-t pt-2">
-                                    <div class="entry-author d-flex align-items-center">
-                                        <img src="{{ asset('asset') }}/images/reviewer/3.jpg" alt="" class="rounded-circle me-1" />
-                                        <span>John Bolden</span>
-                                    </div>
-                                    <div class="entry-metalist">
-                                        <small><a href="#" class="grey"><i class="fa fa-calendar"></i> 10 Apr
-                                                2021</a></small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 swiper-slide">
-                    <div class="trend-item">
-                        <div class="trend-image">
-                            <img src="https://joeleclinics.com/storage/doctor_image/2251-Web_Site_Pic_-_F.jpg"
-                                alt="image" />
-                            <div class="trend-content p-4 bg-lgrey border-b">
-                                <h5 class="theme">Inspiration</h5>
-                                <h4>
-                                    <a href="#">Inspire Runner with Autism Graces the Latest Cover</a>
-                                </h4>
-                                <p class="mb-2">
-                                    A wonderful serenity has taken possession of my entire soul,
-                                    like these sweet mornings.
-                                </p>
-                                <div class="entry-meta d-flex align-items-center justify-content-between border-t pt-2">
-                                    <div class="entry-author d-flex align-items-center">
-                                        <img src="{{ asset('asset') }}/images/reviewer/3.jpg" alt="" class="rounded-circle me-1" />
-                                        <span>John Bolden</span>
-                                    </div>
-                                    <div class="entry-metalist">
-                                        <small><a href="#" class="grey"><i class="fa fa-calendar"></i> 10 Apr
-                                                2021</a></small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-    <!-- top deal ends -->
-
+ 
 @endsection
 

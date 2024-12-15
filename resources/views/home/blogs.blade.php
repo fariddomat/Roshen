@@ -46,7 +46,7 @@
                        <div class="col-lg-6 mb-4">
                         <div class="trend-item box-shadow bg-white">
                             <div class="trend-image">
-                                <img src="{{ asset($blog->image) }}" alt="image" />
+                                <img src="{{ asset($blog->image) }}" alt="{{ $blog->image_alt }}" />
                             </div>
                             <div class="trend-content-main p-4">
                                 <div class="trend-content">
@@ -113,96 +113,6 @@
 </section>
 <!-- blog Ends -->
 
-<!-- featured-video starts -->
-{{-- <section class="featured-video pb-5 bg-grey">
-    <div class="container">
-        <div class="section-title mb-6 pb-1 w-75 mx-auto text-center">
-            <h2 class="m-0"><span>منشورات</span> ذات صله</h2>
-        </div>
-        <div class="featured-video-main">
-            <div class="row">
-
-                <div class="col-lg-6">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 mb-4">
-                            <div class="trend-item box-shadow bg-white">
-                                <div class="trend-image">
-                                    <img src="{{ asset('asset') }}/images/Background.png" alt="image" />
-                                </div>
-                                <div class="trend-content-main">
-                                    <div class="trend-content p-4">
-                                        <h5 class="theme mb-1">Design</h5>
-                                        <h4 class="mb-0">
-                                            <a href="detail-1.html"
-                                            >Get Ready To Up Your Creative Game</a
-                                            >
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 mb-4">
-                            <div class="trend-item box-shadow bg-white">
-                                <div class="trend-image">
-                                    <img src="{{ asset('asset') }}/images/Background.png" alt="image" />
-                                </div>
-                                <div class="trend-content-main">
-                                    <div class="trend-content p-4">
-                                        <h5 class="theme mb-1">Products</h5>
-                                        <h4 class="mb-0">
-                                            <a href="detail-1.html"
-                                            >New: Freehand Templates, built for all</a
-                                            >
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 mb-4">
-                            <div class="trend-item box-shadow bg-white">
-                                <div class="trend-image">
-                                    <img src="{{ asset('asset') }}/images/Background.png" alt="image" />
-                                </div>
-                                <div class="trend-content-main">
-                                    <div class="trend-content p-4">
-                                        <h5 class="theme mb-1">Design</h5>
-                                        <h4 class="mb-0">
-                                            <a href="detail-1.html"
-                                            >Get Ready To Up Your Creative Game</a
-                                            >
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 mb-4">
-                            <div class="trend-item box-shadow bg-white">
-                                <div class="trend-image">
-                                    <img src="{{ asset('asset') }}/images/Background.png" alt="image" />
-                                </div>
-                                <div class="trend-content-main">
-                                    <div class="trend-content p-4">
-                                        <h5 class="theme mb-1">Products</h5>
-                                        <h4 class="mb-0">
-                                            <a href="detail-1.html"
-                                            >New: Freehand Templates, built for all</a
-                                            >
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> --}}
-<!-- featured-video ends -->
 
 @endsection
 
