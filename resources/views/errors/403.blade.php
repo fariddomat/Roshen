@@ -3,7 +3,7 @@
 @section('title', "هذه الصفحة غير متوفرة")
 @section('content')
   <!-- 404 content -->
-  <section class="pt-5 pb-5 bg-light">
+  <section class="pt-5 pb-5 bg-light" style="min-height: 50vh">
     <div class="container">
         <div class="not-found text-center">
             <img src="{{ asset('home/img/404.png') }}" alt="" data-animate="shake" data-delay="1.3">

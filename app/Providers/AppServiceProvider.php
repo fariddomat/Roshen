@@ -37,6 +37,9 @@ class AppServiceProvider extends ServiceProvider
 
         Paginator::useBootstrap();
 
+        View::composer('home._layouts._app', function ($view) {
+            $view->with('services', Service::all());
+        });
         // Using closure based composers...
         View::composer('layouts.site', function ($view) {
             $view->with('socialMedias', SocialMedia::all())

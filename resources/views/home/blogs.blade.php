@@ -9,7 +9,17 @@
 
 @endsection
 @section('scripts')
+<script>
+    document.querySelectorAll('s').forEach((tag) => {
+    // Replace the <s> tag with its inner content
+    const parent = tag.parentNode;
+    while (tag.firstChild) {
+        parent.insertBefore(tag.firstChild, tag);
+    }
+    parent.removeChild(tag); // Remove the empty <s> tag
+});
 
+</script>
 @endsection
 @section('content')
 

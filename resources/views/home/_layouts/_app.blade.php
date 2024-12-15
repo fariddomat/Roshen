@@ -78,10 +78,11 @@
         <script src="{{ asset('noty/noty.min.js') }}" defer></script>
         <style>
             @media (max-width: 480px) {
-            .menu-f {
-                display: block !important;
+                .menu-f {
+                    display: block !important;
+                }
             }
-        }
+
             :root {
                 behavior: smooth !important;
             }
@@ -136,7 +137,7 @@
             }
 
             .newsletter-subscription input[type="tel"] {
-                width: 300px;
+                width: 250px;
                 padding: 10px 15px;
                 border-radius: 50px;
                 border: 1px solid #ccc;
@@ -169,9 +170,9 @@
 
         <style>
             /* .header_menu-g .navbar.navbar-default {
-                background: rgb(16, 136, 124);
-                background: linear-gradient(180deg, rgba(16, 136, 124, 1) 0%, rgba(44, 172, 159, 1) 50%, rgba(255, 255, 255, 1) 100%);
-            } */
+                    background: rgb(16, 136, 124);
+                    background: linear-gradient(180deg, rgba(16, 136, 124, 1) 0%, rgba(44, 172, 159, 1) 50%, rgba(255, 255, 255, 1) 100%);
+                } */
 
             .main_header_area .header_menu .navbar.navbar-default .nav.navbar-nav li a {
                 /* color: #fff; */
@@ -179,10 +180,10 @@
             }
 
             /* .header_menu-g .navbar.navbar-default .nav.navbar-nav li:hover a,
-            .header_menu-g .navbar.navbar-default .nav.navbar-nav li.active a {
-                color: #605098 !important;
-                background: transparent;
-            } */
+                .header_menu-g .navbar.navbar-default .nav.navbar-nav li.active a {
+                    color: #605098 !important;
+                    background: transparent;
+                } */
         </style>
         @yield('style')
     </head>
@@ -262,61 +263,98 @@
         @yield('content')
 
         <!--Footer-->
-        <footer>
+        <footer class="container-fluid py-5 text-white">
             <div class="waves">
                 <div class="wave" id="wave1"></div>
                 <div class="wave" id="wave2"></div>
                 <div class="wave" id="wave3"></div>
                 <div class="wave" id="wave4"></div>
             </div>
+            <div class="row">
+                <!-- Social Media and Newsletter -->
+                <div class="col-md-3">
+                    <h5 style="font-size: 20px;
+  font-weight: bold;
+  color: #fff;">تابعنا</h5>
+                    <ul class="social_icon">
+                        @php
+                            $social_sites = ['facebook', 'twitter', 'instagram', 'whatsapp', 'youtube', 'snapchat'];
+                            $social_icons = [
+                                'facebook' => 'fa-facebook',
+                                'twitter' => 'fa-x-twitter',
+                                'instagram' => 'fa-instagram',
+                                'whatsapp' => 'fa-whatsapp',
+                                'youtube' => 'fa-youtube',
+                                'snapchat' => 'fa-snapchat',
+                            ];
+                        @endphp
+                        @foreach ($social_sites as $social_site)
+                            @php
+                                $social_link = setting($social_site . '_link');
+                            @endphp
+                            <li class="">
+                                <a href="{{ $social_link }}" target="_blank">
+                                    <i class="fa-brands {{ $social_icons[$social_site] }} fs-3"></i>
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                    <div class="newsletter-subscription">
+                        <form action="{{ route('newsletter') }}" method="POST">
+                            @csrf
+                            <input type="tel" name="mobile" placeholder="أدخل رقمك" required>
+                            <button type="submit">تابعنا</button>
+                        </form>
 
-            <!-- Social Icons -->
-            <ul class="social_icon">
-                @php
-                    $social_sites = ['facebook', 'twitter', 'instagram', 'whatsapp', 'youtube', 'snapchat'];
-                    $social_icons = [
-                        'facebook' => 'fa-facebook',
-                        'twitter' => 'fa-x-twitter',
-                        'instagram' => 'fa-instagram',
-                        'whatsapp' => 'fa-whatsapp',
-                        'youtube' => 'fa-youtube',
-                        'snapchat' => 'fa-snapchat',
-                    ];
-                @endphp
+                    </div>
+                </div>
 
-                @foreach ($social_sites as $social_site)
-                    @php
-                        $social_link = setting($social_site . '_link');
-                    @endphp
-                    <li>
-                        <a href="{{ $social_link }}" target="_blank">
-                            <i class="fa-brands {{ $social_icons[$social_site] }} fs-2"></i>
-                        </a>
-                    </li>
-                @endforeach
-            </ul>
+                <!-- Services -->
+                <div class="col-md-3">
+                    <h5 style="font-size: 20px;
+  font-weight: bold;
+  color: #fff;">خدماتنا</h5>
+                    <ul class="list-unstyled menu" style="display: inline-grid !important">
+                        @foreach ($services as $service)
+                            <li><a href="{{ route('services', $service->id) }}">{{ $service->name }}</a></li>
+                        @endforeach
+                    </ul>
+                </div>
 
-            <!-- Newsletter Subscription -->
-            <div class="newsletter-subscription">
-                <form action="{{ route('newsletter') }}" method="POST">
-                    @csrf
-                    <input type="tel" name="mobile" placeholder="أدخل رقمك" required>
-                    <button type="submit">تابعنا</button>
-                </form>
+                <!-- Quick Links -->
+                <div class="col-md-3">
+                    <h5 style="font-size: 20px;
+  font-weight: bold;
+  color: #fff;">روابط سريعة</h5>
+                    <ul class="list-unstyled menu" style="display: inline-grid !important">
+                        <li><a href="{{ route('blogs') }}">المدونة</a></li>
+                        <li><a href="{{ route('about') }}">من نحن</a></li>
+                        <li><a href="{{ route('contactPage') }}">اتصل بنا</a></li>
+                        <li><a href="{{ route('privacy') }}">سياسية الخصوصية</a></li>
+                        <li><a href="{{ route('terms') }}">الشروط والأحكام</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="col-md-3">
+                    <h5 style="font-size: 20px;
+  font-weight: bold;
+  color: #fff;">معلومات التواصل</h5>
+                    <ul class="list-unstyled menu" style="display: inline-grid !important">
+                        <li class="mb-2" style="font-size: 13px"><a href="{{ setting('site_location') }}">جدة، المملكة
+                                العربية السعودية</a></li>
+                        <li class="mb-2"><i class="fa fa-phone me-2"></i> <a
+                                href="tel:{{ setting('site_phone') }}">{{ setting('site_phone') }}</a></li>
+                        <li class="mb-2"><i class="fa fa-envelope me-2"></i> <a
+                                href="mailto:{{ setting('site_email') }}">{{ setting('site_email') }}</a></li>
+                    </ul>
+                </div>
             </div>
-
-            <!-- Footer Menu -->
-            <ul class="menu menu-f">
-                <li><a href="{{ route('blogs') }}">المدونة</a></li>
-                <li><a href="{{ route('about') }}">من نحن</a></li>
-                <li><a href="{{ route('services') }}">خدماتنا</a></li>
-                <li><a href="{{ route('contactPage') }}">اتصل بنا</a></li>
-                <li><a href="{{ route('privacy') }}">سياسية الخصوصية</a></li>
-                <li><a href="{{ route('terms') }}">الشروط والأحكام</a></li>
-
-            </ul>
-            <p>حقوق النشر والملكية ل روشم</p>
+            <div class="text-center mt-4">
+                <p>حقوق النشر والملكية ل روشم</p>
+            </div>
         </footer>
+
 
         <!-- footer ends -->
 
