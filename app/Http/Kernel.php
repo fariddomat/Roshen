@@ -32,6 +32,8 @@ class Kernel extends HttpKernel
         // \RenatoMarinho\LaravelPageSpeed\Middleware\DeferJavascript::class,
         \App\Http\Middleware\InjectMetaTags::class,
         \App\Http\Middleware\HandleRedirects::class,
+
+        \App\Http\Middleware\RemoveQueryString::class,
     ];
 
     /**
