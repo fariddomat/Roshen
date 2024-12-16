@@ -33,7 +33,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\InjectMetaTags::class,
         \App\Http\Middleware\HandleRedirects::class,
 
-        \App\Http\Middleware\RemoveQueryString::class,
+        // \App\Http\Middleware\RemoveQueryString::class,
     ];
 
     /**

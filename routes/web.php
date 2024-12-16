@@ -59,7 +59,7 @@ Route::group([], function () {
 
 Route::prefix('dashboard')
     ->name('dashboard.')
-    ->middleware(['auth', 'role:superadministrator|blogger'])
+    ->middleware(['auth', 'role:superadministrator|blogger|Manager|Call Center'])
     ->group(
         function () {
 

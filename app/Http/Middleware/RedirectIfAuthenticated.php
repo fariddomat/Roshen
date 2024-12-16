@@ -19,7 +19,7 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            if (auth()->user()->hasRole(['superadministrator', 'blogger', 'hr'])) {
+            if (auth()->user()->hasRole(['superadministrator', 'blogger', 'Manager', 'Call Center'])) {
                 return redirect(RouteServiceProvider::DASHBOARDHOME);
             }
 

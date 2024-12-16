@@ -119,14 +119,7 @@
                         href="{{ route('dashboard.setting.settingsText') }}"><i class="icon-info "></i>
                         معلومات الموقع</a>
                 </li>
-                {{-- <li class="nav-item">
-                <a class="nav-link" href="{{ route('dashboard.privacies.index') }}"><i class="icon-info "></i>
-                    سياسة الخصوصية</a>
-            </li> --}}
-                {{-- <li class="nav-item">
-                <a class="nav-link" href="{{ route('dashboard.setting.chart') }}"><i class="icon-info "></i>
-                    الاسهم</a>
-            </li> --}}
+               
                 <li class="nav-title">
                     الأدوات
                 </li>

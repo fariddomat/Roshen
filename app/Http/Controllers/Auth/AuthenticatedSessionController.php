@@ -24,7 +24,7 @@ class AuthenticatedSessionController extends Controller
 
     protected function redirectTo()
     {
-        if (auth()->user()->hasRole(['superadministrator', 'blogger', 'hr'])) {
+        if (auth()->user()->hasRole(['superadministrator', 'blogger', 'Manager', 'Call Center'])) {
             return RouteServiceProvider::DASHBOARDHOME;
         }
     }
