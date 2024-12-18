@@ -18,7 +18,11 @@
     width: 0;
     height: 9px;
     background-color: #10887c;
-}</style>
+}
+ul li {
+    display: block;
+}
+</style>
 
 @endsection
 @section('scripts')
@@ -137,6 +141,6 @@
     </section>
     <!-- blog Ends -->
 
- 
+
 @endsection
 
