@@ -61,7 +61,7 @@
             }
         </style>
 
-        <link href="{{ asset('asset') }}/css/style.css?v=1" rel="stylesheet" type="text/css" />
+        <link  href="{{ asset('asset') }}/css/style.css?v=1" rel="stylesheet" type="text/css" />
         <!--Plugin CSS-->
         <link href="{{ asset('asset') }}/css/plugin.css?v=1" rel="stylesheet" type="text/css" />
         <!--Flaticons CSS-->
@@ -169,21 +169,14 @@
         </style>
 
         <style>
-            /* .header_menu-g .navbar.navbar-default {
-                    background: rgb(16, 136, 124);
-                    background: linear-gradient(180deg, rgba(16, 136, 124, 1) 0%, rgba(44, 172, 159, 1) 50%, rgba(255, 255, 255, 1) 100%);
-                } */
+
 
             .main_header_area .header_menu .navbar.navbar-default .nav.navbar-nav li a {
                 /* color: #fff; */
                 font-weight: bold !important;
             }
 
-            /* .header_menu-g .navbar.navbar-default .nav.navbar-nav li:hover a,
-                .header_menu-g .navbar.navbar-default .nav.navbar-nav li.active a {
-                    color: #605098 !important;
-                    background: transparent;
-                } */
+
         </style>
         @yield('style')
     </head>
@@ -208,8 +201,8 @@
                             <!-- Brand and toggle get grouped for better mobile display -->
                             <div class="navbar-header">
                                 <a class="navbar-brand" href="{{ route('home') }}">
-                                    <img src="{{ asset('asset') }}/images/logo.webp" alt="image" />
-                                    <img src="{{ asset('asset') }}/images/logo.webp" alt="image" />
+                                    <img src="{{ asset('asset') }}/images/logo.webp" alt="image"  loading="lazy"/>
+                                    <img src="{{ asset('asset') }}/images/logo.webp" alt="image"  loading="lazy"/>
                                 </a>
                             </div>
                             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -386,15 +379,15 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
         <!-- *Scripts* -->
-        <script src="{{ asset('asset') }}/js/jquery-3.5.1.min.js"></script>
-        <script src="{{ asset('asset') }}/js/bootstrap.min.js"></script>
-        <script src="{{ asset('asset') }}/js/plugin.js"></script>
-        <script src="{{ asset('asset') }}/js/main.js?v=7"></script>
+        <script src="{{ asset('asset') }}/js/jquery-3.5.1.min.js" ></script>
+        <script src="{{ asset('asset') }}/js/bootstrap.min.js" ></script>
+        <script src="{{ asset('asset') }}/js/plugin.js" ></script>
+        <script src="{{ asset('asset') }}/js/main.js?v=7" defer></script>
         {{-- <script src="{{ asset('asset') }}/js/custom-swiper.js"></script> --}}
-        <script src="{{ asset('asset') }}/js/custom-nav.js"></script>
+        <script src="{{ asset('asset') }}/js/custom-nav.js" defer></script>
 
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
         <script defer>
             // Disable scroll inside the slider
             $(".review-slider, .item-slider").on("mouseenter", function() {

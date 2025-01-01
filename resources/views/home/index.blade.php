@@ -1,6 +1,10 @@
 @extends('home._layouts._app')
 
 @section('style')
+<link rel="preload" as="image" href="https://roshem.sa/home/images/1.jpg?v=1">
+{{-- <link rel="preload" as="image" href="https://roshem.sa/home/images/2.jpg?v=1">
+<link rel="preload" as="image" href="https://roshem.sa/home/images/3.jpg?v=1"> --}}
+
     <style>
         .banner .slider .swiper-container .swiper-slide .slide-inner .swiper-content>h2 {
             letter-spacing: 1px !important;
@@ -88,6 +92,29 @@
             });
         };
     </script>
+    <script defer>
+        document.addEventListener("DOMContentLoaded", () => {
+  const lazyImages = document.querySelectorAll(".slide-image.lazyload");
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const slideImage = entry.target;
+          const bgImage = slideImage.dataset.bg;
+          slideImage.style.backgroundImage = `url('${bgImage}')`;
+          slideImage.classList.remove("lazyload");
+          observer.unobserve(slideImage);
+        }
+      });
+    },
+    { rootMargin: "0px 0px 50px 0px" }
+  );
+
+  lazyImages.forEach(image => observer.observe(image));
+});
+
+    </script>
 @endsection
 
 @section('content')
@@ -95,64 +122,64 @@
     <section style="direction: ltr" class="banner overflow-hidden">
         <div class="slider">
             <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="slide-inner">
-                            <div class="slide-image" style="background-image: url({{ asset('home/images/1.jpg?v=1') }})">
-                            </div>
-                            <div class="swiper-content">
-                                <div class="entry-meta mb-0">
-                                    <span class="entry-category">
-                                        <a class="text-white"></a>
-                                    </span>
-                                </div>
-                                <h2 class="mb-1">
-                                    <a class="text-white">{{ setting('cover1_text') }}</a>
-                                </h2>
-
-                            </div>
-                            <div class="overlay"></div>
-                        </div>
+              <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                  <div class="slide-inner">
+                    <div class="slide-image lazyload" data-bg="{{ asset('home/images/1.jpg?v=1') }}"></div>
+                    <div class="swiper-content">
+                      <div class="entry-meta mb-0">
+                        <span class="entry-category">
+                          <a class="text-white"></a>
+                        </span>
+                      </div>
+                      <h2 class="mb-1">
+                        <a class="text-white">{{ setting('cover1_text') }}</a>
+                      </h2>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="slide-inner">
-                            <div class="slide-image" style="background-image: url({{ asset('home/images/2.jpg?v=1') }})">
-                            </div>
-                            <div class="swiper-content">
-                                <div class="entry-meta mb-0">
-                                    <span class="entry-category">
-                                        <a class="text-white"></a>
-                                    </span>
-                                </div>
-                                <h2 class="mb-1">
-                                    <a class="text-white">{{ setting('cover2_text') }}</a>
-                                </h2>
-
-                            </div>
-                            <div class="overlay"></div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slide-inner">
-                            <div class="slide-image" style="background-image: url({{ asset('home/images/3.jpg?v=1') }})">
-                            </div>
-                            <div class="swiper-content">
-                                <div class="entry-meta mb-0">
-                                    <span class="entry-category">
-                                        <a class="text-white"></a>
-                                    </span>
-                                </div>
-                                <h2 class="mb-1">
-                                    <a class="text-white">{{ setting('cover3_text') }}</a>
-                                </h2>
-
-                            </div>
-                            <div class="overlay"></div>
-                        </div>
-                    </div>
+                    <div class="overlay"></div>
+                  </div>
                 </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                  <div class="slide-inner">
+                    <div class="slide-image lazyload" data-bg="{{ asset('home/images/2.jpg?v=1') }}"></div>
+                    <div class="swiper-content">
+                      <div class="entry-meta mb-0">
+                        <span class="entry-category">
+                          <a class="text-white"></a>
+                        </span>
+                      </div>
+                      <h2 class="mb-1">
+                        <a class="text-white">{{ setting('cover2_text') }}</a>
+                      </h2>
+                    </div>
+                    <div class="overlay"></div>
+                  </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                  <div class="slide-inner">
+                    <div class="slide-image lazyload" data-bg="{{ asset('home/images/3.jpg?v=1') }}"></div>
+                    <div class="swiper-content">
+                      <div class="entry-meta mb-0">
+                        <span class="entry-category">
+                          <a class="text-white"></a>
+                        </span>
+                      </div>
+                      <h2 class="mb-1">
+                        <a class="text-white">{{ setting('cover3_text') }}</a>
+                      </h2>
+                    </div>
+                    <div class="overlay"></div>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
+          </div>
+
         <!-- Add Arrows -->
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
@@ -186,8 +213,10 @@
                             <iframe width="300" height="500" src="https://www.youtube.com/embed/WnF3-33LhME"
                                 title="روشم فايف تاورز درب الحرمين - 3D" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
-                                style="width: auto"></iframe>
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: auto"
+                                loading="lazy">
+                            </iframe>
+
                         </div>
                     </div>
                 </div>
@@ -267,11 +296,12 @@
                         <div class="col-lg-4 col-md-4 mb-4  p-3 box-shadow" style="position: relative">
                             @if ($project->status == 'تم البيع')
                                 <img src="{{ asset('home/sell.png') }}" alt=""
-                                    style="position: absolute; z-index: 9999; max-width: 80% !important;   left: 10%;">
+                                    style="position: absolute; z-index: 9999; max-width: 80% !important;   left: 10%;"
+                                    loading="lazy">
                             @endif
                             <div class="trend-item bg-white box-shadow rounded">
                                 <div class="trend-image">
-                                    <img src="{{ asset($project->poster_path) }}" alt="image" />
+                                    <img src="{{ asset($project->poster_path) }}" alt="image" loading="lazy" />
                                     <a href="#" class="flash white px-3 py-2"></a>
                                     <div class="trend-meta d-flex align-items-center justify-content-between"
                                         style="border-radius: 15px;
@@ -318,7 +348,8 @@
                 <ul class="attract-slider">
                     @foreach ($partners as $partner)
                         <li class="px-3">
-                            <a href="#"><img src="{{ asset($partner->img) }}" alt="" /></a>
+                            <a href="#"><img src="{{ asset($partner->img) }}" alt=""
+                                    loading="lazy" /></a>
                         </li>
                     @endforeach
 
@@ -397,7 +428,7 @@
                         border-radius: 100%;
                         margin: auto;
                       "
-                                        src="{{ asset($review->image_path) }}" alt="" />
+                                        src="{{ asset($review->image_path) }}" alt="" loading="lazy" />
                                 </a>
                                 <div class="author-title">
                                     <h4 class="m-0 theme2">{{ $review->name }}</h4>
@@ -423,7 +454,8 @@
             <div class="row bg-lgrey py-3 px-2" style="justify-content:center !important">
                 @foreach ($certs as $cert)
                     <div class="col-lg-2 d-flex align-items-center justify-content-center">
-                        <img style="max-height: 220px; max-width: 100%" src="{{ asset($cert->img) }}" alt="" />
+                        <img style="max-height: 220px; max-width: 100%" src="{{ asset($cert->img) }}" alt=""
+                            loading="lazy" />
                     </div>
                 @endforeach
             </div>
@@ -449,7 +481,7 @@
                     margin: 10px auto;
                     display: block;
                   "
-                                        src="{{ asset($facil->icon) }}" alt="" />
+                                        src="{{ asset($facil->icon) }}" alt="" loading="lazy" />
                                     <h2 style="color: #605098" class="value mb-0 text-center">
                                         {{ $facil->value }}
                                     </h2>
