@@ -26,4 +26,13 @@ class Service extends Model
         // return Storage::url('images/'.$this->img);
     }
 
+    public function reviews()
+    {
+        return $this->hasMany(ServiceReview::class);
+    }
+
+    public function faqs()
+    {
+        return $this->hasMany(ServiceFAQ::class);
+    }
 }

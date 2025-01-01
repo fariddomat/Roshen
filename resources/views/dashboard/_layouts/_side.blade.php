@@ -84,6 +84,14 @@
                     <a class="nav-link" href="{{ route('dashboard.services.index') }}"><i class="icon-note "></i>
                         الخدمات</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('dashboard.service-faqs.index') }}"><i class="icon-note "></i>
+                        الاسئلة الشائعة</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('dashboard.service_reviews.index') }}"><i class="icon-note "></i>
+                        التقيمات</a>
+                </li>
             @endif
 
             @if (auth()->user()->hasRole('superadministrator') || auth()->user()->hasRole('blogger'))
@@ -119,7 +127,7 @@
                         href="{{ route('dashboard.setting.settingsText') }}"><i class="icon-info "></i>
                         معلومات الموقع</a>
                 </li>
-               
+
                 <li class="nav-title">
                     الأدوات
                 </li>

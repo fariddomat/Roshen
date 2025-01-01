@@ -78,6 +78,10 @@ Route::prefix('dashboard')
 
             Route::resource('categories', 'Dashboard\CategoryController');
             Route::resource('services', 'Dashboard\ServiceController');
+            Route::resource('service-faqs', \App\Http\Controllers\Dashboard\ServiceFAQController::class);
+            Route::resource('service_reviews', \App\Http\Controllers\Dashboard\ServiceReviewController::class);
+
+
             Route::resource('counters', 'Dashboard\CounterController');
             Route::resource('partners', 'Dashboard\PartnerController');
             Route::resource('whies', 'Dashboard\WhyController');
