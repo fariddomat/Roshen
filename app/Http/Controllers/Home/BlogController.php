@@ -41,8 +41,8 @@ class BlogController extends Controller
 
         // Get blogs that belong to the found category
         $blogs = Blog::where('blog_category_id', $category->id)
-                     ->orderBy('created_at', 'desc')
-                     ->paginate(16);
+            ->orderBy('created_at', 'desc')
+            ->paginate(16);
 
         $blogCategories = BlogCategory::all();
 
@@ -57,7 +57,13 @@ class BlogController extends Controller
 
         if ($blog) {
 
-            return view('home.blog', compact('blog'));
+            // Get related blogs from the same category, excluding the current blog, limit to 5
+            $relatedBlogs = Blog::where('blog_category_id', $blog->blog_category_id)
+                ->where('id', '!=', $blog->id)
+                ->orderBy('created_at', 'desc')
+                ->limit(5)
+                ->get();
+            return view('home.blog', compact('blog', 'relatedBlogs'));
         } else {
             # code...
             abort(404);
