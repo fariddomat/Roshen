@@ -15,9 +15,9 @@
             <div class="card text-white bg-success mb-3">
                 <div class="card-body">
                     <h5 class="card-title">
-                        <a href="{{ route('dashboard.categories.index') }}" style="text-decoration: none; color: inherit;">
-                            الأحياء
-                            <span class="badge badge-light">{{ $categories }}</span>
+                        <a href="{{ route('dashboard.blogs.index') }}" style="text-decoration: none; color: inherit;">
+                            المدونات
+                            <span class="badge badge-light">{{ $blogs }}</span>
                             <i class="fa fa-list-alt float-right"></i>
                         </a>
                     </h5>

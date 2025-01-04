@@ -150,189 +150,187 @@
                 </div>
             </div>
             <!-- <div class="why-us">
-                <div class="why-us-box">
-                    <div class="row">
-                        <div class="col-lg-4 rounded-2 col-md-6 mb-4">
-                            <div style="border-radius: 8px" class="why-us-item text-center bg-lgrey">
-                                <div class="why-us-icon">
-                                    <i class="flaticon-building theme"></i>
-                                </div>
-                                <div class="why-us-content">
-                                    <h3>
-                                        <a href="service.html">التطوير العقاري و التمليك</a>
-                                    </h3>
-                                    <p class="mb-0">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                        sed do eiusmod tempor incididunt.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 rounded-2 col-md-6 mb-4">
-                            <div style="border-radius: 8px" class="why-us-item text-center bg-lgrey">
-                                <div class="why-us-icon">
-                                    <i class="flaticon-global theme"></i>
-                                </div>
-                                <div class="why-us-content">
-                                    <h3>
-                                        <a href="service.html">التسوييق اللعقـااري</a>
-                                    </h3>
-                                    <p class="mb-0">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                        sed do eiusmod tempor incididunt.
-                                    </p>
+                    <div class="why-us-box">
+                        <div class="row">
+                            <div class="col-lg-4 rounded-2 col-md-6 mb-4">
+                                <div style="border-radius: 8px" class="why-us-item text-center bg-lgrey">
+                                    <div class="why-us-icon">
+                                        <i class="flaticon-building theme"></i>
+                                    </div>
+                                    <div class="why-us-content">
+                                        <h3>
+                                            <a href="service.html">التطوير العقاري و التمليك</a>
+                                        </h3>
+                                        <p class="mb-0">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                            sed do eiusmod tempor incididunt.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-4 rounded-2 col-md-6 mb-4">
-                            <div style="border-radius: 8px" class="why-us-item text-center bg-lgrey">
-                                <div class="why-us-icon d-flex justify-content-center align-items-center"
-                                     style="height: 89px">
-                                    <i class="fa-solid fa-building-circle-check theme"></i>
-                                </div>
-                                <div class="why-us-content">
-                                    <h3><a href="service.html">إدارة ألأمــلاك</a></h3>
-                                    <p class="mb-0">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                        sed do eiusmod tempor incididunt.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 rounded-2 col-md-6 mb-4">
-                            <div style="border-radius: 8px" class="why-us-item text-center bg-lgrey">
-                                <div class="why-us-icon d-flex justify-content-center align-items-center"
-                                     style="height: 89px">
-                                    <i class="fa-solid fa-head-side-virus theme"></i>
-                                </div>
-                                <div class="why-us-content">
-                                    <h3>
-                                        <a href="service.html">الحلـول تمويليــة</a>
-                                    </h3>
-                                    <p class="mb-0">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                        sed do eiusmod tempor incididunt.
-                                    </p>
+                            <div class="col-lg-4 rounded-2 col-md-6 mb-4">
+                                <div style="border-radius: 8px" class="why-us-item text-center bg-lgrey">
+                                    <div class="why-us-icon">
+                                        <i class="flaticon-global theme"></i>
+                                    </div>
+                                    <div class="why-us-content">
+                                        <h3>
+                                            <a href="service.html">التسوييق اللعقـااري</a>
+                                        </h3>
+                                        <p class="mb-0">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                            sed do eiusmod tempor incididunt.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-4 rounded-2 col-md-6 mb-4">
-                            <div style="border-radius: 8px" class="why-us-item text-center bg-lgrey">
-                                <div class="why-us-icon d-flex justify-content-center align-items-center"
-                                     style="height: 89px">
-                                    <i class="fa-solid fa-money-bill-trend-up theme"></i>
-                                </div>
-                                <div class="why-us-content">
-                                    <h3><a href="service.html">الاستثمــار</a></h3>
-                                    <p class="mb-0">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                        sed do eiusmod tempor incididunt.
-                                    </p>
+                            <div class="col-lg-4 rounded-2 col-md-6 mb-4">
+                                <div style="border-radius: 8px" class="why-us-item text-center bg-lgrey">
+                                    <div class="why-us-icon d-flex justify-content-center align-items-center"
+                                         style="height: 89px">
+                                        <i class="fa-solid fa-building-circle-check theme"></i>
+                                    </div>
+                                    <div class="why-us-content">
+                                        <h3><a href="service.html">إدارة ألأمــلاك</a></h3>
+                                        <p class="mb-0">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                            sed do eiusmod tempor incididunt.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-4 rounded-2 col-md-6 mb-4">
-                            <div style="border-radius: 8px" class="why-us-item text-center bg-lgrey">
-                                <div class="why-us-icon d-flex justify-content-center align-items-center"
-                                     style="height: 89px">
-                                    <i class="fa-solid fa-dollar-sign theme"></i>
+                            <div class="col-lg-4 rounded-2 col-md-6 mb-4">
+                                <div style="border-radius: 8px" class="why-us-item text-center bg-lgrey">
+                                    <div class="why-us-icon d-flex justify-content-center align-items-center"
+                                         style="height: 89px">
+                                        <i class="fa-solid fa-head-side-virus theme"></i>
+                                    </div>
+                                    <div class="why-us-content">
+                                        <h3>
+                                            <a href="service.html">الحلـول تمويليــة</a>
+                                        </h3>
+                                        <p class="mb-0">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                            sed do eiusmod tempor incididunt.
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="why-us-content">
-                                    <h3>
-                                        <a href="service.html">الاستشارات الفنية و المالية</a>
-                                    </h3>
-                                    <p class="mb-0">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                        sed do eiusmod tempor incididunt.
-                                    </p>
+                            </div>
+                            <div class="col-lg-4 rounded-2 col-md-6 mb-4">
+                                <div style="border-radius: 8px" class="why-us-item text-center bg-lgrey">
+                                    <div class="why-us-icon d-flex justify-content-center align-items-center"
+                                         style="height: 89px">
+                                        <i class="fa-solid fa-money-bill-trend-up theme"></i>
+                                    </div>
+                                    <div class="why-us-content">
+                                        <h3><a href="service.html">الاستثمــار</a></h3>
+                                        <p class="mb-0">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                            sed do eiusmod tempor incididunt.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 rounded-2 col-md-6 mb-4">
+                                <div style="border-radius: 8px" class="why-us-item text-center bg-lgrey">
+                                    <div class="why-us-icon d-flex justify-content-center align-items-center"
+                                         style="height: 89px">
+                                        <i class="fa-solid fa-dollar-sign theme"></i>
+                                    </div>
+                                    <div class="why-us-content">
+                                        <h3>
+                                            <a href="service.html">الاستشارات الفنية و المالية</a>
+                                        </h3>
+                                        <p class="mb-0">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                            sed do eiusmod tempor incididunt.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div> -->
+                </div> -->
             <!-- why us ends -->
         </div>
     </section>
     <!-- about-us ends -->
 
-    @if ($service->faqs->count()>0)
-    <!-- Questions -->
-    <div class="custom-accordion container">
-        <div class="section-title mb-4 pb-1 w-75 mx-auto text-center">
-            <h2 class="m-0">الأسئلة الشائعة</h2>
-        </div>
-        <div class="accordion-wrapper">
-            @foreach ($service->faqs as $index => $faq)
-                <div class="accordion-item">
-                    <div class="accordion-header" data-target="#customCollapse{{ $index }}">
-                        <span>{{ $faq->question }}</span>
-                        <i class="toggle-icon"></i>
-                    </div>
-                    <div id="customCollapse{{ $index }}" class="accordion-content">
-                        {!! $faq->answer !!}
-                    </div>
-                </div>
-            @endforeach
-
-        </div>
-    </div>
-
-    <!-- Questions -->
-
-    @endif
-
-    @if ($service->reviews->count()>0)
-    <!-- testomonial start -->
-    <section class="testimonial pb-5 pt-9" style="padding-bottom: 20px;">
-        <div class="container">
+    @if ($service->faqs->count() > 0)
+        <!-- Questions -->
+        <div class="custom-accordion container">
             <div class="section-title mb-4 pb-1 w-75 mx-auto text-center">
-                <h2 class="m-0">اراء العملاء</h2>
+                <h2 class="m-0">الأسئلة الشائعة</h2>
             </div>
-            <div class="row review-slider bg-lgrey" style="direction: ltr">
-                @foreach ($service->reviews as $review)
-                    <div style="border-radius: 8px" class="col-sm-4 item">
-                        <div class="testimonial-item1 text-center">
-                            <div class="details">
-                                <p class="m-0">
-                                    {!! $review->description !!}
-                                </p>
-                            </div>
-                            <div class="author-info mt-2">
-                                <a href="#">
-                                    <img style="
-                                width: 100px;
-                                height: 100px;
-                                border-radius: 100%;
-                                margin: auto;
-                                "
-                                        src="{{ asset($review->image_path) }}" alt="" />
-                                </a>
-                                <div class="author-title">
-                                    <h4 class="m-0 theme2">{{ $review->name }}</h4>
-                                    <span>{{ $review->title }}</span>
-                                </div>
-                            </div>
-                            <i class="fa fa-quote-left mb-2"></i>
+            <div class="accordion-wrapper">
+                @foreach ($service->faqs as $index => $faq)
+                    <div class="accordion-item">
+                        <div class="accordion-header" data-target="#customCollapse{{ $index }}">
+                            <span>{{ $faq->question }}</span>
+                            <i class="toggle-icon"></i>
+                        </div>
+                        <div id="customCollapse{{ $index }}" class="accordion-content">
+                            {!! $faq->answer !!}
                         </div>
                     </div>
                 @endforeach
 
             </div>
         </div>
-    </section>
-    <!-- testomonial-->
 
+        <!-- Questions -->
+    @endif
+
+    @if ($service->reviews->count() > 0)
+        <!-- testomonial start -->
+        <section class="testimonial pb-5 pt-9" style="padding-bottom: 20px;">
+            <div class="container">
+                <div class="section-title mb-4 pb-1 w-75 mx-auto text-center">
+                    <h2 class="m-0">اراء العملاء</h2>
+                </div>
+                <div class="row review-slider bg-lgrey" style="direction: ltr">
+                    @foreach ($service->reviews as $review)
+                        <div style="border-radius: 8px" class="col-sm-4 item">
+                            <div class="testimonial-item1 text-center">
+                                <div class="details">
+                                    <p class="m-0">
+                                        {!! $review->description !!}
+                                    </p>
+                                </div>
+                                <div class="author-info mt-2">
+                                    <a href="#">
+                                        <img style="
+                                width: 100px;
+                                height: 100px;
+                                border-radius: 100%;
+                                margin: auto;
+                                "
+                                            src="{{ asset($review->image_path) }}" alt="" />
+                                    </a>
+                                    <div class="author-title">
+                                        <h4 class="m-0 theme2">{{ $review->name }}</h4>
+                                        <span>{{ $review->title }}</span>
+                                    </div>
+                                </div>
+                                <i class="fa fa-quote-left mb-2"></i>
+                            </div>
+                        </div>
+                    @endforeach
+
+                </div>
+            </div>
+        </section>
+        <!-- testomonial-->
     @endif
 
     <!-- contact starts -->
     <section style="margin-top: 110px;" class="contact-main pt-0 pb-10 bg-grey">
         <!-- <div class="map">
-            <div style="width: 100%">
-                <iframe height="500"
-                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(mangal%20bazar)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
-            </div>
-        </div> -->
+                <div style="width: 100%">
+                    <iframe height="500"
+                        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(mangal%20bazar)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                </div>
+            </div> -->
         <div class="container">
             <div class="contact-info-main">
                 <div class="row">
@@ -346,33 +344,39 @@
                             </div>
                             <div class="contact-info-content row mb-1">
                                 <div class="col-lg-4 col-md-6 mb-4">
-                                    <div class="info-item bg-lgrey px-4 py-5 border-all text-center">
+                                    <div class="info-item bg-lgrey px-4 py-5 border-all text-center" style="height: 100%;">
                                         <div class="info-icon mb-2">
                                             <i class="fa fa-map-marker"></i>
                                         </div>
                                         <div class="info-content">
-                                            <p style="font-size: 18px" class="m-0">السعودية جدة</p>
+                                            <p style="font-size: 18px" class="m-0"><a
+                                                    href="{{ setting('site_location') }}"> إعمار سكوير، حي الفيحاء، جدة،
+                                                    المملكة العربية السعودية</a></p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6 mb-4">
-                                    <div class="info-item bg-lgrey px-4 py-5 border-all text-center">
+                                    <div class="info-item bg-lgrey px-4 py-5 border-all text-center" style="height: 100%;">
                                         <div class="info-icon mb-2">
                                             <i class="fa fa-phone"></i>
                                         </div>
                                         <div class="info-content">
-                                            <p style="font-size: 18px" class="m-0">+966554115160</p>
+                                            <p style="font-size: 18px" class="m-0"><a
+                                                    href="tel:{{ setting('site_phone') }}">{{ setting('site_phone') }}</a>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-12 mb-4">
-                                    <div class="info-item bg-lgrey px-4 py-5 border-all text-center">
+                                    <div class="info-item bg-lgrey px-4 py-5 border-all text-center" style="height: 100%;">
                                         <div class="info-icon mb-2">
                                             <i class="fa fa-envelope"></i>
                                         </div>
                                         <div class="info-content ps-4">
                                             <p style="font-size: 18px" class="m-0">
-                                                info@roshem.sa
+                                                <a
+                                                    href="mailto:{{ setting('site_email') }}">{{ setting('site_email') }}</a>
+                                                </li>
                                             </p>
                                         </div>
                                     </div>

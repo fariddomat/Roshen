@@ -39,7 +39,7 @@
                                         <th scope="col">@lang('site.phone')</th>
                                         <th scope="col">@lang('site.email')</th>
                                         <th scope="col">الخدمة</th>
-                                        {{-- <th scope="col">الرسالة</th> --}}
+                                        <th scope="col">الرسالة</th>
                                         <th scope="col">التاريخ</th>
                                         <th scope="col">العمليات</th>
 
@@ -53,7 +53,7 @@
                                             <td>{{ $contact->email }}</td>
                                             <td>{{ $contact->service?->name }}</td>
                                             <td>{{ $contact->message }}</td>
-                                            <td>{{ $contact->created_at->diffforhumans() }}</td>
+                                            <td>{{ $contact->created_at }}</td>
                                             <td>
                                                 @if ($contact->status != 'read')
                                                 <form action="{{ route('dashboard.setting.markAsRead', $contact->id) }}"

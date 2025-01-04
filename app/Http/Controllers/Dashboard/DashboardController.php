@@ -10,6 +10,7 @@ use App\Models\LogSystem;
 use App\Models\NewsLetter;
 use App\Models\ProfileDownload;
 use App\Models\Project;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
 use IlluminateSupportFacadesLog;
@@ -24,8 +25,9 @@ class DashboardController extends Controller
         $apartments = Apartment::count();
         $contacts = Contact::count();
         $newsLetter = NewsLetter::count();
+        $blogs=Blog::count();
 
         // Pass the counts to the view
-        return view('dashboard.index', compact('categories', 'projects', 'apartments', 'contacts', 'newsLetter'));
+        return view('dashboard.index', compact('categories', 'projects', 'apartments', 'contacts', 'newsLetter', 'blogs'));
     }
 }

@@ -334,12 +334,11 @@
   font-weight: bold;
   color: #fff;">معلومات التواصل</h5>
                     <ul class="list-unstyled menu" style="display: inline-grid !important">
-                        <li class="mb-2" style="font-size: 13px"><a href="{{ setting('site_location') }}">جدة، المملكة
-                                العربية السعودية</a></li>
-                        <li class="mb-2"><i class="fa fa-phone me-2"></i> <a
-                                href="tel:{{ setting('site_phone') }}">{{ setting('site_phone') }}</a></li>
-                        <li class="mb-2"><i class="fa fa-envelope me-2"></i> <a
-                                href="mailto:{{ setting('site_email') }}">{{ setting('site_email') }}</a></li>
+                        <li class="mb-2" style="font-size: 13px">   <a href="{{ setting('site_location') }}">  <i class="fa fa-map-marker"></i> إعمار سكوير، حي الفيحاء، جدة، المملكة العربية السعودية</a></li>
+                        <li class="mb-2"><a
+                                href="tel:{{ setting('site_phone') }}"><i class="fa fa-phone me-2"></i> {{ setting('site_phone') }}</a></li>
+                        <li class="mb-2"><a
+                                href="mailto:{{ setting('site_email') }}"><i class="fa fa-envelope me-2"></i> {{ setting('site_email') }}</a></li>
                     </ul>
                 </div>
             </div>

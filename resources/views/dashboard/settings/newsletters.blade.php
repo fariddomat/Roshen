@@ -44,7 +44,7 @@
                                     @foreach ($newsletters as $index => $item)
                                         <tr dir="rtl" style=" text-align: right;">
                                             <td>{{ $item->mobile }}</td>
-                                            <td>{{ $item->created_at->diffforhumans() }}</td>
+                                            <td>{{ $item->created_at }}</td>
 
 
                                         </tr>
