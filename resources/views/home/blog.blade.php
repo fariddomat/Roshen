@@ -107,9 +107,9 @@
                         <div class="blog-single-in d-md-flex align-items-center mb-4 text-center text-md-start">
                             <div class="blog-single-in-cont text-center">
                                 <div class="blog-content">
-                                    <h2 class="blog-title mb-0">
-                                        <a href="#" class="">{{ $blog->title }}</a>
-                                    </h2>
+                                    <h1 class="blog-title mb-0" style="font-size: 2.5rem">
+                                        {{ $blog->title }}
+                                    </h1>
                                 </div>
                             </div>
                         </div>
