@@ -9,7 +9,16 @@
 
 @endsection
 @section('scripts')
-
+<script>
+    document.querySelectorAll('s').forEach((tag) => {
+        // Replace the <s> tag with its inner content
+        const parent = tag.parentNode;
+        while (tag.firstChild) {
+            parent.insertBefore(tag.firstChild, tag);
+        }
+        parent.removeChild(tag); // Remove the empty <s> tag
+    });
+</script>
 @endsection
 @section('content')
 
@@ -33,11 +42,16 @@
                                     <div
                                             class="sortby d-flex align-items-center justify-content-between ml-2"
                                     >
-                                        <select class="niceSelect">
-                                            <option value="1">ترتيب حسب</option>
-                                            <option value="2">الاقدم</option>
-                                            <option value="2">الاحدث</option>
+                                    <form id="filterForm" method="GET" action="{{ route('blogs.category',$category->slug) }}">
+                                        <select name="sort" class="niceSelect"
+                                            onchange="document.getElementById('filterForm').submit();">
+                                            <option value="">ترتيب حسب</option>
+                                            <option value="oldest"
+                                                {{ request('sort') == 'oldest' ? 'selected' : '' }}>الاقدم</option>
+                                            <option value="latest"
+                                                {{ request('sort') == 'latest' ? 'selected' : '' }}>الاحدث</option>
                                         </select>
+                                    </form>
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +95,7 @@
                     </div>
                     <div class="pagination-main text-center">
                         <ul class="pagination">
-                          {{ $blogs->links() }}
+                            {{ $blogs->appends(request()->query())->links() }}
                         </ul>
                     </div>
                 </div>

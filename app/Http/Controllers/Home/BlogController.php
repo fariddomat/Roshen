@@ -16,9 +16,18 @@ class BlogController extends Controller
     //
     public function index(Request $request)
     {
-        $query = Blog::orderBy('created_at');
+        $query = Blog::query();
 
-        // تصفية المقالات بناءً على الفئة إذا تم تحديدها
+        // Apply sorting
+        if ($request->sort == 'oldest') {
+            $query->orderBy('created_at', 'asc');
+        } elseif ($request->sort == 'latest') {
+            $query->orderBy('created_at', 'desc');
+        } else {
+            $query->orderBy('created_at', 'desc'); // Default sorting
+        }
+
+        // Filter by category if provided
         if ($request->has('category')) {
             $query->where('blog_category_id', $request->category);
         }
@@ -29,7 +38,8 @@ class BlogController extends Controller
         return view('home.blogs', compact('blogs', 'blogCategories'));
     }
 
-    public function category($slug)
+
+    public function category(Request $request, $slug)
     {
         // Find the category by slug
         $category = BlogCategory::where('slug', $slug)->first();
@@ -40,10 +50,17 @@ class BlogController extends Controller
         }
 
         // Get blogs that belong to the found category
-        $blogs = Blog::where('blog_category_id', $category->id)
-            ->orderBy('created_at', 'desc')
-            ->paginate(16);
+        $query = Blog::where('blog_category_id', $category->id);
+        if ($request->sort == 'oldest') {
+            $query->orderBy('created_at', 'asc');
+        } elseif ($request->sort == 'latest') {
+            $query->orderBy('created_at', 'desc');
+        } else {
+            $query->orderBy('created_at', 'desc'); // Default sorting
+        }
 
+
+        $blogs = $query->paginate(16);
         $blogCategories = BlogCategory::all();
 
         return view('home.blogsCategory', compact('blogs', 'blogCategories', 'category'));

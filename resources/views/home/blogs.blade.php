@@ -36,11 +36,16 @@
                                     </div>
                                     <div class="click-menu d-flex align-items-center justify-content-between">
                                         <div class="sortby d-flex align-items-center justify-content-between ml-2">
-                                            <select class="niceSelect">
-                                                <option value="1">ترتيب حسب</option>
-                                                <option value="2">الاقدم</option>
-                                                <option value="2">الاحدث</option>
-                                            </select>
+                                            <form id="filterForm" method="GET" action="{{ route('blogs') }}">
+                                                <select name="sort" class="niceSelect"
+                                                    onchange="document.getElementById('filterForm').submit();">
+                                                    <option value="">ترتيب حسب</option>
+                                                    <option value="oldest"
+                                                        {{ request('sort') == 'oldest' ? 'selected' : '' }}>الاقدم</option>
+                                                    <option value="latest"
+                                                        {{ request('sort') == 'latest' ? 'selected' : '' }}>الاحدث</option>
+                                                </select>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -58,10 +63,7 @@
                                                     <a href="{{ route('blog', $blog->slug) }}">{{ $blog->title }}</a>
                                                 </h4>
                                                 <p class="mb-2">
-                                               <div>
-                                                    {!! Str::limit($blog->introduction, 190, ' ...') !!}
-
-                                               </div>
+                                                    {{-- {!! Str::limit($blog->introduction, 190, ' ...') !!} --}}
 
                                                 </p>
                                                 <div class="entry-meta d-flex align-items-center justify-content-between">
@@ -80,7 +82,7 @@
                         </div>
                         <div class="pagination-main text-center">
                             <ul class="pagination">
-                                {{ $blogs->links() }}
+                                {{ $blogs->appends(request()->query())->links() }}
                             </ul>
                         </div>
                     </div>
