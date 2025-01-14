@@ -19,9 +19,9 @@ class BlogController extends Controller
         $this->middleware(['role:superadministrator|blogger']);
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $blogs = Blog::with(['category'])->get();
+        $blogs = Blog::whenSearch($request->search)->with(['category'])->get();
         return view('dashboard.blogs.index', compact('blogs'));
     }
     public function create()
