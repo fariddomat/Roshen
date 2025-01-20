@@ -34,14 +34,17 @@ class ServiceFAQController extends Controller
         return redirect()->route('dashboard.service-faqs.index')->with('success', 'FAQ created successfully.');
     }
 
-    public function edit(ServiceFAQ $serviceFAQ)
+    public function edit($id)
     {
+        $serviceFAQ=ServiceFAQ::findOrFail($id);
         $services = Service::all();
         return view('dashboard.service_faqs.edit', compact('serviceFAQ', 'services'));
     }
 
-    public function update(Request $request, ServiceFAQ $serviceFAQ)
+    public function update(Request $request, $id)
     {
+
+        $serviceFAQ=ServiceFAQ::findOrFail($id);
         $request->validate([
             'service_id' => 'required|exists:services,id',
             'question' => 'required|string|max:255',
@@ -53,8 +56,10 @@ class ServiceFAQController extends Controller
         return redirect()->route('dashboard.service-faqs.index')->with('success', 'FAQ updated successfully.');
     }
 
-    public function destroy(ServiceFAQ $serviceFAQ)
+    public function destroy($id)
     {
+
+        $serviceFAQ=ServiceFAQ::findOrFail($id);
         $serviceFAQ->delete();
         return redirect()->route('dashboard.service-faqs.index')->with('success', 'FAQ deleted successfully.');
     }

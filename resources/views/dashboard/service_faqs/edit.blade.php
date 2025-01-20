@@ -6,7 +6,7 @@
         <h4>تعديل FAQ</h4>
     </div>
     <div class="card-body" style="padding: 1rem;">
-        <form action="{{ route('dashboard.service-faqs.update', $serviceFAQ->id) }}" method="POST">
+        <form action="{{ route('dashboard.service-faqs.update', $serviceFAQ) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="form-group">

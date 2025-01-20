@@ -1,77 +1,31 @@
 @extends('home._layouts._app')
-
 @section('header')
     header_menu-g
 @endsection
-
 @section('style')
-<style>
-    .btn-primary:focus {
-        background-color: #10887c
-    }
-    /* Arrow rotation for expanded state */
-    .arrow {
-        transition: transform 0.3s ease;
-    }
-
-    [aria-expanded="true"] .arrow {
-        transform: rotate(180deg);
-    }
-    /* Existing styles */
-    .blog-content p:first-child::first-letter {
-        font-size: inherit !important;
-        color: unset !important;
-        float: inherit !important;
-    }
-
-    .scroll {
-        position: fixed;
-        z-index: 1000;
-        right: 0;
-        top: 0;
-        width: 0;
-        height: 9px;
-        background-color: #10887c;
-    }
-
-    ul li {
-        display: block;
-    }
-
-    /* Mobile-specific styles */
-    @media (max-width: 767.98px) {
-        .blog-left .row {
-                display: flex;
-                flex-direction: column;
-            }
-
-            .blog-left .col-lg-4 {
-                order: 2; /* Move sidebar (content table and writer section) after the main content */
-            }
-
-            .blog-left .col-lg-8 {
-                order: 1; /* Ensure main content comes first */
-            }
-        /* Move writer section to the end of the blog content */
-        .author-news {
-            margin-top: 2rem; /* Add some spacing */
+    <style>
+        .blog-content p:first-child::first-letter {
+            font-size: inherit !important;
+            color: unset !important;
+            float: inherit !important;
         }
 
-        /* Ensure content table is visible only in mobile */
-        .content-table-mobile {
-            display: block !important; /* Force display for mobile */
+        .scroll {
+            position: fixed;
+            z-index: 1000;
+            right: 0;
+            top: 0;
+            width: 0;
+            height: 9px;
+            background-color: #10887c;
         }
 
-        /* Hide content table in sidebar for mobile */
-        .sidebar-item.d-none.d-lg-block {
-            display: none !important;
+        ul li {
+            display: block;
         }
-    }
-</style>
+    </style>
 @endsection
-
 @section('scripts')
-
     <script>
         let ele = document.querySelector(".scroll");
         let height =
@@ -84,9 +38,12 @@
         })
     </script>
 @endsection
-
 @section('content')
+
+
     <div class="scroll"></div>
+
+
 
     <!-- blog starts -->
     <section class="blog blog-left pt-10">
@@ -95,8 +52,7 @@
                 <div class="col-lg-4 col-md-12">
                     <div class="sidebar-sticky">
                         <div class="list-sidebar">
-                            <!-- Content Table for Desktop -->
-                            <div class="sidebar-item mb-4 d-none d-lg-block">
+                            <div class="sidebar-item mb-4">
                                 <h4 class="">جدول المحتويات</h4>
                                 <ul class="sidebar-category">
                                     @php
@@ -120,12 +76,14 @@
                                         <li>لا يوجد محتوى متاح</li>
                                     @endif
                                 </ul>
-                            </div>
 
-                            <!-- Writer Section -->
+
+
+                            </div>
                             <div class="author-news mb-4 box-shadow p-5 text-center">
                                 <div class="author-news-content">
                                     <h3 class="title mb-1"><a href="#">كاتب المقال</a></h3>
+
                                     <div class="author-thumb mb-1">
                                         <img src="{{ asset($blog->author_image) }}" alt="author" />
                                     </div>
@@ -161,72 +119,41 @@
                                 <div class="blog-imagelist mb-3">
                                     <img src="{{ asset($blog->index_image) }}" alt="{{ $blog->index_image_alt }}" />
                                 </div>
-
-                                <!-- Toggle Button for Content Table (Visible Only on Mobile) -->
-                                <div class="mb-3 d-block d-lg-none">
-                                    <button class="btn btn-primary w-100 d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#contentTableCollapse" aria-expanded="false" aria-controls="contentTableCollapse" style="background-color: #10887c">
-                                        جدول المحتويات
-                                        <span class="arrow">▼</span>
-                                    </button>
-                                </div>
-
-                                <!-- Content Table (Collapsible) -->
-                                <div id="contentTableCollapse" class="collapse">
-                                    <h4 class="mb-3">جدول المحتويات</h4>
-                                    <ul class="sidebar-category">
-                                        @php
-                                            // Remove HTML tags and convert to plain text
-                                            $plainText = strip_tags($blog->content_table);
-
-                                            // Replace &nbsp; with a regular space
-                                            $plainText = str_replace('&nbsp;', ' ', $plainText);
-
-                                            // Split the plain text by newlines
-                                            $rows = preg_split('/\r\n|\r|\n/', $plainText);
-                                        @endphp
-
-                                        @if(!empty($rows))
-                                            @foreach($rows as $row)
-                                                @if(trim($row) !== '') {{-- Skip empty rows --}}
-                                                    <li><a href="#">{{ $row }}</a></li>
-                                                @endif
-                                            @endforeach
-                                        @else
-                                            <li>لا يوجد محتوى متاح</li>
-                                        @endif
-                                    </ul>
-                                </div>
-
                                 <h3>المقدمه</h3>
                                 <div class="mb-3 shadow-sm"
                                     style="
-                                      border-right: 2px solid #10887c;
-                                      padding: 10px;
-                                      border-radius: 8px;
-                                    ">
+                      border-right: 2px solid #10887c;
+                      padding: 10px;
+                      border-radius: 8px;
+                    ">
                                     {!! $blog->introduction !!}
                                 </div>
                             </div>
                             <!-- blog blockquote -->
                             <div class="mb-3 shadow-sm"
                                 style="
-                                    border-right: 2px solid #10887c;
-                                    padding: 1.5rem;
-                                    border-radius: 8px;
-                                  ">
+                    border-right: 2px solid #10887c;
+                    padding: 1.5rem;
+                    border-radius: 8px;
+                  ">
                                 {!! $blog->first_paragraph !!}
                             </div>
+                            {{-- <h3>عنوان محتوى المقاله</h3> --}}
+                            <!-- blog blockquote -->
                             <div class="mb-3 shadow-sm"
                                 style="
-                                    border-right: 2px solid #10887c;
-                                    padding: 10px;
-                                    border-radius: 8px;
-                                  ">
+                    border-right: 2px solid #10887c;
+                    padding: 10px;
+                    border-radius: 8px;
+                  ">
                                 {!! $blog->description !!}
                             </div>
+
                         </div>
                     </div>
                 </div>
+
+                <!-- sidebar starts -->
             </div>
         </div>
     </section>
@@ -245,6 +172,7 @@
                             <div class="trend-item">
                                 <div class="trend-image">
                                     <img src="{{ asset($blog->image) }}" alt="{{ $blog->image_alt }}" />
+
                                     <div class="trend-content p-4 bg-lgrey border-b">
                                         <h5 class="theme">{{ $blog->category->name }}</h5>
                                         <h4>
@@ -270,9 +198,11 @@
                             </div>
                         </div>
                     @endforeach
+
                 </div>
             </div>
         </section>
         <!-- top deal ends -->
     @endif
+
 @endsection
