@@ -373,10 +373,10 @@
                         <h2 class="mb-2">لماذا تختار روشم ؟</h2>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                {{-- <div class="col-lg-4">
                     <a style="border-radius: 8px" href="{{ route('projects') }}"
                         class="btn-btn float-lg-end float-none">عرض جميع المشاريع</a>
-                </div>
+                </div> --}}
             </div>
             <!-- why us starts -->
             <div class="why-us">
