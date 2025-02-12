@@ -67,6 +67,14 @@
             display: none !important;
         }
     }
+
+    .team-slider {
+    width: 100%; /* Ensure the container takes full width */
+    overflow: hidden; /* Hide overflow */
+}
+.swiper-slide {
+    width: 33.33%; /* Adjust based on slidesPerView */
+}
 </style>
 @endsection
 
@@ -83,6 +91,37 @@
             ele.style.width = ((scroller / height) * 100) + "%";
         })
     </script>
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const swiper = new Swiper('.team-slider', {
+        slidesPerView: 3,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+            delay: 3000,
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+            },
+            768: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+            },
+        },
+        observer: true,
+        observeParents: true,
+    });
+});
+document.querySelectorAll('*').forEach(element => {
+    if (window.getComputedStyle(element).fontFamily.includes('Arial')) {
+        element.style.fontFamily = 'Cairo, sans-serif';
+    }
+});
+    </script>
+
 @endsection
 
 @section('content')
@@ -250,9 +289,7 @@
                                         <h4>
                                             <a href="{{ route('blog', $blog->slug) }}">{{ $blog->title }}</a>
                                         </h4>
-                                        <p class="mb-2">
-                                            {!! Str::limit($blog->introduction, 190, ' ...') !!}
-                                        </p>
+
                                         <div
                                             class="entry-meta d-flex align-items-center justify-content-between border-t pt-2">
                                             <div class="entry-author d-flex align-items-center">

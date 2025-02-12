@@ -6,6 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ $metaTitle ?? 'روشم العقارية' }}</title>
     <meta name="description" content="{{ $metaDescription ?? 'شركة روشم العقارية، خيارك الأول للسكن والاستثمار' }}">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-15GH7DS6L4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-15GH7DS6L4');
+</script>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]function(){(c[a].q=c[a].q[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "q7w4k3jouj");
+</script>
     @isset($metaTag)
         @if ($metaTag->canonical_link)
             <link rel="canonical" href="{{ $metaTag->canonical_link }}">
@@ -293,9 +309,12 @@
                         @endforeach
                     </ul>
                     <div class="newsletter-subscription">
+                            @error('mobile')
+                            <p class="text-danger">يجب أن يبدأ رقم الهاتف بـ 05 وأن يتكون من 10 أرقام.</p>
+                             @enderror
                         <form action="{{ route('newsletter') }}" method="POST">
                             @csrf
-                            <input type="tel" name="mobile" placeholder="أدخل رقمك" required>
+                            <input type="tel" name="mobile" value="{{ old('mobile') }}" placeholder="أدخل رقمك" required>
                             <button type="submit">تابعنا</button>
                         </form>
 

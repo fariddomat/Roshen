@@ -104,7 +104,13 @@ class HomeController extends Controller
     public function newsletter(Request $request)
     {
         $request->validate([
-            'mobile' => 'required',
+            'mobile' => [
+                'required',
+                'regex:/^05[0-9]{8}$/', // Start with 05 and exactly 10 digits in total
+            ],
+            'message' => 'required',
+        ], [
+            'phone.regex' => 'يجب أن يبدأ رقم الهاتف بـ 05 وأن يتكون من 10 أرقام.', // Custom error message in Arabic
         ]);
 
         NewsLetter::create($request->all());

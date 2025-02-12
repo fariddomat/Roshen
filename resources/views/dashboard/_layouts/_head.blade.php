@@ -11,8 +11,8 @@
     <!-- Main styles for this application -->
     <link href="{{ asset('dashboard/dest/style.css') }}" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ asset('noty/noty.css') }}">
-    <script src="{{ asset('noty/noty.min.js') }}" defer></script>
+        <link rel="stylesheet" href="{{ asset('noty/noty.css') }}">
+        <script src="{{ asset('noty/noty.min.js') }}" defer></script>
 
     <!-- Include jQuery library -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>

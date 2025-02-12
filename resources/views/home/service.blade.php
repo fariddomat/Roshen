@@ -124,6 +124,11 @@
                 }
             });
         });
+        document.querySelectorAll('*').forEach(element => {
+    if (window.getComputedStyle(element).fontFamily.includes('Arial')) {
+        element.style.fontFamily = 'Cairo, sans-serif';
+    }
+});
     </script>
 @endsection
 @section('content')
