@@ -25,8 +25,13 @@
 <!-- Our Services -->
 <section class="about-us pb-6 pt-4 bg-pattern">
     <div class="container">
-        <div class="section-title mb-6 pb-1 w-75 text-center mx-auto">
-            <h2 class="m-0">خدماتنا</h2>
+        <<div class="section-title mb-6 pb-1 w-75 text-center mx-auto">
+            <h1 style="
+                color: #10887c;
+                line-height: 1.2;
+                margin-bottom: 1rem !important;
+                ">خدماتنا
+            </h1>
         </div>
         <!-- why us starts -->
         <div class="why-us">

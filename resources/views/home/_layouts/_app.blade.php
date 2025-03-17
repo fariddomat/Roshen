@@ -7,21 +7,30 @@
     <title>{{ $metaTitle ?? 'روشم العقارية' }}</title>
     <meta name="description" content="{{ $metaDescription ?? 'شركة روشم العقارية، خيارك الأول للسكن والاستثمار' }}">
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-15GH7DS6L4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-15GH7DS6L4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-15GH7DS6L4');
-</script>
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]function(){(c[a].q=c[a].q[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "q7w4k3jouj");
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-15GH7DS6L4');
+    </script>
+    <script type="text/javascript">
+        (function(c, l, a, r, i, t, y) {
+            c[a] = c[a]
+            function() {
+                (c[a].q = c[a].q[]).push(arguments)
+            };
+            t = l.createElement(r);
+            t.async = 1;
+            t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q7w4k3jouj");
+    </script>
     @isset($metaTag)
         @if ($metaTag->canonical_link)
             <link rel="canonical" href="{{ $metaTag->canonical_link }}">
@@ -77,7 +86,7 @@
             }
         </style>
 
-        <link  href="{{ asset('asset') }}/css/style.css?v=1" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('asset') }}/css/style.css?v=1" rel="stylesheet" type="text/css" />
         <!--Plugin CSS-->
         <link href="{{ asset('asset') }}/css/plugin.css?v=1" rel="stylesheet" type="text/css" />
         <!--Flaticons CSS-->
@@ -185,14 +194,76 @@
         </style>
 
         <style>
-
-
             .main_header_area .header_menu .navbar.navbar-default .nav.navbar-nav li a {
                 /* color: #fff; */
                 font-weight: bold !important;
             }
+        </style>
+        <style>
+            /* Sidebar styles */
+            .sidebar-container {
+                position: fixed;
+                left: -300px;
+                top: 0;
+                width: 300px;
+                height: 100%;
+                background: #fff;
+                transition: 0.3s ease-in-out;
+                z-index: 99999;
+                box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            }
 
+            .sidebar-container.active {
+                left: 0;
+            }
 
+            .sidebar-toggle-btn {
+                position: fixed;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                background: #605098;
+                color: white;
+                border: none;
+                padding: 15px 10px;
+                border-radius: 0 10px 10px 0;
+                cursor: pointer;
+                z-index: 100;
+                transition: 0.3s ease;
+                writing-mode: vertical-rl;
+                text-orientation: mixed;
+                width: 50px;
+            }
+
+            .sidebar-toggle-btn:hover {
+                background: #483d8b;
+            }
+
+            .sidebar-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                display: none;
+                z-index: 999;
+            }
+
+            .sidebar-container.active+.sidebar-overlay {
+                display: block;
+            }
+
+            @media (max-width: 768px) {
+                .sidebar-container {
+                    
+                    width: 300px;
+                }
+
+                .sidebar-toggle-btn {
+                    padding: 10px 8px;
+                }
+            }
         </style>
         @yield('style')
     </head>
@@ -217,8 +288,8 @@
                             <!-- Brand and toggle get grouped for better mobile display -->
                             <div class="navbar-header">
                                 <a class="navbar-brand" href="{{ route('home') }}">
-                                    <img src="{{ asset('asset') }}/images/logo.webp" alt="image"  loading="lazy"/>
-                                    <img src="{{ asset('asset') }}/images/logo.webp" alt="image"  loading="lazy"/>
+                                    <img src="{{ asset('asset') }}/images/logo.webp" alt="image" loading="lazy" />
+                                    <img src="{{ asset('asset') }}/images/logo.webp" alt="image" loading="lazy" />
                                 </a>
                             </div>
                             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -309,12 +380,13 @@
                         @endforeach
                     </ul>
                     <div class="newsletter-subscription">
-                            @error('mobile')
+                        @error('mobile')
                             <p class="text-danger">يجب أن يبدأ رقم الهاتف بـ 05 وأن يتكون من 10 أرقام.</p>
-                             @enderror
+                        @enderror
                         <form action="{{ route('newsletter') }}" method="POST">
                             @csrf
-                            <input type="tel" name="mobile" value="{{ old('mobile') }}" placeholder="أدخل رقمك" required>
+                            <input type="tel" name="mobile" value="{{ old('mobile') }}" placeholder="أدخل رقمك"
+                                required>
                             <button type="submit">تابعنا</button>
                         </form>
 
@@ -353,11 +425,13 @@
   font-weight: bold;
   color: #fff;">معلومات التواصل</h5>
                     <ul class="list-unstyled menu" style="display: inline-grid !important">
-                        <li class="mb-2" style="font-size: 13px">   <a href="{{ setting('site_location') }}">  <i class="fa fa-map-marker"></i> إعمار سكوير، حي الفيحاء، جدة، المملكة العربية السعودية</a></li>
-                        <li class="mb-2"><a
-                                href="tel:{{ setting('site_phone') }}"><i class="fa fa-phone me-2"></i> {{ setting('site_phone') }}</a></li>
-                        <li class="mb-2"><a
-                                href="mailto:{{ setting('site_email') }}"><i class="fa fa-envelope me-2"></i> {{ setting('site_email') }}</a></li>
+                        <li class="mb-2" style="font-size: 13px"> <a href="{{ setting('site_location') }}"> <i
+                                    class="fa fa-map-marker"></i> إعمار سكوير، حي الفيحاء، جدة، المملكة العربية
+                                السعودية</a></li>
+                        <li class="mb-2"><a href="tel:{{ setting('site_phone') }}"><i class="fa fa-phone me-2"></i>
+                                {{ setting('site_phone') }}</a></li>
+                        <li class="mb-2"><a href="mailto:{{ setting('site_email') }}"><i
+                                    class="fa fa-envelope me-2"></i> {{ setting('site_email') }}</a></li>
                     </ul>
                 </div>
             </div>
@@ -397,9 +471,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
         <!-- *Scripts* -->
-        <script src="{{ asset('asset') }}/js/jquery-3.5.1.min.js" ></script>
-        <script src="{{ asset('asset') }}/js/bootstrap.min.js" ></script>
-        <script src="{{ asset('asset') }}/js/plugin.js" ></script>
+        <script src="{{ asset('asset') }}/js/jquery-3.5.1.min.js"></script>
+        <script src="{{ asset('asset') }}/js/bootstrap.min.js"></script>
+        <script src="{{ asset('asset') }}/js/plugin.js"></script>
         <script src="{{ asset('asset') }}/js/main.js?v=7" defer></script>
         {{-- <script src="{{ asset('asset') }}/js/custom-swiper.js"></script> --}}
         <script src="{{ asset('asset') }}/js/custom-nav.js" defer></script>
@@ -422,6 +496,17 @@
             });
         </script>
 
+        <script>
+            $(document).ready(function() {
+                $('.sidebar-toggle-btn').click(function() {
+                    $('.sidebar-container').toggleClass('active');
+                });
+
+                $('.sidebar-overlay').click(function() {
+                    $('.sidebar-container').removeClass('active');
+                });
+            });
+        </script>
         @extends('dashboard._layouts._noty')
         @yield('scripts')
     </body>

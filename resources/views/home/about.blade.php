@@ -187,7 +187,12 @@
         background-size: cover;
       ">
         <div class="section-title mb-6 pb-1 w-75 text-center mx-auto">
-            <h2 class="m-0 text-center">عن روشم</h2>
+            <h1 style="
+                color: #10887c;
+                line-height: 1.2;
+                margin-bottom: 1rem !important;text-align: center !important;
+                ">عن روشم
+            </h1>
         </div>
     </div>
     <section class="about-us pb-6">

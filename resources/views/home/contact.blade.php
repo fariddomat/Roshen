@@ -3,31 +3,41 @@
     header_menu-g
 @endsection
 @section('style')
-<style>
- h3 {
-  font-size: 2.5rem !important;
-  }
-   p {
-  font-size: 1.5rem !important;
-}
+    <style>
+        h3 {
+            font-size: 2.5rem !important;
+        }
 
- a{
+        p {
+            font-size: 1.5rem !important;
+        }
 
-  font-size: 1rem !important;
-  font-weight: bold !important;}
+        a {
 
-input[type="text"],
-input[type="email"],
-textarea{
-    font-size: 1.3rem !important;
-}
-</style>
+            font-size: 1rem !important;
+            font-weight: bold !important;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            font-size: 1.3rem !important;
+        }
+    </style>
 @endsection
 @section('content')
     <!-- contact starts -->
     <section class="contact-main pt-0 pb-10 bg-white">
         <div class="map">
             <div style="width: 100%">
+                <div class="section-title mb-6 pb-1 w-75 text-center mx-auto">
+                    <h1 style="
+                        color: #10887c;
+                        line-height: 1.2;
+                        margin-bottom: 1rem !important;
+                        ">تواصل معنا
+                    </h1>
+                </div>
                 {!! setting('site_title') !!}
             </div>
         </div>
@@ -102,18 +112,19 @@ textarea{
                                             placeholder=" *رقم  الجوال" />
 
                                         <div class="form-group mb-2">
-                                        <select class="form-control mt-2" id="dropdown" name="service_id">
-                                            <option value="" disabled selected>اختر الخدمة</option>
-                                           @foreach ($services as $service)
-                                               <option value="{{ $service->id }}">{{ $service->name }}</option>
-                                           @endforeach
-                                        </select>
-                                    </div>
+                                            <select class="form-control mt-2" id="dropdown" name="service_id">
+                                                <option value="" disabled selected>اختر الخدمة</option>
+                                                @foreach ($services as $service)
+                                                    <option value="{{ $service->id }}">{{ $service->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
                                         <div class="textarea mb-2">
                                             <textarea name="message" placeholder=" *اكتب رسالتك نسعد بها"></textarea>
                                         </div>
                                         <div class="comment-btn text-center">
-                                            <button type="submit" style="background-color: #6f42c1; color: white;  font-size: 1.5rem;"
+                                            <button type="submit"
+                                                style="background-color: #6f42c1; color: white;  font-size: 1.5rem;"
                                                 class="btn px-5" id="submit2">ارسال الرسالة</button>
                                         </div>
                                     </div>

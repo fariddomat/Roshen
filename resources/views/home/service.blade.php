@@ -135,8 +135,16 @@
     <!-- about-us starts -->
     <section class="about-us bg-white pb-6 pt-0">
         <div class="container">
+            
             <div class="section-title mb-6 pb-1 w-75 text-center mx-auto">
-                <h2 class="m-0">{{ $service->name }}</h2>
+                <h1 style="
+                    color: #10887c;
+                    line-height: 1.2;
+                    margin-bottom: 1rem !important;
+                    font-size: 48px;
+                    font-weight: bold;
+                    ">
+                {{ $service->name }}</h1>
             </div>
             <!-- why us starts -->
             <div class="text">

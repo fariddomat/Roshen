@@ -61,7 +61,7 @@ class ProjectControlelr extends Controller
         });
         }
 
-        $projects = $query->orderBy('created_at')->paginate(16);
+        $projects = $query->orderBy('created_at')->paginate(12);
         $categories = Category::all();
 
         return view('home.projects', compact('category', 'projects', 'categories'));

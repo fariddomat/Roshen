@@ -25,6 +25,14 @@
     <!-- blog starts -->
     <section class="blog">
         <div class="container">
+            <div class="section-title mb-6 pb-1 w-75 text-center mx-auto">
+                <h1 style="
+                    color: #10887c;
+                    line-height: 1.2;
+                    margin-bottom: 1rem !important;
+                    ">المدونة
+                </h1>
+            </div>
             <div class="row">
                 <div class="col-lg-8">
                     <div class="listing-inner">
