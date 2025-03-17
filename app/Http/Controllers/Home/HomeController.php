@@ -17,21 +17,23 @@ use App\Models\ProfileDownload;
 use App\Models\Project;
 use App\Models\Promoter;
 use App\Models\Review;
-use App\Models\Role;
 use App\Models\Service;
-use App\Models\Terms;
 use App\Models\Why;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Mail;
+use Illuminate\Support\Facades\Http;
+use App\Models\Role;
+use App\Models\Terms;
+
 
 class HomeController extends Controller
 {
     //
     public function index()
     {
+                // $hrRole = Role::create(['name' => 'Manager']);
 
-        // $hrRole = Role::create(['name' => 'Manager']);
 
         $projects = Project::latest()->limit(6)->get();
         $category_list = Category::limit(3)->get(['id', 'name']);
@@ -55,7 +57,7 @@ class HomeController extends Controller
 
     public function contact(Request $request)
     {
-        $request->validate([
+         $request->validate([
             'name' => 'required',
             'phone' => [
                 'required',
@@ -69,6 +71,7 @@ class HomeController extends Controller
 
         ]);
 
+
         // حفظ البيانات في قاعدة البيانات
         Contact::create($request->all());
 
@@ -81,29 +84,40 @@ class HomeController extends Controller
             'email' => $request->email ?? 'غير متوفر', // التحقق من وجود البريد الإلكتروني
             'phone' => $request->phone,
             'service' => $service ? $service->name : 'غير متوفر',
-            'data' => $request->message ? $service->message : 'غير متوفر',
+            'data' => $request->message,
         ];
 
-        session()->flash('success', 'شكرا لك !');
-        // إرسال البريد الإلكتروني
-        try {
-            Mail::send('mail', $info, function ($message) {
-                $message->to("info@roshem.sa", "Roshem Info")
-                    ->subject('New Contact Order');
-                $message->from('support@roshem.sa', 'Roshem Support');
-            });
-        } catch (\Throwable $th) {
-            //throw $th;
-        }
 
-        session()->flash('success', 'شكرا لك !');
-        return redirect()->back();
+
+        $response = Http::get('https://crm.roshem.sa/cron/api_insert', [
+        'name' => $request->name,
+        'phonenumber' => $request->phone,
+        'email' => $request->email ?? 'غير متوفر',
+        'description' => $request->message,
+            'service' => $service ? $service->id : ''
+    ]);
+
+
+
+
+        // إرسال البريد الإلكتروني
+       try {
+        Mail::send('mail', $info, function ($message) {
+            $message->to("info@roshem.sa", "Roshem Info")
+                ->subject('New Contact Order');
+            $message->from('support@roshem.sa', 'Roshem Support');
+        });
+       } catch (\Throwable $th) {
+        //throw $th;
+       }
+
+        return redirect()->route('home');
     }
 
 
     public function newsletter(Request $request)
     {
-        $request->validate([
+         $request->validate([
             'mobile' => [
                 'required',
                 'regex:/^05[0-9]{8}$/', // Start with 05 and exactly 10 digits in total
@@ -172,7 +186,7 @@ class HomeController extends Controller
         $privacies = Privacy::orderBy('id')->get();
         return view('home.privacy', compact('privacies'));
     }
-    public function terms()
+     public function terms()
     {
         $terms = Terms::orderBy('id')->get();
         return view('home.terms', compact('terms'));
