@@ -101,7 +101,7 @@
 
                         <div class="form-group mb-3">
                             <label for="description" class="form-label">الوصف - Description</label>
-                            <textarea class="form-control" id="description" name="description" rows="5" dir="rtl">{{ $blog->description }}</textarea>
+                            <textarea class="form-control description" id="description" name="description" rows="5" dir="rtl">{{ $blog->description }}</textarea>
                         </div>
 
                         {{-- <div class="form-group mb-3">

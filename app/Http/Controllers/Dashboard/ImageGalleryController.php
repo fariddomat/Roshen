@@ -15,7 +15,7 @@ class ImageGalleryController extends Controller
         $files = Storage::disk('local')->allFiles('public/photos/gallery');
         return view('dashboard.filebrowse.browser', compact('CKEditorFuncNum', 'files'));
     }
-
+ 
     public function uploader(Request $request)
     {
         $validator = Validator::make($request->all(), [

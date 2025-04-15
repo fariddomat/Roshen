@@ -29,6 +29,9 @@ class BlogController extends Controller
         $categories = BlogCategory::all();
         return view('dashboard.blogs.create', compact('categories'));
     }
+    public function show(Blog $blog)
+    {
+    }
 
     public function store(Request $request)
     {
@@ -101,6 +104,7 @@ class BlogController extends Controller
     public function edit(Blog $blog)
     {
         $categories = BlogCategory::all();
+
         return view('dashboard.blogs.edit', compact('blog', 'categories'));
     }
 
