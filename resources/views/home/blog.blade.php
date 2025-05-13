@@ -75,6 +75,10 @@
 .swiper-slide {
     width: 33.33%; /* Adjust based on slidesPerView */
 }
+
+.blog-single p{
+    text-align: justify !important;
+}
 </style>
 @endsection
 
