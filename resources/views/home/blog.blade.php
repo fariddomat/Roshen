@@ -5,85 +5,123 @@
 @endsection
 
 @section('style')
-<style>
-    .btn-primary:focus {
-        background-color: #10887c
-    }
-    /* Arrow rotation for expanded state */
-    .arrow {
-        transition: transform 0.3s ease;
-    }
+    <style>
+        .btn-primary:focus {
+            background-color: #10887c;
+        }
 
-    [aria-expanded="true"] .arrow {
-        transform: rotate(180deg);
-    }
-    /* Existing styles */
-    .blog-content p:first-child::first-letter {
-        font-size: inherit !important;
-        color: unset !important;
-        float: inherit !important;
-    }
+        .arrow {
+            transition: transform 0.3s ease;
+        }
 
-    .scroll {
-        position: fixed;
-        z-index: 1000;
-        right: 0;
-        top: 0;
-        width: 0;
-        height: 9px;
-        background-color: #10887c;
-    }
+        [aria-expanded="true"] .arrow {
+            transform: rotate(180deg);
+        }
 
-    ul li {
-        display: block;
-    }
+        .blog-content p:first-child::first-letter {
+            font-size: inherit !important;
+            color: unset !important;
+            float: inherit !important;
+        }
 
-    /* Mobile-specific styles */
-    @media (max-width: 767.98px) {
-        .blog-left .row {
+        .scroll {
+            position: fixed;
+            z-index: 1000;
+            right: 0;
+            top: 0;
+            width: 0;
+            height: 9px;
+            background-color: #10887c;
+        }
+
+        /* Updated list styles */
+        .blog-single ul,
+        .blog-single ol {
+            padding-right: 2rem !important;
+            margin-bottom: 1.5rem;
+            list-style: revert;
+        }
+
+        .blog-single ul li,
+        .blog-single ol li {
+            text-align: justify !important;
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            list-style: revert;
+        }
+
+        .blog-single ul {
+            list-style-type: disc;
+        }
+
+        .blog-single ul li {
+            display: list-item;
+            list-style-type: disc;
+        }
+
+        .blog-single ol {
+            list-style-type: decimal;
+        }
+
+        .blog-single dl {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-single dt {
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        .blog-single dd {
+            margin-right: 2rem;
+            text-align: justify;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Mobile-specific styles */
+        @media (max-width: 767.98px) {
+            .blog-left .row {
                 display: flex;
                 flex-direction: column;
             }
 
             .blog-left .col-lg-4 {
-                order: 2; /* Move sidebar (content table and writer section) after the main content */
+                order: 2;
             }
 
             .blog-left .col-lg-8 {
-                order: 1; /* Ensure main content comes first */
+                order: 1;
             }
-        /* Move writer section to the end of the blog content */
-        .author-news {
-            margin-top: 2rem; /* Add some spacing */
+
+            .author-news {
+                margin-top: 2rem;
+            }
+
+            .content-table-mobile {
+                display: block !important;
+            }
+
+            .sidebar-item.d-none.d-lg-block {
+                display: none !important;
+            }
         }
 
-        /* Ensure content table is visible only in mobile */
-        .content-table-mobile {
-            display: block !important; /* Force display for mobile */
+        .team-slider {
+            width: 100%;
+            overflow: hidden;
         }
 
-        /* Hide content table in sidebar for mobile */
-        .sidebar-item.d-none.d-lg-block {
-            display: none !important;
+        .swiper-slide {
+            width: 33.33%;
         }
-    }
 
-    .team-slider {
-    width: 100%; /* Ensure the container takes full width */
-    overflow: hidden; /* Hide overflow */
-}
-.swiper-slide {
-    width: 33.33%; /* Adjust based on slidesPerView */
-}
-
-.blog-single p{
-    text-align: justify !important;
-}
-</style>
+        .blog-single p {
+            text-align: justify !important;
+        }
+    </style>
 @endsection
 
 @section('scripts')
-
     <script>
         let ele = document.querySelector(".scroll");
         let height =
@@ -96,36 +134,35 @@
         })
     </script>
     <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const swiper = new Swiper('.team-slider', {
-        slidesPerView: 3,
-        spaceBetween: 20,
-        loop: true,
-        autoplay: {
-            delay: 3000,
-        },
-        breakpoints: {
-            320: {
-                slidesPerView: 1,
-            },
-            768: {
-                slidesPerView: 2,
-            },
-            1024: {
+        document.addEventListener('DOMContentLoaded', function() {
+            const swiper = new Swiper('.team-slider', {
                 slidesPerView: 3,
-            },
-        },
-        observer: true,
-        observeParents: true,
-    });
-});
-document.querySelectorAll('*').forEach(element => {
-    if (window.getComputedStyle(element).fontFamily.includes('Arial')) {
-        element.style.fontFamily = 'Cairo, sans-serif';
-    }
-});
+                spaceBetween: 20,
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    },
+                },
+                observer: true,
+                observeParents: true,
+            });
+        });
+        document.querySelectorAll('*').forEach(element => {
+            if (window.getComputedStyle(element).fontFamily.includes('Arial')) {
+                element.style.fontFamily = 'Cairo, sans-serif';
+            }
+        });
     </script>
-
 @endsection
 
 @section('content')
@@ -153,9 +190,10 @@ document.querySelectorAll('*').forEach(element => {
                                         $rows = preg_split('/\r\n|\r|\n/', $plainText);
                                     @endphp
 
-                                    @if(!empty($rows))
-                                        @foreach($rows as $row)
-                                            @if(trim($row) !== '') {{-- Skip empty rows --}}
+                                    @if (!empty($rows))
+                                        @foreach ($rows as $row)
+                                            @if (trim($row) !== '')
+                                                {{-- Skip empty rows --}}
                                                 <li><a href="#">{{ $row }}</a></li>
                                             @endif
                                         @endforeach
@@ -207,7 +245,10 @@ document.querySelectorAll('*').forEach(element => {
 
                                 <!-- Toggle Button for Content Table (Visible Only on Mobile) -->
                                 <div class="mb-3 d-block d-lg-none">
-                                    <button class="btn btn-primary w-100 d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#contentTableCollapse" aria-expanded="false" aria-controls="contentTableCollapse" style="background-color: #10887c">
+                                    <button class="btn btn-primary w-100 d-flex justify-content-between align-items-center"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#contentTableCollapse"
+                                        aria-expanded="false" aria-controls="contentTableCollapse"
+                                        style="background-color: #10887c">
                                         جدول المحتويات
                                         <span class="arrow">▼</span>
                                     </button>
@@ -228,9 +269,10 @@ document.querySelectorAll('*').forEach(element => {
                                             $rows = preg_split('/\r\n|\r|\n/', $plainText);
                                         @endphp
 
-                                        @if(!empty($rows))
-                                            @foreach($rows as $row)
-                                                @if(trim($row) !== '') {{-- Skip empty rows --}}
+                                        @if (!empty($rows))
+                                            @foreach ($rows as $row)
+                                                @if (trim($row) !== '')
+                                                    {{-- Skip empty rows --}}
                                                     <li><a href="#">{{ $row }}</a></li>
                                                 @endif
                                             @endforeach
