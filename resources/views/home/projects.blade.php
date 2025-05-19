@@ -83,7 +83,7 @@
         /* Desktop styles */
         @media (min-width: 992px) {
             .trend-item {
-                display: flex;
+                display: flex !important;
                 align-items: stretch;
                 background: #fff;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -138,11 +138,19 @@
             }
         }
 
+        @media (max-width: 567px){
+                .trending .trend-item {
+        display: flex !important;
+    }
+    .trend-content{
+        text-align: center !important;
+    }
+        }
         /* Mobile styles (revert to original) */
         @media (max-width: 991px) {
             .trend-item {
-                display: block;
-                border-radius: 10px;
+                display: flex !important; /* Use flex to control order */
+                flex-direction: column; /* Stack vertically */
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
                 /* Original shadow */
             }
@@ -179,6 +187,27 @@
         }
         /* Mobile styles (revert to original with reversed order) */
 @media (max-width: 991px) {
+    .project-col:nth-child(even) .trend-item {
+                border-top-right-radius: 50px;
+                /* RTL: Fully rounded top-right */
+                border-bottom-left-radius: 50px;
+                /* RTL: Fully rounded bottom-left */
+                border-top-left-radius: 10px;
+                /* Small rounded */
+                border-bottom-right-radius: 10px;
+                /* Small rounded */
+            }
+
+            .project-col:nth-child(odd) .trend-item {
+                border-top-left-radius: 50px;
+                /* RTL: Fully rounded top-left */
+                border-bottom-right-radius: 50px;
+                /* RTL: Fully rounded bottom-right */
+                border-top-right-radius: 10px;
+                /* Small rounded */
+                border-bottom-left-radius: 10px;
+                /* Small rounded */
+            }
     .trend-item {
         display: flex; /* Change to flex to control order */
         flex-direction: column; /* Stack vertically */
@@ -372,25 +401,25 @@
                         <div class="trend-box bg-light p-4">
                             <div class="row">
                                 @foreach ($projects as $project)
-                                    <div class="col-lg-6 col-md-6 mb-4 p-8 project-col" style="padding: 2rem !important">
-                                        <div class="trend-item" style="background: #10887c28">
+                                    <div class="col-lg-6 col-md-6 mb-4 p-8 project-col" style="padding: 2rem !important;">
+                                        <div class="trend-item" style="background: #10887c28; min-height: 400px">
                                             <div class="trend-content p-4">
                                                 <h5 class="bold"
-                                                    style="border-left: unset; margin: 5px auto; color: #10887c; font-weight: bold">
+                                                    style="border-left: unset; margin: 5px auto; color: #10887c; font-weight: bold; font-size: 24px;">
                                                     {{ $project->category->name }}</h5>
                                                 <h4>
                                                     <a href="{{ route('project', $project->slug) }}"
                                                         class="text-decoration-none"
-                                                        style="color: #605098 ">{{ $project->name }}</a>
+                                                        style="color: #605098 ; font-size: 20px;">{{ $project->name }}</a>
                                                 </h4>
-                                                <div class="trend-meta">
+                                                <div class="trend-meta" style="padding-top: 25px">
                                                     <a href="{{ route('project', $project->slug) }}"
-                                                        class="tags bg-theme2 text-white px-1 py-1 text-decoration-none">استعراض
+                                                        class="tags bg-theme2 text-white px-1 py-1 text-decoration-none" style="max-width: 150px; min-height: 45px; font-size: 18px;     padding-top: 10px !important;">استعراض
                                                         المشروع</a>
                                                     @if ($project->pdfs && $project->pdfs->count() > 0)
                                                         <a href="{{ asset('/Uploads/' . $project->pdfs->first()->file_path) }}"
                                                             class="tags bg-theme2 text-white px-1 py-1 text-decoration-none"
-                                                            style="background-color: #10887c !important">تحميل البرشور</a>
+                                                            style="background-color: #10887c !important; max-width: 150px; min-height: 45px; font-size: 18px;    padding-top: 10px !important;">تحميل البرشور</a>
                                                     @endif
                                                 </div>
                                             </div>

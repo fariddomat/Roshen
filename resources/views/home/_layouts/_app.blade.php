@@ -256,7 +256,7 @@
 
             @media (max-width: 768px) {
                 .sidebar-container {
-                    
+
                     width: 300px;
                 }
 
