@@ -32,7 +32,7 @@ class HomeController extends Controller
     //
     public function index()
     {
-                // $hrRole = Role::create(['name' => 'Manager']);
+        // $hrRole = Role::create(['name' => 'Manager']);
 
 
         $projects = Project::latest()->limit(6)->get();
@@ -57,7 +57,7 @@ class HomeController extends Controller
 
     public function contact(Request $request)
     {
-         $request->validate([
+        $request->validate([
             'name' => 'required',
             'phone' => [
                 'required',
@@ -90,26 +90,26 @@ class HomeController extends Controller
 
 
         $response = Http::get('https://crm.roshem.sa/cron/api_insert', [
-        'name' => $request->name,
-        'phonenumber' => $request->phone,
-        'email' => $request->email ?? 'غير متوفر',
-        'description' => $request->message,
+            'name' => $request->name,
+            'phonenumber' => $request->phone,
+            'email' => $request->email ?? 'غير متوفر',
+            'description' => $request->message,
             'service' => $service ? $service->id : ''
-    ]);
+        ]);
 
 
 
 
         // إرسال البريد الإلكتروني
-       try {
-        Mail::send('mail', $info, function ($message) {
-            $message->to("info@roshem.sa", "Roshem Info")
-                ->subject('New Contact Order');
-            $message->from('support@roshem.sa', 'Roshem Support');
-        });
-       } catch (\Throwable $th) {
-        //throw $th;
-       }
+        try {
+            Mail::send('mail', $info, function ($message) {
+                $message->to("info@roshem.sa", "Roshem Info")
+                    ->subject('New Contact Order');
+                $message->from('support@roshem.sa', 'Roshem Support');
+            });
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
 
         return redirect()->route('home');
     }
@@ -117,7 +117,7 @@ class HomeController extends Controller
 
     public function newsletter(Request $request)
     {
-         $request->validate([
+        $request->validate([
             'mobile' => [
                 'required',
                 'regex:/^05[0-9]{8}$/', // Start with 05 and exactly 10 digits in total
@@ -186,7 +186,7 @@ class HomeController extends Controller
         $privacies = Privacy::orderBy('id')->get();
         return view('home.privacy', compact('privacies'));
     }
-     public function terms()
+    public function terms()
     {
         $terms = Terms::orderBy('id')->get();
         return view('home.terms', compact('terms'));
