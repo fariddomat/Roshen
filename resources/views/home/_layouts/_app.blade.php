@@ -497,6 +497,7 @@ snaptr('track', 'PAGE_VIEW');
         });
     </script>
 
+
     <script>
         $(document).ready(function() {
             $('.sidebar-toggle-btn').click(function() {
