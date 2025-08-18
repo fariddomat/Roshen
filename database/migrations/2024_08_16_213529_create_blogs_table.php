@@ -30,6 +30,7 @@ return new class extends Migration
             $table->string('author_name');
             $table->string('author_title');
             $table->string('author_image')->nullable();
+            $table->longtext('map')->nullable();
 
             $table->timestamps();
         });

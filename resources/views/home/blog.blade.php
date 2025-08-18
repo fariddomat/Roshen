@@ -118,6 +118,20 @@
         .blog-single p {
             text-align: justify !important;
         }
+
+        .content-box iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            min-height: 480px !important;
+        }
+
+        .content-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 @endsection
 
@@ -309,6 +323,17 @@
                                   ">
                                 {!! $blog->description !!}
                             </div>
+
+                            @if ($blog->map)
+                                <div class="mb-3 shadow-sm d-flex flex-column">
+                                    <p class="text-center" style="font-size: 22px; margin-bottom: 12px">
+                                        الموقع على الخريطة
+                                    </p>
+                                    <div class="content-box flex-grow-1">
+                                        {!! $blog->map !!}
+                                    </div>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>

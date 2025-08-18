@@ -52,8 +52,8 @@
 
                         <div class="form-group mb-3">
                             <label for="title" class="form-label">العنوان</label>
-                            <input type="text" name="title" class="form-control"
-                                value="{{ $blog->title }}" dir="rtl">
+                            <input type="text" name="title" class="form-control" value="{{ $blog->title }}"
+                                dir="rtl">
                         </div>
                         {{-- <div class="form-group mb-3">
                     <label for="title" class="form-label">Title in English</label>
@@ -139,8 +139,8 @@
 
                         <div class="form-group mb-3">
                             <label for="author_name" class="form-label">اسم الكاتب</label>
-                            <input type="text" name="author_name" class="form-control"
-                                value="{{ $blog->author_name }}" dir="rtl">
+                            <input type="text" name="author_name" class="form-control" value="{{ $blog->author_name }}"
+                                dir="rtl">
                         </div>
                         {{-- <div class="form-group mb-3">
                     <label for="author_name" class="form-label">Author Name in English</label>
@@ -171,8 +171,8 @@
                         </div>
                         <div class="form-group mb-3">
                             <label for="image_alt" class="form-label">وصف الصورة المصغرة - alt</label>
-                            <input type="text" name="image_alt" class="form-control" value="{{ old('image_alt', $blog->image_alt) }}"
-                                dir="rtl">
+                            <input type="text" name="image_alt" class="form-control"
+                                value="{{ old('image_alt', $blog->image_alt) }}" dir="rtl">
                         </div>
 
                         <div class="form-group mb-3">
@@ -188,8 +188,8 @@
 
                         <div class="form-group mb-3">
                             <label for="index_image_alt" class="form-label">وصف الصورة الرئيسية - alt</label>
-                            <input type="text" name="index_image_alt" class="form-control" value="{{ old('index_image_alt', $blog->index_image_alt) }}"
-                                dir="rtl">
+                            <input type="text" name="index_image_alt" class="form-control"
+                                value="{{ old('index_image_alt', $blog->index_image_alt) }}" dir="rtl">
                         </div>
                         <div class="form-group mb-3">
                             @if ($blog->index_image)
@@ -206,6 +206,10 @@
                         </div>
 
 
+                        <div class="form-group mb-3">
+                            <label for="content_table" class="form-label">الخريطة - iframe</label>
+                            <textarea class="form-control" id="" name="map" rows="5" dir="rtl">{{ old('map', $blog->map) }}</textarea>
+                        </div>
                         <div class="form-group mb-3">
                             <button type="submit" class="btn btn-primary"><i class="fas fa-pencil-alt"></i> تعديل
                             </button>

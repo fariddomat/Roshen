@@ -29,9 +29,7 @@ class BlogController extends Controller
         $categories = BlogCategory::all();
         return view('dashboard.blogs.create', compact('categories'));
     }
-    public function show(Blog $blog)
-    {
-    }
+    public function show(Blog $blog) {}
 
     public function store(Request $request)
     {
@@ -51,6 +49,8 @@ class BlogController extends Controller
             'author_name' => ['required'],
             'author_title' => ['required'],
             'author_image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,webp'],
+            'map' => ['nullable'],
+
         ];
         $validatedData = $request->validate($rules);
 
@@ -66,6 +66,7 @@ class BlogController extends Controller
 
         $blog->image_alt = $validatedData['image_alt'];
         $blog->index_image_alt = $validatedData['index_image_alt'];
+        $blog->map = $validatedData['map'];
 
         if ($request->has('author_image')) {
             $helper = new ImageHelper;
@@ -131,6 +132,8 @@ class BlogController extends Controller
 
             'image_alt' => ['nullable'],
             'index_image_alt' => ['nullable'],
+            'map' => ['nullable'],
+
 
         ];
         $validatedData = $request->validate($rules);
@@ -149,6 +152,8 @@ class BlogController extends Controller
         $blog->image_alt = $validatedData['image_alt'];
         $blog->index_image_alt = $validatedData['index_image_alt'];
 
+        $blog->map = $validatedData['map'];
+
         if ($request->has('author_image')) {
             $helper = new ImageHelper;
             $helper->removeImageInPublicDirectory($blog->author_image);
@@ -158,7 +163,7 @@ class BlogController extends Controller
             $blog->author_image = $fullPath;
         }
 
-            $helper = new ImageHelper;
+        $helper = new ImageHelper;
         if ($request->has('image')) {
             // Storage::disk('local')->delete($blog->image);
 
